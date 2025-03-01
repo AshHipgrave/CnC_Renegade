@@ -1337,8 +1337,6 @@ int Build_List_From_String
 				char* delim_start = const_cast<char*>( // HACK: const_cast, blegh!! (TODO: AshHipgrave - Fix this properly!)
 					::strstr(entry_string, delimiter));
 				if (delim_start != NULL) {
-					// TODO: AshHipgrave - It looks like the implementation of StringClass just performs a shallow copy (i.e. 'entry' and 'entry_string' point to the same buffer). If that's the case then this will truncate both strings.
-					// is this the correct behaviour or is this a bug?
 					delim_start[0] = 0; 
 				}
 
