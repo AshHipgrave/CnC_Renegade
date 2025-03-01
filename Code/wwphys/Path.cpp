@@ -1306,7 +1306,7 @@ PathClass::Clip_Spline_To_Pathfind_Data
 	//
 	//	Free the temporary portal-box list
 	//
-	for (index = 0; index < portal_list.Count (); index ++) {
+	for (int index = 0; index < portal_list.Count (); index ++) {
 		AABoxClass *portal_box = portal_list[index];
 		delete portal_box;
 	}
@@ -1314,7 +1314,7 @@ PathClass::Clip_Spline_To_Pathfind_Data
 	//
 	//	Free the temporary sector-box list
 	//
-	for (index = 0; index < sector_list.Count (); index ++) {		
+	for (int index = 0; index < sector_list.Count (); index ++) {		
 		AABoxClass *box = sector_list[index];
 		delete box;
 	}

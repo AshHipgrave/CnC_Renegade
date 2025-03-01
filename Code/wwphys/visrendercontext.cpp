@@ -314,7 +314,7 @@ void VisRenderContextClass::Compute_2D_Bounds
 	// scan for the min and max
 	min_v->X = max_v->X = corner[0].X;
 	min_v->Y = max_v->Y = corner[0].Y;
-	for (ivert = 1; ivert<NUM_BOX_VERTS; ivert++) {
+	for (int ivert = 1; ivert<NUM_BOX_VERTS; ivert++) {
 		if (min_v->X > corner[ivert].X) min_v->X = corner[ivert].X;
 		if (min_v->Y > corner[ivert].Y) min_v->Y = corner[ivert].Y;
 		if (max_v->X < corner[ivert].X) max_v->X = corner[ivert].X;
