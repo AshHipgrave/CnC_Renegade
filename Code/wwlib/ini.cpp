@@ -992,7 +992,7 @@ int INIClass::Get_UUBlock(char const * section, void * block, int len) const
  * HISTORY:                                                                                    *
  *    11/6/2001 4:27PM ST : Created                                                            *
  *=============================================================================================*/
-const WideStringClass& INIClass::Get_Wide_String(WideStringClass& new_string, char const * section, char const * entry, unsigned short const * defvalue) const
+const WideStringClass& INIClass::Get_Wide_String(WideStringClass& new_string, char const * section, char const * entry, wchar_t const * defvalue) const
 {
 	unsigned short out[1024];
 	char buffer[1024];

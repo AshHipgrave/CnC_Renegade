@@ -324,7 +324,7 @@ DialogBaseClass::End_Dialog (void)
 	//
 	//	Release all child dialogs
 	//
-	for (index = 0; index < ChildDialogList.Count (); index ++) {
+	for (int index = 0; index < ChildDialogList.Count(); index++) {
 		ChildDialogList[index]->End_Dialog ();
 		ChildDialogList[index]->Set_Parent_Dialog (NULL);
 		ChildDialogList[index]->Release_Ref ();
@@ -371,7 +371,7 @@ DialogBaseClass::On_Frame_Update (void)
 		//
 		//	Let each control "think"
 		//
-		for (index = 0; index < ChildDialogList.Count (); index ++) {
+		for (int index = 0; index < ChildDialogList.Count (); index ++) {
 			ChildDialogList[index]->On_Frame_Update ();
 		}
 	}
@@ -404,7 +404,7 @@ DialogBaseClass::Render (void)
 		//
 		//	Render each child - dialog
 		//
-		for (index = 0; index < ChildDialogList.Count (); index ++) {
+		for (int index = 0; index < ChildDialogList.Count (); index ++) {
 			if (ChildDialogList[index]->Is_Visible ()) {
 				ChildDialogList[index]->Render ();
 			}
@@ -1500,7 +1500,7 @@ DialogBaseClass::Build_Control_List (CONTROL_LIST &list)
 	//
 	//	Next, add in the control from each dialog
 	//
-	for (index = 0; index < ChildDialogList.Count (); index ++) {
+	for (int index = 0; index < ChildDialogList.Count(); index++) {
 		if (ChildDialogList[index]->Is_Visible ()) {
 			ChildDialogList[index]->Build_Control_List (list);
 		}
@@ -1541,17 +1541,17 @@ DialogBaseClass::Set_Rect (const RectClass &rect)
 	//
 	//	Move all the child dialogs
 	//
-	for (index = 0; index < ChildDialogList.Count (); index ++) {
+	for (int index = 0; index < ChildDialogList.Count (); index ++) {
 
 		//
 		//	Offset this dialog
 		//
-		RectClass rect = ChildDialogList[index]->Get_Rect ();
-		rect.Left	+= offset.X;
-		rect.Right	+= offset.X;
-		rect.Top		+= offset.Y;
-		rect.Bottom	+= offset.Y;
-		ChildDialogList[index]->Set_Rect (rect);
+		RectClass offsetRect = ChildDialogList[index]->Get_Rect ();
+		offsetRect.Left	+= offset.X;
+		offsetRect.Right	+= offset.X;
+		offsetRect.Top		+= offset.Y;
+		offsetRect.Bottom	+= offset.Y;
+		ChildDialogList[index]->Set_Rect(offsetRect);
 	}
 
 	Rect = rect;
@@ -1634,7 +1634,7 @@ void DialogBaseClass::Set_Dirty(bool onoff)
 	//
 	//	Render each child - dialog
 	//
-	for (index = 0; index < ChildDialogList.Count (); index ++) {
+	for (int index = 0; index < ChildDialogList.Count(); index++) {
 		ChildDialogList[index]->Set_Dirty();
 	}
 }

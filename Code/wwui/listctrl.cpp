@@ -728,7 +728,7 @@ ListCtrlClass::Update_Scroll_Bar_Visibility (void)
 	// visibility changed
 	//
 	if (was_scrollbar_displayed != IsScrollBarDisplayed) {
-		for (index = 0; index < RowInfoList.Count (); index ++) {
+		for (int index = 0; index < RowInfoList.Count(); index++) {
 			Update_Row_Height (index);
 		}
 
@@ -1958,7 +1958,7 @@ ListCtrlClass::Delete_All_Entries (void)
 	//
 	//	Now delete all the entries from each column
 	//
-	for (index = 0; index < ColList.Count (); index ++) {
+	for (int index = 0; index < ColList.Count(); index++) {
 		ColList[index]->Delete_All_Entries ();
 	}
 
@@ -2271,7 +2271,8 @@ ListCtrlClass::Scroll_Page (int direction)
 	//	Scan either direction from the current scroll
 	// position until we've moved a whole page
 	//
-	for (	int index = ScrollPos;
+	int index;
+	for (index = ScrollPos;
 			index >= 0 && index < count;
 			index += direction)
 	{		

@@ -340,7 +340,8 @@ void EditCtrlClass::Get_Display_Text(WideStringClass &text)
 		int len = Title.Get_Length();
 		wchar_t* buffer = text.Peek_Buffer();
 
-		for (int index = 0; index < len; ++index) {
+		int index;
+		for (index = 0; index < len; ++index) {
 			buffer[index] = L'*';
 		}
 
