@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Support">
+      <UniqueIdentifier>{36ffe2df-396b-4694-9ddc-aa7d7518fa1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Design_Test">
+      <UniqueIdentifier>{f5634dc6-a9d9-4680-be97-6e3720969329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Toolkit">
+      <UniqueIdentifier>{cc105f2a-5a7b-4ca1-b5ba-deb4af4408b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Missions">
+      <UniqueIdentifier>{74fed192-1dca-4cdc-9cfe-5ca8c6a40115}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="always.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="bool.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="combatsound.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomEvents.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="DPrint.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjobserver.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptevents.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptFactory.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptNode.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptRegistrant.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptRegistrar.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="slist.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="slnode.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="strtrim.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="vector3.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="visualc.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="wwmath.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit.h">
+      <Filter>Toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission00.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission1.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission10.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission11.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission2.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission3.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission4.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission5.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission6.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission7.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission8.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="Mission9.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="MissionX0.h">
+      <Filter>Missions</Filter>
+    </ClInclude>
+    <ClInclude Include="actionparams.h" />
+    <ClInclude Include="scriptcommands.h" />
+    <ClInclude Include="scripts.h" />
+    <ClInclude Include="string_ids.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DLLmain.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="DPrint.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="DrMobius.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptFactory.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptRegistrar.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="strtrim.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_BMG.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_Cinematic.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_DAK.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_DAY.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_DLS.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_DME.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_GTH.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_JDG_EVA.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_PDS.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_RAD.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_RMV.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_RMV_Toolkit.cpp">
+      <Filter>Design_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Actions.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Animations.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Broadcaster.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Explosions.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Objectives.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Objects.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Powerup.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Siege.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Sounds.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Spawners.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit_Triggers.cpp">
+      <Filter>Toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission00.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission01.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission02.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission03.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission04.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission05.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission06.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission07.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="mission08.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission09.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission10.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="Mission11.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="MissionDemo.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="MissionX0.cpp">
+      <Filter>Missions</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts.cpp" />
+  </ItemGroup>
+</Project>
