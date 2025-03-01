@@ -358,7 +358,7 @@ int PacketManagerClass::Build_Delta_Packet_Patch(unsigned char *base_packet, uns
 		*/
 		read_bit_pos = 0;
 		num_diff_bytes = 0;
-		for (i=0 ; i<base_packet_size ; i+= 8) {
+		for (int i=0 ; i<base_packet_size ; i+= 8) {
 
 			/*
 			** If we have chunk info, then use it to skip matching chunks.
