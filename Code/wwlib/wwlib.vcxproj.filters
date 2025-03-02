@@ -298,9 +298,6 @@
     <ClInclude Include="blitter.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="bool.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="borlandc.h">
       <Filter>Headers</Filter>
     </ClInclude>

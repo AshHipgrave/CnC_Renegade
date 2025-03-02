@@ -134,9 +134,9 @@ DECLARE_SCRIPT(M02_Objective_Controller, "")
 						Commands->Set_Objective_Status (213, OBJECTIVE_STATUS_ACCOMPLISHED);
 						Commands->Stop_All_Conversations ();
 						int id = Commands->Create_Conversation ("M02_SECONDARY_09_FINISH", 100, 300, true);
-						Commands->Join_Conversation (NULL, id);
+						Commands->Join_Conversation (NULL, id, true, true, true);
 						Commands->Join_Conversation (STAR, id, true, false, false);
-						Commands->Start_Conversation (id);
+						Commands->Start_Conversation (id, 0);
 					}
 					break;
 				}
@@ -166,9 +166,9 @@ DECLARE_SCRIPT(M02_Objective_Controller, "")
 									rocket_soldier_speech = true;
 									Commands->Stop_All_Conversations ();
 									int id = Commands->Create_Conversation("M02_MORE_ROCKET_SOLDIERS", 100, 300, true);
-									Commands->Join_Conversation(NULL, id);
+									Commands->Join_Conversation(NULL, id, true, true, true);
 									Commands->Join_Conversation (STAR, id, true, false, false);
-									Commands->Start_Conversation(id);
+									Commands->Start_Conversation(id, 0);
 								}
 							}
 						}
@@ -334,9 +334,9 @@ DECLARE_SCRIPT(M02_Objective_Controller, "")
 		}
 		if (id)
 		{
-			Commands->Join_Conversation(NULL, id);
+			Commands->Join_Conversation(NULL, id, true, true, true);
 			Commands->Join_Conversation (STAR, id, true, false, false);
-			Commands->Start_Conversation(id);
+			Commands->Start_Conversation(id, 0);
 		}
 	}
 
@@ -555,9 +555,9 @@ DECLARE_SCRIPT(M02_Objective_Zone, "")
 					{
 						Commands->Stop_All_Conversations ();
 						int id = Commands->Create_Conversation("M02_BAY_DOOR_WARNING", 100, 300, true);
-						Commands->Join_Conversation(NULL, id);
+						Commands->Join_Conversation(NULL, id, true, true, true);
 						Commands->Join_Conversation (STAR, id, true, false, false);
-						Commands->Start_Conversation(id);
+						Commands->Start_Conversation(id, 0);
 						destroy_zone = true;
 					}
 					break;
@@ -566,9 +566,9 @@ DECLARE_SCRIPT(M02_Objective_Zone, "")
 				{
 					Commands->Stop_All_Conversations ();
 					int id = Commands->Create_Conversation("M02_PRIMARY_03_GUIDE", 100, 300, true);
-					Commands->Join_Conversation(NULL, id);
+					Commands->Join_Conversation(NULL, id, true, true, true);
 					Commands->Join_Conversation (STAR, id, true, false, false);
-					Commands->Start_Conversation(id);
+					Commands->Start_Conversation(id, 0);
 					destroy_zone = true;
 					break;
 				}
@@ -578,9 +578,9 @@ DECLARE_SCRIPT(M02_Objective_Zone, "")
 					{
 						was_entered = true;
 						int id = Commands->Create_Conversation("MX2DSGN_DSGN0001", 100, 300, true);
-						Commands->Join_Conversation(NULL, id);
+						Commands->Join_Conversation(NULL, id, true, true, true);
 						Commands->Join_Conversation (STAR, id, true, false, false);
-						Commands->Start_Conversation(id);
+						Commands->Start_Conversation(id, 0);
 						Commands->Set_HUD_Help_Text(IDS_M02DSGN_DSGN0186I1DSGN_TXT, TEXT_COLOR_OBJECTIVE_PRIMARY);
 					}
 					break;
@@ -589,8 +589,8 @@ DECLARE_SCRIPT(M02_Objective_Zone, "")
 				{
 					// Turn on objectives
 
-					Commands->Send_Custom_Event(obj, object, 206, 0);
-					Commands->Send_Custom_Event(obj, object, 207, 0);
+					Commands->Send_Custom_Event(obj, object, 206, 0, 0.0f);
+					Commands->Send_Custom_Event(obj, object, 207, 0, 0.0f);
 
 					// Turn on A00
 

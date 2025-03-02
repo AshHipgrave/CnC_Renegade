@@ -180,7 +180,7 @@ class INIClass {
 		bool Put_Point(char const * section, char const * entry, TPoint3D<int> const & value);
 		bool Put_Point(char const * section, char const * entry, TPoint3D<float> const & value);
 		bool Put_Point(char const * section, char const * entry, TPoint2D<int> const & value);
-		bool Put_Wide_String(char const * section, char const * entry, const unsigned short * string);
+		bool Put_Wide_String(char const * section, char const * entry, const wchar_t * string);
 
 //	protected:
 		enum {MAX_LINE_LENGTH=512};

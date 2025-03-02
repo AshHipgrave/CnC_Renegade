@@ -778,7 +778,7 @@ DECLARE_SCRIPT(M01_Mission_Controller_JDG, "")//this guys ID number is 100376
 						if (player_has_unlocked_pen == true)
 						{
 							unlocked_gate_conv = Commands->Create_Conversation( "M01_Remove_Unlock_Gate_Objective", 100, 1000, false);
-							Commands->Join_Conversation( NULL, unlocked_gate_conv, false, false );
+							Commands->Join_Conversation( NULL, unlocked_gate_conv, false, false, true );
 							Commands->Start_Conversation( unlocked_gate_conv, unlocked_gate_conv );
 
 							Commands->Monitor_Conversation(  obj, unlocked_gate_conv );

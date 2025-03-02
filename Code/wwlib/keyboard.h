@@ -41,15 +41,7 @@
 #include	"_xmouse.h"
 #include	"win.h"
 
-/*
-**	The "bool" integral type was defined by the C++ comittee in
-**	November of '94. Until the compiler supports this, use the following
-**	definition.
-*/
-#include	"bool.h"
-
-
-typedef enum {
+enum {
 	WWKEY_SHIFT_BIT	= 0x100,
 	WWKEY_CTRL_BIT		= 0x200,
 	WWKEY_ALT_BIT		= 0x400,

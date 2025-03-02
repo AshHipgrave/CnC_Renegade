@@ -80,6 +80,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Lib>
       <OutputFile>..\libs\Debug\wwlib.lib</OutputFile>
@@ -106,6 +107,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Lib>
       <OutputFile>..\libs\Release\wwlib.lib</OutputFile>
@@ -132,6 +134,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Lib>
       <OutputFile>..\libs\Profile\wwlib.lib</OutputFile>
@@ -663,7 +666,6 @@
     <ClInclude Include="bittype.h" />
     <ClInclude Include="blit.h" />
     <ClInclude Include="blitter.h" />
-    <ClInclude Include="bool.h" />
     <ClInclude Include="borlandc.h" />
     <ClInclude Include="bound.h" />
     <ClInclude Include="BSEARCH.H" />

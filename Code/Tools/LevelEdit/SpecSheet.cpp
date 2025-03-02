@@ -76,7 +76,7 @@ SpecSheetClass::~SpecSheetClass (void)
 	//	Unlock all the parameters in this definition
 	//
 	int count = m_Definition->Get_Parameter_Count ();
-	for (index = 0; index < count; index ++) {
+	for (int index = 0; index < count; index ++) {
 		m_Definition->Unlock_Parameter (index);
 	}
 
@@ -317,7 +317,7 @@ SpecSheetClass::OnCreate (LPCREATESTRUCT lpCreateStruct)
 	//
 	//	Ask each control to create its UI
 	//
-	for (index = 0; index < m_CtrlList.Count (); index ++) {
+	for (int index = 0; index < m_CtrlList.Count (); index ++) {
 		ParameterCtrlClass *parameter_ctrl = m_CtrlList[index];
 		
 		parameter_ctrl->Set_Read_Only (m_IsReadOnly);
@@ -669,7 +669,8 @@ SpecSheetClass::Scroll_Controls (int amount)
 	//
 	//	Build a list of all the child windows we want to scroll
 	//
-	for (	HWND child_wnd = ::GetWindow (m_hWnd, GW_CHILD);
+	HWND child_wnd;
+	for ( child_wnd = ::GetWindow (m_hWnd, GW_CHILD);
 			child_wnd != NULL;
 			child_wnd = ::GetWindow (child_wnd, GW_HWNDNEXT))
 	{

@@ -115,7 +115,7 @@ void	Debug_Message( char *format, ... )
 #endif
 }
 
-void Modify_Action( GameObject * obj, int action_id, const ActionParamsStruct & params, bool modify_move, bool modify_attack )
+void Modify_Action( GameObject * obj, int action_id, const ActionParamsStruct & params, bool modify_move = true, bool modify_attack = true )
 {
 	SCRIPT_PTR_CHECK( obj );
 	SCRIPT_TRACE((	"ST>Modify_Action( %d, %d )\n", obj->Get_ID(), action_id ));
@@ -584,7 +584,7 @@ void	Start_Timer( GameObject * obj, ScriptClass * script, float duration, int ti
 /*
 ** Weapons
 */
-void	Trigger_Weapon( GameObject * obj, bool trigger, const Vector3 & target, bool primary_fire )
+void	Trigger_Weapon( GameObject * obj, bool trigger, const Vector3 & target, bool primary_fire = true)
 {
 	SCRIPT_PTR_CHECK( obj );
 	SCRIPT_TRACE((	"ST>Trigger_Weapon( %d, %d, (%f %f %f ) %d\n", obj->Get_ID(), trigger, target.X, target.Y, target.Z, primary_fire ));
@@ -633,7 +633,7 @@ void	Select_Weapon( GameObject * obj, const char * weapon_name )
 /*
 **
 */
-void	Send_Custom_Event( GameObject * from, GameObject * to, int type, int param, float delay )
+void	Send_Custom_Event( GameObject * from, GameObject * to, int type = 0, int param = 0, float delay = 0 )
 {
 #if(0) // Denzil 4/4/00 - From not required for most messages
 	SCRIPT_PTR_CHECK( from );
@@ -1172,7 +1172,7 @@ void Start_Sound( int sound_id )
 }
 
 
-void Stop_Sound( int sound_id, bool destroy_sound )
+void Stop_Sound( int sound_id, bool destroy_sound = true )
 {
 	SCRIPT_TRACE(("ST>Stop_Sound( %d )\n", sound_id));
 
@@ -1373,7 +1373,7 @@ void	Force_Camera_Look( const Vector3 & target )
 **	Find_Closest_Soldier
 **
 */
-GameObject * Find_Closest_Soldier( const Vector3 & pos, float min_dist, float max_dist, bool only_human )
+GameObject * Find_Closest_Soldier( const Vector3 & pos, float min_dist, float max_dist, bool only_human = true )
 {
 	AABoxClass box (pos, Vector3 (max_dist / 2, max_dist / 2, max_dist / 2));
 
@@ -1521,7 +1521,7 @@ bool	Is_Object_Visible( GameObject * looker, GameObject * obj )
 }
 
 
-void	Enable_Enemy_Seen( GameObject * obj, bool enable )
+void	Enable_Enemy_Seen( GameObject * obj, bool enable = true )
 {
 	SCRIPT_PTR_CHECK( obj );
 	SCRIPT_TRACE((	"ST>Enable_Enemy_Seen( %d, %d )\n", obj->Get_ID(), enable ));
@@ -1539,7 +1539,7 @@ void	Enable_Enemy_Seen( GameObject * obj, bool enable )
 
 Vector3 _DisplayColor( 1,1,1 );
 
-void	Set_Display_Color( unsigned char red, unsigned char green, unsigned char blue )
+void	Set_Display_Color( unsigned char red = 255, unsigned char green = 255, unsigned char blue = 255)
 {
 	_DisplayColor = Vector3( (float)red/255.0f, (float)green/255.0f, (float)blue/255.0f );
 }
@@ -1563,7 +1563,7 @@ void	Display_Text( int string_id )
 	}
 }
 
-void	Display_Float( float value, const char * format )
+void	Display_Float( float value, const char * format = "%f")
 {
 	WideStringClass wide_format;
 	wide_format.Convert_From( format );
@@ -1572,7 +1572,7 @@ void	Display_Float( float value, const char * format )
 	DebugManager::Display_Text( string, _DisplayColor );
 }
 
-void	Display_Int( int value, const char * format )
+void	Display_Int( int value, const char * format = "%d")
 {
 	WideStringClass wide_format;
 	wide_format.Convert_From( format );
@@ -1872,7 +1872,7 @@ void	Enable_Radar( bool enable )
 /*
 **
 */
-void	Create_Explosion( const char * explosion_def_name, const Vector3 & pos, GameObject * creator )
+void	Create_Explosion( const char * explosion_def_name, const Vector3 & pos, GameObject * creator = NULL)
 {
 	SCRIPT_PTR_CHECK( explosion_def_name );
 	SCRIPT_TRACE((	"ST>Create_Explosion( %s, (%f,%f,%f), %d )\n",
@@ -1890,7 +1890,7 @@ void	Create_Explosion( const char * explosion_def_name, const Vector3 & pos, Gam
 	}
 }
 
-void	Create_Explosion_At_Bone( const char * explosion_def_name, GameObject * object, const char * bone_name, GameObject * creator )
+void	Create_Explosion_At_Bone( const char * explosion_def_name, GameObject * object, const char * bone_name, GameObject * creator = NULL )
 {
 	SCRIPT_PTR_CHECK( explosion_def_name );
 	SCRIPT_PTR_CHECK( object );
@@ -1942,7 +1942,7 @@ void	Mission_Complete( bool success )
 }
 
 
-void	Give_PowerUp( GameObject * obj, const char * preset_name, bool display_on_hud )
+void	Give_PowerUp( GameObject * obj, const char * preset_name, bool display_on_hud = false )
 {
 	SCRIPT_PTR_CHECK( obj );
 	SCRIPT_PTR_CHECK( preset_name );
@@ -2035,7 +2035,7 @@ void Innate_Enable(GameObject* object)
 }
 
 
-void	Set_Innate_Soldier_Home_Location( GameObject * obj, const Vector3& home_pos, float home_radius )
+void	Set_Innate_Soldier_Home_Location( GameObject * obj, const Vector3& home_pos, float home_radius = 999999 )
 {
 	SCRIPT_PTR_CHECK( obj );
 	SCRIPT_TRACE((	"ST>Set_Innate_Soldier_Home_Location( %d, (%f %f %f), %f )\n", obj->Get_ID(), home_pos.X, home_pos.Y, home_pos.Z, home_radius ));
@@ -2214,7 +2214,7 @@ void	Innate_Force_State_Enemy_Seen( GameObject * obj, GameObject * enemy )
 **
 */
 
-void	Static_Anim_Phys_Goto_Frame( int obj_id, float frame, const char * anim_name )
+void	Static_Anim_Phys_Goto_Frame( int obj_id, float frame, const char * anim_name = NULL )
 {
 	SCRIPT_TRACE((	"ST>Static_Anim_Phys_Goto_Frame( %d, %d )\n", obj_id, frame ));
 
@@ -2232,7 +2232,7 @@ void	Static_Anim_Phys_Goto_Frame( int obj_id, float frame, const char * anim_nam
 }
 
 
-void	Static_Anim_Phys_Goto_Last_Frame( int obj_id, const char * anim_name )
+void	Static_Anim_Phys_Goto_Last_Frame( int obj_id, const char * anim_name = NULL )
 {
 	SCRIPT_TRACE((	"ST>Static_Anim_Phys_Goto_Last_Frame( %d )\n", obj_id ));
 
@@ -2315,7 +2315,7 @@ void	Set_Objective_HUD_Info_Position( int id, float priority, const char * textu
 /*
 **
 */
-void	Shake_Camera( const Vector3 & pos, float radius, float intensity, float duration )
+void	Shake_Camera( const Vector3 & pos, float radius = 25, float intensity = 0.25f, float duration = 1.5f )
 {
 	SCRIPT_TRACE((	"ST>Shake_Camera( (%f, %f, %f), %f, %f, %f\n",pos.X, pos.Y, pos.Z, radius, intensity, duration ));
 	if ( COMBAT_SCENE ) {
@@ -2421,7 +2421,7 @@ void	Attach_To_Object_Bone( GameObject * object, GameObject * host_object, const
 	}
 }
 
-int	Create_Conversation( const char *conversation_name, int priority, float max_dist, bool is_interruptable )
+int	Create_Conversation( const char *conversation_name, int priority = 0, float max_dist = 0, bool is_interruptable = true )
 {
 	int active_conversation_id = -1;
 	SCRIPT_TRACE((	"ST>Create_Conversation( %s )\n", conversation_name ));
@@ -2501,7 +2501,7 @@ void	Join_Conversation_Facing( GameObject * object, int active_conversation_id, 
 }
 
 
-void	Join_Conversation( GameObject * object, int active_conversation_id, bool allow_move, bool allow_head_turn, bool allow_face )
+void	Join_Conversation( GameObject * object, int active_conversation_id, bool allow_move = true, bool allow_head_turn = true, bool allow_face = true )
 {
 	int obj_id = 0;
 	if ( object != NULL ) {

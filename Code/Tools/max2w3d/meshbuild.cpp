@@ -309,7 +309,7 @@ public:
 		// texcoords must match for all passes and stages
 		// Note: I'm checking them separately and last so that I can keep track
 		// of how many splits are caused solely by u-v discontinuities...
-		for (pass=0; pass<MeshBuilderClass::MAX_PASSES; pass++) {
+		for (int pass=0; pass<MeshBuilderClass::MAX_PASSES; pass++) {
 			for (int stage=0; stage < MeshBuilderClass::MAX_STAGES; stage++) {
 				if (v0.TexCoord[pass][stage] != v1.TexCoord[pass][stage]) {
 					UVSplits++;

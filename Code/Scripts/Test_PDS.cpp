@@ -107,7 +107,7 @@ DECLARE_SCRIPT(PDS_Test_Modify_Attack, "WaypathID=:int")
 			params.Set_Attack (Commands->Get_The_Star (), 100, 0.5F, true);	
 			params.AttackCheckBlocked = false;
 			
-			Commands->Modify_Action (game_obj, 777, params);
+			Commands->Modify_Action (game_obj, 777, params, true, true);
 
 			Commands->Start_Timer(game_obj, this, 4.0F, 999);			
 

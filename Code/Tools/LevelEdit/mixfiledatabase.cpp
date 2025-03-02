@@ -548,7 +548,7 @@ MixFileDatabaseClass::Get_All (LPCTSTR dest_path, LPCTSTR search_mask)
 	//
 	//	Now, get all the matching files to the specified path
 	//
-	for (index = 0; index < file_list.Count (); index ++) {
+	for (int index = 0; index < file_list.Count (); index ++) {
 		StringClass full_path = (const char *)::Make_Path (dest_path, file_list[index]);
 		Get (full_path);
 	}
@@ -605,7 +605,7 @@ MixFileDatabaseClass::Get_Filename (LPCTSTR path, StringClass &filename)
 	//	Check to see if the sub-directory is important, if it is, then
 	// return the sub-directory as well
 	//
-	char *subdir_token = ::strstr (filename, "+\\");
+	const char *subdir_token = ::strstr (filename, "+\\");
 	if (subdir_token != NULL) {
 
 		//

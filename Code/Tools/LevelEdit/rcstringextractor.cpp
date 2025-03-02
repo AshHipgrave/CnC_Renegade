@@ -74,7 +74,7 @@ RCStringExtractorClass::Find_String
 	//
 	//	Did we find the keyword?
 	//
-	char *buffer = ::strstr (new_line, keyword);
+	const char *buffer = ::strstr (new_line, keyword);
 	if (buffer != NULL) {
 		buffer += ::lstrlen (keyword);
 
@@ -105,7 +105,7 @@ RCStringExtractorClass::Find_String
 			//	Record the start and end of the string
 			//
 			bool found_end = false;
-			char *start = buffer;
+			const char *start = buffer;
 			while (buffer[0] != 0) {
 				if (buffer[0] == '\"') {
 					found_end = true;
@@ -116,7 +116,7 @@ RCStringExtractorClass::Find_String
 			}
 
 			if (found_end) {
-				char *end = buffer;
+				const char *end = buffer;
 
 				//
 				//	Return the contents to the caller

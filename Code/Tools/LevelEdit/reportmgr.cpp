@@ -138,7 +138,7 @@ ReportMgrClass::Export_File_Usage_Report (const char *filename)
 		//
 		//	Now write all the file names to the text file
 		//
-		for (index = 0; index < file_list.Count (); index ++) {
+		for (int index = 0; index < file_list.Count (); index ++) {
 			StringClass lower_name (file_list[index], true);
 			::strlwr (lower_name.Peek_Buffer ());
 

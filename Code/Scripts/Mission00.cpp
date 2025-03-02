@@ -178,7 +178,7 @@ DECLARE_SCRIPT (MTU_Tutorial_Controller, "")
 				GameObject* logan = Commands->Find_Object(MTU_LOGAN);
 				if (logan)
 				{
-					Commands->Send_Custom_Event(obj, logan, MTU_TYPE_LOGAN, MTU_PARAM_SPEECH_INTRO);
+					Commands->Send_Custom_Event(obj, logan, MTU_TYPE_LOGAN, MTU_PARAM_SPEECH_INTRO, 0.0f);
 				}
 
 				// Turn off the AGT
@@ -186,7 +186,7 @@ DECLARE_SCRIPT (MTU_Tutorial_Controller, "")
 				GameObject * tower = Commands->Find_Object (MTU_TOWER);
 				if (tower)
 				{
-					Commands->Send_Custom_Event (obj, tower, 0, 0);
+					Commands->Send_Custom_Event (obj, tower, 0, 0, 0.0f);
 				}
 				break;
 			}
@@ -328,7 +328,7 @@ DECLARE_SCRIPT (MTU_Tutorial_Controller, "")
 					if (sydney_zone)
 					{
 						sydney_restart = false;
-						Commands->Send_Custom_Event (obj, sydney_zone, MTU_TYPE_SYDNEY_IS_RESET, MTU_PARAM_DEFAULT);
+						Commands->Send_Custom_Event (obj, sydney_zone, MTU_TYPE_SYDNEY_IS_RESET, MTU_PARAM_DEFAULT, 0.0f);
 					}
 				}
 				break;
@@ -426,7 +426,7 @@ DECLARE_SCRIPT (MTU_Tutorial_Controller, "")
 				{
 					if (found_targets)
 					{
-						Commands->Send_Custom_Event (obj, gunner, MTU_TYPE_GUNNER, MTU_PARAM_SPEECH_MORE_TARGETS);
+						Commands->Send_Custom_Event (obj, gunner, MTU_TYPE_GUNNER, MTU_PARAM_SPEECH_MORE_TARGETS, 0.0f);
 					}
 					else
 					{
@@ -436,7 +436,7 @@ DECLARE_SCRIPT (MTU_Tutorial_Controller, "")
 							range_powerup = 0;
 							Commands->Destroy_Object (range_powerup_obj);
 						}
-						Commands->Send_Custom_Event (obj, gunner, MTU_TYPE_GUNNER, MTU_PARAM_TARGETS_ELIMINATED);
+						Commands->Send_Custom_Event (obj, gunner, MTU_TYPE_GUNNER, MTU_PARAM_TARGETS_ELIMINATED, 0.0f);
 					}
 				}
 				break;
@@ -878,12 +878,12 @@ DECLARE_SCRIPT (MTU_Tutorial_Controller, "")
 				if (hotwire_state == -1)
 				{
 					hotwire_state = 0;
-					Commands->Send_Custom_Event (obj, obj, MTU_TYPE_WEAP_FACTORY_CLEANUP, MTU_PARAM_DEFAULT);
-					Commands->Send_Custom_Event (obj, obj, MTU_TYPE_RESET_CHECKPOINT_COUNT, MTU_PARAM_DEFAULT);
+					Commands->Send_Custom_Event (obj, obj, MTU_TYPE_WEAP_FACTORY_CLEANUP, MTU_PARAM_DEFAULT, 0.0f);
+					Commands->Send_Custom_Event (obj, obj, MTU_TYPE_RESET_CHECKPOINT_COUNT, MTU_PARAM_DEFAULT, 0.0f);
 					GameObject * logan = Commands->Find_Object (MTU_LOGAN);
 					if (logan)
 					{
-						Commands->Send_Custom_Event (obj, logan, MTU_TYPE_LOGAN, MTU_PARAM_ACTION_GOTO_WEAPONS);
+						Commands->Send_Custom_Event (obj, logan, MTU_TYPE_LOGAN, MTU_PARAM_ACTION_GOTO_WEAPONS, 0.0f);
 					}
 				}
 				break;
@@ -892,8 +892,8 @@ DECLARE_SCRIPT (MTU_Tutorial_Controller, "")
 			{
 				// This is called by all other buildings to force weapon factory cleanup!
 				hotwire_state = -1;
-				Commands->Send_Custom_Event (obj, obj, MTU_TYPE_WEAP_FACTORY_CLEANUP, MTU_PARAM_DEFAULT);
-				Commands->Send_Custom_Event (obj, obj, MTU_TYPE_RESET_CHECKPOINT_COUNT, MTU_PARAM_DEFAULT);
+				Commands->Send_Custom_Event (obj, obj, MTU_TYPE_WEAP_FACTORY_CLEANUP, MTU_PARAM_DEFAULT, 0.0f);
+				Commands->Send_Custom_Event (obj, obj, MTU_TYPE_RESET_CHECKPOINT_COUNT, MTU_PARAM_DEFAULT, 0.0f);
 				break;
 			}
 		case (MTU_TYPE_HOTWIRE_START):

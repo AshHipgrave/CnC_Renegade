@@ -151,6 +151,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pluglibd.lib;mesh.lib;maxutil.lib;maxscrpt.lib;bmm.lib;comctl32.lib;core.lib;geom.lib;paramblk2.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -195,6 +196,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pluglib.lib;mesh.lib;maxutil.lib;maxscrpt.lib;bmm.lib;comctl32.lib;core.lib;geom.lib;paramblk2.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -238,6 +240,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pluglib.lib;mesh.lib;maxutil.lib;maxscrpt.lib;bmm.lib;comctl32.lib;core.lib;geom.lib;paramblk2.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -282,6 +285,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <CompileAs>Default</CompileAs>
       <UndefinePreprocessorDefinitions>_UNICODE _MBCS;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pluglib.lib;mesh.lib;maxutil.lib;maxscrpt.lib;bmm.lib;comctl32.lib;core.lib;geom.lib;paramblk2.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -325,6 +329,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <UndefinePreprocessorDefinitions>_UNICODE _MBCS;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pluglib.lib;mesh.lib;maxutil.lib;maxscrpt.lib;bmm.lib;comctl32.lib;core.lib;geom.lib;paramblk2.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -368,6 +373,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <UndefinePreprocessorDefinitions>_UNICODE _MBCS;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pluglib.lib;mesh.lib;maxutil.lib;maxscrpt.lib;bmm.lib;comctl32.lib;core.lib;geom.lib;paramblk2.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -411,6 +417,7 @@
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <UndefinePreprocessorDefinitions>_UNICODE _MBCS;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pluglib.lib;mesh.lib;maxutil.lib;maxscrpt.lib;bmm.lib;comctl32.lib;core.lib;geom.lib;paramblk2.lib;%(AdditionalDependencies)</AdditionalDependencies>

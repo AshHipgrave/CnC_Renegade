@@ -994,7 +994,7 @@ int INIClass::Get_UUBlock(char const * section, void * block, int len) const
  *=============================================================================================*/
 const WideStringClass& INIClass::Get_Wide_String(WideStringClass& new_string, char const * section, char const * entry, wchar_t const * defvalue) const
 {
-	unsigned short out[1024];
+	wchar_t out[1024];
 	char buffer[1024];
 
 	Base64Pipe b64pipe(Base64Pipe::DECODE);
@@ -1031,7 +1031,7 @@ const WideStringClass& INIClass::Get_Wide_String(WideStringClass& new_string, ch
  * HISTORY:                                                                                    *
  *   11/6/2001 4:29PM ST : Created                                                             *
  *=============================================================================================*/
-bool INIClass::Put_Wide_String(char const * section, char const * entry, const unsigned short * string)
+bool INIClass::Put_Wide_String(char const * section, char const * entry, const wchar_t* string)
 {
 	if (section == NULL || entry == NULL || string == NULL) {
 		return(false);

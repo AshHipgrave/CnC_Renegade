@@ -1,102 +1,134 @@
+
+
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
-/* File created by MIDL compiler version 5.01.0164 */
-/* at Mon Feb 10 16:56:02 2025
+ /* File created by MIDL compiler version 8.01.0628 */
+/* at Tue Jan 19 03:14:07 2038
  */
-/* Compiler settings for D:\projects\_GPL\CnC_Renegade_GPL\Code\Tools\LevelEdit\VSS.IDL:
-    Os (OptLev=s), W1, Zp8, env=Win32, ms_ext, c_ext
+/* Compiler settings for VSS.IDL:
+    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.01.0628 
+    protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
+    VC __declspec() decoration level: 
+         __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+         DECLSPEC_UUID(), MIDL_INTERFACE()
 */
-//@@MIDL_FILE_HEADING(  )
+/* @@MIDL_FILE_HEADING(  ) */
+
 
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
-#define __REQUIRED_RPCNDR_H_VERSION__ 440
+#define __REQUIRED_RPCNDR_H_VERSION__ 500
 #endif
 
 #include "rpc.h"
 #include "rpcndr.h"
 
+#ifndef __RPCNDR_H_VERSION__
+#error this stub requires an updated version of <rpcndr.h>
+#endif /* __RPCNDR_H_VERSION__ */
+
+
 #ifndef __vss_h__
 #define __vss_h__
 
-#ifdef __cplusplus
-extern "C"{
-#endif 
+#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+#pragma once
+#endif
+
+#ifndef DECLSPEC_XFGVIRT
+#if defined(_CONTROL_FLOW_GUARD_XFG)
+#define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
+#else
+#define DECLSPEC_XFGVIRT(base, func)
+#endif
+#endif
 
 /* Forward Declarations */ 
 
 #ifndef __IVSSItemOld_FWD_DEFINED__
 #define __IVSSItemOld_FWD_DEFINED__
 typedef interface IVSSItemOld IVSSItemOld;
+
 #endif 	/* __IVSSItemOld_FWD_DEFINED__ */
 
 
 #ifndef __IVSSItem_FWD_DEFINED__
 #define __IVSSItem_FWD_DEFINED__
 typedef interface IVSSItem IVSSItem;
+
 #endif 	/* __IVSSItem_FWD_DEFINED__ */
 
 
 #ifndef __IVSSVersions_FWD_DEFINED__
 #define __IVSSVersions_FWD_DEFINED__
 typedef interface IVSSVersions IVSSVersions;
+
 #endif 	/* __IVSSVersions_FWD_DEFINED__ */
 
 
 #ifndef __IVSSVersionOld_FWD_DEFINED__
 #define __IVSSVersionOld_FWD_DEFINED__
 typedef interface IVSSVersionOld IVSSVersionOld;
+
 #endif 	/* __IVSSVersionOld_FWD_DEFINED__ */
 
 
 #ifndef __IVSSVersion_FWD_DEFINED__
 #define __IVSSVersion_FWD_DEFINED__
 typedef interface IVSSVersion IVSSVersion;
+
 #endif 	/* __IVSSVersion_FWD_DEFINED__ */
 
 
 #ifndef __IVSSItems_FWD_DEFINED__
 #define __IVSSItems_FWD_DEFINED__
 typedef interface IVSSItems IVSSItems;
+
 #endif 	/* __IVSSItems_FWD_DEFINED__ */
 
 
 #ifndef __IVSSCheckouts_FWD_DEFINED__
 #define __IVSSCheckouts_FWD_DEFINED__
 typedef interface IVSSCheckouts IVSSCheckouts;
+
 #endif 	/* __IVSSCheckouts_FWD_DEFINED__ */
 
 
 #ifndef __IVSSCheckout_FWD_DEFINED__
 #define __IVSSCheckout_FWD_DEFINED__
 typedef interface IVSSCheckout IVSSCheckout;
+
 #endif 	/* __IVSSCheckout_FWD_DEFINED__ */
 
 
 #ifndef __IVSSDatabaseOld_FWD_DEFINED__
 #define __IVSSDatabaseOld_FWD_DEFINED__
 typedef interface IVSSDatabaseOld IVSSDatabaseOld;
+
 #endif 	/* __IVSSDatabaseOld_FWD_DEFINED__ */
 
 
 #ifndef __IVSSDatabase_FWD_DEFINED__
 #define __IVSSDatabase_FWD_DEFINED__
 typedef interface IVSSDatabase IVSSDatabase;
+
 #endif 	/* __IVSSDatabase_FWD_DEFINED__ */
 
 
 #ifndef __IVSSUser_FWD_DEFINED__
 #define __IVSSUser_FWD_DEFINED__
 typedef interface IVSSUser IVSSUser;
+
 #endif 	/* __IVSSUser_FWD_DEFINED__ */
 
 
 #ifndef __IVSSUsers_FWD_DEFINED__
 #define __IVSSUsers_FWD_DEFINED__
 typedef interface IVSSUsers IVSSUsers;
+
 #endif 	/* __IVSSUsers_FWD_DEFINED__ */
 
 
@@ -163,24 +195,28 @@ typedef struct VSSUser VSSUser;
 #ifndef __IVSSEventsOld_FWD_DEFINED__
 #define __IVSSEventsOld_FWD_DEFINED__
 typedef interface IVSSEventsOld IVSSEventsOld;
+
 #endif 	/* __IVSSEventsOld_FWD_DEFINED__ */
 
 
 #ifndef __IVSSEvents_FWD_DEFINED__
 #define __IVSSEvents_FWD_DEFINED__
 typedef interface IVSSEvents IVSSEvents;
+
 #endif 	/* __IVSSEvents_FWD_DEFINED__ */
 
 
 #ifndef __IVSS_FWD_DEFINED__
 #define __IVSS_FWD_DEFINED__
 typedef interface IVSS IVSS;
+
 #endif 	/* __IVSS_FWD_DEFINED__ */
 
 
 #ifndef __IVSSEventHandler_FWD_DEFINED__
 #define __IVSSEventHandler_FWD_DEFINED__
 typedef interface IVSSEventHandler IVSSEventHandler;
+
 #endif 	/* __IVSSEventHandler_FWD_DEFINED__ */
 
 
@@ -201,10 +237,12 @@ typedef struct VSSApp VSSApp;
 #include "oaidl.h"
 #include "ocidl.h"
 
-void __RPC_FAR * __RPC_USER MIDL_user_allocate(size_t);
-void __RPC_USER MIDL_user_free( void __RPC_FAR * ); 
+#ifdef __cplusplus
+extern "C"{
+#endif 
 
-/* interface __MIDL_itf_VSS_0000 */
+
+/* interface __MIDL_itf_VSS_0000_0000 */
 /* [local] */ 
 
 
@@ -225,8 +263,8 @@ void __RPC_USER MIDL_user_free( void __RPC_FAR * );
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_VSS_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_VSS_0000_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VSS_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_VSS_0000_0000_v0_0_s_ifspec;
 
 
 #ifndef __SourceSafeTypeLib_LIBRARY_DEFINED__
@@ -235,70 +273,74 @@ extern RPC_IF_HANDLE __MIDL_itf_VSS_0000_v0_0_s_ifspec;
 /* library SourceSafeTypeLib */
 /* [helpcontext][helpfile][helpstring][version][uuid] */ 
 
-typedef /* [public][helpstring][uuid] */ 
-enum __MIDL___MIDL_itf_VSS_0000_0001
-    {	VSSFLAG_USERRONO	= 1,
-	VSSFLAG_USERROYES	= 2,
-	VSSFLAG_TIMENOW	= 4,
-	VSSFLAG_TIMEMOD	= 8,
-	VSSFLAG_TIMEUPD	= 12,
-	VSSFLAG_EOLCR	= 16,
-	VSSFLAG_EOLLF	= 32,
-	VSSFLAG_EOLCRLF	= 48,
-	VSSFLAG_REPASK	= 64,
-	VSSFLAG_REPREPLACE	= 128,
-	VSSFLAG_REPSKIP	= 192,
-	VSSFLAG_REPMERGE	= 256,
-	VSSFLAG_CMPFULL	= 512,
-	VSSFLAG_CMPTIME	= 1024,
-	VSSFLAG_CMPCHKSUM	= 1536,
-	VSSFLAG_CMPFAIL	= 2048,
-	VSSFLAG_RECURSNO	= 4096,
-	VSSFLAG_RECURSYES	= 8192,
-	VSSFLAG_FORCEDIRNO	= 16384,
-	VSSFLAG_FORCEDIRYES	= 32768,
-	VSSFLAG_KEEPNO	= 65536,
-	VSSFLAG_KEEPYES	= 131072,
-	VSSFLAG_DELNO	= 262144,
-	VSSFLAG_DELYES	= 524288,
-	VSSFLAG_DELNOREPLACE	= 786432,
-	VSSFLAG_BINTEST	= 1048576,
-	VSSFLAG_BINBINARY	= 2097152,
-	VSSFLAG_BINTEXT	= 3145728,
-	VSSFLAG_DELTAYES	= 4194304,
-	VSSFLAG_DELTANO	= 8388608,
-	VSSFLAG_UPDASK	= 16777216,
-	VSSFLAG_UPDUPDATE	= 33554432,
-	VSSFLAG_UPDUNCH	= 50331648,
-	VSSFLAG_GETYES	= 67108864,
-	VSSFLAG_GETNO	= 134217728,
-	VSSFLAG_CHKEXCLUSIVEYES	= 268435456,
-	VSSFLAG_CHKEXCLUSIVENO	= 536870912,
-	VSSFLAG_HISTIGNOREFILES	= 1073741824
-    }	VSSFlags;
+typedef /* [public][helpstring][uuid] */  DECLSPEC_UUID("783CD4EF-9D54-11CF-B8EE-00608CC9A71F") 
+enum __MIDL___MIDL_itf_VSS_0000_0000_0001
+    {
+        VSSFLAG_USERRONO	= 1,
+        VSSFLAG_USERROYES	= 2,
+        VSSFLAG_TIMENOW	= 4,
+        VSSFLAG_TIMEMOD	= 8,
+        VSSFLAG_TIMEUPD	= 12,
+        VSSFLAG_EOLCR	= 16,
+        VSSFLAG_EOLLF	= 32,
+        VSSFLAG_EOLCRLF	= 48,
+        VSSFLAG_REPASK	= 64,
+        VSSFLAG_REPREPLACE	= 128,
+        VSSFLAG_REPSKIP	= 192,
+        VSSFLAG_REPMERGE	= 256,
+        VSSFLAG_CMPFULL	= 512,
+        VSSFLAG_CMPTIME	= 1024,
+        VSSFLAG_CMPCHKSUM	= 1536,
+        VSSFLAG_CMPFAIL	= 2048,
+        VSSFLAG_RECURSNO	= 4096,
+        VSSFLAG_RECURSYES	= 8192,
+        VSSFLAG_FORCEDIRNO	= 16384,
+        VSSFLAG_FORCEDIRYES	= 32768,
+        VSSFLAG_KEEPNO	= 65536,
+        VSSFLAG_KEEPYES	= 131072,
+        VSSFLAG_DELNO	= 262144,
+        VSSFLAG_DELYES	= 524288,
+        VSSFLAG_DELNOREPLACE	= 786432,
+        VSSFLAG_BINTEST	= 1048576,
+        VSSFLAG_BINBINARY	= 2097152,
+        VSSFLAG_BINTEXT	= 3145728,
+        VSSFLAG_DELTAYES	= 4194304,
+        VSSFLAG_DELTANO	= 8388608,
+        VSSFLAG_UPDASK	= 16777216,
+        VSSFLAG_UPDUPDATE	= 33554432,
+        VSSFLAG_UPDUNCH	= 50331648,
+        VSSFLAG_GETYES	= 67108864,
+        VSSFLAG_GETNO	= 134217728,
+        VSSFLAG_CHKEXCLUSIVEYES	= 268435456,
+        VSSFLAG_CHKEXCLUSIVENO	= 536870912,
+        VSSFLAG_HISTIGNOREFILES	= 1073741824
+    } 	VSSFlags;
 
-typedef /* [public][helpstring][uuid] */ 
-enum __MIDL___MIDL_itf_VSS_0000_0002
-    {	VSSFILE_NOTCHECKEDOUT	= 0,
-	VSSFILE_CHECKEDOUT	= 1,
-	VSSFILE_CHECKEDOUT_ME	= 2
-    }	VSSFileStatus;
+typedef /* [public][helpstring][uuid] */  DECLSPEC_UUID("783CD4ED-9D54-11CF-B8EE-00608CC9A71F") 
+enum __MIDL___MIDL_itf_VSS_0000_0000_0002
+    {
+        VSSFILE_NOTCHECKEDOUT	= 0,
+        VSSFILE_CHECKEDOUT	= 1,
+        VSSFILE_CHECKEDOUT_ME	= 2
+    } 	VSSFileStatus;
 
-typedef /* [public][helpstring][uuid] */ 
-enum __MIDL___MIDL_itf_VSS_0000_0003
-    {	VSSITEM_PROJECT	= 0,
-	VSSITEM_FILE	= 1
-    }	VSSItemType;
+typedef /* [public][helpstring][uuid] */  DECLSPEC_UUID("783CD4EE-9D54-11CF-B8EE-00608CC9A71F") 
+enum __MIDL___MIDL_itf_VSS_0000_0000_0003
+    {
+        VSSITEM_PROJECT	= 0,
+        VSSITEM_FILE	= 1
+    } 	VSSItemType;
 
-typedef /* [public][helpstring][uuid] */ 
-enum __MIDL___MIDL_itf_VSS_0000_0004
-    {	VSSRIGHTS_READ	= 1,
-	VSSRIGHTS_CHKUPD	= 2,
-	VSSRIGHTS_ADDRENREM	= 4,
-	VSSRIGHTS_DESTROY	= 8,
-	VSSRIGHTS_ALL	= 15,
-	VSSRIGHTS_INHERITED	= 16
-    }	VSSRights;
+typedef /* [public][helpstring][uuid] */  DECLSPEC_UUID("2A0DE0E6-2E9F-11D0-9236-00AA00A1EB95") 
+enum __MIDL___MIDL_itf_VSS_0000_0000_0004
+    {
+        VSSRIGHTS_READ	= 1,
+        VSSRIGHTS_CHKUPD	= 2,
+        VSSRIGHTS_ADDRENREM	= 4,
+        VSSRIGHTS_DESTROY	= 8,
+        VSSRIGHTS_ALL	= 15,
+        VSSRIGHTS_INHERITED	= 16
+    } 	VSSRights;
 
 
 EXTERN_C const IID LIBID_SourceSafeTypeLib;
@@ -319,107 +361,108 @@ EXTERN_C const IID IID_IVSSItemOld;
     {
     public:
         virtual /* [id] */ HRESULT __stdcall Spec( 
-            /* [retval][out] */ BSTR __RPC_FAR *pSpec) = 0;
+            /* [retval][out] */ BSTR *pSpec) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Binary( 
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbBinary) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbBinary) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_Binary( 
             /* [in] */ VARIANT_BOOL pbBinary) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Deleted( 
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbDeleted) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbDeleted) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_Deleted( 
             /* [in] */ VARIANT_BOOL pbDeleted) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Type( 
-            /* [retval][out] */ int __RPC_FAR *piType) = 0;
+            /* [retval][out] */ int *piType) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_LocalSpec( 
-            /* [retval][out] */ BSTR __RPC_FAR *pLocal) = 0;
+            /* [retval][out] */ BSTR *pLocal) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_LocalSpec( 
             /* [in] */ BSTR pLocal) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Name( 
-            /* [retval][out] */ BSTR __RPC_FAR *pName) = 0;
+            /* [retval][out] */ BSTR *pName) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_Name( 
             /* [in] */ BSTR pName) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Parent( 
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIParent) = 0;
+            /* [retval][out] */ IVSSItem **ppIParent) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_VersionNumber( 
-            /* [retval][out] */ long __RPC_FAR *piVersion) = 0;
+            /* [retval][out] */ long *piVersion) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Items( 
             /* [defaultvalue][optional][in] */ VARIANT_BOOL IncludeDeleted,
-            /* [retval][out] */ IVSSItems __RPC_FAR *__RPC_FAR *ppIItems) = 0;
+            /* [retval][out] */ IVSSItems **ppIItems) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Get( 
-            /* [defaultvalue][optional][out][in] */ BSTR __RPC_FAR *Local = 0,
+            /* [defaultvalue][optional][out][in] */ BSTR *Local = 0,
             /* [defaultvalue][optional][in] */ long iFlags = 0) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Checkout( 
-            /* [defaultvalue][optional][in] */ BSTR Comment = L"",
-            /* [defaultvalue][optional][in] */ BSTR Local = L"",
+            /* [defaultvalue][optional][in] */ BSTR Comment = (BSTR)L"",
+            /* [defaultvalue][optional][in] */ BSTR Local = (BSTR)L"",
             /* [defaultvalue][optional][in] */ long iFlags = 0) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Checkin( 
-            /* [defaultvalue][optional][in] */ BSTR Comment = L"",
-            /* [defaultvalue][optional][in] */ BSTR Local = L"",
+            /* [defaultvalue][optional][in] */ BSTR Comment = (BSTR)L"",
+            /* [defaultvalue][optional][in] */ BSTR Local = (BSTR)L"",
             /* [defaultvalue][optional][in] */ long iFlags = 0) = 0;
         
         virtual /* [id] */ HRESULT __stdcall UndoCheckout( 
-            /* [defaultvalue][optional][in] */ BSTR Local = L"",
+            /* [defaultvalue][optional][in] */ BSTR Local = (BSTR)L"",
             /* [defaultvalue][optional][in] */ long iFlags = 0) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_IsCheckedOut( 
-            /* [retval][out] */ long __RPC_FAR *piStatus) = 0;
+            /* [retval][out] */ long *piStatus) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Checkouts( 
-            /* [retval][out] */ IVSSCheckouts __RPC_FAR *__RPC_FAR *ppICheckouts) = 0;
+            /* [retval][out] */ IVSSCheckouts **ppICheckouts) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_IsDifferent( 
             /* [defaultvalue][optional][in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbDifferent) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbDifferent) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Add( 
             /* [in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ long iFlags,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem) = 0;
+            /* [retval][out] */ IVSSItem **ppIItem) = 0;
         
         virtual /* [id] */ HRESULT __stdcall NewSubproject( 
             /* [in] */ BSTR Name,
             /* [defaultvalue][optional][in] */ BSTR Comment,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem) = 0;
+            /* [retval][out] */ IVSSItem **ppIItem) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Share( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
-            /* [defaultvalue][optional][in] */ BSTR Comment = L"",
+            /* [in] */ IVSSItem *pIItem,
+            /* [defaultvalue][optional][in] */ BSTR Comment = (BSTR)L"",
             /* [defaultvalue][optional][in] */ long iFlags = 0) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Destroy( void) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Move( 
-            /* [in] */ IVSSItem __RPC_FAR *pINewParent) = 0;
+            /* [in] */ IVSSItem *pINewParent) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Label( 
             /* [in] */ BSTR Label,
-            /* [defaultvalue][optional][in] */ BSTR Comment = L"") = 0;
+            /* [defaultvalue][optional][in] */ BSTR Comment = (BSTR)L"") = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Versions( 
             /* [defaultvalue][optional][in] */ long iFlags,
-            /* [retval][out] */ IVSSVersions __RPC_FAR *__RPC_FAR *pIVersions) = 0;
+            /* [retval][out] */ IVSSVersions **pIVersions) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Version( 
             /* [optional][in] */ VARIANT Version,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem) = 0;
+            /* [retval][out] */ IVSSItem **ppIItem) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -427,181 +470,225 @@ EXTERN_C const IID IID_IVSSItemOld;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSItemOld * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSItemOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSItemOld * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSItemOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSItemOld * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSItemOld * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSItemOld * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSItemOld * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSItemOld * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Spec )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pSpec);
+        DECLSPEC_XFGVIRT(IVSSItemOld, Spec)
+        /* [id] */ HRESULT ( __stdcall *Spec )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ BSTR *pSpec);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Binary )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbBinary);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Binary)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Binary )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ VARIANT_BOOL *pbBinary);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_Binary )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, put_Binary)
+        /* [propput][id] */ HRESULT ( __stdcall *put_Binary )( 
+            IVSSItemOld * This,
             /* [in] */ VARIANT_BOOL pbBinary);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Deleted )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbDeleted);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Deleted)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Deleted )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ VARIANT_BOOL *pbDeleted);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_Deleted )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, put_Deleted)
+        /* [propput][id] */ HRESULT ( __stdcall *put_Deleted )( 
+            IVSSItemOld * This,
             /* [in] */ VARIANT_BOOL pbDeleted);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Type )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ int __RPC_FAR *piType);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Type)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Type )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ int *piType);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_LocalSpec )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pLocal);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_LocalSpec)
+        /* [propget][id] */ HRESULT ( __stdcall *get_LocalSpec )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ BSTR *pLocal);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_LocalSpec )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, put_LocalSpec)
+        /* [propput][id] */ HRESULT ( __stdcall *put_LocalSpec )( 
+            IVSSItemOld * This,
             /* [in] */ BSTR pLocal);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Name )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pName);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Name)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Name )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ BSTR *pName);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_Name )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, put_Name)
+        /* [propput][id] */ HRESULT ( __stdcall *put_Name )( 
+            IVSSItemOld * This,
             /* [in] */ BSTR pName);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Parent )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIParent);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Parent)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Parent )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ IVSSItem **ppIParent);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VersionNumber )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piVersion);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_VersionNumber)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VersionNumber )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ long *piVersion);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Items )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Items)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Items )( 
+            IVSSItemOld * This,
             /* [defaultvalue][optional][in] */ VARIANT_BOOL IncludeDeleted,
-            /* [retval][out] */ IVSSItems __RPC_FAR *__RPC_FAR *ppIItems);
+            /* [retval][out] */ IVSSItems **ppIItems);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Get )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [defaultvalue][optional][out][in] */ BSTR __RPC_FAR *Local,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Get)
+        /* [id] */ HRESULT ( __stdcall *Get )( 
+            IVSSItemOld * This,
+            /* [defaultvalue][optional][out][in] */ BSTR *Local,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Checkout )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Checkout)
+        /* [id] */ HRESULT ( __stdcall *Checkout )( 
+            IVSSItemOld * This,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Checkin )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Checkin)
+        /* [id] */ HRESULT ( __stdcall *Checkin )( 
+            IVSSItemOld * This,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *UndoCheckout )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, UndoCheckout)
+        /* [id] */ HRESULT ( __stdcall *UndoCheckout )( 
+            IVSSItemOld * This,
             /* [defaultvalue][optional][in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_IsCheckedOut )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piStatus);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_IsCheckedOut)
+        /* [propget][id] */ HRESULT ( __stdcall *get_IsCheckedOut )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ long *piStatus);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Checkouts )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [retval][out] */ IVSSCheckouts __RPC_FAR *__RPC_FAR *ppICheckouts);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Checkouts)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Checkouts )( 
+            IVSSItemOld * This,
+            /* [retval][out] */ IVSSCheckouts **ppICheckouts);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_IsDifferent )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_IsDifferent)
+        /* [propget][id] */ HRESULT ( __stdcall *get_IsDifferent )( 
+            IVSSItemOld * This,
             /* [defaultvalue][optional][in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbDifferent);
+            /* [retval][out] */ VARIANT_BOOL *pbDifferent);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Add )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Add)
+        /* [id] */ HRESULT ( __stdcall *Add )( 
+            IVSSItemOld * This,
             /* [in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ long iFlags,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+            /* [retval][out] */ IVSSItem **ppIItem);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *NewSubproject )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, NewSubproject)
+        /* [id] */ HRESULT ( __stdcall *NewSubproject )( 
+            IVSSItemOld * This,
             /* [in] */ BSTR Name,
             /* [defaultvalue][optional][in] */ BSTR Comment,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+            /* [retval][out] */ IVSSItem **ppIItem);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Share )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Share)
+        /* [id] */ HRESULT ( __stdcall *Share )( 
+            IVSSItemOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Destroy )( 
-            IVSSItemOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IVSSItemOld, Destroy)
+        /* [id] */ HRESULT ( __stdcall *Destroy )( 
+            IVSSItemOld * This);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Move )( 
-            IVSSItemOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pINewParent);
+        DECLSPEC_XFGVIRT(IVSSItemOld, Move)
+        /* [id] */ HRESULT ( __stdcall *Move )( 
+            IVSSItemOld * This,
+            /* [in] */ IVSSItem *pINewParent);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Label )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Label)
+        /* [id] */ HRESULT ( __stdcall *Label )( 
+            IVSSItemOld * This,
             /* [in] */ BSTR Label,
             /* [defaultvalue][optional][in] */ BSTR Comment);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Versions )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Versions)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Versions )( 
+            IVSSItemOld * This,
             /* [defaultvalue][optional][in] */ long iFlags,
-            /* [retval][out] */ IVSSVersions __RPC_FAR *__RPC_FAR *pIVersions);
+            /* [retval][out] */ IVSSVersions **pIVersions);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Version )( 
-            IVSSItemOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Version)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Version )( 
+            IVSSItemOld * This,
             /* [optional][in] */ VARIANT Version,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+            /* [retval][out] */ IVSSItem **ppIItem);
         
         END_INTERFACE
     } IVSSItemOldVtbl;
 
     interface IVSSItemOld
     {
-        CONST_VTBL struct IVSSItemOldVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSItemOldVtbl *lpVtbl;
     };
 
     
@@ -610,470 +697,117 @@ EXTERN_C const IID IID_IVSSItemOld;
 
 
 #define IVSSItemOld_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSItemOld_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSItemOld_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSItemOld_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSItemOld_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSItemOld_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSItemOld_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSItemOld_Spec(This,pSpec)	\
-    (This)->lpVtbl -> Spec(This,pSpec)
+    ( (This)->lpVtbl -> Spec(This,pSpec) ) 
 
 #define IVSSItemOld_get_Binary(This,pbBinary)	\
-    (This)->lpVtbl -> get_Binary(This,pbBinary)
+    ( (This)->lpVtbl -> get_Binary(This,pbBinary) ) 
 
 #define IVSSItemOld_put_Binary(This,pbBinary)	\
-    (This)->lpVtbl -> put_Binary(This,pbBinary)
+    ( (This)->lpVtbl -> put_Binary(This,pbBinary) ) 
 
 #define IVSSItemOld_get_Deleted(This,pbDeleted)	\
-    (This)->lpVtbl -> get_Deleted(This,pbDeleted)
+    ( (This)->lpVtbl -> get_Deleted(This,pbDeleted) ) 
 
 #define IVSSItemOld_put_Deleted(This,pbDeleted)	\
-    (This)->lpVtbl -> put_Deleted(This,pbDeleted)
+    ( (This)->lpVtbl -> put_Deleted(This,pbDeleted) ) 
 
 #define IVSSItemOld_get_Type(This,piType)	\
-    (This)->lpVtbl -> get_Type(This,piType)
+    ( (This)->lpVtbl -> get_Type(This,piType) ) 
 
 #define IVSSItemOld_get_LocalSpec(This,pLocal)	\
-    (This)->lpVtbl -> get_LocalSpec(This,pLocal)
+    ( (This)->lpVtbl -> get_LocalSpec(This,pLocal) ) 
 
 #define IVSSItemOld_put_LocalSpec(This,pLocal)	\
-    (This)->lpVtbl -> put_LocalSpec(This,pLocal)
+    ( (This)->lpVtbl -> put_LocalSpec(This,pLocal) ) 
 
 #define IVSSItemOld_get_Name(This,pName)	\
-    (This)->lpVtbl -> get_Name(This,pName)
+    ( (This)->lpVtbl -> get_Name(This,pName) ) 
 
 #define IVSSItemOld_put_Name(This,pName)	\
-    (This)->lpVtbl -> put_Name(This,pName)
+    ( (This)->lpVtbl -> put_Name(This,pName) ) 
 
 #define IVSSItemOld_get_Parent(This,ppIParent)	\
-    (This)->lpVtbl -> get_Parent(This,ppIParent)
+    ( (This)->lpVtbl -> get_Parent(This,ppIParent) ) 
 
 #define IVSSItemOld_get_VersionNumber(This,piVersion)	\
-    (This)->lpVtbl -> get_VersionNumber(This,piVersion)
+    ( (This)->lpVtbl -> get_VersionNumber(This,piVersion) ) 
 
 #define IVSSItemOld_get_Items(This,IncludeDeleted,ppIItems)	\
-    (This)->lpVtbl -> get_Items(This,IncludeDeleted,ppIItems)
+    ( (This)->lpVtbl -> get_Items(This,IncludeDeleted,ppIItems) ) 
 
 #define IVSSItemOld_Get(This,Local,iFlags)	\
-    (This)->lpVtbl -> Get(This,Local,iFlags)
+    ( (This)->lpVtbl -> Get(This,Local,iFlags) ) 
 
 #define IVSSItemOld_Checkout(This,Comment,Local,iFlags)	\
-    (This)->lpVtbl -> Checkout(This,Comment,Local,iFlags)
+    ( (This)->lpVtbl -> Checkout(This,Comment,Local,iFlags) ) 
 
 #define IVSSItemOld_Checkin(This,Comment,Local,iFlags)	\
-    (This)->lpVtbl -> Checkin(This,Comment,Local,iFlags)
+    ( (This)->lpVtbl -> Checkin(This,Comment,Local,iFlags) ) 
 
 #define IVSSItemOld_UndoCheckout(This,Local,iFlags)	\
-    (This)->lpVtbl -> UndoCheckout(This,Local,iFlags)
+    ( (This)->lpVtbl -> UndoCheckout(This,Local,iFlags) ) 
 
 #define IVSSItemOld_get_IsCheckedOut(This,piStatus)	\
-    (This)->lpVtbl -> get_IsCheckedOut(This,piStatus)
+    ( (This)->lpVtbl -> get_IsCheckedOut(This,piStatus) ) 
 
 #define IVSSItemOld_get_Checkouts(This,ppICheckouts)	\
-    (This)->lpVtbl -> get_Checkouts(This,ppICheckouts)
+    ( (This)->lpVtbl -> get_Checkouts(This,ppICheckouts) ) 
 
 #define IVSSItemOld_get_IsDifferent(This,Local,pbDifferent)	\
-    (This)->lpVtbl -> get_IsDifferent(This,Local,pbDifferent)
+    ( (This)->lpVtbl -> get_IsDifferent(This,Local,pbDifferent) ) 
 
 #define IVSSItemOld_Add(This,Local,Comment,iFlags,ppIItem)	\
-    (This)->lpVtbl -> Add(This,Local,Comment,iFlags,ppIItem)
+    ( (This)->lpVtbl -> Add(This,Local,Comment,iFlags,ppIItem) ) 
 
 #define IVSSItemOld_NewSubproject(This,Name,Comment,ppIItem)	\
-    (This)->lpVtbl -> NewSubproject(This,Name,Comment,ppIItem)
+    ( (This)->lpVtbl -> NewSubproject(This,Name,Comment,ppIItem) ) 
 
 #define IVSSItemOld_Share(This,pIItem,Comment,iFlags)	\
-    (This)->lpVtbl -> Share(This,pIItem,Comment,iFlags)
+    ( (This)->lpVtbl -> Share(This,pIItem,Comment,iFlags) ) 
 
 #define IVSSItemOld_Destroy(This)	\
-    (This)->lpVtbl -> Destroy(This)
+    ( (This)->lpVtbl -> Destroy(This) ) 
 
 #define IVSSItemOld_Move(This,pINewParent)	\
-    (This)->lpVtbl -> Move(This,pINewParent)
+    ( (This)->lpVtbl -> Move(This,pINewParent) ) 
 
 #define IVSSItemOld_Label(This,Label,Comment)	\
-    (This)->lpVtbl -> Label(This,Label,Comment)
+    ( (This)->lpVtbl -> Label(This,Label,Comment) ) 
 
 #define IVSSItemOld_get_Versions(This,iFlags,pIVersions)	\
-    (This)->lpVtbl -> get_Versions(This,iFlags,pIVersions)
+    ( (This)->lpVtbl -> get_Versions(This,iFlags,pIVersions) ) 
 
 #define IVSSItemOld_get_Version(This,Version,ppIItem)	\
-    (This)->lpVtbl -> get_Version(This,Version,ppIItem)
+    ( (This)->lpVtbl -> get_Version(This,Version,ppIItem) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Spec_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pSpec);
-
-
-void __RPC_STUB IVSSItemOld_Spec_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Binary_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbBinary);
-
-
-void __RPC_STUB IVSSItemOld_get_Binary_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSItemOld_put_Binary_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ VARIANT_BOOL pbBinary);
-
-
-void __RPC_STUB IVSSItemOld_put_Binary_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Deleted_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbDeleted);
-
-
-void __RPC_STUB IVSSItemOld_get_Deleted_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSItemOld_put_Deleted_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ VARIANT_BOOL pbDeleted);
-
-
-void __RPC_STUB IVSSItemOld_put_Deleted_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Type_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ int __RPC_FAR *piType);
-
-
-void __RPC_STUB IVSSItemOld_get_Type_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_LocalSpec_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pLocal);
-
-
-void __RPC_STUB IVSSItemOld_get_LocalSpec_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSItemOld_put_LocalSpec_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ BSTR pLocal);
-
-
-void __RPC_STUB IVSSItemOld_put_LocalSpec_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Name_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pName);
-
-
-void __RPC_STUB IVSSItemOld_get_Name_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSItemOld_put_Name_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ BSTR pName);
-
-
-void __RPC_STUB IVSSItemOld_put_Name_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Parent_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIParent);
-
-
-void __RPC_STUB IVSSItemOld_get_Parent_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_VersionNumber_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ long __RPC_FAR *piVersion);
-
-
-void __RPC_STUB IVSSItemOld_get_VersionNumber_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Items_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ VARIANT_BOOL IncludeDeleted,
-    /* [retval][out] */ IVSSItems __RPC_FAR *__RPC_FAR *ppIItems);
-
-
-void __RPC_STUB IVSSItemOld_get_Items_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Get_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [defaultvalue][optional][out][in] */ BSTR __RPC_FAR *Local,
-    /* [defaultvalue][optional][in] */ long iFlags);
-
-
-void __RPC_STUB IVSSItemOld_Get_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Checkout_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ BSTR Comment,
-    /* [defaultvalue][optional][in] */ BSTR Local,
-    /* [defaultvalue][optional][in] */ long iFlags);
-
-
-void __RPC_STUB IVSSItemOld_Checkout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Checkin_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ BSTR Comment,
-    /* [defaultvalue][optional][in] */ BSTR Local,
-    /* [defaultvalue][optional][in] */ long iFlags);
-
-
-void __RPC_STUB IVSSItemOld_Checkin_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_UndoCheckout_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ BSTR Local,
-    /* [defaultvalue][optional][in] */ long iFlags);
-
-
-void __RPC_STUB IVSSItemOld_UndoCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_IsCheckedOut_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ long __RPC_FAR *piStatus);
-
-
-void __RPC_STUB IVSSItemOld_get_IsCheckedOut_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Checkouts_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [retval][out] */ IVSSCheckouts __RPC_FAR *__RPC_FAR *ppICheckouts);
-
-
-void __RPC_STUB IVSSItemOld_get_Checkouts_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_IsDifferent_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ BSTR Local,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbDifferent);
-
-
-void __RPC_STUB IVSSItemOld_get_IsDifferent_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Add_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ BSTR Local,
-    /* [defaultvalue][optional][in] */ BSTR Comment,
-    /* [defaultvalue][optional][in] */ long iFlags,
-    /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
-
-
-void __RPC_STUB IVSSItemOld_Add_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_NewSubproject_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ BSTR Name,
-    /* [defaultvalue][optional][in] */ BSTR Comment,
-    /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
-
-
-void __RPC_STUB IVSSItemOld_NewSubproject_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Share_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [defaultvalue][optional][in] */ BSTR Comment,
-    /* [defaultvalue][optional][in] */ long iFlags);
-
-
-void __RPC_STUB IVSSItemOld_Share_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Destroy_Proxy( 
-    IVSSItemOld __RPC_FAR * This);
-
-
-void __RPC_STUB IVSSItemOld_Destroy_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Move_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pINewParent);
-
-
-void __RPC_STUB IVSSItemOld_Move_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItemOld_Label_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [in] */ BSTR Label,
-    /* [defaultvalue][optional][in] */ BSTR Comment);
-
-
-void __RPC_STUB IVSSItemOld_Label_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Versions_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ long iFlags,
-    /* [retval][out] */ IVSSVersions __RPC_FAR *__RPC_FAR *pIVersions);
-
-
-void __RPC_STUB IVSSItemOld_get_Versions_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItemOld_get_Version_Proxy( 
-    IVSSItemOld __RPC_FAR * This,
-    /* [optional][in] */ VARIANT Version,
-    /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
-
-
-void __RPC_STUB IVSSItemOld_get_Version_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -1096,14 +830,15 @@ EXTERN_C const IID IID_IVSSItem;
     {
     public:
         virtual /* [propget][id] */ HRESULT __stdcall get_Links( 
-            /* [retval][out] */ IVSSItems __RPC_FAR *__RPC_FAR *ppIItems) = 0;
+            /* [retval][out] */ IVSSItems **ppIItems) = 0;
         
         virtual /* [id] */ HRESULT __stdcall Branch( 
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ long iFlags,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem) = 0;
+            /* [retval][out] */ IVSSItem **ppIItem) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -1111,191 +846,237 @@ EXTERN_C const IID IID_IVSSItem;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSItem * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSItem __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSItem * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSItem __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSItem * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSItem __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSItem * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSItem * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSItem * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSItem __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSItem * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Spec )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pSpec);
+        DECLSPEC_XFGVIRT(IVSSItemOld, Spec)
+        /* [id] */ HRESULT ( __stdcall *Spec )( 
+            IVSSItem * This,
+            /* [retval][out] */ BSTR *pSpec);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Binary )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbBinary);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Binary)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Binary )( 
+            IVSSItem * This,
+            /* [retval][out] */ VARIANT_BOOL *pbBinary);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_Binary )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, put_Binary)
+        /* [propput][id] */ HRESULT ( __stdcall *put_Binary )( 
+            IVSSItem * This,
             /* [in] */ VARIANT_BOOL pbBinary);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Deleted )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbDeleted);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Deleted)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Deleted )( 
+            IVSSItem * This,
+            /* [retval][out] */ VARIANT_BOOL *pbDeleted);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_Deleted )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, put_Deleted)
+        /* [propput][id] */ HRESULT ( __stdcall *put_Deleted )( 
+            IVSSItem * This,
             /* [in] */ VARIANT_BOOL pbDeleted);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Type )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ int __RPC_FAR *piType);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Type)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Type )( 
+            IVSSItem * This,
+            /* [retval][out] */ int *piType);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_LocalSpec )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pLocal);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_LocalSpec)
+        /* [propget][id] */ HRESULT ( __stdcall *get_LocalSpec )( 
+            IVSSItem * This,
+            /* [retval][out] */ BSTR *pLocal);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_LocalSpec )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, put_LocalSpec)
+        /* [propput][id] */ HRESULT ( __stdcall *put_LocalSpec )( 
+            IVSSItem * This,
             /* [in] */ BSTR pLocal);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Name )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pName);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Name)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Name )( 
+            IVSSItem * This,
+            /* [retval][out] */ BSTR *pName);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_Name )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, put_Name)
+        /* [propput][id] */ HRESULT ( __stdcall *put_Name )( 
+            IVSSItem * This,
             /* [in] */ BSTR pName);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Parent )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIParent);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Parent)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Parent )( 
+            IVSSItem * This,
+            /* [retval][out] */ IVSSItem **ppIParent);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VersionNumber )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piVersion);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_VersionNumber)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VersionNumber )( 
+            IVSSItem * This,
+            /* [retval][out] */ long *piVersion);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Items )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Items)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Items )( 
+            IVSSItem * This,
             /* [defaultvalue][optional][in] */ VARIANT_BOOL IncludeDeleted,
-            /* [retval][out] */ IVSSItems __RPC_FAR *__RPC_FAR *ppIItems);
+            /* [retval][out] */ IVSSItems **ppIItems);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Get )( 
-            IVSSItem __RPC_FAR * This,
-            /* [defaultvalue][optional][out][in] */ BSTR __RPC_FAR *Local,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Get)
+        /* [id] */ HRESULT ( __stdcall *Get )( 
+            IVSSItem * This,
+            /* [defaultvalue][optional][out][in] */ BSTR *Local,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Checkout )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Checkout)
+        /* [id] */ HRESULT ( __stdcall *Checkout )( 
+            IVSSItem * This,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Checkin )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Checkin)
+        /* [id] */ HRESULT ( __stdcall *Checkin )( 
+            IVSSItem * This,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *UndoCheckout )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, UndoCheckout)
+        /* [id] */ HRESULT ( __stdcall *UndoCheckout )( 
+            IVSSItem * This,
             /* [defaultvalue][optional][in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_IsCheckedOut )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piStatus);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_IsCheckedOut)
+        /* [propget][id] */ HRESULT ( __stdcall *get_IsCheckedOut )( 
+            IVSSItem * This,
+            /* [retval][out] */ long *piStatus);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Checkouts )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ IVSSCheckouts __RPC_FAR *__RPC_FAR *ppICheckouts);
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Checkouts)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Checkouts )( 
+            IVSSItem * This,
+            /* [retval][out] */ IVSSCheckouts **ppICheckouts);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_IsDifferent )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_IsDifferent)
+        /* [propget][id] */ HRESULT ( __stdcall *get_IsDifferent )( 
+            IVSSItem * This,
             /* [defaultvalue][optional][in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbDifferent);
+            /* [retval][out] */ VARIANT_BOOL *pbDifferent);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Add )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Add)
+        /* [id] */ HRESULT ( __stdcall *Add )( 
+            IVSSItem * This,
             /* [in] */ BSTR Local,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ long iFlags,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+            /* [retval][out] */ IVSSItem **ppIItem);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *NewSubproject )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, NewSubproject)
+        /* [id] */ HRESULT ( __stdcall *NewSubproject )( 
+            IVSSItem * This,
             /* [in] */ BSTR Name,
             /* [defaultvalue][optional][in] */ BSTR Comment,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+            /* [retval][out] */ IVSSItem **ppIItem);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Share )( 
-            IVSSItem __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Share)
+        /* [id] */ HRESULT ( __stdcall *Share )( 
+            IVSSItem * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ long iFlags);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Destroy )( 
-            IVSSItem __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IVSSItemOld, Destroy)
+        /* [id] */ HRESULT ( __stdcall *Destroy )( 
+            IVSSItem * This);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Move )( 
-            IVSSItem __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pINewParent);
+        DECLSPEC_XFGVIRT(IVSSItemOld, Move)
+        /* [id] */ HRESULT ( __stdcall *Move )( 
+            IVSSItem * This,
+            /* [in] */ IVSSItem *pINewParent);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Label )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, Label)
+        /* [id] */ HRESULT ( __stdcall *Label )( 
+            IVSSItem * This,
             /* [in] */ BSTR Label,
             /* [defaultvalue][optional][in] */ BSTR Comment);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Versions )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Versions)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Versions )( 
+            IVSSItem * This,
             /* [defaultvalue][optional][in] */ long iFlags,
-            /* [retval][out] */ IVSSVersions __RPC_FAR *__RPC_FAR *pIVersions);
+            /* [retval][out] */ IVSSVersions **pIVersions);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Version )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItemOld, get_Version)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Version )( 
+            IVSSItem * This,
             /* [optional][in] */ VARIANT Version,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+            /* [retval][out] */ IVSSItem **ppIItem);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Links )( 
-            IVSSItem __RPC_FAR * This,
-            /* [retval][out] */ IVSSItems __RPC_FAR *__RPC_FAR *ppIItems);
+        DECLSPEC_XFGVIRT(IVSSItem, get_Links)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Links )( 
+            IVSSItem * This,
+            /* [retval][out] */ IVSSItems **ppIItems);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Branch )( 
-            IVSSItem __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItem, Branch)
+        /* [id] */ HRESULT ( __stdcall *Branch )( 
+            IVSSItem * This,
             /* [defaultvalue][optional][in] */ BSTR Comment,
             /* [defaultvalue][optional][in] */ long iFlags,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+            /* [retval][out] */ IVSSItem **ppIItem);
         
         END_INTERFACE
     } IVSSItemVtbl;
 
     interface IVSSItem
     {
-        CONST_VTBL struct IVSSItemVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSItemVtbl *lpVtbl;
     };
 
     
@@ -1304,150 +1085,124 @@ EXTERN_C const IID IID_IVSSItem;
 
 
 #define IVSSItem_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSItem_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSItem_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSItem_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSItem_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSItem_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSItem_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSItem_Spec(This,pSpec)	\
-    (This)->lpVtbl -> Spec(This,pSpec)
+    ( (This)->lpVtbl -> Spec(This,pSpec) ) 
 
 #define IVSSItem_get_Binary(This,pbBinary)	\
-    (This)->lpVtbl -> get_Binary(This,pbBinary)
+    ( (This)->lpVtbl -> get_Binary(This,pbBinary) ) 
 
 #define IVSSItem_put_Binary(This,pbBinary)	\
-    (This)->lpVtbl -> put_Binary(This,pbBinary)
+    ( (This)->lpVtbl -> put_Binary(This,pbBinary) ) 
 
 #define IVSSItem_get_Deleted(This,pbDeleted)	\
-    (This)->lpVtbl -> get_Deleted(This,pbDeleted)
+    ( (This)->lpVtbl -> get_Deleted(This,pbDeleted) ) 
 
 #define IVSSItem_put_Deleted(This,pbDeleted)	\
-    (This)->lpVtbl -> put_Deleted(This,pbDeleted)
+    ( (This)->lpVtbl -> put_Deleted(This,pbDeleted) ) 
 
 #define IVSSItem_get_Type(This,piType)	\
-    (This)->lpVtbl -> get_Type(This,piType)
+    ( (This)->lpVtbl -> get_Type(This,piType) ) 
 
 #define IVSSItem_get_LocalSpec(This,pLocal)	\
-    (This)->lpVtbl -> get_LocalSpec(This,pLocal)
+    ( (This)->lpVtbl -> get_LocalSpec(This,pLocal) ) 
 
 #define IVSSItem_put_LocalSpec(This,pLocal)	\
-    (This)->lpVtbl -> put_LocalSpec(This,pLocal)
+    ( (This)->lpVtbl -> put_LocalSpec(This,pLocal) ) 
 
 #define IVSSItem_get_Name(This,pName)	\
-    (This)->lpVtbl -> get_Name(This,pName)
+    ( (This)->lpVtbl -> get_Name(This,pName) ) 
 
 #define IVSSItem_put_Name(This,pName)	\
-    (This)->lpVtbl -> put_Name(This,pName)
+    ( (This)->lpVtbl -> put_Name(This,pName) ) 
 
 #define IVSSItem_get_Parent(This,ppIParent)	\
-    (This)->lpVtbl -> get_Parent(This,ppIParent)
+    ( (This)->lpVtbl -> get_Parent(This,ppIParent) ) 
 
 #define IVSSItem_get_VersionNumber(This,piVersion)	\
-    (This)->lpVtbl -> get_VersionNumber(This,piVersion)
+    ( (This)->lpVtbl -> get_VersionNumber(This,piVersion) ) 
 
 #define IVSSItem_get_Items(This,IncludeDeleted,ppIItems)	\
-    (This)->lpVtbl -> get_Items(This,IncludeDeleted,ppIItems)
+    ( (This)->lpVtbl -> get_Items(This,IncludeDeleted,ppIItems) ) 
 
 #define IVSSItem_Get(This,Local,iFlags)	\
-    (This)->lpVtbl -> Get(This,Local,iFlags)
+    ( (This)->lpVtbl -> Get(This,Local,iFlags) ) 
 
 #define IVSSItem_Checkout(This,Comment,Local,iFlags)	\
-    (This)->lpVtbl -> Checkout(This,Comment,Local,iFlags)
+    ( (This)->lpVtbl -> Checkout(This,Comment,Local,iFlags) ) 
 
 #define IVSSItem_Checkin(This,Comment,Local,iFlags)	\
-    (This)->lpVtbl -> Checkin(This,Comment,Local,iFlags)
+    ( (This)->lpVtbl -> Checkin(This,Comment,Local,iFlags) ) 
 
 #define IVSSItem_UndoCheckout(This,Local,iFlags)	\
-    (This)->lpVtbl -> UndoCheckout(This,Local,iFlags)
+    ( (This)->lpVtbl -> UndoCheckout(This,Local,iFlags) ) 
 
 #define IVSSItem_get_IsCheckedOut(This,piStatus)	\
-    (This)->lpVtbl -> get_IsCheckedOut(This,piStatus)
+    ( (This)->lpVtbl -> get_IsCheckedOut(This,piStatus) ) 
 
 #define IVSSItem_get_Checkouts(This,ppICheckouts)	\
-    (This)->lpVtbl -> get_Checkouts(This,ppICheckouts)
+    ( (This)->lpVtbl -> get_Checkouts(This,ppICheckouts) ) 
 
 #define IVSSItem_get_IsDifferent(This,Local,pbDifferent)	\
-    (This)->lpVtbl -> get_IsDifferent(This,Local,pbDifferent)
+    ( (This)->lpVtbl -> get_IsDifferent(This,Local,pbDifferent) ) 
 
 #define IVSSItem_Add(This,Local,Comment,iFlags,ppIItem)	\
-    (This)->lpVtbl -> Add(This,Local,Comment,iFlags,ppIItem)
+    ( (This)->lpVtbl -> Add(This,Local,Comment,iFlags,ppIItem) ) 
 
 #define IVSSItem_NewSubproject(This,Name,Comment,ppIItem)	\
-    (This)->lpVtbl -> NewSubproject(This,Name,Comment,ppIItem)
+    ( (This)->lpVtbl -> NewSubproject(This,Name,Comment,ppIItem) ) 
 
 #define IVSSItem_Share(This,pIItem,Comment,iFlags)	\
-    (This)->lpVtbl -> Share(This,pIItem,Comment,iFlags)
+    ( (This)->lpVtbl -> Share(This,pIItem,Comment,iFlags) ) 
 
 #define IVSSItem_Destroy(This)	\
-    (This)->lpVtbl -> Destroy(This)
+    ( (This)->lpVtbl -> Destroy(This) ) 
 
 #define IVSSItem_Move(This,pINewParent)	\
-    (This)->lpVtbl -> Move(This,pINewParent)
+    ( (This)->lpVtbl -> Move(This,pINewParent) ) 
 
 #define IVSSItem_Label(This,Label,Comment)	\
-    (This)->lpVtbl -> Label(This,Label,Comment)
+    ( (This)->lpVtbl -> Label(This,Label,Comment) ) 
 
 #define IVSSItem_get_Versions(This,iFlags,pIVersions)	\
-    (This)->lpVtbl -> get_Versions(This,iFlags,pIVersions)
+    ( (This)->lpVtbl -> get_Versions(This,iFlags,pIVersions) ) 
 
 #define IVSSItem_get_Version(This,Version,ppIItem)	\
-    (This)->lpVtbl -> get_Version(This,Version,ppIItem)
+    ( (This)->lpVtbl -> get_Version(This,Version,ppIItem) ) 
 
 
 #define IVSSItem_get_Links(This,ppIItems)	\
-    (This)->lpVtbl -> get_Links(This,ppIItems)
+    ( (This)->lpVtbl -> get_Links(This,ppIItems) ) 
 
 #define IVSSItem_Branch(This,Comment,iFlags,ppIItem)	\
-    (This)->lpVtbl -> Branch(This,Comment,iFlags,ppIItem)
+    ( (This)->lpVtbl -> Branch(This,Comment,iFlags,ppIItem) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItem_get_Links_Proxy( 
-    IVSSItem __RPC_FAR * This,
-    /* [retval][out] */ IVSSItems __RPC_FAR *__RPC_FAR *ppIItems);
-
-
-void __RPC_STUB IVSSItem_get_Links_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSItem_Branch_Proxy( 
-    IVSSItem __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ BSTR Comment,
-    /* [defaultvalue][optional][in] */ long iFlags,
-    /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
-
-
-void __RPC_STUB IVSSItem_Branch_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -1470,9 +1225,10 @@ EXTERN_C const IID IID_IVSSVersions;
     {
     public:
         virtual /* [hidden][restricted][id] */ HRESULT __stdcall _NewEnum( 
-            /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum) = 0;
+            /* [retval][out] */ IUnknown **ppIEnum) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -1480,56 +1236,73 @@ EXTERN_C const IID IID_IVSSVersions;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSVersions __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSVersions * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSVersions __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSVersions * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSVersions __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSVersions * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSVersions __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSVersions * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSVersions __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSVersions * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSVersions __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSVersions * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSVersions __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSVersions * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [hidden][restricted][id] */ HRESULT ( __stdcall __RPC_FAR *_NewEnum )( 
-            IVSSVersions __RPC_FAR * This,
-            /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum);
+        DECLSPEC_XFGVIRT(IVSSVersions, _NewEnum)
+        /* [hidden][restricted][id] */ HRESULT ( __stdcall *_NewEnum )( 
+            IVSSVersions * This,
+            /* [retval][out] */ IUnknown **ppIEnum);
         
         END_INTERFACE
     } IVSSVersionsVtbl;
 
     interface IVSSVersions
     {
-        CONST_VTBL struct IVSSVersionsVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSVersionsVtbl *lpVtbl;
     };
 
     
@@ -1538,48 +1311,36 @@ EXTERN_C const IID IID_IVSSVersions;
 
 
 #define IVSSVersions_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSVersions_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSVersions_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSVersions_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSVersions_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSVersions_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSVersions_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSVersions__NewEnum(This,ppIEnum)	\
-    (This)->lpVtbl -> _NewEnum(This,ppIEnum)
+    ( (This)->lpVtbl -> _NewEnum(This,ppIEnum) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [hidden][restricted][id] */ HRESULT __stdcall IVSSVersions__NewEnum_Proxy( 
-    IVSSVersions __RPC_FAR * This,
-    /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum);
-
-
-void __RPC_STUB IVSSVersions__NewEnum_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -1602,27 +1363,28 @@ EXTERN_C const IID IID_IVSSVersionOld;
     {
     public:
         virtual /* [propget][id] */ HRESULT __stdcall get_Username( 
-            /* [retval][out] */ BSTR __RPC_FAR *pUsername) = 0;
+            /* [retval][out] */ BSTR *pUsername) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_VersionNumber( 
-            /* [retval][out] */ long __RPC_FAR *piVersion) = 0;
+            /* [retval][out] */ long *piVersion) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Action( 
-            /* [retval][out] */ BSTR __RPC_FAR *pAction) = 0;
+            /* [retval][out] */ BSTR *pAction) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Date( 
-            /* [retval][out] */ DATE __RPC_FAR *pDate) = 0;
+            /* [retval][out] */ DATE *pDate) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Comment( 
-            /* [retval][out] */ BSTR __RPC_FAR *pComment) = 0;
+            /* [retval][out] */ BSTR *pComment) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Label( 
-            /* [retval][out] */ BSTR __RPC_FAR *pLabel) = 0;
+            /* [retval][out] */ BSTR *pLabel) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_VSSItem( 
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem) = 0;
+            /* [retval][out] */ IVSSItem **ppIItem) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -1630,80 +1392,103 @@ EXTERN_C const IID IID_IVSSVersionOld;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSVersionOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSVersionOld * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSVersionOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSVersionOld * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSVersionOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSVersionOld * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSVersionOld * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSVersionOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSVersionOld * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSVersionOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSVersionOld * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSVersionOld * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Username )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pUsername);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Username)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Username )( 
+            IVSSVersionOld * This,
+            /* [retval][out] */ BSTR *pUsername);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VersionNumber )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piVersion);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_VersionNumber)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VersionNumber )( 
+            IVSSVersionOld * This,
+            /* [retval][out] */ long *piVersion);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Action )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pAction);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Action)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Action )( 
+            IVSSVersionOld * This,
+            /* [retval][out] */ BSTR *pAction);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Date )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [retval][out] */ DATE __RPC_FAR *pDate);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Date)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Date )( 
+            IVSSVersionOld * This,
+            /* [retval][out] */ DATE *pDate);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Comment )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pComment);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Comment)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Comment )( 
+            IVSSVersionOld * This,
+            /* [retval][out] */ BSTR *pComment);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Label )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pLabel);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Label)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Label )( 
+            IVSSVersionOld * This,
+            /* [retval][out] */ BSTR *pLabel);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VSSItem )( 
-            IVSSVersionOld __RPC_FAR * This,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_VSSItem)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VSSItem )( 
+            IVSSVersionOld * This,
+            /* [retval][out] */ IVSSItem **ppIItem);
         
         END_INTERFACE
     } IVSSVersionOldVtbl;
 
     interface IVSSVersionOld
     {
-        CONST_VTBL struct IVSSVersionOldVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSVersionOldVtbl *lpVtbl;
     };
 
     
@@ -1712,138 +1497,54 @@ EXTERN_C const IID IID_IVSSVersionOld;
 
 
 #define IVSSVersionOld_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSVersionOld_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSVersionOld_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSVersionOld_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSVersionOld_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSVersionOld_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSVersionOld_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSVersionOld_get_Username(This,pUsername)	\
-    (This)->lpVtbl -> get_Username(This,pUsername)
+    ( (This)->lpVtbl -> get_Username(This,pUsername) ) 
 
 #define IVSSVersionOld_get_VersionNumber(This,piVersion)	\
-    (This)->lpVtbl -> get_VersionNumber(This,piVersion)
+    ( (This)->lpVtbl -> get_VersionNumber(This,piVersion) ) 
 
 #define IVSSVersionOld_get_Action(This,pAction)	\
-    (This)->lpVtbl -> get_Action(This,pAction)
+    ( (This)->lpVtbl -> get_Action(This,pAction) ) 
 
 #define IVSSVersionOld_get_Date(This,pDate)	\
-    (This)->lpVtbl -> get_Date(This,pDate)
+    ( (This)->lpVtbl -> get_Date(This,pDate) ) 
 
 #define IVSSVersionOld_get_Comment(This,pComment)	\
-    (This)->lpVtbl -> get_Comment(This,pComment)
+    ( (This)->lpVtbl -> get_Comment(This,pComment) ) 
 
 #define IVSSVersionOld_get_Label(This,pLabel)	\
-    (This)->lpVtbl -> get_Label(This,pLabel)
+    ( (This)->lpVtbl -> get_Label(This,pLabel) ) 
 
 #define IVSSVersionOld_get_VSSItem(This,ppIItem)	\
-    (This)->lpVtbl -> get_VSSItem(This,ppIItem)
+    ( (This)->lpVtbl -> get_VSSItem(This,ppIItem) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSVersionOld_get_Username_Proxy( 
-    IVSSVersionOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pUsername);
-
-
-void __RPC_STUB IVSSVersionOld_get_Username_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSVersionOld_get_VersionNumber_Proxy( 
-    IVSSVersionOld __RPC_FAR * This,
-    /* [retval][out] */ long __RPC_FAR *piVersion);
-
-
-void __RPC_STUB IVSSVersionOld_get_VersionNumber_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSVersionOld_get_Action_Proxy( 
-    IVSSVersionOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pAction);
-
-
-void __RPC_STUB IVSSVersionOld_get_Action_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSVersionOld_get_Date_Proxy( 
-    IVSSVersionOld __RPC_FAR * This,
-    /* [retval][out] */ DATE __RPC_FAR *pDate);
-
-
-void __RPC_STUB IVSSVersionOld_get_Date_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSVersionOld_get_Comment_Proxy( 
-    IVSSVersionOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pComment);
-
-
-void __RPC_STUB IVSSVersionOld_get_Comment_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSVersionOld_get_Label_Proxy( 
-    IVSSVersionOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pLabel);
-
-
-void __RPC_STUB IVSSVersionOld_get_Label_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSVersionOld_get_VSSItem_Proxy( 
-    IVSSVersionOld __RPC_FAR * This,
-    /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
-
-
-void __RPC_STUB IVSSVersionOld_get_VSSItem_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -1866,9 +1567,10 @@ EXTERN_C const IID IID_IVSSVersion;
     {
     public:
         virtual /* [propget][id] */ HRESULT __stdcall get_LabelComment( 
-            /* [retval][out] */ BSTR __RPC_FAR *pComment) = 0;
+            /* [retval][out] */ BSTR *pComment) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -1876,84 +1578,108 @@ EXTERN_C const IID IID_IVSSVersion;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSVersion __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSVersion * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSVersion __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSVersion * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSVersion __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSVersion * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSVersion * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSVersion __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSVersion * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSVersion __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSVersion * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSVersion * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Username )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pUsername);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Username)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Username )( 
+            IVSSVersion * This,
+            /* [retval][out] */ BSTR *pUsername);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VersionNumber )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piVersion);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_VersionNumber)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VersionNumber )( 
+            IVSSVersion * This,
+            /* [retval][out] */ long *piVersion);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Action )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pAction);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Action)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Action )( 
+            IVSSVersion * This,
+            /* [retval][out] */ BSTR *pAction);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Date )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [retval][out] */ DATE __RPC_FAR *pDate);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Date)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Date )( 
+            IVSSVersion * This,
+            /* [retval][out] */ DATE *pDate);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Comment )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pComment);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Comment)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Comment )( 
+            IVSSVersion * This,
+            /* [retval][out] */ BSTR *pComment);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Label )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pLabel);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_Label)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Label )( 
+            IVSSVersion * This,
+            /* [retval][out] */ BSTR *pLabel);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VSSItem )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+        DECLSPEC_XFGVIRT(IVSSVersionOld, get_VSSItem)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VSSItem )( 
+            IVSSVersion * This,
+            /* [retval][out] */ IVSSItem **ppIItem);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_LabelComment )( 
-            IVSSVersion __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pComment);
+        DECLSPEC_XFGVIRT(IVSSVersion, get_LabelComment)
+        /* [propget][id] */ HRESULT ( __stdcall *get_LabelComment )( 
+            IVSSVersion * This,
+            /* [retval][out] */ BSTR *pComment);
         
         END_INTERFACE
     } IVSSVersionVtbl;
 
     interface IVSSVersion
     {
-        CONST_VTBL struct IVSSVersionVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSVersionVtbl *lpVtbl;
     };
 
     
@@ -1962,70 +1688,58 @@ EXTERN_C const IID IID_IVSSVersion;
 
 
 #define IVSSVersion_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSVersion_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSVersion_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSVersion_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSVersion_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSVersion_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSVersion_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSVersion_get_Username(This,pUsername)	\
-    (This)->lpVtbl -> get_Username(This,pUsername)
+    ( (This)->lpVtbl -> get_Username(This,pUsername) ) 
 
 #define IVSSVersion_get_VersionNumber(This,piVersion)	\
-    (This)->lpVtbl -> get_VersionNumber(This,piVersion)
+    ( (This)->lpVtbl -> get_VersionNumber(This,piVersion) ) 
 
 #define IVSSVersion_get_Action(This,pAction)	\
-    (This)->lpVtbl -> get_Action(This,pAction)
+    ( (This)->lpVtbl -> get_Action(This,pAction) ) 
 
 #define IVSSVersion_get_Date(This,pDate)	\
-    (This)->lpVtbl -> get_Date(This,pDate)
+    ( (This)->lpVtbl -> get_Date(This,pDate) ) 
 
 #define IVSSVersion_get_Comment(This,pComment)	\
-    (This)->lpVtbl -> get_Comment(This,pComment)
+    ( (This)->lpVtbl -> get_Comment(This,pComment) ) 
 
 #define IVSSVersion_get_Label(This,pLabel)	\
-    (This)->lpVtbl -> get_Label(This,pLabel)
+    ( (This)->lpVtbl -> get_Label(This,pLabel) ) 
 
 #define IVSSVersion_get_VSSItem(This,ppIItem)	\
-    (This)->lpVtbl -> get_VSSItem(This,ppIItem)
+    ( (This)->lpVtbl -> get_VSSItem(This,ppIItem) ) 
 
 
 #define IVSSVersion_get_LabelComment(This,pComment)	\
-    (This)->lpVtbl -> get_LabelComment(This,pComment)
+    ( (This)->lpVtbl -> get_LabelComment(This,pComment) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSVersion_get_LabelComment_Proxy( 
-    IVSSVersion __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pComment);
-
-
-void __RPC_STUB IVSSVersion_get_LabelComment_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -2048,16 +1762,17 @@ EXTERN_C const IID IID_IVSSItems;
     {
     public:
         virtual /* [propget][id] */ HRESULT __stdcall get_Count( 
-            /* [retval][out] */ long __RPC_FAR *piCount) = 0;
+            /* [retval][out] */ long *piCount) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Item( 
             /* [in] */ VARIANT sItem,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem) = 0;
+            /* [retval][out] */ IVSSItem **ppIItem) = 0;
         
         virtual /* [hidden][restricted][id] */ HRESULT __stdcall _NewEnum( 
-            /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum) = 0;
+            /* [retval][out] */ IUnknown **ppIEnum) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -2065,65 +1780,84 @@ EXTERN_C const IID IID_IVSSItems;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSItems __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSItems * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSItems __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSItems * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSItems __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSItems * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSItems __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSItems * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSItems __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSItems * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSItems __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSItems * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSItems __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSItems * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Count )( 
-            IVSSItems __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piCount);
+        DECLSPEC_XFGVIRT(IVSSItems, get_Count)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Count )( 
+            IVSSItems * This,
+            /* [retval][out] */ long *piCount);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Item )( 
-            IVSSItems __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSItems, get_Item)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Item )( 
+            IVSSItems * This,
             /* [in] */ VARIANT sItem,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
+            /* [retval][out] */ IVSSItem **ppIItem);
         
-        /* [hidden][restricted][id] */ HRESULT ( __stdcall __RPC_FAR *_NewEnum )( 
-            IVSSItems __RPC_FAR * This,
-            /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum);
+        DECLSPEC_XFGVIRT(IVSSItems, _NewEnum)
+        /* [hidden][restricted][id] */ HRESULT ( __stdcall *_NewEnum )( 
+            IVSSItems * This,
+            /* [retval][out] */ IUnknown **ppIEnum);
         
         END_INTERFACE
     } IVSSItemsVtbl;
 
     interface IVSSItems
     {
-        CONST_VTBL struct IVSSItemsVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSItemsVtbl *lpVtbl;
     };
 
     
@@ -2132,79 +1866,42 @@ EXTERN_C const IID IID_IVSSItems;
 
 
 #define IVSSItems_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSItems_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSItems_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSItems_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSItems_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSItems_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSItems_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSItems_get_Count(This,piCount)	\
-    (This)->lpVtbl -> get_Count(This,piCount)
+    ( (This)->lpVtbl -> get_Count(This,piCount) ) 
 
 #define IVSSItems_get_Item(This,sItem,ppIItem)	\
-    (This)->lpVtbl -> get_Item(This,sItem,ppIItem)
+    ( (This)->lpVtbl -> get_Item(This,sItem,ppIItem) ) 
 
 #define IVSSItems__NewEnum(This,ppIEnum)	\
-    (This)->lpVtbl -> _NewEnum(This,ppIEnum)
+    ( (This)->lpVtbl -> _NewEnum(This,ppIEnum) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItems_get_Count_Proxy( 
-    IVSSItems __RPC_FAR * This,
-    /* [retval][out] */ long __RPC_FAR *piCount);
-
-
-void __RPC_STUB IVSSItems_get_Count_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSItems_get_Item_Proxy( 
-    IVSSItems __RPC_FAR * This,
-    /* [in] */ VARIANT sItem,
-    /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIItem);
-
-
-void __RPC_STUB IVSSItems_get_Item_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [hidden][restricted][id] */ HRESULT __stdcall IVSSItems__NewEnum_Proxy( 
-    IVSSItems __RPC_FAR * This,
-    /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum);
-
-
-void __RPC_STUB IVSSItems__NewEnum_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -2227,16 +1924,17 @@ EXTERN_C const IID IID_IVSSCheckouts;
     {
     public:
         virtual /* [propget][id] */ HRESULT __stdcall get_Count( 
-            /* [retval][out] */ long __RPC_FAR *piCount) = 0;
+            /* [retval][out] */ long *piCount) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Item( 
             /* [in] */ VARIANT sItem,
-            /* [retval][out] */ IVSSCheckout __RPC_FAR *__RPC_FAR *ppICheckout) = 0;
+            /* [retval][out] */ IVSSCheckout **ppICheckout) = 0;
         
         virtual /* [hidden][restricted][id] */ HRESULT __stdcall _NewEnum( 
-            /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum) = 0;
+            /* [retval][out] */ IUnknown **ppIEnum) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -2244,65 +1942,84 @@ EXTERN_C const IID IID_IVSSCheckouts;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSCheckouts __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSCheckouts * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSCheckouts __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSCheckouts * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSCheckouts __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSCheckouts * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSCheckouts __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSCheckouts * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSCheckouts __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSCheckouts * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSCheckouts __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSCheckouts * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSCheckouts __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSCheckouts * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Count )( 
-            IVSSCheckouts __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piCount);
+        DECLSPEC_XFGVIRT(IVSSCheckouts, get_Count)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Count )( 
+            IVSSCheckouts * This,
+            /* [retval][out] */ long *piCount);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Item )( 
-            IVSSCheckouts __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSCheckouts, get_Item)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Item )( 
+            IVSSCheckouts * This,
             /* [in] */ VARIANT sItem,
-            /* [retval][out] */ IVSSCheckout __RPC_FAR *__RPC_FAR *ppICheckout);
+            /* [retval][out] */ IVSSCheckout **ppICheckout);
         
-        /* [hidden][restricted][id] */ HRESULT ( __stdcall __RPC_FAR *_NewEnum )( 
-            IVSSCheckouts __RPC_FAR * This,
-            /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum);
+        DECLSPEC_XFGVIRT(IVSSCheckouts, _NewEnum)
+        /* [hidden][restricted][id] */ HRESULT ( __stdcall *_NewEnum )( 
+            IVSSCheckouts * This,
+            /* [retval][out] */ IUnknown **ppIEnum);
         
         END_INTERFACE
     } IVSSCheckoutsVtbl;
 
     interface IVSSCheckouts
     {
-        CONST_VTBL struct IVSSCheckoutsVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSCheckoutsVtbl *lpVtbl;
     };
 
     
@@ -2311,79 +2028,42 @@ EXTERN_C const IID IID_IVSSCheckouts;
 
 
 #define IVSSCheckouts_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSCheckouts_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSCheckouts_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSCheckouts_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSCheckouts_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSCheckouts_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSCheckouts_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSCheckouts_get_Count(This,piCount)	\
-    (This)->lpVtbl -> get_Count(This,piCount)
+    ( (This)->lpVtbl -> get_Count(This,piCount) ) 
 
 #define IVSSCheckouts_get_Item(This,sItem,ppICheckout)	\
-    (This)->lpVtbl -> get_Item(This,sItem,ppICheckout)
+    ( (This)->lpVtbl -> get_Item(This,sItem,ppICheckout) ) 
 
 #define IVSSCheckouts__NewEnum(This,ppIEnum)	\
-    (This)->lpVtbl -> _NewEnum(This,ppIEnum)
+    ( (This)->lpVtbl -> _NewEnum(This,ppIEnum) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckouts_get_Count_Proxy( 
-    IVSSCheckouts __RPC_FAR * This,
-    /* [retval][out] */ long __RPC_FAR *piCount);
-
-
-void __RPC_STUB IVSSCheckouts_get_Count_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckouts_get_Item_Proxy( 
-    IVSSCheckouts __RPC_FAR * This,
-    /* [in] */ VARIANT sItem,
-    /* [retval][out] */ IVSSCheckout __RPC_FAR *__RPC_FAR *ppICheckout);
-
-
-void __RPC_STUB IVSSCheckouts_get_Item_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [hidden][restricted][id] */ HRESULT __stdcall IVSSCheckouts__NewEnum_Proxy( 
-    IVSSCheckouts __RPC_FAR * This,
-    /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum);
-
-
-void __RPC_STUB IVSSCheckouts__NewEnum_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -2406,27 +2086,28 @@ EXTERN_C const IID IID_IVSSCheckout;
     {
     public:
         virtual /* [propget][id] */ HRESULT __stdcall get_Username( 
-            /* [retval][out] */ BSTR __RPC_FAR *pUsername) = 0;
+            /* [retval][out] */ BSTR *pUsername) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Date( 
-            /* [retval][out] */ DATE __RPC_FAR *pDate) = 0;
+            /* [retval][out] */ DATE *pDate) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_LocalSpec( 
-            /* [retval][out] */ BSTR __RPC_FAR *pLocal) = 0;
+            /* [retval][out] */ BSTR *pLocal) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Machine( 
-            /* [retval][out] */ BSTR __RPC_FAR *pMachine) = 0;
+            /* [retval][out] */ BSTR *pMachine) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Project( 
-            /* [retval][out] */ BSTR __RPC_FAR *pProject) = 0;
+            /* [retval][out] */ BSTR *pProject) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Comment( 
-            /* [retval][out] */ BSTR __RPC_FAR *pComment) = 0;
+            /* [retval][out] */ BSTR *pComment) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_VersionNumber( 
-            /* [retval][out] */ long __RPC_FAR *piVersion) = 0;
+            /* [retval][out] */ long *piVersion) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -2434,80 +2115,103 @@ EXTERN_C const IID IID_IVSSCheckout;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSCheckout __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSCheckout * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSCheckout __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSCheckout * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSCheckout __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSCheckout * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSCheckout * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSCheckout __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSCheckout * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSCheckout __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSCheckout * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSCheckout * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Username )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pUsername);
+        DECLSPEC_XFGVIRT(IVSSCheckout, get_Username)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Username )( 
+            IVSSCheckout * This,
+            /* [retval][out] */ BSTR *pUsername);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Date )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [retval][out] */ DATE __RPC_FAR *pDate);
+        DECLSPEC_XFGVIRT(IVSSCheckout, get_Date)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Date )( 
+            IVSSCheckout * This,
+            /* [retval][out] */ DATE *pDate);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_LocalSpec )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pLocal);
+        DECLSPEC_XFGVIRT(IVSSCheckout, get_LocalSpec)
+        /* [propget][id] */ HRESULT ( __stdcall *get_LocalSpec )( 
+            IVSSCheckout * This,
+            /* [retval][out] */ BSTR *pLocal);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Machine )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pMachine);
+        DECLSPEC_XFGVIRT(IVSSCheckout, get_Machine)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Machine )( 
+            IVSSCheckout * This,
+            /* [retval][out] */ BSTR *pMachine);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Project )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pProject);
+        DECLSPEC_XFGVIRT(IVSSCheckout, get_Project)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Project )( 
+            IVSSCheckout * This,
+            /* [retval][out] */ BSTR *pProject);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Comment )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pComment);
+        DECLSPEC_XFGVIRT(IVSSCheckout, get_Comment)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Comment )( 
+            IVSSCheckout * This,
+            /* [retval][out] */ BSTR *pComment);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VersionNumber )( 
-            IVSSCheckout __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piVersion);
+        DECLSPEC_XFGVIRT(IVSSCheckout, get_VersionNumber)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VersionNumber )( 
+            IVSSCheckout * This,
+            /* [retval][out] */ long *piVersion);
         
         END_INTERFACE
     } IVSSCheckoutVtbl;
 
     interface IVSSCheckout
     {
-        CONST_VTBL struct IVSSCheckoutVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSCheckoutVtbl *lpVtbl;
     };
 
     
@@ -2516,138 +2220,54 @@ EXTERN_C const IID IID_IVSSCheckout;
 
 
 #define IVSSCheckout_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSCheckout_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSCheckout_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSCheckout_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSCheckout_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSCheckout_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSCheckout_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSCheckout_get_Username(This,pUsername)	\
-    (This)->lpVtbl -> get_Username(This,pUsername)
+    ( (This)->lpVtbl -> get_Username(This,pUsername) ) 
 
 #define IVSSCheckout_get_Date(This,pDate)	\
-    (This)->lpVtbl -> get_Date(This,pDate)
+    ( (This)->lpVtbl -> get_Date(This,pDate) ) 
 
 #define IVSSCheckout_get_LocalSpec(This,pLocal)	\
-    (This)->lpVtbl -> get_LocalSpec(This,pLocal)
+    ( (This)->lpVtbl -> get_LocalSpec(This,pLocal) ) 
 
 #define IVSSCheckout_get_Machine(This,pMachine)	\
-    (This)->lpVtbl -> get_Machine(This,pMachine)
+    ( (This)->lpVtbl -> get_Machine(This,pMachine) ) 
 
 #define IVSSCheckout_get_Project(This,pProject)	\
-    (This)->lpVtbl -> get_Project(This,pProject)
+    ( (This)->lpVtbl -> get_Project(This,pProject) ) 
 
 #define IVSSCheckout_get_Comment(This,pComment)	\
-    (This)->lpVtbl -> get_Comment(This,pComment)
+    ( (This)->lpVtbl -> get_Comment(This,pComment) ) 
 
 #define IVSSCheckout_get_VersionNumber(This,piVersion)	\
-    (This)->lpVtbl -> get_VersionNumber(This,piVersion)
+    ( (This)->lpVtbl -> get_VersionNumber(This,piVersion) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckout_get_Username_Proxy( 
-    IVSSCheckout __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pUsername);
-
-
-void __RPC_STUB IVSSCheckout_get_Username_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckout_get_Date_Proxy( 
-    IVSSCheckout __RPC_FAR * This,
-    /* [retval][out] */ DATE __RPC_FAR *pDate);
-
-
-void __RPC_STUB IVSSCheckout_get_Date_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckout_get_LocalSpec_Proxy( 
-    IVSSCheckout __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pLocal);
-
-
-void __RPC_STUB IVSSCheckout_get_LocalSpec_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckout_get_Machine_Proxy( 
-    IVSSCheckout __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pMachine);
-
-
-void __RPC_STUB IVSSCheckout_get_Machine_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckout_get_Project_Proxy( 
-    IVSSCheckout __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pProject);
-
-
-void __RPC_STUB IVSSCheckout_get_Project_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckout_get_Comment_Proxy( 
-    IVSSCheckout __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pComment);
-
-
-void __RPC_STUB IVSSCheckout_get_Comment_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSCheckout_get_VersionNumber_Proxy( 
-    IVSSCheckout __RPC_FAR * This,
-    /* [retval][out] */ long __RPC_FAR *piVersion);
-
-
-void __RPC_STUB IVSSCheckout_get_VersionNumber_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -2670,21 +2290,21 @@ EXTERN_C const IID IID_IVSSDatabaseOld;
     {
     public:
         virtual /* [id] */ HRESULT __stdcall Open( 
-            /* [defaultvalue][optional][in] */ BSTR SrcSafeIni = L"",
-            /* [defaultvalue][optional][in] */ BSTR Username = L"",
-            /* [defaultvalue][optional][in] */ BSTR Password = L"") = 0;
+            /* [defaultvalue][optional][in] */ BSTR SrcSafeIni = (BSTR)L"",
+            /* [defaultvalue][optional][in] */ BSTR Username = (BSTR)L"",
+            /* [defaultvalue][optional][in] */ BSTR Password = (BSTR)L"") = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_SrcSafeIni( 
-            /* [retval][out] */ BSTR __RPC_FAR *pSrcSafeIni) = 0;
+            /* [retval][out] */ BSTR *pSrcSafeIni) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_DatabaseName( 
-            /* [retval][out] */ BSTR __RPC_FAR *pDatabaseName) = 0;
+            /* [retval][out] */ BSTR *pDatabaseName) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Username( 
-            /* [retval][out] */ BSTR __RPC_FAR *pUsername) = 0;
+            /* [retval][out] */ BSTR *pUsername) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_CurrentProject( 
-            /* [retval][out] */ BSTR __RPC_FAR *pPrj) = 0;
+            /* [retval][out] */ BSTR *pPrj) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_CurrentProject( 
             /* [in] */ BSTR pPrj) = 0;
@@ -2692,9 +2312,10 @@ EXTERN_C const IID IID_IVSSDatabaseOld;
         virtual /* [propget][id] */ HRESULT __stdcall get_VSSItem( 
             /* [in] */ BSTR Spec,
             /* [defaultvalue][optional][in] */ VARIANT_BOOL Deleted,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIVSSItem) = 0;
+            /* [retval][out] */ IVSSItem **ppIVSSItem) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -2702,84 +2323,107 @@ EXTERN_C const IID IID_IVSSDatabaseOld;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSDatabaseOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSDatabaseOld * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSDatabaseOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSDatabaseOld * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSDatabaseOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSDatabaseOld * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSDatabaseOld __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSDatabaseOld * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSDatabaseOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSDatabaseOld * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSDatabaseOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSDatabaseOld * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSDatabaseOld __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSDatabaseOld * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Open )( 
-            IVSSDatabaseOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, Open)
+        /* [id] */ HRESULT ( __stdcall *Open )( 
+            IVSSDatabaseOld * This,
             /* [defaultvalue][optional][in] */ BSTR SrcSafeIni,
             /* [defaultvalue][optional][in] */ BSTR Username,
             /* [defaultvalue][optional][in] */ BSTR Password);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_SrcSafeIni )( 
-            IVSSDatabaseOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pSrcSafeIni);
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_SrcSafeIni)
+        /* [propget][id] */ HRESULT ( __stdcall *get_SrcSafeIni )( 
+            IVSSDatabaseOld * This,
+            /* [retval][out] */ BSTR *pSrcSafeIni);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_DatabaseName )( 
-            IVSSDatabaseOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pDatabaseName);
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_DatabaseName)
+        /* [propget][id] */ HRESULT ( __stdcall *get_DatabaseName )( 
+            IVSSDatabaseOld * This,
+            /* [retval][out] */ BSTR *pDatabaseName);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Username )( 
-            IVSSDatabaseOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pUsername);
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_Username)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Username )( 
+            IVSSDatabaseOld * This,
+            /* [retval][out] */ BSTR *pUsername);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_CurrentProject )( 
-            IVSSDatabaseOld __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pPrj);
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_CurrentProject)
+        /* [propget][id] */ HRESULT ( __stdcall *get_CurrentProject )( 
+            IVSSDatabaseOld * This,
+            /* [retval][out] */ BSTR *pPrj);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_CurrentProject )( 
-            IVSSDatabaseOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, put_CurrentProject)
+        /* [propput][id] */ HRESULT ( __stdcall *put_CurrentProject )( 
+            IVSSDatabaseOld * This,
             /* [in] */ BSTR pPrj);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VSSItem )( 
-            IVSSDatabaseOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_VSSItem)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VSSItem )( 
+            IVSSDatabaseOld * This,
             /* [in] */ BSTR Spec,
             /* [defaultvalue][optional][in] */ VARIANT_BOOL Deleted,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIVSSItem);
+            /* [retval][out] */ IVSSItem **ppIVSSItem);
         
         END_INTERFACE
     } IVSSDatabaseOldVtbl;
 
     interface IVSSDatabaseOld
     {
-        CONST_VTBL struct IVSSDatabaseOldVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSDatabaseOldVtbl *lpVtbl;
     };
 
     
@@ -2788,142 +2432,54 @@ EXTERN_C const IID IID_IVSSDatabaseOld;
 
 
 #define IVSSDatabaseOld_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSDatabaseOld_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSDatabaseOld_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSDatabaseOld_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSDatabaseOld_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSDatabaseOld_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSDatabaseOld_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSDatabaseOld_Open(This,SrcSafeIni,Username,Password)	\
-    (This)->lpVtbl -> Open(This,SrcSafeIni,Username,Password)
+    ( (This)->lpVtbl -> Open(This,SrcSafeIni,Username,Password) ) 
 
 #define IVSSDatabaseOld_get_SrcSafeIni(This,pSrcSafeIni)	\
-    (This)->lpVtbl -> get_SrcSafeIni(This,pSrcSafeIni)
+    ( (This)->lpVtbl -> get_SrcSafeIni(This,pSrcSafeIni) ) 
 
 #define IVSSDatabaseOld_get_DatabaseName(This,pDatabaseName)	\
-    (This)->lpVtbl -> get_DatabaseName(This,pDatabaseName)
+    ( (This)->lpVtbl -> get_DatabaseName(This,pDatabaseName) ) 
 
 #define IVSSDatabaseOld_get_Username(This,pUsername)	\
-    (This)->lpVtbl -> get_Username(This,pUsername)
+    ( (This)->lpVtbl -> get_Username(This,pUsername) ) 
 
 #define IVSSDatabaseOld_get_CurrentProject(This,pPrj)	\
-    (This)->lpVtbl -> get_CurrentProject(This,pPrj)
+    ( (This)->lpVtbl -> get_CurrentProject(This,pPrj) ) 
 
 #define IVSSDatabaseOld_put_CurrentProject(This,pPrj)	\
-    (This)->lpVtbl -> put_CurrentProject(This,pPrj)
+    ( (This)->lpVtbl -> put_CurrentProject(This,pPrj) ) 
 
 #define IVSSDatabaseOld_get_VSSItem(This,Spec,Deleted,ppIVSSItem)	\
-    (This)->lpVtbl -> get_VSSItem(This,Spec,Deleted,ppIVSSItem)
+    ( (This)->lpVtbl -> get_VSSItem(This,Spec,Deleted,ppIVSSItem) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [id] */ HRESULT __stdcall IVSSDatabaseOld_Open_Proxy( 
-    IVSSDatabaseOld __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ BSTR SrcSafeIni,
-    /* [defaultvalue][optional][in] */ BSTR Username,
-    /* [defaultvalue][optional][in] */ BSTR Password);
-
-
-void __RPC_STUB IVSSDatabaseOld_Open_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabaseOld_get_SrcSafeIni_Proxy( 
-    IVSSDatabaseOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pSrcSafeIni);
-
-
-void __RPC_STUB IVSSDatabaseOld_get_SrcSafeIni_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabaseOld_get_DatabaseName_Proxy( 
-    IVSSDatabaseOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pDatabaseName);
-
-
-void __RPC_STUB IVSSDatabaseOld_get_DatabaseName_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabaseOld_get_Username_Proxy( 
-    IVSSDatabaseOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pUsername);
-
-
-void __RPC_STUB IVSSDatabaseOld_get_Username_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabaseOld_get_CurrentProject_Proxy( 
-    IVSSDatabaseOld __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pPrj);
-
-
-void __RPC_STUB IVSSDatabaseOld_get_CurrentProject_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSDatabaseOld_put_CurrentProject_Proxy( 
-    IVSSDatabaseOld __RPC_FAR * This,
-    /* [in] */ BSTR pPrj);
-
-
-void __RPC_STUB IVSSDatabaseOld_put_CurrentProject_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabaseOld_get_VSSItem_Proxy( 
-    IVSSDatabaseOld __RPC_FAR * This,
-    /* [in] */ BSTR Spec,
-    /* [defaultvalue][optional][in] */ VARIANT_BOOL Deleted,
-    /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIVSSItem);
-
-
-void __RPC_STUB IVSSDatabaseOld_get_VSSItem_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -2949,28 +2505,29 @@ EXTERN_C const IID IID_IVSSDatabase;
             /* [in] */ BSTR User,
             /* [in] */ BSTR Password,
             /* [in] */ VARIANT_BOOL ReadOnly,
-            /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser) = 0;
+            /* [retval][out] */ IVSSUser **ppIUser) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_User( 
             /* [in] */ BSTR Name,
-            /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser) = 0;
+            /* [retval][out] */ IVSSUser **ppIUser) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Users( 
-            /* [retval][out] */ IVSSUsers __RPC_FAR *__RPC_FAR *ppIUsers) = 0;
+            /* [retval][out] */ IVSSUsers **ppIUsers) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_ProjectRightsEnabled( 
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pEnabled) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pEnabled) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_ProjectRightsEnabled( 
             /* [in] */ VARIANT_BOOL pEnabled) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_DefaultProjectRights( 
-            /* [retval][out] */ long __RPC_FAR *pRights) = 0;
+            /* [retval][out] */ long *pRights) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_DefaultProjectRights( 
             /* [in] */ long pRights) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -2978,108 +2535,138 @@ EXTERN_C const IID IID_IVSSDatabase;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSDatabase * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSDatabase __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSDatabase * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSDatabase __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSDatabase * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSDatabase * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSDatabase * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSDatabase * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSDatabase * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Open )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, Open)
+        /* [id] */ HRESULT ( __stdcall *Open )( 
+            IVSSDatabase * This,
             /* [defaultvalue][optional][in] */ BSTR SrcSafeIni,
             /* [defaultvalue][optional][in] */ BSTR Username,
             /* [defaultvalue][optional][in] */ BSTR Password);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_SrcSafeIni )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pSrcSafeIni);
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_SrcSafeIni)
+        /* [propget][id] */ HRESULT ( __stdcall *get_SrcSafeIni )( 
+            IVSSDatabase * This,
+            /* [retval][out] */ BSTR *pSrcSafeIni);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_DatabaseName )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pDatabaseName);
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_DatabaseName)
+        /* [propget][id] */ HRESULT ( __stdcall *get_DatabaseName )( 
+            IVSSDatabase * This,
+            /* [retval][out] */ BSTR *pDatabaseName);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Username )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pUsername);
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_Username)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Username )( 
+            IVSSDatabase * This,
+            /* [retval][out] */ BSTR *pUsername);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_CurrentProject )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pPrj);
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_CurrentProject)
+        /* [propget][id] */ HRESULT ( __stdcall *get_CurrentProject )( 
+            IVSSDatabase * This,
+            /* [retval][out] */ BSTR *pPrj);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_CurrentProject )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, put_CurrentProject)
+        /* [propput][id] */ HRESULT ( __stdcall *put_CurrentProject )( 
+            IVSSDatabase * This,
             /* [in] */ BSTR pPrj);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VSSItem )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabaseOld, get_VSSItem)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VSSItem )( 
+            IVSSDatabase * This,
             /* [in] */ BSTR Spec,
             /* [defaultvalue][optional][in] */ VARIANT_BOOL Deleted,
-            /* [retval][out] */ IVSSItem __RPC_FAR *__RPC_FAR *ppIVSSItem);
+            /* [retval][out] */ IVSSItem **ppIVSSItem);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *AddUser )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabase, AddUser)
+        /* [id] */ HRESULT ( __stdcall *AddUser )( 
+            IVSSDatabase * This,
             /* [in] */ BSTR User,
             /* [in] */ BSTR Password,
             /* [in] */ VARIANT_BOOL ReadOnly,
-            /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser);
+            /* [retval][out] */ IVSSUser **ppIUser);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_User )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabase, get_User)
+        /* [propget][id] */ HRESULT ( __stdcall *get_User )( 
+            IVSSDatabase * This,
             /* [in] */ BSTR Name,
-            /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser);
+            /* [retval][out] */ IVSSUser **ppIUser);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Users )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [retval][out] */ IVSSUsers __RPC_FAR *__RPC_FAR *ppIUsers);
+        DECLSPEC_XFGVIRT(IVSSDatabase, get_Users)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Users )( 
+            IVSSDatabase * This,
+            /* [retval][out] */ IVSSUsers **ppIUsers);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_ProjectRightsEnabled )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pEnabled);
+        DECLSPEC_XFGVIRT(IVSSDatabase, get_ProjectRightsEnabled)
+        /* [propget][id] */ HRESULT ( __stdcall *get_ProjectRightsEnabled )( 
+            IVSSDatabase * This,
+            /* [retval][out] */ VARIANT_BOOL *pEnabled);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_ProjectRightsEnabled )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabase, put_ProjectRightsEnabled)
+        /* [propput][id] */ HRESULT ( __stdcall *put_ProjectRightsEnabled )( 
+            IVSSDatabase * This,
             /* [in] */ VARIANT_BOOL pEnabled);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_DefaultProjectRights )( 
-            IVSSDatabase __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *pRights);
+        DECLSPEC_XFGVIRT(IVSSDatabase, get_DefaultProjectRights)
+        /* [propget][id] */ HRESULT ( __stdcall *get_DefaultProjectRights )( 
+            IVSSDatabase * This,
+            /* [retval][out] */ long *pRights);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_DefaultProjectRights )( 
-            IVSSDatabase __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSDatabase, put_DefaultProjectRights)
+        /* [propput][id] */ HRESULT ( __stdcall *put_DefaultProjectRights )( 
+            IVSSDatabase * This,
             /* [in] */ long pRights);
         
         END_INTERFACE
@@ -3087,7 +2674,7 @@ EXTERN_C const IID IID_IVSSDatabase;
 
     interface IVSSDatabase
     {
-        CONST_VTBL struct IVSSDatabaseVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSDatabaseVtbl *lpVtbl;
     };
 
     
@@ -3096,164 +2683,76 @@ EXTERN_C const IID IID_IVSSDatabase;
 
 
 #define IVSSDatabase_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSDatabase_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSDatabase_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSDatabase_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSDatabase_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSDatabase_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSDatabase_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSDatabase_Open(This,SrcSafeIni,Username,Password)	\
-    (This)->lpVtbl -> Open(This,SrcSafeIni,Username,Password)
+    ( (This)->lpVtbl -> Open(This,SrcSafeIni,Username,Password) ) 
 
 #define IVSSDatabase_get_SrcSafeIni(This,pSrcSafeIni)	\
-    (This)->lpVtbl -> get_SrcSafeIni(This,pSrcSafeIni)
+    ( (This)->lpVtbl -> get_SrcSafeIni(This,pSrcSafeIni) ) 
 
 #define IVSSDatabase_get_DatabaseName(This,pDatabaseName)	\
-    (This)->lpVtbl -> get_DatabaseName(This,pDatabaseName)
+    ( (This)->lpVtbl -> get_DatabaseName(This,pDatabaseName) ) 
 
 #define IVSSDatabase_get_Username(This,pUsername)	\
-    (This)->lpVtbl -> get_Username(This,pUsername)
+    ( (This)->lpVtbl -> get_Username(This,pUsername) ) 
 
 #define IVSSDatabase_get_CurrentProject(This,pPrj)	\
-    (This)->lpVtbl -> get_CurrentProject(This,pPrj)
+    ( (This)->lpVtbl -> get_CurrentProject(This,pPrj) ) 
 
 #define IVSSDatabase_put_CurrentProject(This,pPrj)	\
-    (This)->lpVtbl -> put_CurrentProject(This,pPrj)
+    ( (This)->lpVtbl -> put_CurrentProject(This,pPrj) ) 
 
 #define IVSSDatabase_get_VSSItem(This,Spec,Deleted,ppIVSSItem)	\
-    (This)->lpVtbl -> get_VSSItem(This,Spec,Deleted,ppIVSSItem)
+    ( (This)->lpVtbl -> get_VSSItem(This,Spec,Deleted,ppIVSSItem) ) 
 
 
 #define IVSSDatabase_AddUser(This,User,Password,ReadOnly,ppIUser)	\
-    (This)->lpVtbl -> AddUser(This,User,Password,ReadOnly,ppIUser)
+    ( (This)->lpVtbl -> AddUser(This,User,Password,ReadOnly,ppIUser) ) 
 
 #define IVSSDatabase_get_User(This,Name,ppIUser)	\
-    (This)->lpVtbl -> get_User(This,Name,ppIUser)
+    ( (This)->lpVtbl -> get_User(This,Name,ppIUser) ) 
 
 #define IVSSDatabase_get_Users(This,ppIUsers)	\
-    (This)->lpVtbl -> get_Users(This,ppIUsers)
+    ( (This)->lpVtbl -> get_Users(This,ppIUsers) ) 
 
 #define IVSSDatabase_get_ProjectRightsEnabled(This,pEnabled)	\
-    (This)->lpVtbl -> get_ProjectRightsEnabled(This,pEnabled)
+    ( (This)->lpVtbl -> get_ProjectRightsEnabled(This,pEnabled) ) 
 
 #define IVSSDatabase_put_ProjectRightsEnabled(This,pEnabled)	\
-    (This)->lpVtbl -> put_ProjectRightsEnabled(This,pEnabled)
+    ( (This)->lpVtbl -> put_ProjectRightsEnabled(This,pEnabled) ) 
 
 #define IVSSDatabase_get_DefaultProjectRights(This,pRights)	\
-    (This)->lpVtbl -> get_DefaultProjectRights(This,pRights)
+    ( (This)->lpVtbl -> get_DefaultProjectRights(This,pRights) ) 
 
 #define IVSSDatabase_put_DefaultProjectRights(This,pRights)	\
-    (This)->lpVtbl -> put_DefaultProjectRights(This,pRights)
+    ( (This)->lpVtbl -> put_DefaultProjectRights(This,pRights) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [id] */ HRESULT __stdcall IVSSDatabase_AddUser_Proxy( 
-    IVSSDatabase __RPC_FAR * This,
-    /* [in] */ BSTR User,
-    /* [in] */ BSTR Password,
-    /* [in] */ VARIANT_BOOL ReadOnly,
-    /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser);
-
-
-void __RPC_STUB IVSSDatabase_AddUser_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabase_get_User_Proxy( 
-    IVSSDatabase __RPC_FAR * This,
-    /* [in] */ BSTR Name,
-    /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser);
-
-
-void __RPC_STUB IVSSDatabase_get_User_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabase_get_Users_Proxy( 
-    IVSSDatabase __RPC_FAR * This,
-    /* [retval][out] */ IVSSUsers __RPC_FAR *__RPC_FAR *ppIUsers);
-
-
-void __RPC_STUB IVSSDatabase_get_Users_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabase_get_ProjectRightsEnabled_Proxy( 
-    IVSSDatabase __RPC_FAR * This,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pEnabled);
-
-
-void __RPC_STUB IVSSDatabase_get_ProjectRightsEnabled_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSDatabase_put_ProjectRightsEnabled_Proxy( 
-    IVSSDatabase __RPC_FAR * This,
-    /* [in] */ VARIANT_BOOL pEnabled);
-
-
-void __RPC_STUB IVSSDatabase_put_ProjectRightsEnabled_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSDatabase_get_DefaultProjectRights_Proxy( 
-    IVSSDatabase __RPC_FAR * This,
-    /* [retval][out] */ long __RPC_FAR *pRights);
-
-
-void __RPC_STUB IVSSDatabase_get_DefaultProjectRights_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSDatabase_put_DefaultProjectRights_Proxy( 
-    IVSSDatabase __RPC_FAR * This,
-    /* [in] */ long pRights);
-
-
-void __RPC_STUB IVSSDatabase_put_DefaultProjectRights_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -3278,7 +2777,7 @@ EXTERN_C const IID IID_IVSSUser;
         virtual /* [id] */ HRESULT __stdcall Delete( void) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Name( 
-            /* [retval][out] */ BSTR __RPC_FAR *pName) = 0;
+            /* [retval][out] */ BSTR *pName) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_Name( 
             /* [in] */ BSTR pName) = 0;
@@ -3287,14 +2786,14 @@ EXTERN_C const IID IID_IVSSUser;
             /* [in] */ BSTR rhs) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_ReadOnly( 
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pReadOnly) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pReadOnly) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_ReadOnly( 
             /* [in] */ VARIANT_BOOL pReadOnly) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_ProjectRights( 
             /* [defaultvalue][optional][in] */ BSTR Project,
-            /* [retval][out] */ long __RPC_FAR *piRightsOut) = 0;
+            /* [retval][out] */ long *piRightsOut) = 0;
         
         virtual /* [propput][id] */ HRESULT __stdcall put_ProjectRights( 
             /* [defaultvalue][optional][in] */ BSTR Project,
@@ -3305,87 +2804,113 @@ EXTERN_C const IID IID_IVSSUser;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IVSSUserVtbl
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSUser * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSUser __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSUser * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSUser __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSUser * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSUser __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSUser * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSUser * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSUser * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSUser __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSUser * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *Delete )( 
-            IVSSUser __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IVSSUser, Delete)
+        /* [id] */ HRESULT ( __stdcall *Delete )( 
+            IVSSUser * This);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Name )( 
-            IVSSUser __RPC_FAR * This,
-            /* [retval][out] */ BSTR __RPC_FAR *pName);
+        DECLSPEC_XFGVIRT(IVSSUser, get_Name)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Name )( 
+            IVSSUser * This,
+            /* [retval][out] */ BSTR *pName);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_Name )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSUser, put_Name)
+        /* [propput][id] */ HRESULT ( __stdcall *put_Name )( 
+            IVSSUser * This,
             /* [in] */ BSTR pName);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_Password )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSUser, put_Password)
+        /* [propput][id] */ HRESULT ( __stdcall *put_Password )( 
+            IVSSUser * This,
             /* [in] */ BSTR rhs);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_ReadOnly )( 
-            IVSSUser __RPC_FAR * This,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pReadOnly);
+        DECLSPEC_XFGVIRT(IVSSUser, get_ReadOnly)
+        /* [propget][id] */ HRESULT ( __stdcall *get_ReadOnly )( 
+            IVSSUser * This,
+            /* [retval][out] */ VARIANT_BOOL *pReadOnly);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_ReadOnly )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSUser, put_ReadOnly)
+        /* [propput][id] */ HRESULT ( __stdcall *put_ReadOnly )( 
+            IVSSUser * This,
             /* [in] */ VARIANT_BOOL pReadOnly);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_ProjectRights )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSUser, get_ProjectRights)
+        /* [propget][id] */ HRESULT ( __stdcall *get_ProjectRights )( 
+            IVSSUser * This,
             /* [defaultvalue][optional][in] */ BSTR Project,
-            /* [retval][out] */ long __RPC_FAR *piRightsOut);
+            /* [retval][out] */ long *piRightsOut);
         
-        /* [propput][id] */ HRESULT ( __stdcall __RPC_FAR *put_ProjectRights )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSUser, put_ProjectRights)
+        /* [propput][id] */ HRESULT ( __stdcall *put_ProjectRights )( 
+            IVSSUser * This,
             /* [defaultvalue][optional][in] */ BSTR Project,
             /* [in] */ long piRightsOut);
         
-        /* [id] */ HRESULT ( __stdcall __RPC_FAR *RemoveProjectRights )( 
-            IVSSUser __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSUser, RemoveProjectRights)
+        /* [id] */ HRESULT ( __stdcall *RemoveProjectRights )( 
+            IVSSUser * This,
             /* [in] */ BSTR Project);
         
         END_INTERFACE
@@ -3393,7 +2918,7 @@ EXTERN_C const IID IID_IVSSUser;
 
     interface IVSSUser
     {
-        CONST_VTBL struct IVSSUserVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSUserVtbl *lpVtbl;
     };
 
     
@@ -3402,169 +2927,60 @@ EXTERN_C const IID IID_IVSSUser;
 
 
 #define IVSSUser_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSUser_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSUser_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSUser_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSUser_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSUser_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSUser_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSUser_Delete(This)	\
-    (This)->lpVtbl -> Delete(This)
+    ( (This)->lpVtbl -> Delete(This) ) 
 
 #define IVSSUser_get_Name(This,pName)	\
-    (This)->lpVtbl -> get_Name(This,pName)
+    ( (This)->lpVtbl -> get_Name(This,pName) ) 
 
 #define IVSSUser_put_Name(This,pName)	\
-    (This)->lpVtbl -> put_Name(This,pName)
+    ( (This)->lpVtbl -> put_Name(This,pName) ) 
 
 #define IVSSUser_put_Password(This,rhs)	\
-    (This)->lpVtbl -> put_Password(This,rhs)
+    ( (This)->lpVtbl -> put_Password(This,rhs) ) 
 
 #define IVSSUser_get_ReadOnly(This,pReadOnly)	\
-    (This)->lpVtbl -> get_ReadOnly(This,pReadOnly)
+    ( (This)->lpVtbl -> get_ReadOnly(This,pReadOnly) ) 
 
 #define IVSSUser_put_ReadOnly(This,pReadOnly)	\
-    (This)->lpVtbl -> put_ReadOnly(This,pReadOnly)
+    ( (This)->lpVtbl -> put_ReadOnly(This,pReadOnly) ) 
 
 #define IVSSUser_get_ProjectRights(This,Project,piRightsOut)	\
-    (This)->lpVtbl -> get_ProjectRights(This,Project,piRightsOut)
+    ( (This)->lpVtbl -> get_ProjectRights(This,Project,piRightsOut) ) 
 
 #define IVSSUser_put_ProjectRights(This,Project,piRightsOut)	\
-    (This)->lpVtbl -> put_ProjectRights(This,Project,piRightsOut)
+    ( (This)->lpVtbl -> put_ProjectRights(This,Project,piRightsOut) ) 
 
 #define IVSSUser_RemoveProjectRights(This,Project)	\
-    (This)->lpVtbl -> RemoveProjectRights(This,Project)
+    ( (This)->lpVtbl -> RemoveProjectRights(This,Project) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [id] */ HRESULT __stdcall IVSSUser_Delete_Proxy( 
-    IVSSUser __RPC_FAR * This);
-
-
-void __RPC_STUB IVSSUser_Delete_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSUser_get_Name_Proxy( 
-    IVSSUser __RPC_FAR * This,
-    /* [retval][out] */ BSTR __RPC_FAR *pName);
-
-
-void __RPC_STUB IVSSUser_get_Name_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSUser_put_Name_Proxy( 
-    IVSSUser __RPC_FAR * This,
-    /* [in] */ BSTR pName);
-
-
-void __RPC_STUB IVSSUser_put_Name_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSUser_put_Password_Proxy( 
-    IVSSUser __RPC_FAR * This,
-    /* [in] */ BSTR rhs);
-
-
-void __RPC_STUB IVSSUser_put_Password_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSUser_get_ReadOnly_Proxy( 
-    IVSSUser __RPC_FAR * This,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pReadOnly);
-
-
-void __RPC_STUB IVSSUser_get_ReadOnly_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSUser_put_ReadOnly_Proxy( 
-    IVSSUser __RPC_FAR * This,
-    /* [in] */ VARIANT_BOOL pReadOnly);
-
-
-void __RPC_STUB IVSSUser_put_ReadOnly_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSUser_get_ProjectRights_Proxy( 
-    IVSSUser __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ BSTR Project,
-    /* [retval][out] */ long __RPC_FAR *piRightsOut);
-
-
-void __RPC_STUB IVSSUser_get_ProjectRights_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propput][id] */ HRESULT __stdcall IVSSUser_put_ProjectRights_Proxy( 
-    IVSSUser __RPC_FAR * This,
-    /* [defaultvalue][optional][in] */ BSTR Project,
-    /* [in] */ long piRightsOut);
-
-
-void __RPC_STUB IVSSUser_put_ProjectRights_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT __stdcall IVSSUser_RemoveProjectRights_Proxy( 
-    IVSSUser __RPC_FAR * This,
-    /* [in] */ BSTR Project);
-
-
-void __RPC_STUB IVSSUser_RemoveProjectRights_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -3587,16 +3003,17 @@ EXTERN_C const IID IID_IVSSUsers;
     {
     public:
         virtual /* [propget][id] */ HRESULT __stdcall get_Count( 
-            /* [retval][out] */ long __RPC_FAR *piCount) = 0;
+            /* [retval][out] */ long *piCount) = 0;
         
         virtual /* [propget][id] */ HRESULT __stdcall get_Item( 
             /* [in] */ VARIANT sItem,
-            /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser) = 0;
+            /* [retval][out] */ IVSSUser **ppIUser) = 0;
         
         virtual /* [hidden][restricted][id] */ HRESULT __stdcall _NewEnum( 
-            /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum) = 0;
+            /* [retval][out] */ IUnknown **ppIEnum) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -3604,65 +3021,84 @@ EXTERN_C const IID IID_IVSSUsers;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSUsers __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSUsers * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSUsers __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSUsers * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSUsers __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSUsers * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSSUsers __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSSUsers * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSSUsers __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSSUsers * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSSUsers __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSSUsers * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSSUsers __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSSUsers * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Count )( 
-            IVSSUsers __RPC_FAR * This,
-            /* [retval][out] */ long __RPC_FAR *piCount);
+        DECLSPEC_XFGVIRT(IVSSUsers, get_Count)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Count )( 
+            IVSSUsers * This,
+            /* [retval][out] */ long *piCount);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_Item )( 
-            IVSSUsers __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSUsers, get_Item)
+        /* [propget][id] */ HRESULT ( __stdcall *get_Item )( 
+            IVSSUsers * This,
             /* [in] */ VARIANT sItem,
-            /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser);
+            /* [retval][out] */ IVSSUser **ppIUser);
         
-        /* [hidden][restricted][id] */ HRESULT ( __stdcall __RPC_FAR *_NewEnum )( 
-            IVSSUsers __RPC_FAR * This,
-            /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum);
+        DECLSPEC_XFGVIRT(IVSSUsers, _NewEnum)
+        /* [hidden][restricted][id] */ HRESULT ( __stdcall *_NewEnum )( 
+            IVSSUsers * This,
+            /* [retval][out] */ IUnknown **ppIEnum);
         
         END_INTERFACE
     } IVSSUsersVtbl;
 
     interface IVSSUsers
     {
-        CONST_VTBL struct IVSSUsersVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSUsersVtbl *lpVtbl;
     };
 
     
@@ -3671,79 +3107,42 @@ EXTERN_C const IID IID_IVSSUsers;
 
 
 #define IVSSUsers_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSUsers_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSUsers_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSUsers_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSSUsers_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSSUsers_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSSUsers_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSSUsers_get_Count(This,piCount)	\
-    (This)->lpVtbl -> get_Count(This,piCount)
+    ( (This)->lpVtbl -> get_Count(This,piCount) ) 
 
 #define IVSSUsers_get_Item(This,sItem,ppIUser)	\
-    (This)->lpVtbl -> get_Item(This,sItem,ppIUser)
+    ( (This)->lpVtbl -> get_Item(This,sItem,ppIUser) ) 
 
 #define IVSSUsers__NewEnum(This,ppIEnum)	\
-    (This)->lpVtbl -> _NewEnum(This,ppIEnum)
+    ( (This)->lpVtbl -> _NewEnum(This,ppIEnum) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSUsers_get_Count_Proxy( 
-    IVSSUsers __RPC_FAR * This,
-    /* [retval][out] */ long __RPC_FAR *piCount);
-
-
-void __RPC_STUB IVSSUsers_get_Count_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [propget][id] */ HRESULT __stdcall IVSSUsers_get_Item_Proxy( 
-    IVSSUsers __RPC_FAR * This,
-    /* [in] */ VARIANT sItem,
-    /* [retval][out] */ IVSSUser __RPC_FAR *__RPC_FAR *ppIUser);
-
-
-void __RPC_STUB IVSSUsers_get_Item_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [hidden][restricted][id] */ HRESULT __stdcall IVSSUsers__NewEnum_Proxy( 
-    IVSSUsers __RPC_FAR * This,
-    /* [retval][out] */ IUnknown __RPC_FAR *__RPC_FAR *ppIEnum);
-
-
-void __RPC_STUB IVSSUsers__NewEnum_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -3806,71 +3205,72 @@ EXTERN_C const IID IID_IVSSEventsOld;
     {
     public:
         virtual HRESULT __stdcall BeforeAdd( 
-            /* [in] */ IVSSItem __RPC_FAR *pIPrj,
+            /* [in] */ IVSSItem *pIPrj,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterAdd( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local) = 0;
         
         virtual HRESULT __stdcall BeforeCheckout( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterCheckout( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local) = 0;
         
         virtual HRESULT __stdcall BeforeCheckin( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterCheckin( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local) = 0;
         
         virtual HRESULT __stdcall BeforeUndoCheckout( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterUndoCheckout( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local) = 0;
         
         virtual HRESULT __stdcall BeforeRename( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR NewName,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterRename( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR OldName) = 0;
         
         virtual HRESULT __stdcall BeforeBranch( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [in] */ IVSSItem *pIItem,
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterBranch( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem) = 0;
+            /* [in] */ IVSSItem *pIItem) = 0;
         
         virtual HRESULT __stdcall BeforeEvent( 
             /* [in] */ long iEvent,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Str,
             /* [in] */ VARIANT var,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterEvent( 
             /* [in] */ long iEvent,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Str,
             /* [in] */ VARIANT var) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -3878,93 +3278,111 @@ EXTERN_C const IID IID_IVSSEventsOld;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSEventsOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSEventsOld * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSEventsOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSEventsOld * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSEventsOld __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSEventsOld * This);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeAdd )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIPrj,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, BeforeAdd)
+        HRESULT ( __stdcall *BeforeAdd )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIPrj,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterAdd )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, AfterAdd)
+        HRESULT ( __stdcall *AfterAdd )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeCheckout )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, BeforeCheckout)
+        HRESULT ( __stdcall *BeforeCheckout )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterCheckout )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, AfterCheckout)
+        HRESULT ( __stdcall *AfterCheckout )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeCheckin )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, BeforeCheckin)
+        HRESULT ( __stdcall *BeforeCheckin )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterCheckin )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, AfterCheckin)
+        HRESULT ( __stdcall *AfterCheckin )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeUndoCheckout )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, BeforeUndoCheckout)
+        HRESULT ( __stdcall *BeforeUndoCheckout )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterUndoCheckout )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, AfterUndoCheckout)
+        HRESULT ( __stdcall *AfterUndoCheckout )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeRename )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, BeforeRename)
+        HRESULT ( __stdcall *BeforeRename )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR NewName,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterRename )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, AfterRename)
+        HRESULT ( __stdcall *AfterRename )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR OldName);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeBranch )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+        DECLSPEC_XFGVIRT(IVSSEventsOld, BeforeBranch)
+        HRESULT ( __stdcall *BeforeBranch )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem,
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterBranch )( 
-            IVSSEventsOld __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem);
+        DECLSPEC_XFGVIRT(IVSSEventsOld, AfterBranch)
+        HRESULT ( __stdcall *AfterBranch )( 
+            IVSSEventsOld * This,
+            /* [in] */ IVSSItem *pIItem);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeEvent )( 
-            IVSSEventsOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, BeforeEvent)
+        HRESULT ( __stdcall *BeforeEvent )( 
+            IVSSEventsOld * This,
             /* [in] */ long iEvent,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Str,
             /* [in] */ VARIANT var,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterEvent )( 
-            IVSSEventsOld __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSEventsOld, AfterEvent)
+        HRESULT ( __stdcall *AfterEvent )( 
+            IVSSEventsOld * This,
             /* [in] */ long iEvent,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Str,
             /* [in] */ VARIANT var);
         
@@ -3973,7 +3391,7 @@ EXTERN_C const IID IID_IVSSEventsOld;
 
     interface IVSSEventsOld
     {
-        CONST_VTBL struct IVSSEventsOldVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSEventsOldVtbl *lpVtbl;
     };
 
     
@@ -3982,253 +3400,62 @@ EXTERN_C const IID IID_IVSSEventsOld;
 
 
 #define IVSSEventsOld_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSEventsOld_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSEventsOld_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSEventsOld_BeforeAdd(This,pIPrj,Local,pbContinue)	\
-    (This)->lpVtbl -> BeforeAdd(This,pIPrj,Local,pbContinue)
+    ( (This)->lpVtbl -> BeforeAdd(This,pIPrj,Local,pbContinue) ) 
 
 #define IVSSEventsOld_AfterAdd(This,pIItem,Local)	\
-    (This)->lpVtbl -> AfterAdd(This,pIItem,Local)
+    ( (This)->lpVtbl -> AfterAdd(This,pIItem,Local) ) 
 
 #define IVSSEventsOld_BeforeCheckout(This,pIItem,Local,pbContinue)	\
-    (This)->lpVtbl -> BeforeCheckout(This,pIItem,Local,pbContinue)
+    ( (This)->lpVtbl -> BeforeCheckout(This,pIItem,Local,pbContinue) ) 
 
 #define IVSSEventsOld_AfterCheckout(This,pIItem,Local)	\
-    (This)->lpVtbl -> AfterCheckout(This,pIItem,Local)
+    ( (This)->lpVtbl -> AfterCheckout(This,pIItem,Local) ) 
 
 #define IVSSEventsOld_BeforeCheckin(This,pIItem,Local,pbContinue)	\
-    (This)->lpVtbl -> BeforeCheckin(This,pIItem,Local,pbContinue)
+    ( (This)->lpVtbl -> BeforeCheckin(This,pIItem,Local,pbContinue) ) 
 
 #define IVSSEventsOld_AfterCheckin(This,pIItem,Local)	\
-    (This)->lpVtbl -> AfterCheckin(This,pIItem,Local)
+    ( (This)->lpVtbl -> AfterCheckin(This,pIItem,Local) ) 
 
 #define IVSSEventsOld_BeforeUndoCheckout(This,pIItem,Local,pbContinue)	\
-    (This)->lpVtbl -> BeforeUndoCheckout(This,pIItem,Local,pbContinue)
+    ( (This)->lpVtbl -> BeforeUndoCheckout(This,pIItem,Local,pbContinue) ) 
 
 #define IVSSEventsOld_AfterUndoCheckout(This,pIItem,Local)	\
-    (This)->lpVtbl -> AfterUndoCheckout(This,pIItem,Local)
+    ( (This)->lpVtbl -> AfterUndoCheckout(This,pIItem,Local) ) 
 
 #define IVSSEventsOld_BeforeRename(This,pIItem,NewName,pbContinue)	\
-    (This)->lpVtbl -> BeforeRename(This,pIItem,NewName,pbContinue)
+    ( (This)->lpVtbl -> BeforeRename(This,pIItem,NewName,pbContinue) ) 
 
 #define IVSSEventsOld_AfterRename(This,pIItem,OldName)	\
-    (This)->lpVtbl -> AfterRename(This,pIItem,OldName)
+    ( (This)->lpVtbl -> AfterRename(This,pIItem,OldName) ) 
 
 #define IVSSEventsOld_BeforeBranch(This,pIItem,pbContinue)	\
-    (This)->lpVtbl -> BeforeBranch(This,pIItem,pbContinue)
+    ( (This)->lpVtbl -> BeforeBranch(This,pIItem,pbContinue) ) 
 
 #define IVSSEventsOld_AfterBranch(This,pIItem)	\
-    (This)->lpVtbl -> AfterBranch(This,pIItem)
+    ( (This)->lpVtbl -> AfterBranch(This,pIItem) ) 
 
 #define IVSSEventsOld_BeforeEvent(This,iEvent,pIItem,Str,var,pbContinue)	\
-    (This)->lpVtbl -> BeforeEvent(This,iEvent,pIItem,Str,var,pbContinue)
+    ( (This)->lpVtbl -> BeforeEvent(This,iEvent,pIItem,Str,var,pbContinue) ) 
 
 #define IVSSEventsOld_AfterEvent(This,iEvent,pIItem,Str,var)	\
-    (This)->lpVtbl -> AfterEvent(This,iEvent,pIItem,Str,var)
+    ( (This)->lpVtbl -> AfterEvent(This,iEvent,pIItem,Str,var) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-HRESULT __stdcall IVSSEventsOld_BeforeAdd_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIPrj,
-    /* [in] */ BSTR Local,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEventsOld_BeforeAdd_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_AfterAdd_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local);
-
-
-void __RPC_STUB IVSSEventsOld_AfterAdd_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_BeforeCheckout_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEventsOld_BeforeCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_AfterCheckout_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local);
-
-
-void __RPC_STUB IVSSEventsOld_AfterCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_BeforeCheckin_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEventsOld_BeforeCheckin_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_AfterCheckin_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local);
-
-
-void __RPC_STUB IVSSEventsOld_AfterCheckin_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_BeforeUndoCheckout_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEventsOld_BeforeUndoCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_AfterUndoCheckout_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local);
-
-
-void __RPC_STUB IVSSEventsOld_AfterUndoCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_BeforeRename_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR NewName,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEventsOld_BeforeRename_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_AfterRename_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR OldName);
-
-
-void __RPC_STUB IVSSEventsOld_AfterRename_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_BeforeBranch_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEventsOld_BeforeBranch_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_AfterBranch_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem);
-
-
-void __RPC_STUB IVSSEventsOld_AfterBranch_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_BeforeEvent_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ long iEvent,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Str,
-    /* [in] */ VARIANT var,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEventsOld_BeforeEvent_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEventsOld_AfterEvent_Proxy( 
-    IVSSEventsOld __RPC_FAR * This,
-    /* [in] */ long iEvent,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Str,
-    /* [in] */ VARIANT var);
-
-
-void __RPC_STUB IVSSEventsOld_AfterEvent_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -4251,86 +3478,87 @@ EXTERN_C const IID IID_IVSSEvents;
     {
     public:
         virtual HRESULT __stdcall BeforeAdd( 
-            /* [in] */ IVSSItem __RPC_FAR *pIPrj,
+            /* [in] */ IVSSItem *pIPrj,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterAdd( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment) = 0;
         
         virtual HRESULT __stdcall BeforeCheckout( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterCheckout( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment) = 0;
         
         virtual HRESULT __stdcall BeforeCheckin( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterCheckin( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment) = 0;
         
         virtual HRESULT __stdcall BeforeUndoCheckout( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterUndoCheckout( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local) = 0;
         
         virtual HRESULT __stdcall BeforeRename( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR NewName,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterRename( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR OldName) = 0;
         
         virtual HRESULT __stdcall BeforeBranch( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Comment,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterBranch( 
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Comment) = 0;
         
         virtual HRESULT __stdcall BeginCommand( 
             /* [in] */ long unused,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall EndCommand( 
             /* [in] */ long unused) = 0;
         
         virtual HRESULT __stdcall BeforeEvent( 
             /* [in] */ long iEvent,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Str,
             /* [in] */ VARIANT var,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue) = 0;
+            /* [retval][out] */ VARIANT_BOOL *pbContinue) = 0;
         
         virtual HRESULT __stdcall AfterEvent( 
             /* [in] */ long iEvent,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Str,
             /* [in] */ VARIANT var) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -4338,110 +3566,130 @@ EXTERN_C const IID IID_IVSSEvents;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSEvents __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSEvents * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSEvents __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSEvents * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSEvents __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSEvents * This);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeAdd )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIPrj,
+        DECLSPEC_XFGVIRT(IVSSEvents, BeforeAdd)
+        HRESULT ( __stdcall *BeforeAdd )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIPrj,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterAdd )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, AfterAdd)
+        HRESULT ( __stdcall *AfterAdd )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeCheckout )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, BeforeCheckout)
+        HRESULT ( __stdcall *BeforeCheckout )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterCheckout )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, AfterCheckout)
+        HRESULT ( __stdcall *AfterCheckout )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeCheckin )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, BeforeCheckin)
+        HRESULT ( __stdcall *BeforeCheckin )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterCheckin )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, AfterCheckin)
+        HRESULT ( __stdcall *AfterCheckin )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
             /* [in] */ BSTR Comment);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeUndoCheckout )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, BeforeUndoCheckout)
+        HRESULT ( __stdcall *BeforeUndoCheckout )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterUndoCheckout )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, AfterUndoCheckout)
+        HRESULT ( __stdcall *AfterUndoCheckout )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Local);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeRename )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, BeforeRename)
+        HRESULT ( __stdcall *BeforeRename )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR NewName,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterRename )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, AfterRename)
+        HRESULT ( __stdcall *AfterRename )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR OldName);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeBranch )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, BeforeBranch)
+        HRESULT ( __stdcall *BeforeBranch )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Comment,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterBranch )( 
-            IVSSEvents __RPC_FAR * This,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+        DECLSPEC_XFGVIRT(IVSSEvents, AfterBranch)
+        HRESULT ( __stdcall *AfterBranch )( 
+            IVSSEvents * This,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Comment);
         
-        HRESULT ( __stdcall __RPC_FAR *BeginCommand )( 
-            IVSSEvents __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSEvents, BeginCommand)
+        HRESULT ( __stdcall *BeginCommand )( 
+            IVSSEvents * This,
             /* [in] */ long unused,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *EndCommand )( 
-            IVSSEvents __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSEvents, EndCommand)
+        HRESULT ( __stdcall *EndCommand )( 
+            IVSSEvents * This,
             /* [in] */ long unused);
         
-        HRESULT ( __stdcall __RPC_FAR *BeforeEvent )( 
-            IVSSEvents __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSEvents, BeforeEvent)
+        HRESULT ( __stdcall *BeforeEvent )( 
+            IVSSEvents * This,
             /* [in] */ long iEvent,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Str,
             /* [in] */ VARIANT var,
-            /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
+            /* [retval][out] */ VARIANT_BOOL *pbContinue);
         
-        HRESULT ( __stdcall __RPC_FAR *AfterEvent )( 
-            IVSSEvents __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IVSSEvents, AfterEvent)
+        HRESULT ( __stdcall *AfterEvent )( 
+            IVSSEvents * This,
             /* [in] */ long iEvent,
-            /* [in] */ IVSSItem __RPC_FAR *pIItem,
+            /* [in] */ IVSSItem *pIItem,
             /* [in] */ BSTR Str,
             /* [in] */ VARIANT var);
         
@@ -4450,7 +3698,7 @@ EXTERN_C const IID IID_IVSSEvents;
 
     interface IVSSEvents
     {
-        CONST_VTBL struct IVSSEventsVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSEventsVtbl *lpVtbl;
     };
 
     
@@ -4459,292 +3707,68 @@ EXTERN_C const IID IID_IVSSEvents;
 
 
 #define IVSSEvents_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSEvents_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSEvents_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSEvents_BeforeAdd(This,pIPrj,Local,Comment,pbContinue)	\
-    (This)->lpVtbl -> BeforeAdd(This,pIPrj,Local,Comment,pbContinue)
+    ( (This)->lpVtbl -> BeforeAdd(This,pIPrj,Local,Comment,pbContinue) ) 
 
 #define IVSSEvents_AfterAdd(This,pIItem,Local,Comment)	\
-    (This)->lpVtbl -> AfterAdd(This,pIItem,Local,Comment)
+    ( (This)->lpVtbl -> AfterAdd(This,pIItem,Local,Comment) ) 
 
 #define IVSSEvents_BeforeCheckout(This,pIItem,Local,Comment,pbContinue)	\
-    (This)->lpVtbl -> BeforeCheckout(This,pIItem,Local,Comment,pbContinue)
+    ( (This)->lpVtbl -> BeforeCheckout(This,pIItem,Local,Comment,pbContinue) ) 
 
 #define IVSSEvents_AfterCheckout(This,pIItem,Local,Comment)	\
-    (This)->lpVtbl -> AfterCheckout(This,pIItem,Local,Comment)
+    ( (This)->lpVtbl -> AfterCheckout(This,pIItem,Local,Comment) ) 
 
 #define IVSSEvents_BeforeCheckin(This,pIItem,Local,Comment,pbContinue)	\
-    (This)->lpVtbl -> BeforeCheckin(This,pIItem,Local,Comment,pbContinue)
+    ( (This)->lpVtbl -> BeforeCheckin(This,pIItem,Local,Comment,pbContinue) ) 
 
 #define IVSSEvents_AfterCheckin(This,pIItem,Local,Comment)	\
-    (This)->lpVtbl -> AfterCheckin(This,pIItem,Local,Comment)
+    ( (This)->lpVtbl -> AfterCheckin(This,pIItem,Local,Comment) ) 
 
 #define IVSSEvents_BeforeUndoCheckout(This,pIItem,Local,pbContinue)	\
-    (This)->lpVtbl -> BeforeUndoCheckout(This,pIItem,Local,pbContinue)
+    ( (This)->lpVtbl -> BeforeUndoCheckout(This,pIItem,Local,pbContinue) ) 
 
 #define IVSSEvents_AfterUndoCheckout(This,pIItem,Local)	\
-    (This)->lpVtbl -> AfterUndoCheckout(This,pIItem,Local)
+    ( (This)->lpVtbl -> AfterUndoCheckout(This,pIItem,Local) ) 
 
 #define IVSSEvents_BeforeRename(This,pIItem,NewName,pbContinue)	\
-    (This)->lpVtbl -> BeforeRename(This,pIItem,NewName,pbContinue)
+    ( (This)->lpVtbl -> BeforeRename(This,pIItem,NewName,pbContinue) ) 
 
 #define IVSSEvents_AfterRename(This,pIItem,OldName)	\
-    (This)->lpVtbl -> AfterRename(This,pIItem,OldName)
+    ( (This)->lpVtbl -> AfterRename(This,pIItem,OldName) ) 
 
 #define IVSSEvents_BeforeBranch(This,pIItem,Comment,pbContinue)	\
-    (This)->lpVtbl -> BeforeBranch(This,pIItem,Comment,pbContinue)
+    ( (This)->lpVtbl -> BeforeBranch(This,pIItem,Comment,pbContinue) ) 
 
 #define IVSSEvents_AfterBranch(This,pIItem,Comment)	\
-    (This)->lpVtbl -> AfterBranch(This,pIItem,Comment)
+    ( (This)->lpVtbl -> AfterBranch(This,pIItem,Comment) ) 
 
 #define IVSSEvents_BeginCommand(This,unused,pbContinue)	\
-    (This)->lpVtbl -> BeginCommand(This,unused,pbContinue)
+    ( (This)->lpVtbl -> BeginCommand(This,unused,pbContinue) ) 
 
 #define IVSSEvents_EndCommand(This,unused)	\
-    (This)->lpVtbl -> EndCommand(This,unused)
+    ( (This)->lpVtbl -> EndCommand(This,unused) ) 
 
 #define IVSSEvents_BeforeEvent(This,iEvent,pIItem,Str,var,pbContinue)	\
-    (This)->lpVtbl -> BeforeEvent(This,iEvent,pIItem,Str,var,pbContinue)
+    ( (This)->lpVtbl -> BeforeEvent(This,iEvent,pIItem,Str,var,pbContinue) ) 
 
 #define IVSSEvents_AfterEvent(This,iEvent,pIItem,Str,var)	\
-    (This)->lpVtbl -> AfterEvent(This,iEvent,pIItem,Str,var)
+    ( (This)->lpVtbl -> AfterEvent(This,iEvent,pIItem,Str,var) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-HRESULT __stdcall IVSSEvents_BeforeAdd_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIPrj,
-    /* [in] */ BSTR Local,
-    /* [in] */ BSTR Comment,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEvents_BeforeAdd_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_AfterAdd_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [in] */ BSTR Comment);
-
-
-void __RPC_STUB IVSSEvents_AfterAdd_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_BeforeCheckout_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [in] */ BSTR Comment,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEvents_BeforeCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_AfterCheckout_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [in] */ BSTR Comment);
-
-
-void __RPC_STUB IVSSEvents_AfterCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_BeforeCheckin_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [in] */ BSTR Comment,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEvents_BeforeCheckin_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_AfterCheckin_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [in] */ BSTR Comment);
-
-
-void __RPC_STUB IVSSEvents_AfterCheckin_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_BeforeUndoCheckout_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEvents_BeforeUndoCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_AfterUndoCheckout_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Local);
-
-
-void __RPC_STUB IVSSEvents_AfterUndoCheckout_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_BeforeRename_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR NewName,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEvents_BeforeRename_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_AfterRename_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR OldName);
-
-
-void __RPC_STUB IVSSEvents_AfterRename_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_BeforeBranch_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Comment,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEvents_BeforeBranch_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_AfterBranch_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Comment);
-
-
-void __RPC_STUB IVSSEvents_AfterBranch_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_BeginCommand_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ long unused,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEvents_BeginCommand_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_EndCommand_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ long unused);
-
-
-void __RPC_STUB IVSSEvents_EndCommand_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_BeforeEvent_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ long iEvent,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Str,
-    /* [in] */ VARIANT var,
-    /* [retval][out] */ VARIANT_BOOL __RPC_FAR *pbContinue);
-
-
-void __RPC_STUB IVSSEvents_BeforeEvent_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-HRESULT __stdcall IVSSEvents_AfterEvent_Proxy( 
-    IVSSEvents __RPC_FAR * This,
-    /* [in] */ long iEvent,
-    /* [in] */ IVSSItem __RPC_FAR *pIItem,
-    /* [in] */ BSTR Str,
-    /* [in] */ VARIANT var);
-
-
-void __RPC_STUB IVSSEvents_AfterEvent_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -4767,9 +3791,10 @@ EXTERN_C const IID IID_IVSS;
     {
     public:
         virtual /* [propget][id] */ HRESULT __stdcall get_VSSDatabase( 
-            /* [retval][out] */ IVSSDatabase __RPC_FAR *__RPC_FAR *ppIVSSDatabase) = 0;
+            /* [retval][out] */ IVSSDatabase **ppIVSSDatabase) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -4777,56 +3802,73 @@ EXTERN_C const IID IID_IVSS;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSS __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSS * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSS __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSS * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSS __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSS * This);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfoCount )( 
-            IVSS __RPC_FAR * This,
-            /* [out] */ UINT __RPC_FAR *pctinfo);
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IVSS * This,
+            /* [out] */ UINT *pctinfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetTypeInfo )( 
-            IVSS __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IVSS * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo __RPC_FAR *__RPC_FAR *ppTInfo);
+            /* [out] */ ITypeInfo **ppTInfo);
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *GetIDsOfNames )( 
-            IVSS __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IVSS * This,
             /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR __RPC_FAR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID __RPC_FAR *rgDispId);
+            /* [size_is][out] */ DISPID *rgDispId);
         
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Invoke )( 
-            IVSS __RPC_FAR * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS __RPC_FAR *pDispParams,
-            /* [out] */ VARIANT __RPC_FAR *pVarResult,
-            /* [out] */ EXCEPINFO __RPC_FAR *pExcepInfo,
-            /* [out] */ UINT __RPC_FAR *puArgErr);
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IVSS * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( __stdcall __RPC_FAR *get_VSSDatabase )( 
-            IVSS __RPC_FAR * This,
-            /* [retval][out] */ IVSSDatabase __RPC_FAR *__RPC_FAR *ppIVSSDatabase);
+        DECLSPEC_XFGVIRT(IVSS, get_VSSDatabase)
+        /* [propget][id] */ HRESULT ( __stdcall *get_VSSDatabase )( 
+            IVSS * This,
+            /* [retval][out] */ IVSSDatabase **ppIVSSDatabase);
         
         END_INTERFACE
     } IVSSVtbl;
 
     interface IVSS
     {
-        CONST_VTBL struct IVSSVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSVtbl *lpVtbl;
     };
 
     
@@ -4835,48 +3877,36 @@ EXTERN_C const IID IID_IVSS;
 
 
 #define IVSS_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSS_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSS_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSS_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IVSS_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IVSS_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IVSS_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IVSS_get_VSSDatabase(This,ppIVSSDatabase)	\
-    (This)->lpVtbl -> get_VSSDatabase(This,ppIVSSDatabase)
+    ( (This)->lpVtbl -> get_VSSDatabase(This,ppIVSSDatabase) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [propget][id] */ HRESULT __stdcall IVSS_get_VSSDatabase_Proxy( 
-    IVSS __RPC_FAR * This,
-    /* [retval][out] */ IVSSDatabase __RPC_FAR *__RPC_FAR *ppIVSSDatabase);
-
-
-void __RPC_STUB IVSS_get_VSSDatabase_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -4899,9 +3929,10 @@ EXTERN_C const IID IID_IVSSEventHandler;
     {
     public:
         virtual HRESULT __stdcall Init( 
-            /* [in] */ IVSS __RPC_FAR *pIVSS) = 0;
+            /* [in] */ IVSS *pIVSS) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -4909,27 +3940,32 @@ EXTERN_C const IID IID_IVSSEventHandler;
     {
         BEGIN_INTERFACE
         
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
-            IVSSEventHandler __RPC_FAR * This,
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IVSSEventHandler * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
-            IVSSEventHandler __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IVSSEventHandler * This);
         
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
-            IVSSEventHandler __RPC_FAR * This);
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IVSSEventHandler * This);
         
-        HRESULT ( __stdcall __RPC_FAR *Init )( 
-            IVSSEventHandler __RPC_FAR * This,
-            /* [in] */ IVSS __RPC_FAR *pIVSS);
+        DECLSPEC_XFGVIRT(IVSSEventHandler, Init)
+        HRESULT ( __stdcall *Init )( 
+            IVSSEventHandler * This,
+            /* [in] */ IVSS *pIVSS);
         
         END_INTERFACE
     } IVSSEventHandlerVtbl;
 
     interface IVSSEventHandler
     {
-        CONST_VTBL struct IVSSEventHandlerVtbl __RPC_FAR *lpVtbl;
+        CONST_VTBL struct IVSSEventHandlerVtbl *lpVtbl;
     };
 
     
@@ -4938,35 +3974,23 @@ EXTERN_C const IID IID_IVSSEventHandler;
 
 
 #define IVSSEventHandler_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IVSSEventHandler_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IVSSEventHandler_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IVSSEventHandler_Init(This,pIVSS)	\
-    (This)->lpVtbl -> Init(This,pIVSS)
+    ( (This)->lpVtbl -> Init(This,pIVSS) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-HRESULT __stdcall IVSSEventHandler_Init_Proxy( 
-    IVSSEventHandler __RPC_FAR * This,
-    /* [in] */ IVSS __RPC_FAR *pIVSS);
-
-
-void __RPC_STUB IVSSEventHandler_Init_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -4991,3 +4015,5 @@ VSSApp;
 #endif
 
 #endif
+
+

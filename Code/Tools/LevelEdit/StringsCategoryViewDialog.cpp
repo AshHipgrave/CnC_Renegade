@@ -121,7 +121,7 @@ StringsCategoryViewDialogClass::Remove_Column (int col_id)
 		// it from list
 		//
 		if (Columns[index] == col_id) {
-			Columns.Delete (index);
+			Columns.DeleteIndex(index);
 			break;
 		}
 	}

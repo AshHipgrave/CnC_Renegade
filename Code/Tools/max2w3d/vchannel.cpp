@@ -473,7 +473,7 @@ bool VectorChannelClass::SaveAdaptiveDelta(ChunkSaveClass & csave, BitChannelCla
 	// Compute Scale
 
 	for (int fidx=1; fidx < MaxFrames; fidx++) {
-		for (i=0; i<VectorLen; i++) {
+		for (int i=0; i<VectorLen; i++) {
 			
 			delta = fabs( get_value(fidx, i) - get_value(fidx - 1, i));
 
@@ -486,7 +486,7 @@ bool VectorChannelClass::SaveAdaptiveDelta(ChunkSaveClass & csave, BitChannelCla
 						
 	// End Compute Scale
 
-	for (i=0; i < numpackets; i++) {
+	for (int i=0; i < numpackets; i++) {
 		for (int vi=0; vi<VectorLen; vi++) {
 			last_value = work[vi];
 			// Copy Original Data into the original packet
@@ -999,7 +999,7 @@ static  float32 tempvec[MAX_VECTOR_SIZE];
         
         bool close_enough = true;
         
-        for (idx=0; idx < c->VectorLen; idx++)  {
+        for (uint8 idx=0; idx < c->VectorLen; idx++)  {
         	
           float32 delta;
           
@@ -1243,7 +1243,7 @@ static  float32 tempvec[MAX_VECTOR_SIZE];
 				double delta = 0.0;
 				
         
-				for (idx=0; idx < c->VectorLen; idx++)  {
+				for (uint8 idx=0; idx < c->VectorLen; idx++)  {
         		 
 					double tmp;
 
