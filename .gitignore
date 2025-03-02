@@ -35,6 +35,7 @@ GMax_Hybrid/
 *.sbr
 *.pch
 *.tlb
+*.sbr
 
 *_i.c
 
