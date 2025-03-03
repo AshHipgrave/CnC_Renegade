@@ -1,7 +1,7 @@
 
 # Command & Conquer Renegade
 
-Custom fork of C&C: Renegade at getting the game up and running on modern Windows PC's.
+Custom fork of C&C: Renegade aimed at getting the game up and running on modern Windows PC's.
 
 ## Roadmap
 
