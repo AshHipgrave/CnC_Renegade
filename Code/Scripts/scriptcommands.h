@@ -137,7 +137,7 @@ typedef struct {
 	void ( * Action_Dock )( GameObject * obj, const ActionParamsStruct & params );
 	void ( * Action_Follow_Input )( GameObject * obj, const ActionParamsStruct & params );
 
-	void ( * Modify_Action )( GameObject * obj, int action_id, const ActionParamsStruct & params, bool modify_move, bool modify_attack );
+	void ( * Modify_Action )( GameObject * obj, int action_id, const ActionParamsStruct & params, bool modify_move /* = true */, bool modify_attack /* = true */);
 
 	// Action information queries
 	int	( * Get_Action_ID )( GameObject * obj );
@@ -175,7 +175,7 @@ typedef struct {
 	void	( * Select_Weapon )( GameObject * obj, const char * weapon_name );
 
 	// Custom Script
-	void	( * Send_Custom_Event )( GameObject * from, GameObject * to, int type, int param, float delay );
+	void	( * Send_Custom_Event )( GameObject * from, GameObject * to, int type /* = 0 */, int param /* = 0 */, float delay /* = 0 */);
 	void	( * Send_Damaged_Event )( GameObject * object, GameObject * damager );
 
 	// Random Numbers
@@ -284,8 +284,8 @@ typedef struct {
 	float	(* Get_Safe_Flight_Height )( float x_pos, float y_pos );
 
 	// Explosions
-	void	(* Create_Explosion )( const char * explosion_def_name, const Vector3 & pos, GameObject * creator );
-	void	(* Create_Explosion_At_Bone )( const char * explosion_def_name, GameObject * object, const char * bone_name, GameObject * creator );
+	void	(* Create_Explosion )( const char * explosion_def_name, const Vector3 & pos, GameObject * creator /* = NULL */ );
+	void	(* Create_Explosion_At_Bone )( const char * explosion_def_name, GameObject * object, const char * bone_name, GameObject * creator /* = NULL */ );
 
 	// HUD
 	void	(* Enable_HUD )( bool enable );
@@ -344,7 +344,7 @@ typedef struct {
 	int	(* Get_Difficulty_Level)( void );
 
 	// Keys
-	void	(* Grant_Key)( GameObject* object, int key, bool grant );
+	void	(* Grant_Key)( GameObject* object, int key, bool grant /* = true */ );
 	bool	(* Has_Key)( GameObject* object, int key );
 
 	// Hibernation
@@ -353,10 +353,10 @@ typedef struct {
 	void	(* Attach_To_Object_Bone)( GameObject * object, GameObject * host_object, const char * bone_name );
 
 	// Conversation
-	int	(* Create_Conversation)( const char *conversation_name, int priority, float max_dist, bool is_interruptable );
-	void	(* Join_Conversation)( GameObject * object, int active_conversation_id, bool allow_move, bool allow_head_turn, bool allow_face );
+	int	(* Create_Conversation)( const char *conversation_name, int priority /* = 0 */, float max_dist /* = 0 */, bool is_interruptable /* = true */);
+	void	(* Join_Conversation)( GameObject * object, int active_conversation_id, bool allow_move /* = true */, bool allow_head_turn /* = true */, bool allow_face /* = true */);
 	void	(* Join_Conversation_Facing)( GameObject * object, int active_conversation_id, int obj_id_to_face );
-	void	(* Start_Conversation)( int active_conversation_id, int action_id );
+	void	(* Start_Conversation)( int active_conversation_id, int action_id /* = 0 */);
 	void	(* Monitor_Conversation)( GameObject * object, int active_conversation_id );
 	void	(* Start_Random_Conversation)( GameObject * object );
 	void	(* Stop_Conversation)( int active_conversation_id );
@@ -367,7 +367,7 @@ typedef struct {
 	void	(* Unlock_Soldier_Facing)( GameObject * object );
 
 	// Apply Damage
-	void	(* Apply_Damage)( GameObject * object, float amount, const char * warhead_name, GameObject * damager );
+	void	(* Apply_Damage)( GameObject * object, float amount, const char * warhead_name, GameObject * damager /* = NULL */);
 
 	// Soldier
 	void	(* Set_Loiters_Allowed)( GameObject * object, bool allowed );
