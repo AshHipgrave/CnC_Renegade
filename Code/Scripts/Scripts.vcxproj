@@ -205,7 +205,6 @@
   <ItemGroup>
     <ClInclude Include="actionparams.h" />
     <ClInclude Include="always.h" />
-    <ClInclude Include="bool.h" />
     <ClInclude Include="combatsound.h" />
     <ClInclude Include="CustomEvents.h" />
     <ClInclude Include="DPrint.h" />

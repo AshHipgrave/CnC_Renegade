@@ -18,9 +18,6 @@
     <ClInclude Include="always.h">
       <Filter>Support</Filter>
     </ClInclude>
-    <ClInclude Include="bool.h">
-      <Filter>Support</Filter>
-    </ClInclude>
     <ClInclude Include="combatsound.h">
       <Filter>Support</Filter>
     </ClInclude>

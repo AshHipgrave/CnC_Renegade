@@ -1130,11 +1130,11 @@ DECLARE_SCRIPT(M03_Gunboat_Controller_RMV, "Receive_Type:int, Receive_Param_For_
 
 	void Killed(GameObject * obj, GameObject * killer)
 	{
-		Commands->Create_Explosion_At_Bone("Ground Explosions Twiddler", obj, "TURRET");
+		Commands->Create_Explosion_At_Bone("Ground Explosions Twiddler", obj, "TURRET", NULL);
 		
 		if (killer == Commands->Find_Object (1100002))
 		{
-			int id = Commands->Create_Conversation("M03CON031");
+			int id = Commands->Create_Conversation("M03CON031", 0, 0, true);
 			Commands->Join_Conversation(NULL, id, true, true, true);
 			Commands->Start_Conversation(id, 100031);
 			Commands->Monitor_Conversation(obj, id);
@@ -1147,7 +1147,7 @@ DECLARE_SCRIPT(M03_Gunboat_Controller_RMV, "Receive_Type:int, Receive_Param_For_
 
 		if (killer != Commands->Find_Object (1100002))
 		{
-			int id = Commands->Create_Conversation("M03CON018");
+			int id = Commands->Create_Conversation("M03CON018", 0, 0, true);
 			Commands->Join_Conversation(NULL, id, true, true, true);
 			Commands->Join_Conversation(NULL, id, true, true, true);
 			Commands->Join_Conversation(STAR, id, true, true, true);
@@ -1423,7 +1423,7 @@ DECLARE_SCRIPT(RMV_Volcano_And_Lava_Ball_Creator, "")
 			GameObject *temp = Commands->Find_Object(1144977);
 			if (temp)
 			{
-				Commands->Send_Custom_Event(obj, temp, 100, 100);
+				Commands->Send_Custom_Event(obj, temp, 100, 100, 0.0f);
 			}
 			Commands->Create_Object("Volcano Controller", Vector3(0,0,0));
 		}
@@ -3036,9 +3036,9 @@ DECLARE_SCRIPT(M03_Initial_Powerups, "")
 			GameObject *star = Commands->Get_A_Star(Commands->Get_Position(obj));
 			if (star)
 			{
-				Commands->Give_PowerUp(star, "Shotgun Weapon 1 Clip PU");
-				Commands->Give_PowerUp(star, "Sniper Weapon 1 Clip PU");
-				Commands->Give_PowerUp(star, "Remote Mine Weapon 1 Clip PU");
+				Commands->Give_PowerUp(star, "Shotgun Weapon 1 Clip PU", false);
+				Commands->Give_PowerUp(star, "Sniper Weapon 1 Clip PU", false);
+				Commands->Give_PowerUp(star, "Remote Mine Weapon 1 Clip PU", false);
 				Commands->Grant_Key(star, 5, true);
 				//Commands->Grant_Key(star, 1, true);
 				char params[20];
@@ -4280,7 +4280,7 @@ DECLARE_SCRIPT(M03_Base_Harvester, "Tiberium_Loc:vector3, Dock_Location:vector3,
 			}
 			else
 			{
-				Commands->Set_Animation(obj, "V_NOD_HRVSTR.V_NOD_HRVSTR", false);
+				Commands->Set_Animation(obj, "V_NOD_HRVSTR.V_NOD_HRVSTR", false, NULL, 0.0f, -1.0f, false);
 				return;
 			}
 		}
@@ -4321,7 +4321,7 @@ DECLARE_SCRIPT(M03_Base_Harvester, "Tiberium_Loc:vector3, Dock_Location:vector3,
 
 		if (action_id == HARVESTER_HARVEST_MOVE)
 		{
-			Commands->Set_Animation(obj, "V_NOD_HRVSTR.V_NOD_HRVSTR", false);
+			Commands->Set_Animation(obj, "V_NOD_HRVSTR.V_NOD_HRVSTR", false, NULL, 0.0f, -1.0f, false);
 			playing_anim = true;
 		}
 		if (action_id == HARVESTER_BEAT_IT)
@@ -4353,7 +4353,7 @@ DECLARE_SCRIPT(M03_Base_Harvester, "Tiberium_Loc:vector3, Dock_Location:vector3,
 	{
 		if (type == 622 && param == 622)
 		{
-			Commands->Set_Animation(obj, NULL, false);
+			Commands->Set_Animation(obj, NULL, false, NULL, 0.0f, -1.0f, false);
 			ActionParamsStruct params;
 			params.Set_Basic(this, 100, HARVESTER_BEAT_IT);
 			params.Set_Movement(Vector3(0,0,0), 1.0f, 1.0f);
@@ -4362,7 +4362,7 @@ DECLARE_SCRIPT(M03_Base_Harvester, "Tiberium_Loc:vector3, Dock_Location:vector3,
 		}
 		if (type == 722 && param == 722 && !docked)
 		{
-			Commands->Set_Animation(obj, "V_NOD_HRVSTR.V_NOD_HRVSTR", true);
+			Commands->Set_Animation(obj, "V_NOD_HRVSTR.V_NOD_HRVSTR", true, NULL, 0.0f, -1.0f, false);
 			ActionParamsStruct params;
 			params.Set_Basic(this, 100, HARVESTER_CHASE_PLAYER);
 			params.Set_Movement(STAR, ((float)DIFFICULTY / 10.0f) + 0.8f, 0.0f);
@@ -4380,7 +4380,7 @@ DECLARE_SCRIPT(M03_Wheres_The_Star, "Controller_ID:int, Type:int, Param:int")
 	void Entered(GameObject * obj, GameObject * enterer)
 	{
 		GameObject * controller = Commands->Find_Object(Get_Int_Parameter("Controller_ID"));
-		Commands->Send_Custom_Event(obj, controller, Get_Int_Parameter("Type"), Get_Int_Parameter("Param"));
+		Commands->Send_Custom_Event(obj, controller, Get_Int_Parameter("Type"), Get_Int_Parameter("Param"), 0.0f);
 	}
 };
 
@@ -4679,10 +4679,10 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 		GameObject *chinook_rail = Commands->Create_Object("Generic_Cinematic", loc);
 		Commands->Set_Model(chinook_rail, "X5D_Chinookfly");
 		Commands->Set_Facing(chinook_rail, facing);
-		Commands->Set_Animation(chinook_rail, "X5D_Chinookfly.X5D_Chinookfly", false);
+		Commands->Set_Animation(chinook_rail, "X5D_Chinookfly.X5D_Chinookfly", false, NULL, 0.0f, -1.0f, false);
 		GameObject *chinook = Commands->Create_Object("Nod_Transport_Helicopter", loc);
 		Commands->Set_Facing(chinook, facing);
-		Commands->Set_Animation(chinook, "v_Nod_trnspt.XG_RTN_TrnsptA", true);
+		Commands->Set_Animation(chinook, "v_Nod_trnspt.XG_RTN_TrnsptA", true, NULL, 0.0f, -1.0f, false);
 		Commands->Attach_To_Object_Bone(chinook, chinook_rail, "BN_Chinook_1");
 
 		dead = false;
@@ -4727,7 +4727,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 				para1 = Commands->Create_Object("Generic_Cinematic", loc);
 				Commands->Set_Facing(para1, facing);
 				Commands->Set_Model(para1, "X5D_Parachute");
-				Commands->Set_Animation(para1, "X5D_Parachute.X5D_ParaC_1", false);
+				Commands->Set_Animation(para1, "X5D_Parachute.X5D_ParaC_1", false, NULL, 0.0f, -1.0f, false);
 				Commands->Create_3D_Sound_At_Bone("parachute_open", para1, "ROOTTRANSFORM");
 				Commands->Attach_Script(para1, "M03_No_More_Parachute", "");
 			}
@@ -4739,7 +4739,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 				para2 = Commands->Create_Object("Generic_Cinematic", loc);
 				Commands->Set_Facing(para2, facing);
 				Commands->Set_Model(para2, "X5D_Parachute");
-				Commands->Set_Animation(para2, "X5D_Parachute.X5D_ParaC_2", false);
+				Commands->Set_Animation(para2, "X5D_Parachute.X5D_ParaC_2", false, NULL, 0.0f, -1.0f, false);
 				Commands->Create_3D_Sound_At_Bone("parachute_open", para2, "ROOTTRANSFORM");
 				Commands->Attach_Script(para2, "M03_No_More_Parachute", "");
 			}
@@ -4751,7 +4751,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 				para3 = Commands->Create_Object("Generic_Cinematic", loc);
 				Commands->Set_Facing(para3, facing);
 				Commands->Set_Model(para3, "X5D_Parachute");
-				Commands->Set_Animation(para3, "X5D_Parachute.X5D_ParaC_3", false);
+				Commands->Set_Animation(para3, "X5D_Parachute.X5D_ParaC_3", false, NULL, 0.0f, -1.0f, false);
 				Commands->Create_3D_Sound_At_Bone("parachute_open", para3, "ROOTTRANSFORM");
 				Commands->Attach_Script(para3, "M03_No_More_Parachute", "");
 			}
@@ -4763,7 +4763,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 			GameObject *box1 = Commands->Create_Object("Generic_Cinematic", loc);
 			Commands->Set_Model(box1, "X5D_Box01");
 			Commands->Set_Facing(box1, facing);
-			Commands->Set_Animation(box1, "X5D_Box01.X5D_Box01", false);
+			Commands->Set_Animation(box1, "X5D_Box01.X5D_Box01", false, NULL, 0.0f, -1.0f, false);
 
 			GameObject *soldier1;
 			soldier1 = Commands->Create_Object_At_Bone(box1, preset, "Box01");
@@ -4773,7 +4773,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 			Commands->Attach_Script(soldier1, "M03_Paratrooper_Run", "");
 			Commands->Attach_Script(soldier1, "DLS_Volcano_Stumble", "");
 			Commands->Attach_To_Object_Bone( soldier1, box1, "Box01" );
-			Commands->Set_Animation(soldier1, "s_a_human.H_A_X5D_ParaT_1", false);
+			Commands->Set_Animation(soldier1, "s_a_human.H_A_X5D_ParaT_1", false, NULL, 0.0f, -1.0f, false);
 			out++;
 			/*if ((out - 1) == DIFFICULTY)
 			{
@@ -4789,7 +4789,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 			GameObject *box2 = Commands->Create_Object("Generic_Cinematic", loc);
 			Commands->Set_Model(box2, "X5D_Box02");
 			Commands->Set_Facing(box2, facing);
-			Commands->Set_Animation(box2, "X5D_Box02.X5D_Box02", false);
+			Commands->Set_Animation(box2, "X5D_Box02.X5D_Box02", false, NULL, 0.0f, -1.0f, false);
 
 			GameObject *soldier2;
 			soldier2 = Commands->Create_Object_At_Bone(box2, preset, "Box02");
@@ -4798,7 +4798,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 			Commands->Attach_Script(soldier2, "M03_Killed_Sound", "");
 			Commands->Attach_Script(soldier2, "M03_Paratrooper_Run", "");
 			Commands->Attach_Script(soldier2, "DLS_Volcano_Stumble", "");
-			Commands->Set_Animation(soldier2, "s_a_human.H_A_X5D_ParaT_2", false);
+			Commands->Set_Animation(soldier2, "s_a_human.H_A_X5D_ParaT_2", false, NULL, 0.0f, -1.0f, false);
 			Commands->Attach_To_Object_Bone( soldier2, box2, "Box02" );
 			out++;
 			/*if ((out - 1) == DIFFICULTY)
@@ -4815,7 +4815,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 			GameObject *box3 = Commands->Create_Object("Generic_Cinematic", loc);
 			Commands->Set_Model(box3, "X5D_Box03");
 			Commands->Set_Facing(box3, facing);
-			Commands->Set_Animation(box3, "X5D_Box03.X5D_Box03", false);
+			Commands->Set_Animation(box3, "X5D_Box03.X5D_Box03", false, NULL, 0.0f, -1.0f, false);
 
 			GameObject *soldier3;
 			soldier3 = Commands->Create_Object_At_Bone(box3, preset, "Box03");
@@ -4824,7 +4824,7 @@ DECLARE_SCRIPT(M03_Chinook_ParaDrop, "Preset:string")
 			Commands->Attach_Script(soldier3, "M03_Killed_Sound", "");
 			Commands->Attach_Script(soldier3, "M03_Paratrooper_Run", "");
 			Commands->Attach_Script(soldier3, "DLS_Volcano_Stumble", "");
-			Commands->Set_Animation(soldier3, "s_a_human.H_A_X5D_ParaT_3", false);
+			Commands->Set_Animation(soldier3, "s_a_human.H_A_X5D_ParaT_3", false, NULL, 0.0f, -1.0f, false);
 			Commands->Attach_To_Object_Bone( soldier3, box3, "Box03" );
 			out++;
 			/*if ((out - 1) == DIFFICULTY)
@@ -5482,8 +5482,8 @@ DECLARE_SCRIPT(DLS_Volcano_Active, "Receive_Type=0:int, Receive_Param=0:int, Vol
 		if (timer_id == MESSAGE_DELAY)
 		{			
 			int id = Commands->Create_Conversation("M03CON011", 99, 2000, true);
-			Commands->Join_Conversation(NULL, id);
-			Commands->Join_Conversation(STAR, id);
+			Commands->Join_Conversation(NULL, id, true, true, true);
+			Commands->Join_Conversation(STAR, id, true, true, true);
 			Commands->Start_Conversation(id, 100011);
 			Commands->Monitor_Conversation(obj, id);		
 		}
@@ -5491,7 +5491,7 @@ DECLARE_SCRIPT(DLS_Volcano_Active, "Receive_Type=0:int, Receive_Param=0:int, Vol
 		if (timer_id == ANNOUNCEMENT_DELAY)
 		{			
 			int id = Commands->Create_Conversation("M03CON048", 99, 2000, true);
-			Commands->Join_Conversation(NULL, id);
+			Commands->Join_Conversation(NULL, id, true, true, true);
 			Commands->Start_Conversation(id, 100048);
 			Commands->Monitor_Conversation(obj, id);
 
@@ -5535,9 +5535,9 @@ DECLARE_SCRIPT(M03_Sakura_Explosion, "")
 {
 	void Destroyed(GameObject * obj)
 	{
-		Commands->Create_Explosion_At_Bone( "Air Explosions Twiddler", obj, "ROTOR00");
-		Commands->Create_Explosion_At_Bone( "Air Explosions Twiddler", obj, "TURRET");
-		Commands->Create_Explosion_At_Bone( "Air Explosions Twiddler", obj, "ROTOR01");	
+		Commands->Create_Explosion_At_Bone( "Air Explosions Twiddler", obj, "ROTOR00", NULL);
+		Commands->Create_Explosion_At_Bone( "Air Explosions Twiddler", obj, "TURRET", NULL);
+		Commands->Create_Explosion_At_Bone( "Air Explosions Twiddler", obj, "ROTOR01", NULL);	
 	}
 };
 
@@ -5736,10 +5736,10 @@ DECLARE_SCRIPT(M03_Beach_Radio, "")
 			conv[2] = "M03CON046";
 			
 
-			conv_id = Commands->Create_Conversation(conv[conv_count++]);
+			conv_id = Commands->Create_Conversation(conv[conv_count++], 0, 0, true);
 			Commands->Join_Conversation(NULL, conv_id, true, true, true);
 			Commands->Join_Conversation(poker, conv_id, true, true, true);
-			Commands->Start_Conversation(conv_id);
+			Commands->Start_Conversation(conv_id, 0);
 			Commands->Monitor_Conversation(obj, conv_id);
 			conv_active = true;
 		}
@@ -5815,7 +5815,7 @@ DECLARE_SCRIPT(M03_Power_Plant, "")
 		Commands->Send_Custom_Event(obj, harvester, 7800, 7800, 0);
 
 		Commands->Enable_Radar ( true );
-		Commands->Send_Custom_Event( obj, Commands->Find_Object (2009818), POWER_KILLED, 0 );
+		Commands->Send_Custom_Event( obj, Commands->Find_Object (2009818), POWER_KILLED, 0, 0.0f );
 	}
 };
 
@@ -5823,8 +5823,8 @@ DECLARE_SCRIPT(M03_Refinery, "")
 {
 	void Killed(GameObject * obj, GameObject * killer)
 	{
-		Commands->Send_Custom_Event( obj, Commands->Find_Object (1100004), 311, 3 );
-		Commands->Send_Custom_Event( obj, Commands->Find_Object (1100004), 311, 1 );
+		Commands->Send_Custom_Event( obj, Commands->Find_Object (1100004), 311, 3, 0.0f );
+		Commands->Send_Custom_Event( obj, Commands->Find_Object (1100004), 311, 1, 0.0f );
 	}
 };
 
@@ -6127,7 +6127,7 @@ DECLARE_SCRIPT (M03_Mct_Poke, "")
 		if (!already_poked)
 		{
 			already_poked = true;
-			Commands->Send_Custom_Event( obj, Commands->Find_Object (2009818), MCT_ACCESSED, 0 );
+			Commands->Send_Custom_Event( obj, Commands->Find_Object (2009818), MCT_ACCESSED, 0, 0.0f );
 		}
 	}
 };
@@ -6281,8 +6281,8 @@ DECLARE_SCRIPT (M03_Conversation_Zone, "Conv_Num:int")
 					{
 						already_entered = true;
 
-						Commands->Send_Custom_Event(obj, Commands->Find_Object (2013086), ENTERED, 0);
-						Commands->Send_Custom_Event(obj, Commands->Find_Object (2013087), ENTERED, 0);
+                        Commands->Send_Custom_Event(obj, Commands->Find_Object(2013086), ENTERED, 0, 0.0f);
+                        Commands->Send_Custom_Event(obj, Commands->Find_Object(2013087), ENTERED, 0, 0.0f);
 
 						int id = Commands->Create_Conversation("M03CON004", 99, 2000, true);
 						Commands->Join_Conversation(NULL, id, true, true, true);
@@ -6421,8 +6421,8 @@ DECLARE_SCRIPT(M03_KaneHead_JDG, "") //2017221
 		if (STAR)
 		{
 			int id = Commands->Create_Conversation("M03CON061", 99, 30, true);
-			Commands->Join_Conversation(obj, id);
-			Commands->Join_Conversation(STAR, id);
+			Commands->Join_Conversation(obj, id, true, true, true);
+			Commands->Join_Conversation(STAR, id, true, true, true);
 			Commands->Start_Conversation(id, 100061);
 			Commands->Monitor_Conversation(obj, id);
 		}

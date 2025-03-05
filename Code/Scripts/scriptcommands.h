@@ -226,7 +226,7 @@ typedef struct {
 	// Get the Star
 	GameObject * ( * Get_The_Star )( void );
 	GameObject * ( * Get_A_Star )( const Vector3 & pos );
-	GameObject * ( * Find_Closest_Soldier )( const Vector3 & pos, float min_dist, float max_dist, bool only_human );
+	GameObject * ( * Find_Closest_Soldier )( const Vector3 & pos, float min_dist, float max_dist, bool only_human /* = true */ );
 	bool		    ( * Is_A_Star )( GameObject * obj );
 
 	// Object Control
@@ -238,7 +238,7 @@ typedef struct {
 
 	// Visibility
 	bool	( * Is_Object_Visible)( GameObject * looker, GameObject * obj );
-	void	( * Enable_Enemy_Seen)( GameObject * obj, bool enable );
+	void	( * Enable_Enemy_Seen)( GameObject * obj, bool enable /* = true */ );
 
 	// Display Text
 	void	(*	Set_Display_Color )( unsigned char red, unsigned char green, unsigned char blue);
@@ -291,7 +291,7 @@ typedef struct {
 	void	(* Enable_HUD )( bool enable );
 	void	(* Mission_Complete )( bool success );
 
-	void	(* Give_PowerUp )( GameObject * obj, const char * preset_name, bool display_on_hud );
+	void	(* Give_PowerUp )( GameObject * obj, const char * preset_name, bool display_on_hud /* = false */);
 
 	// Administration
 	void (*Innate_Disable)(GameObject* object);
@@ -303,7 +303,7 @@ typedef struct {
 	bool	(* Innate_Soldier_Enable_Footsteps_Heard )( GameObject * obj, bool state );
 	bool	(* Innate_Soldier_Enable_Bullet_Heard )( GameObject * obj, bool state );
 	bool	(* Innate_Soldier_Enable_Actions )( GameObject * obj, bool state );
-	void	(* Set_Innate_Soldier_Home_Location )( GameObject * obj, const Vector3& home_pos, float home_radius );
+	void	(* Set_Innate_Soldier_Home_Location )( GameObject * obj, const Vector3& home_pos, float home_radius /* = 999999 */);
 	void	(* Set_Innate_Aggressiveness )( GameObject * obj, float aggressiveness );
 	void	(* Set_Innate_Take_Cover_Probability )( GameObject * obj, float probability );
 	void	(* Set_Innate_Is_Stationary )( GameObject * obj, bool stationary );
@@ -321,7 +321,7 @@ typedef struct {
 	unsigned int (* Get_Sync_Time)( void );
 
 	// Objectives
-	void	(* Add_Objective)( int id, int type, int status, int short_description_id, char * description_sound_filename, int long_description_id );
+	void	(* Add_Objective)( int id, int type, int status, int short_description_id, char * description_sound_filename /* = NULL */, int long_description_id /* = 0 */);
 	void	(* Remove_Objective)( int id );
 	void	(* Set_Objective_Status)( int id, int status );
 	void	(* Change_Objective_Type)( int id, int type );
