@@ -290,7 +290,7 @@ ConversationMgrClass::Save (ChunkSaveClass &csave)
 	//	Save each active conversation to its own chunk
 	//
 	count = ActiveConversationList.Count ();
-	for (index = 0; index < count; index ++) {
+	for (int index = 0; index < count; index ++) {
 		ActiveConversationClass *active_conversation = ActiveConversationList[index];
 		if (active_conversation != NULL) {
 			csave.Begin_Chunk (CHUNKID_ACTIVE_CONVERSATION);

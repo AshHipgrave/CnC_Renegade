@@ -1063,7 +1063,7 @@ FirewallHelperClass::FirewallBehaviorType FirewallHelperClass::Detect_Firewall_B
 		** case.
 		*/
 		bool port_open_failed = false;
-		for (i=0 ; i<NUM_TEST_PORTS ; i++) {
+		for (int i=0 ; i<NUM_TEST_PORTS ; i++) {
 			source_ports[i] = Get_Next_Temporary_Source_Port(i);
 			port_sockets[i] = new SocketHandlerClass;
 			if (!port_sockets[i]->Open(source_ports[i], 4321)) {
@@ -1098,6 +1098,8 @@ FirewallHelperClass::FirewallBehaviorType FirewallHelperClass::Detect_Firewall_B
 		int num_responses = 0;
 		packet_id = packet_id + 10;
 		timeout = TIMEGETTIME() + (TIMER_SECOND * 12);
+
+		int i = 0;
 
 		while (TIMEGETTIME() < timeout && num_responses < NUM_TEST_PORTS) {
 			for (i=0 ; i<NUM_TEST_PORTS ; i++) {

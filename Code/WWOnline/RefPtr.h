@@ -216,7 +216,7 @@ template<typename Type> class RefPtr :
 		// Template function for implicit conversion ops
 		template<typename NewType>
 		inline operator RefPtr<NewType>()
-			{return RefPtr<NewType>(GetRefObject());}
+			{return RefPtr<NewType>(reinterpret_cast<NewType*>(GetRefObject()));}
 
 		// These are public mostly because I can't seem to declare rc_ptr<Other> as a friend
 		inline Type* const ReferencedObject(void)

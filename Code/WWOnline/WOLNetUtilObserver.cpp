@@ -252,7 +252,7 @@ STDMETHODIMP NetUtilObserver::OnPing(HRESULT result, int time, unsigned long ip,
 
 		while (iter != mOuter->mPingRequests.end())
 			{
-			if (iter == ping)
+			if (&(*iter) == ping)
 				{
 				mOuter->mPingRequests.erase(iter);
 				mOuter->mPingsPending--;

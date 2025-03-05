@@ -203,7 +203,7 @@ EditConversationDialogClass::OnInitDialog (void)
 	//
 	bool is_locked		= true;
 	int orator_count	= m_Conversation->Get_Orator_Count ();
-	for (index = 0; index < orator_count; index ++) {
+	for (int index = 0; index < orator_count; index ++) {
 		OratorClass *orator = m_Conversation->Get_Orator (index);
 
 		//

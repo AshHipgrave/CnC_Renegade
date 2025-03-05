@@ -272,7 +272,7 @@ MessageWindowClass::On_Frame_Update (void)
 		//
 		//	Decay the entries
 		//
-		for (index = TextWindow->Get_Item_Count () - 1; index >= 0; index --) {
+		for (int index = TextWindow->Get_Item_Count () - 1; index >= 0; index --) {
 			
 			//
 			//	Decay the time remaining on this message

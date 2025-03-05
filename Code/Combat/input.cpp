@@ -910,7 +910,7 @@ void	Input::Update( void )
 			//
 			//	Loop over and zero out any function that uses either of these primary keys
 			//
-			for (index = 0; index < INPUT_FUNCTION_COUNT; index ++) {
+			for (int index = 0; index < INPUT_FUNCTION_COUNT; index ++) {
 
 				//
 				//	Does this function use one of the keys that is mapped to the zoom functions?
@@ -938,7 +938,7 @@ void	Input::Update( void )
 		//
 		// Apply accelerated keys
 		//
-		for (index = 0; index < AcceleratedKeyList.Count (); index ++) {
+		for (int index = 0; index < AcceleratedKeyList.Count (); index ++) {
 			AcceleratedKeyDef &def = AcceleratedKeyList[index];
 
 			//
@@ -1138,7 +1138,7 @@ const char *Input::Get_Key_Name( short key_id )
 	//
 	// Check each slider name
 	//
-	for (index = 0; index < NUM_SLIDER_NAMES; index ++) {
+	for (int index = 0; index < NUM_SLIDER_NAMES; index ++) {
 		if (SliderNames[index].ID == key_id) {
 			return SliderNames[index].Name;
 		}
@@ -1167,7 +1167,7 @@ short	Input::Get_Key( const char *name )
 		//
 		// Check each slider name
 		//
-		for (index = 0; index < NUM_SLIDER_NAMES; index ++) {
+		for (int index = 0; index < NUM_SLIDER_NAMES; index ++) {
 			if (::stricmp (name, SliderNames[index].Name) == 0) {
 				return SliderNames[index].ID;
 			}

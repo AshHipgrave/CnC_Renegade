@@ -1774,7 +1774,7 @@ void ChatObserver::Kick_Spammer(WOL::User *wol_user)
 	/*
 	** Ban em, ban em all.
 	*/
-	for (index = 0; index < count; index++) {
+	for (int index = 0; index < count; index++) {
 		const RefPtr<UserData>& user = user_list[index];
 		if (user.IsValid()) {
 			WOL::User userdata = user->GetData();
@@ -3126,7 +3126,7 @@ STDMETHODIMP ChatObserver::OnBuddyDelete(HRESULT result, WOL::User* inUsers)
 ******************************************************************************/
 
 STDMETHODIMP ChatObserver::OnPublicUnicodeMessage(HRESULT result, WOL::Channel*,
-		WOL::User* user, const unsigned short* message)
+		WOL::User* user, const wchar_t* message)
 	{
 	if (mOuter == NULL)
 		{
@@ -3165,7 +3165,7 @@ STDMETHODIMP ChatObserver::OnPublicUnicodeMessage(HRESULT result, WOL::Channel*,
 ******************************************************************************/
 
 STDMETHODIMP ChatObserver::OnPrivateUnicodeMessage(HRESULT result, WOL::User* user,
-		const unsigned short* message)
+		const wchar_t* message)
 	{
 	if (mOuter == NULL)
 		{
@@ -3204,7 +3204,7 @@ STDMETHODIMP ChatObserver::OnPrivateUnicodeMessage(HRESULT result, WOL::User* us
 ******************************************************************************/
 
 STDMETHODIMP ChatObserver::OnPrivateUnicodeAction(HRESULT result, WOL::User* user,
-		const unsigned short* message)
+		const wchar_t* message)
 	{
 	if (mOuter == NULL)
 		{
@@ -3243,7 +3243,7 @@ STDMETHODIMP ChatObserver::OnPrivateUnicodeAction(HRESULT result, WOL::User* use
 ******************************************************************************/
 
 STDMETHODIMP ChatObserver::OnPublicUnicodeAction(HRESULT result, WOL::Channel*,
-		WOL::User* user, const unsigned short* message)
+		WOL::User* user, const wchar_t* message)
 	{
 	if (mOuter == NULL)
 		{
@@ -3281,7 +3281,7 @@ STDMETHODIMP ChatObserver::OnPublicUnicodeAction(HRESULT result, WOL::Channel*,
 *
 ******************************************************************************/
 
-STDMETHODIMP ChatObserver::OnPagedUnicode(HRESULT result, WOL::User* user, const unsigned short* text)
+STDMETHODIMP ChatObserver::OnPagedUnicode(HRESULT result, WOL::User* user, const wchar_t* text)
 	{
 	if (mOuter == NULL)
 		{

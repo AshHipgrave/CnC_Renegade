@@ -187,7 +187,7 @@ CharacterOptionsMenuClass::Fill_Character_Combobox (void)
 	//
 	//	Fill in the NOD characters
 	//
-	for (index = 0; index < MAX_ENTRIES; index ++) {
+	for (int index = 0; index < MAX_ENTRIES; index ++) {
 		
 		int item_index = combo_box->Add_String (settings2->Get_Name (index));
 		if (item_index != -1) {

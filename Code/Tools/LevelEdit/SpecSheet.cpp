@@ -393,7 +393,7 @@ SpecSheetClass::Get_Parameter (int index)
 // OnNcHitTest
 //
 /////////////////////////////////////////////////////////////////////////////
-UINT
+LRESULT
 SpecSheetClass::OnNcHitTest (CPoint point) 
 {
 	return HTCLIENT;

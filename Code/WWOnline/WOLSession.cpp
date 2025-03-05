@@ -2081,7 +2081,8 @@ void Session::MakeSquadRequests(void)
 		unsigned int count = min<unsigned int>(10, mSquadRequests.size());
 
 		// Send each request in turn,
-		for (unsigned int index = 0; index < count; ++index)
+		unsigned int index;
+		for (index = 0; index < count; ++index)
 			{
 			const WideStringClass& request = mSquadRequests[index];
 
@@ -2334,7 +2335,7 @@ void Session::MakeLadderRequests(void)
 					}
 
 				// The request name follows the type
-				WCHAR* widename = wcschr(*request, L':');
+				WCHAR* widename = (WCHAR*)wcschr(*request, L':');
 				WWASSERT(widename != NULL && "Invalid Ladder Request");
 				widename++;
 

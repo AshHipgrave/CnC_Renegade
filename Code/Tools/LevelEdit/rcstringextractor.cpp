@@ -105,7 +105,7 @@ RCStringExtractorClass::Find_String
 			//	Record the start and end of the string
 			//
 			bool found_end = false;
-			const char *start = buffer;
+			char *start = (char*)buffer;
 			while (buffer[0] != 0) {
 				if (buffer[0] == '\"') {
 					found_end = true;
@@ -116,7 +116,7 @@ RCStringExtractorClass::Find_String
 			}
 
 			if (found_end) {
-				const char *end = buffer;
+				char *end = (char*) buffer;
 
 				//
 				//	Return the contents to the caller

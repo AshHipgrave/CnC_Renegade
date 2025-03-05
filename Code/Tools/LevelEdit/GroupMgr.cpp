@@ -232,7 +232,7 @@ GroupMgrClass::Clone_Group (void)
 	//
 	// Loop through and create clones of the items
 	//
-	for (index = 0; index < temp_list.Count (); index ++) {
+	for (int index = 0; index < temp_list.Count (); index ++) {
 		NodeClass *node		= temp_list[index];
 
 		if (node->Get_Type () == NODE_TYPE_WAYPOINT) {
@@ -475,7 +475,7 @@ SelectionMgrClass::Clone_Group (void)
 	//
 	// Show the selection box for all the cloned items
 	//
-	for (index = 0; index < m_GroupList.Count (); index ++) {
+	for (int index = 0; index < m_GroupList.Count (); index ++) {
 		NodeClass *node = m_GroupList[index];
 		node->Show_Selection_Box (true);
 	}

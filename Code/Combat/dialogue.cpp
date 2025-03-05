@@ -401,7 +401,7 @@ DialogueClass::Get_Conversation (void)
 	//	Now find the object this value corresponds to
 	//
 	float count = SilenceWeight;
-	for (index = 0; value > count && index < OptionList.Count (); index ++) {
+	for (int index = 0; value > count && index < OptionList.Count (); index ++) {
 		conv_id	= OptionList[index]->Get_Conversation_ID ();
 		count		+= OptionList[index]->Get_Weight ();
 	}

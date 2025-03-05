@@ -19,6 +19,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <wwdebug.h>
+#include <cctype>
 #include "Viseme.h"
 
 #define IS_VOWEL(x)			( x && (x=='a' || x=='e' || x=='i' || x=='o' || x=='u') )
@@ -100,7 +101,7 @@ VisemeManager::VisemeManager(void)
 	VisemeTableItem *pItem = gsVisemeTable;
 
 	for (int i=0; i<numVisemeTableItems; i++,pItem++) {
-		int index = (int)tolower(pItem->LetterCombination[0]) - 'a';
+		int index = (int)std::tolower(pItem->LetterCombination[0]) - 'a';
 
 		if ( index >= 0 && index < NUM_VISEME_REFERENCES ) {
 			VisemeTableReferenceItem *pR = &VisemeReferenceTable[index];
@@ -262,7 +263,7 @@ int VisemeManager::Lookup(const char *pchar, const char * /*word*/, int viseme[]
 {
 	int length = 0;
 
-	char ch = (char)tolower(*pchar);
+	char ch = (char)std::tolower(*pchar);
 	int index = ch - 'a';
 
 	if ( index < 0 || index >= NUM_VISEME_REFERENCES )	{
