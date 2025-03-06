@@ -290,8 +290,8 @@ void AutoRestartClass::Think(void)
 						}
 						LogonAction = (WOLLogonAction) -1;
 						WOLLogonMgr::Set_Quiet_Mode(true);
-						RefPtr<WWOnline::Session> WOLSession = WWOnline::Session::GetInstance(false);
-						Observer<WWOnline::ServerError>::NotifyMe(*WOLSession);
+						RefPtr<WWOnline::Session> session = WWOnline::Session::GetInstance(false);
+						Observer<WWOnline::ServerError>::NotifyMe(*session);
 						WOLLogonMgr::Logon(this);
 						RestartState = STATE_LOGIN;
 						break;
@@ -885,7 +885,7 @@ void AutoRestartClass::Set_Restart_Flag(bool enable)
 		if (game_mode && game_mode->Is_Active()) {
 			GameMode = 1;
 		} else {
-			GameModeClass *game_mode = GameModeManager::Find("LAN");
+			game_mode = GameModeManager::Find("LAN");
 			if (game_mode && game_mode->Is_Active()) {
 				GameMode = 0;
 			}

@@ -126,7 +126,7 @@ PathMgrClass::Free_Objects (void)
 	//
 	//	Free the list of used objects
 	//
-	for (index = 0; index < UsedPathList.Count (); index ++) {
+	for (int index = 0; index < UsedPathList.Count(); index++) {
 		PathSolveClass *path = UsedPathList[index];
 		REF_PTR_RELEASE (path);
 	}

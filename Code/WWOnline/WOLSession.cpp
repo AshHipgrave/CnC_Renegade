@@ -831,7 +831,7 @@ RefPtr<ChannelData> Session::FindChannel(const char* channelName)
 		{
 		WOL::Channel& wolChannel = mCurrentChannel->GetData();
 
-		if (stricmp(channelName, (const char*)wolChannel.name) == 0)
+		if (_stricmp(channelName, (const char*)wolChannel.name) == 0)
 			{
 			return mCurrentChannel;
 			}
@@ -1631,7 +1631,7 @@ bool Session::SquelchUser(const RefPtr<UserData>& user, bool onoff)
 	{
 	if (user.IsValid())
 		{
-		WWDEBUG_SAY(("WOL: SquelchUser '%S'\n", user->GetName()));
+		WWDEBUG_SAY(("WOL: SquelchUser '%S'\n", *user->GetName()));
 		HRESULT hr = mChat->SetSquelch(&user->GetData(), onoff);
 
 		if (SUCCEEDED(hr))
@@ -1672,7 +1672,7 @@ bool Session::KickUser(const wchar_t* username)
 
 		if (user.IsValid())
 			{
-			WWDEBUG_SAY(("WOL: KickUser '%S'\n", user->GetName()));
+			WWDEBUG_SAY(("WOL: KickUser '%S'\n", *user->GetName()));
 			HRESULT hr = mChat->RequestUserKick(&user->GetData());
 
 			if (SUCCEEDED(hr))
@@ -2001,7 +2001,7 @@ void Session::RequestSquadInfoByID(unsigned long squadID)
 	{
 	if (squadID != 0)
 		{
-		// MAGICK NUMBER -- itoa handles up to 33 digit numbers
+		// MAGICK NUMBER -- _itoa handles up to 33 digit numbers
 		wchar_t idString[34];
 
 		// MAGICK NUMBER - 10 - squadID is base 10.
@@ -2081,7 +2081,8 @@ void Session::MakeSquadRequests(void)
 		unsigned int count = min<unsigned int>(10, mSquadRequests.size());
 
 		// Send each request in turn,
-		for (unsigned int index = 0; index < count; ++index)
+		unsigned int index;
+		for (index = 0; index < count; ++index)
 			{
 			const WideStringClass& request = mSquadRequests[index];
 
@@ -2280,7 +2281,7 @@ void Session::RequestLadderInfo(const wchar_t* name, unsigned long type)
 			pending++;
 			}
 
-		WWDEBUG_SAY(("WOL: LadderInfo request added '%S'.\n", request));
+		WWDEBUG_SAY(("WOL: LadderInfo request added '%S'.\n", *request));
 		mLadderRequests.push_back(request);
 		}
 	}
@@ -2334,7 +2335,7 @@ void Session::MakeLadderRequests(void)
 					}
 
 				// The request name follows the type
-				WCHAR* widename = wcschr(*request, L':');
+				WCHAR* widename = (WCHAR*)wcschr(*request, L':');
 				WWASSERT(widename != NULL && "Invalid Ladder Request");
 				widename++;
 
@@ -3076,7 +3077,7 @@ void Session::RequestPing(const char* address, int timeout)
 
 		while (iter != mPingRequests.end())
 			{
-			if (stricmp(iter->GetHostAddress(), address) == 0)
+			if (_stricmp(iter->GetHostAddress(), address) == 0)
 				{
 //				WWDEBUG_SAY(("WOLWARNING: Ping request already pending %s\n", address));
 				return;
@@ -3162,7 +3163,7 @@ void Session::UpdatePingServerTime(const char* name, int time)
 			{
 			const char* pinger = pingers[index]->GetHostAddress();
 
-			if (stricmp(name, pinger) == 0)
+			if (_stricmp(name, pinger) == 0)
 				{
 				if (time < 0)
 					{
@@ -3287,7 +3288,7 @@ const CComPtr<WOL::IIGROptions>& Session::GetIGRObject(void)
 
 		if (SUCCEEDED(hr))
 			{
-			HRESULT hr = igrObject->Init();
+			hr = igrObject->Init();
 
 			if (S_FALSE == hr)
 				{

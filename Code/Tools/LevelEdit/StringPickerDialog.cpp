@@ -293,7 +293,7 @@ StringPickerDialogClass::OnInitDialog (void)
 	//
 	//	Try to find the tab that the selected object is displayed on
 	//
-	for (index = 0; index < CategoryPages.Count (); index ++) {
+	for (int index = 0; index < CategoryPages.Count (); index ++) {
 		if (CategoryPages[index]->Get_Selection () == SelectedObjectID) {
 			m_TabCtrl.SetCurSel (index);
 			CurrentTab = index;

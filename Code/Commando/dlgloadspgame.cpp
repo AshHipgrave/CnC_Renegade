@@ -58,12 +58,12 @@
 ////////////////////////////////////////////////////////////////
 //	Local constants
 ////////////////////////////////////////////////////////////////
-static enum
+enum
 {
 	MBEVENT_DELETE_PROMPT	= 1,
 };
 
-static enum
+enum
 {
 	COL_DATE	= 0,
 	COL_TIME,
@@ -274,13 +274,13 @@ LoadSPGameMenuClass::Is_Game_Allowed
 	// Determine if this game is valid to present in the load game menu
 
 	// All save games (.SAV) are allowed
-	if ( ::strlen( filename ) > 4 && ::stricmp( filename + (::strlen( filename ) - 4), ".SAV" ) == 0 ) {
+	if ( ::strlen( filename ) > 4 && ::_stricmp( filename + (::strlen( filename ) - 4), ".SAV" ) == 0 ) {
 		return true;
 	}
 
 	// All save games not in the form Mxx.MIX are allowed
 	if ( ( ::strlen( filename ) != 7 ) ||
-		 ( ::stricmp( filename + (::strlen( filename ) - 4), ".MIX" ) != 0 ) ||
+		 ( ::_stricmp( filename + (::strlen( filename ) - 4), ".MIX" ) != 0 ) ||
 		 ( ::toupper( *filename ) != 'M' ) ) {
 		return true;
 	}
@@ -466,7 +466,7 @@ LoadSPGameMenuClass::LoadListSortCallback (ListCtrlClass *list_ctrl, int item_in
 		//
 		const WCHAR *name1 = list_ctrl->Get_Entry_Text (item_index1, 2);
 		const WCHAR *name2 = list_ctrl->Get_Entry_Text (item_index2, 2);
-		retval = ::wcsicmp (name1, name2);
+		retval = ::_wcsicmp (name1, name2);
 	}
 
 	//

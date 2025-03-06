@@ -99,7 +99,7 @@ Frame_Rect
 	}
 
 	index = ((rect.bottom-1) * scanline_size) + (rect.left * 3);
-	for (col = rect.left; col < rect.right; col ++) {
+	for (LONG col = rect.left; col < rect.right; col ++) {
 		pbits[index++] = blue;
 		pbits[index++] = green;
 		pbits[index++] = red;
@@ -114,7 +114,7 @@ Frame_Rect
 	}
 
 	index = (rect.top * scanline_size) + ((rect.right-1) * 3);
-	for (row = rect.top; row < rect.bottom; row ++) {
+	for (LONG row = rect.top; row < rect.bottom; row ++) {
 		pbits[index]		= blue;
 		pbits[index + 1]	= green;
 		pbits[index + 2]	= red;

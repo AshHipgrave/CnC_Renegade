@@ -1345,8 +1345,8 @@ void PhysicalGameObj::Set_Player_Type(int id)
 		//
 		// Handle tinting for soldiers, pedestals, flags
 		//
-		if (	stricmp( Get_Definition().Get_Name(), "CtfFlag" ) == 0 ||
-				stricmp( Get_Definition().Get_Name(), "CtfPedestal" ) == 0)
+		if (	_stricmp( Get_Definition().Get_Name(), "CtfFlag" ) == 0 ||
+				_stricmp( Get_Definition().Get_Name(), "CtfPedestal" ) == 0)
 		{
 			Set_Tint( Get_Team_Color() );
 		}
@@ -1370,7 +1370,7 @@ void Tint(RenderObjClass *robj, const Vector3 & color)
 		for ( int vm = 0; vm < matinfo->Vertex_Material_Count(); vm++ ) {
 			VertexMaterialClass *vertmat = matinfo->Peek_Vertex_Material(vm);
 //			Debug_Say(( "VM %p %s\n", vertmat, vertmat->Get_Name() ));
-//			if (1) {// !strnicmp( vertmat->Get_Name(), "tintt", 5 ) ) {
+//			if (1) {// !_strnicmp( vertmat->Get_Name(), "tintt", 5 ) ) {
 				vertmat->Set_Diffuse( color[0], color[1], color[2] );
 				vertmat->Set_Ambient( color[0], color[1], color[2] );
 //			}

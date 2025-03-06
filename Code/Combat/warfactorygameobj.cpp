@@ -398,7 +398,7 @@ WarFactoryGameObj::CnC_Initialize (BaseControllerClass *base)
 		if (anim_phys_obj != NULL && anim_phys_obj->Peek_Model () != NULL) {
 
 			StringClass name = anim_phys_obj->Peek_Model ()->Get_Name ();
-			::strupr (name.Peek_Buffer ());
+			::_strupr (name.Peek_Buffer ());
 			if (::strstr (name, "WEP#CONSTRUCT") != NULL) {
 
 				//

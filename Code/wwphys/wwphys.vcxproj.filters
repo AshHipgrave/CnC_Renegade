@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{6c7dd677-35fc-4df5-b7f4-6ed127cfd656}</UniqueIdentifier>
+      <Extensions>c;cpp;asm</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{24182781-c599-4ae7-9dfd-6d4e146cd4d5}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Debug Widgets">
+      <UniqueIdentifier>{6dd212f0-4eda-42e0-ac70-35c79c9a18ae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="accessiblephys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="animcollisionmanager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="bpt.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="camerashakesystem.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="decophys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamicaabtreecull.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamicanimphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamicphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamicshadowmanager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="dyntexproject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="floodfillbox.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="floodfillgrid.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="grideffect.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="heightdb.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="humanphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="lightcull.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="lightphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="lightsolve.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="lightsolvecontext.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="materialeffect.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="motorcycle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="motorvehicle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="movephys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="octbox.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PathDebugPlotter.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Pathfind.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pathfindbox.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfindPortal.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfindSector.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pathmgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pathnode.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PathObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pathsolve.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="phys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="phys3.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="physaabtreecull.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="physcon.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="physcontrol.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="physdecalsys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="physdynamicsavesystem.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="physgridcull.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="physresourcemgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="physstaticsavesystem.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="phystexproject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="progcall.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="projectile.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="projectormanager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pscene.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pscene_collision.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pscene_decal.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pscene_lighting.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pscene_projectors.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pscene_saveload.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pscene_vis.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="rbody.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="rbody_obsolete.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="renderobjphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="renegadeterrainmaterialpass.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="renegadeterrainpatch.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ridermanager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="shakeablestaticphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="staticaabtreecull.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="staticanimphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="staticphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="stealtheffect.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="terrainmaterial.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="timeddecophys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="trackedvehicle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="transitioneffect.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="umbrasupport.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vehicledazzle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vehiclephys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="visoptimizationcontext.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="visoptprogress.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="visrendercontext.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vissample.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vissectorstats.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vistable.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vistablemgr.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vtolvehicle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="waypath.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="waypoint.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="wheel.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="wheelvehicle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="wwphys.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="bin_aabox.cpp">
+      <Filter>Debug Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="bin_axes.cpp">
+      <Filter>Debug Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="bin_obbox.cpp">
+      <Filter>Debug Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="bin_point.cpp">
+      <Filter>Debug Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="bin_vector.cpp">
+      <Filter>Debug Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets.cpp">
+      <Filter>Debug Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="widgetuser.cpp">
+      <Filter>Debug Widgets</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="accessiblephys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="animcollisionmanager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="bpt.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="camerashakesystem.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cloud.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="decophys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="dynamicaabtreecull.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="dynamicanimphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="dynamicphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="dynamicshadowmanager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="dyntexproject.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="floodfillbox.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="floodfillgrid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="grideffect.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="heightdb.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="humanphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="lightcull.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="lightexclude.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="lightphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="lightsolve.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="lightsolvecontext.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="lightsolveprogress.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="materialeffect.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="materialeffectlist.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="motorcycle.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="motorvehicle.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="movephys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="octbox.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PathDebugPlotter.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pathfind.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pathfindbox.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindPortal.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindSector.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pathmgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PathNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PathObject.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pathsolve.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="phunits.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="phys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="phys3.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physaabtreecull.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physcoltest.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physcon.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physcontrol.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physdecalsys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physdynamicsavesystem.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physgridcull.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physinttest.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physlist.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physobserver.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physresourcemgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="physstaticsavesystem.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="phystexproject.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="progcall.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="projectile.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="projectormanager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pscene.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="rbody.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="renderobjphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="renegadeterrainmaterialpass.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="renegadeterrainpatch.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ridermanager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="shakeablestaticphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="staticaabtreecull.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="staticanimphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="staticphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="stealtheffect.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="terrainmaterial.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="timeddecophys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="trackedvehicle.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="transitioneffect.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="umbrasupport.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vehicledazzle.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vehiclephys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="visenum.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="visoptimizationcontext.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="visoptprogress.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="visrendercontext.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vissample.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vissectorstats.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vistable.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vistablemgr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vtolvehicle.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="waypath.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="waypathposition.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="waypoint.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheel.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheelvehicle.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="wwphys.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="wwphysids.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="wwphystrig.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="zone.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="bin_aabox.h">
+      <Filter>Debug Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="bin_axes.h">
+      <Filter>Debug Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="bin_obbox.h">
+      <Filter>Debug Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="bin_point.h">
+      <Filter>Debug Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="bin_vector.h">
+      <Filter>Debug Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets.h">
+      <Filter>Debug Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="widgetuser.h">
+      <Filter>Debug Widgets</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

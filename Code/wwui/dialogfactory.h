@@ -52,6 +52,7 @@
 class DialogFactoryBaseClass
 {
 public:
+	virtual ~DialogFactoryBaseClass() = default;
 
 	////////////////////////////////////////////////////////////////
 	//	Public methods
@@ -69,6 +70,7 @@ template<class  T>
 class DialogFactoryClass : public DialogFactoryBaseClass
 {
 public:
+	virtual ~DialogFactoryClass() = default;
 
 	////////////////////////////////////////////////////////////////
 	//	Public methods

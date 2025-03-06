@@ -141,15 +141,15 @@ class ChatObserver :
         
 		STDMETHOD(OnBuddyDelete)(HRESULT hr, WOL::User* buddyDeleted);
 
-		STDMETHOD(OnPublicUnicodeMessage)(HRESULT hr, WOL::Channel* channel, WOL::User* user, const unsigned short* message);
+		STDMETHOD(OnPublicUnicodeMessage)(HRESULT hr, WOL::Channel* channel, WOL::User* user, const wchar_t* message);
         
-		STDMETHOD(OnPrivateUnicodeMessage)(HRESULT hr, WOL::User* user, const unsigned short* message);
+		STDMETHOD(OnPrivateUnicodeMessage)(HRESULT hr, WOL::User* user, const wchar_t* message);
         
-		STDMETHOD(OnPrivateUnicodeAction)(HRESULT hr, WOL::User* user, const unsigned short* action);
+		STDMETHOD(OnPrivateUnicodeAction)(HRESULT hr, WOL::User* user, const wchar_t* action);
         
-		STDMETHOD(OnPublicUnicodeAction)(HRESULT hr, WOL::Channel* channel, WOL::User* user, const unsigned short* action);
+		STDMETHOD(OnPublicUnicodeAction)(HRESULT hr, WOL::Channel* channel, WOL::User* user, const wchar_t* action);
         
-		STDMETHOD(OnPagedUnicode)(HRESULT hr, WOL::User* user, const unsigned short* message);
+		STDMETHOD(OnPagedUnicode)(HRESULT hr, WOL::User* user, const wchar_t* message);
         
 		STDMETHOD(OnServerTime)(HRESULT hr, WOL::time_t stime);
         
@@ -166,9 +166,9 @@ class ChatObserver :
 	protected:
 		virtual ~ChatObserver();
 
-		// prevent copy and assignment
-		ChatObserver(ChatObserver const &);
-		ChatObserver const & operator =(ChatObserver const &);
+		// prevent copy and assignment (TODO AshHipgrave: These should be public to produce better compiler error messages)
+		ChatObserver(ChatObserver const&) = delete;
+		ChatObserver const& operator =(ChatObserver const&) = delete;
 
 		void AssignSquadToUsers(const UserList& users, const RefPtr<SquadData>& squad);
 		void ProcessSquadRequest(const RefPtr<SquadData>& squad);

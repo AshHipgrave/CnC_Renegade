@@ -430,7 +430,7 @@ void WOLQuickMatch::ParseResponse(const wchar_t* message)
 		while (token)
 			{
 			// Find the first occurance of the token in the message
-			wchar_t* cmd = wcsstr(message, token);
+			const wchar_t* cmd = wcsstr(message, token);
 
 			// If the token was found and it is at the start of the message
 			// then return the type of message this is.
@@ -604,7 +604,7 @@ void WOLQuickMatch::HandleNotification(ChatMessage& message)
 
 	if (sender.Compare_No_Case(QUICKMATCH_BOTNAME) == 0)
 		{
-		WWDEBUG_SAY(("WOLQuickMatch: BotMsg - '%S'\n", message.GetMessage()));
+		WWDEBUG_SAY(("WOLQuickMatch: BotMsg - '%S'\n", *message.GetMessage()));
 		ParseResponse(message.GetMessage());
 		}
 	}

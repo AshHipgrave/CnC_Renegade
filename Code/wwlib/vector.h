@@ -517,6 +517,9 @@ class DynamicVectorClass : public VectorClass<T>
 		// Delete object at this vector index.
 		bool Delete(int index);
 
+		// Delete object at this vector index. (TODO: AshHipgrave - Fixes ambiguous call between both 'Delete' functions when 'DynamicVectorClass' contains ints).
+		bool DeleteIndex(int index);
+
 		// Deletes all objects in the vector.
 		void Delete_All(void);
 
@@ -864,6 +867,28 @@ bool DynamicVectorClass<T>::Delete(int index)
 	return(false);
 }
 
+template<class T>
+bool DynamicVectorClass<T>::DeleteIndex(int index)
+{
+	if (index < ActiveCount)
+	{
+		ActiveCount--;
+
+		/*
+		**	If there are any objects past the index that was deleted, copy those
+		**	objects down in order to fill the hole. A simple memory copy is
+		**	not sufficient since the vector could contain class objects that
+		**	need to use the assignment operator for movement.
+		*/
+		//		(&(*this)[index])->~ T ();
+		for (int i = index; i < ActiveCount; i++)
+		{
+			(*this)[i] = (*this)[i + 1];
+		}
+		return(true);
+	}
+	return(false);
+}
 
 template<class T>
 void DynamicVectorClass<T>::Delete_All(void) 

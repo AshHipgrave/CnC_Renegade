@@ -185,7 +185,7 @@ DynamicVectorClass<SubTitleClass*>* SubTitleParserClass::Get_Sub_Titles(const ch
 					}
 
 					// Terminate if end movie token encountered.
-					if (wcsnicmp(string, ENDMOVIE_TOKEN, wcslen(ENDMOVIE_TOKEN)) == 0) {
+					if (_wcsnicmp(string, ENDMOVIE_TOKEN, wcslen(ENDMOVIE_TOKEN)) == 0) {
 						break;
 					}
 				}
@@ -235,7 +235,7 @@ bool SubTitleParserClass::Find_Movie_Entry(const char* moviename)
 		}
 
 		// Look for begin movie token
-		if (wcsnicmp(string, BEGINMOVIE_TOKEN, wcslen(BEGINMOVIE_TOKEN)) == 0) {
+		if (_wcsnicmp(string, BEGINMOVIE_TOKEN, wcslen(BEGINMOVIE_TOKEN)) == 0) {
 			// Get moviename following the token
 			wchar_t* ptr = wcschr(string, L' ');
 
@@ -243,7 +243,7 @@ bool SubTitleParserClass::Find_Movie_Entry(const char* moviename)
 			if (ptr != NULL) {
 				wcstrim(ptr);
 
-				if (wcsicmp(ptr, wideName) == 0) {
+				if (_wcsicmp(ptr, wideName) == 0) {
 					WWDEBUG_SAY(("Found movie entry %s\n", moviename));
 					return true;
 				}
@@ -387,7 +387,7 @@ void SubTitleParserClass::Parse_Token(wchar_t* token, wchar_t* param, SubTitleCl
 		while (mTokenHooks[index].Token != NULL) {
 			TokenHook& hook = mTokenHooks[index];
 
-			if (wcsicmp(hook.Token, token) == 0) {
+			if (_wcsicmp(hook.Token, token) == 0) {
 				WWASSERT(subTitle != NULL);
 				hook.Handler(param, subTitle);
 				return;
@@ -539,7 +539,7 @@ void Parse_Position(wchar_t* param, SubTitleClass* subTitle)
 	int index = 0;
 
 	while (_alignLookup[index].Name != NULL) {
-		if (wcsicmp(ptr, _alignLookup[index].Name) == 0) {
+		if (_wcsicmp(ptr, _alignLookup[index].Name) == 0) {
 			align = _alignLookup[index].Align;
 			break;
 		}

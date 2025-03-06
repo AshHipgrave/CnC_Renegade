@@ -558,7 +558,7 @@ RefPtr<IRCServerData> WOLLogonMgr::GetPreferredServer(const wchar_t* login)
 		const char* name = thisServer->GetName();
 		WWASSERT(name != NULL && "NULL server name");
 
-		if (preferred && (stricmp(preferred, name) == 0))
+		if (preferred && (_stricmp(preferred, name) == 0))
 			{
 			server = thisServer;
 			break;
@@ -1294,7 +1294,7 @@ void WOLLogonMgr::HandleNotification(MessageOfTheDayEvent &event)
 		// Get the text of the news section
 		WideStringClass news_body(0, true);
 		news_body = news + TAG_NEWS_START_LEN;
-		WCHAR* news_end = ::wcsstr(news_body, TAG_NEWS_END);
+		WCHAR* news_end = (WCHAR*)::wcsstr(news_body, TAG_NEWS_END);
 
 		if (news_end)
 			{

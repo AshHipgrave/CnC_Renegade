@@ -37,13 +37,6 @@
 #ifndef SHA_H
 #define SHA_H
 
-
-/*
-**	The "bool" integral type was defined by the C++ comittee in
-**	November of '94. Until the compiler supports this, use the following
-**	definition.
-*/
-#include	"bool.h"
 #include	<new.h>
 #include	<stdio.h>
 #include	<stdlib.h>

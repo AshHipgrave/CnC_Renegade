@@ -493,7 +493,7 @@ int INIClass::Load(Straw & ffile)
 			char * ptr = strchr(buffer, ']');
 			if (ptr != NULL) *ptr = '\0';
 			strtrim(buffer);
-			INISection * secptr = new INISection(strdup(buffer));
+			INISection * secptr = new INISection(_strdup(buffer));
 			if (secptr == NULL) {
 				Clear();
 				return(false);
@@ -544,7 +544,7 @@ int INIClass::Load(Straw & ffile)
 				}
 
 
-				INIEntry * entryptr = new INIEntry(strdup(buffer), strdup(divider));
+				INIEntry * entryptr = new INIEntry(_strdup(buffer), _strdup(divider));
 				if (entryptr == NULL) {
 					delete secptr;
 					Clear();
@@ -992,9 +992,9 @@ int INIClass::Get_UUBlock(char const * section, void * block, int len) const
  * HISTORY:                                                                                    *
  *    11/6/2001 4:27PM ST : Created                                                            *
  *=============================================================================================*/
-const WideStringClass& INIClass::Get_Wide_String(WideStringClass& new_string, char const * section, char const * entry, unsigned short const * defvalue) const
+const WideStringClass& INIClass::Get_Wide_String(WideStringClass& new_string, char const * section, char const * entry, wchar_t const * defvalue) const
 {
-	unsigned short out[1024];
+	wchar_t out[1024];
 	char buffer[1024];
 
 	Base64Pipe b64pipe(Base64Pipe::DECODE);
@@ -1031,7 +1031,7 @@ const WideStringClass& INIClass::Get_Wide_String(WideStringClass& new_string, ch
  * HISTORY:                                                                                    *
  *   11/6/2001 4:29PM ST : Created                                                             *
  *=============================================================================================*/
-bool INIClass::Put_Wide_String(char const * section, char const * entry, const unsigned short * string)
+bool INIClass::Put_Wide_String(char const * section, char const * entry, const wchar_t* string)
 {
 	if (section == NULL || entry == NULL || string == NULL) {
 		return(false);
@@ -1559,7 +1559,7 @@ double INIClass::Get_Double(char const * section, char const * entry, double def
 	INIEntry * entryptr = Find_Entry(section, entry);
 	if (entryptr != NULL && entryptr->Value != NULL) {
 		float val = defvalue;
-		sscanf(entryptr->Value, "%lf", &val);
+		sscanf(entryptr->Value, "%f", &val);
 		defvalue = val;
 		if (strchr(entryptr->Value, '%') != NULL) {
 			defvalue /= 100.0f;
@@ -1626,7 +1626,7 @@ bool INIClass::Put_String(char const * section, char const * entry, char const *
 	INISection * secptr = Find_Section(section);
 
 	if (secptr == NULL) {
-		secptr = new INISection(strdup(section));
+		secptr = new INISection(_strdup(section));
 		if (secptr == NULL) return(false);
 		SectionList->Add_Tail(secptr);
 		SectionIndex->Add_Index(secptr->Index_ID(), secptr);
@@ -1652,7 +1652,7 @@ bool INIClass::Put_String(char const * section, char const * entry, char const *
 	**	Create and add the new entry.
 	*/
 	if (string != NULL && strlen(string) > 0) {
-		entryptr = new INIEntry(strdup(entry), strdup(string));
+		entryptr = new INIEntry(_strdup(entry), _strdup(string));
 
 		if (entryptr == NULL) {
 			return(false);
@@ -1793,7 +1793,7 @@ char *INIClass::Get_Alloc_String(char const * section, char const * entry, char 
 	}
 
 	if (defvalue == NULL) return NULL;
-	return(strdup(defvalue));
+	return(_strdup(defvalue));
 }
 
 int INIClass::Get_List_Index(char const * section, char const * entry, int const defvalue, char *list[])
@@ -1806,7 +1806,7 @@ int INIClass::Get_List_Index(char const * section, char const * entry, int const
 	}
 
 	for (int lp = 0; list[lp]; lp++) {
-		if (stricmp(entryptr->Value, list[lp]) == 0) {
+		if (_stricmp(entryptr->Value, list[lp]) == 0) {
 			return lp;
 		}
 		assert(lp < 1000);
@@ -1825,14 +1825,14 @@ int INIClass::Get_Int_Bitfield(char const * section, char const * entry, int def
 	// get the bitfield value for each piece.
 	// int count	= 0; (gth) initailized but not referenced...
 	int retval	= 0;
-	char *str	= strdup(entryptr->Value);
+	char *str	= _strdup(entryptr->Value);
 
    int lp;
 	for (char *token = strtok(str, "|+"); token; token = strtok(NULL, "|+")) {
 		for (lp = 0; list[lp]; lp++) {
 			// if this list entry matches our string token then we need
 			// to set this bit.
-			if (stricmp(token, list[lp]) == 0) {
+			if (_stricmp(token, list[lp]) == 0) {
 				retval |= (1 << lp);
 				break;
 			}
@@ -1860,7 +1860,7 @@ int *	INIClass::Get_Alloc_Int_Array(char const * section, char const * entry, in
 	// count all the tokens in the string.  Each token should represent an
 	// integer number.
 	int count = 0;
-	char *str = strdup(entryptr->Value);
+	char *str = _strdup(entryptr->Value);
 	char *token;
 	for (token = strtok(str, " "); token; token = strtok(NULL, " ")) {
 		count++;
@@ -1871,7 +1871,7 @@ int *	INIClass::Get_Alloc_Int_Array(char const * section, char const * entry, in
 	// array to hold the tokens and parse out the actual values.
 	retval	= new int[count+1];
 	count		= 0;
-	str		= strdup(entryptr->Value);
+	str		= _strdup(entryptr->Value);
 	for (token = strtok(str, " "); token; token = strtok(NULL, " ")) {
 		retval[count] = atoi(token);
 		count++;

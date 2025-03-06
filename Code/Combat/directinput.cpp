@@ -522,7 +522,7 @@ void DirectInput::ReadMouse( void )
 		DIMouseButtons[i] &= DI_BUTTON_HELD;	// make off all but the STATE
 	}
 
-	for (i = 0; i < (sizeof( DIMouseAxis )/sizeof( DIMouseAxis[0] ) ); i++ ) {
+	for (int i = 0; i < (sizeof( DIMouseAxis )/sizeof( DIMouseAxis[0] ) ); i++ ) {
 		DIMouseAxis[i] = 0;
 	}
 

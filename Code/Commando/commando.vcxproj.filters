@@ -1,0 +1,1525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Combat">
+      <UniqueIdentifier>{2b611d8b-6334-4717-b327-66b8487d5747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modes">
+      <UniqueIdentifier>{1f531392-d39f-4251-8831-344586ba283a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shell">
+      <UniqueIdentifier>{e9a15388-28c5-42d8-a78e-f8d18af9db60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shortcuts">
+      <UniqueIdentifier>{27929348-3d8b-4475-bee3-16dd0008d963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wol">
+      <UniqueIdentifier>{6d5ee38e-91d2-471e-8aad-822ab6e0eba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lan&amp;Wol">
+      <UniqueIdentifier>{a8502b46-ca44-4d44-8f33-95cdd5ae4aa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{47163611-fca8-4f6a-b2dc-b3d77851e271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wolapi">
+      <UniqueIdentifier>{5e7fead6-aa58-4690-aeb1-5bfe31d216e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameModes">
+      <UniqueIdentifier>{d5bfe727-36b3-44fc-a610-099bb0103a37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lan">
+      <UniqueIdentifier>{2a441a98-1cf5-418c-9056-ea67f9ba85e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{660fd2d8-1f49-473d-88a4-48857db80f92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetEvents">
+      <UniqueIdentifier>{311c0a84-592f-42b2-94d1-c980a85d744d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WOLBrowser">
+      <UniqueIdentifier>{9b26ddcd-55fc-46ef-a89b-52f1c251b247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WWOnline">
+      <UniqueIdentifier>{6ef6c5e6-c3b9-44de-b1f1-f5f46625b8da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetObjects">
+      <UniqueIdentifier>{0c09a45a-532a-4f3a-9e85-7dc2afda1d3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unclaimed">
+      <UniqueIdentifier>{21531189-4c0a-4323-a9b0-81594cc3f900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSpy">
+      <UniqueIdentifier>{23c2b553-dd4d-494e-94f6-c3314c92ca6b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="boolean.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="combatgmode.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="commandochunkids.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="commandoids.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="commandosaveload.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="comnetrcvinst.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="gameinitmgr.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="god.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="inputconfig.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="inputconfigmgr.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="lev_file.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="level.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="nethandler.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="playermanager.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="regbool.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="regfloat.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="regint.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="regstring.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="renegadeplayerterminal.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="systemsettings.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="team.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="teammanager.h">
+      <Filter>Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="campaign.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="consolefunction.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="gamemenu.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="langmode.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="movie.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="overlay.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="scorescreen.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="textdisplay.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="wolgmode.h">
+      <Filter>Modes</Filter>
+    </ClInclude>
+    <ClInclude Include="_globals.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="afxres.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoStart.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="buildnum.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="cdverify.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="cominit.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleMode.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="gamemode.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="init.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="mainloop.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="shutdown.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="singletoninstancekeeper.h">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="WINMAIN.H">
+      <Filter>Shell</Filter>
+    </ClInclude>
+    <ClInclude Include="bandwidthcheck.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="FirewallWait.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="GameResSend.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="mpsettingsmgr.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="WOLBuddyMgr.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="WOLChatMgr.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="WOLDiags.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="WOLGameInfo.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="WOLJoinGame.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="wollocalemgr.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="WOLLoginProfile.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="WOLLogonMgr.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="WOLQuickMatch.h">
+      <Filter>Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="chatshre.h">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="gamechanlist.h">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="gamechannel.h">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="gamesideservercontrol.h">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="netinterface.h">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerSettings.h">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="slavemaster.h">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClInclude>
+    <ClInclude Include="apppacketstats.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="bandwidth.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="bandwidthgraph.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="clienthintmanager.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="clientpingmanager.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="cnetwork.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="comnetrcv.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="datasafe.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="demosupport.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="devoptions.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="diagnostics.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="multihud.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="nicenum.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="priority.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="sbbomanager.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="useroptions.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolapi\chatdefs.h">
+      <Filter>Wolapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolapi\downloaddefs.h">
+      <Filter>Wolapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolapi\ftpdefs.h">
+      <Filter>Wolapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolapi\netutildefs.h">
+      <Filter>Wolapi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wolapi\WOLAPI.h">
+      <Filter>Wolapi</Filter>
+    </ClInclude>
+    <ClInclude Include="gamedata.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="gdcnc.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="gdsingleplayer.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="gdskirmish.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="lanchat.h">
+      <Filter>Lan</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogresource.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogtests.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcharacteroptions.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcheatoptions.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcncbattleinfo.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcncpurchasemainmenu.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcncpurchasemenu.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcncreference.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcncserverinfo.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcncteaminfo.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcncwinscreen.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgconfigaudiotab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgconfigperformancetab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgconfigvideotab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcontrols.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcontrolsaveload.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcontrolslisttab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcontroltabs.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgcredits.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDownload.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevabuildingstab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevacharacterstab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevadatatab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevaencyclopedia.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevamaptab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevaobjectivestab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevavehiclestab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevaviewertab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgevaweaponstab.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlghelpscreen.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgloadspgame.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmainmenu.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMessageBox.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmovieoptions.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpchangelannickname.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMPConnect.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMPConnectionRefused.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpingamechat.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpingameteamchat.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmplangamelist.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmplanhostoptions.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMPTeamSelect.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwoladdbuddy.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwoladdignoreentry.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolautologinprompt.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolbuddies.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolbuddylistpopup.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolchat.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwoldeletebuddy.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwoldeleteignoreentry.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolgamelist.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolgoodies.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolignorelist.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolinvitation.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwollocalenag.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolmain.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolmotd.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolpagebuddy.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolpagereply.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmpwolquickmatchoptions.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgmultiplayoptions.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPasswordPrompt.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgpreviewoptions.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgQuickmatch.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRestart.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgsavegame.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgserversaveload.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgsidebarhelp.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgtechoptions.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgWebPage.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgWOLAutoStart.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgWOLLogon.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgWOLSettings.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgWOLWait.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="mainmenutransition.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="radiocommanddisplay.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="renegadedialogmgr.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="skinpackage.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="skinpackagemgr.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="WebBrowser.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="AnnounceEvent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="bioevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="changeteamevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="clientbboevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="clientgoodbyeevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="consolecommandevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="csconsolecommandevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="cshint.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="cspingrequestevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="cstextobj.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="donateevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="evictionevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="gamedataupdateevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="gameoptionsevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="gamespycschallengeresponseevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="gamespyscchallengeevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="godmodeevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="loadingevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="moneyevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="netevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="playerkill.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="purchaserequestevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="purchaseresponseevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="requestkillevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="scoreevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="scpingresponseevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="sctextobj.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="suicideevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="svrgoodbyeevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="vipmodeevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="warpevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="winevent.h">
+      <Filter>NetEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WOLBrowser\WOLBrowser.h">
+      <Filter>WOLBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\GameResField.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\GameResPacket.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\PingProfile.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\RefCounted.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\RefPtr.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WaitCondition.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLAgeCheck.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLChannel.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLChatMsg.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLChatObserver.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLConnect.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLDownload.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLErrorUtil.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLGame.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLGameOptions.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLLadder.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLLangCodes.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLLoginInfo.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLNetUtilObserver.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLPageMsg.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLPing.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLProduct.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLServer.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLSession.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLSquad.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLString.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WWOnline\WOLUser.h">
+      <Filter>WWOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="clientfps.h">
+      <Filter>NetObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="serverfps.h">
+      <Filter>NetObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="renegadecheatmgr.h">
+      <Filter>Unclaimed</Filter>
+    </ClInclude>
+    <ClInclude Include="CDKeyAuth.h">
+      <Filter>GameSpy</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSpy_QnR.h">
+      <Filter>GameSpy</Filter>
+    </ClInclude>
+    <ClInclude Include="gamespyadmin.h">
+      <Filter>GameSpy</Filter>
+    </ClInclude>
+    <ClInclude Include="gamespyauthmgr.h">
+      <Filter>GameSpy</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSpyBanList.h">
+      <Filter>GameSpy</Filter>
+    </ClInclude>
+    <ClInclude Include="floodprotectionmgr.h" />
+    <ClInclude Include="modpackage.h" />
+    <ClInclude Include="modpackagemgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="combatgmode.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="commandosaveload.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="comnetrcvinst.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="gameinitmgr.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="god.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="inputconfig.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="inputconfigmgr.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="level.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="nethandler.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="playermanager.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="regbool.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="regfloat.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="regint.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="regstring.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="renegadeplayerterminal.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="systemsettings.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="team.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="teammanager.cpp">
+      <Filter>Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="campaign.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="consolefunction.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="gamemenu.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="langmode.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="movie.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="overlay.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="scorescreen.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="textdisplay.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="wolgmode.cpp">
+      <Filter>Modes</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoStart.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="buildnum.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="cdverify.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="cominit.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMode.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="gamemode.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="init.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="mainloop.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="shutdown.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="singletoninstancekeeper.cpp">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="WINMAIN.CPP">
+      <Filter>Shell</Filter>
+    </ClCompile>
+    <ClCompile Include="BandwidthCheck.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="FirewallWait.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="GameResSend.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="mpsettingsmgr.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLBuddyMgr.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLChatMgr.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLDiags.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLGameInfo.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLJoinGame.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLLocaleMgr.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLLoginProfile.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLLogonMgr.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="WOLQuickMatch.cpp">
+      <Filter>Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="chatshre.cpp">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="gamechanlist.cpp">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="gamechannel.cpp">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="gamesideservercontrol.cpp">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="netinterface.cpp">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerSettings.cpp">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="slavemaster.cpp">
+      <Filter>Lan&amp;Wol</Filter>
+    </ClCompile>
+    <ClCompile Include="apppacketstats.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="bandwidth.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="bandwidthgraph.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="clienthintmanager.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="clientpingmanager.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="cnetwork.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="datasafe.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="devoptions.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="diagnostics.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="messages.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="multihud.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="NAT.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="nataddr.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="natsock.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="natter.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="netgraphs.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="nicenum.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="pkthandlers.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="priority.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="sbbomanager.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="useroptions.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wolapi\WOLAPI_i.c">
+      <Filter>Wolapi</Filter>
+    </ClCompile>
+    <ClCompile Include="gamedata.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="gdcnc.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="gdsingleplayer.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="gdskirmish.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="lanchat.cpp">
+      <Filter>Lan</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogtests.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcharacteroptions.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcheatoptions.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcncbattleinfo.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcncpurchasemainmenu.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcncpurchasemenu.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcncreference.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcncserverinfo.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcncteaminfo.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcncwinscreen.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgconfigaudiotab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgconfigperformancetab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgconfigvideotab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcontrols.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcontrolsaveload.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcontrolslisttab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcontroltabs.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgcredits.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDownload.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevabuildingstab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevacharacterstab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevadatatab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevaencyclopedia.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevamaptab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevaobjectivestab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevavehiclestab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevaviewertab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgevaweaponstab.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlghelpscreen.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgloadspgame.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmainmenu.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMessageBox.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmovieoptions.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpchangelannickname.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMPConnect.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMPConnectionRefused.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpingamechat.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpingameteamchat.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmplangamelist.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmplanhostoptions.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpslaveservers.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMPTeamSelect.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwoladdbuddy.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwoladdignoreentry.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolautologinprompt.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolbuddies.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolbuddylistpopup.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolchat.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwoldeletebuddy.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwoldeleteignoreentry.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolgamelist.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolgoodies.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolignorelist.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolinvitation.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwollocalenag.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolmain.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolmotd.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolpagebuddy.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolpagereply.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmpwolquickmatchoptions.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgmultiplayoptions.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPasswordPrompt.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgpreviewoptions.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgQuickmatch.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRestart.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgsavegame.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgserversaveload.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgsidebarhelp.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgtechoptions.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgWebPage.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgWOLAutoStart.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgWOLLogon.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgWOLSettings.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgWOLWait.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="mainmenutransition.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="radiocommanddisplay.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="renegadedialogmgr.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="skinpackage.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="skinpackagemgr.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="WebBrowser.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="AnnounceEvent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="bioevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="changeteamevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="clientbboevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="clientgoodbyeevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="consolecommandevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="csconsolecommandevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="cshint.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="cspingrequestevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="cstextobj.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="donateevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="evictionevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="gamedataupdateevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="gameoptionsevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="gamespycschallengeresponseevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="gamespyscchallengeevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="godmodeevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="loadingevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="moneyevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="netevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="playerkill.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="purchaserequestevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="purchaseresponseevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="requestkillevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="scoreevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="scpingresponseevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="sctextobj.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="suicideevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="svrgoodbyeevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="vipmodeevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="warpevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="winevent.cpp">
+      <Filter>NetEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WOLBrowser\WOLBrowser_i.c">
+      <Filter>WOLBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\GameResField.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\GameResPacket.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\PingProfile.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WaitCondition.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLChannel.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLChatMsg.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLChatObserver.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLConnect.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLDownload.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLErrorUtil.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLGame.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLGameOptions.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLLadder.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLLoginInfo.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLNetUtilObserver.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLPageMsg.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLProduct.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLServer.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLSession.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLSquad.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLString.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WWOnline\WOLUser.cpp">
+      <Filter>WWOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="clientfps.cpp">
+      <Filter>NetObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="serverfps.cpp">
+      <Filter>NetObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="renegadecheatmgr.cpp">
+      <Filter>Unclaimed</Filter>
+    </ClCompile>
+    <ClCompile Include="CDKeyAuth.cpp">
+      <Filter>GameSpy</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSpy_QnR.cpp">
+      <Filter>GameSpy</Filter>
+    </ClCompile>
+    <ClCompile Include="gamespyadmin.cpp">
+      <Filter>GameSpy</Filter>
+    </ClCompile>
+    <ClCompile Include="gamespyauthmgr.cpp">
+      <Filter>GameSpy</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSpyBanList.cpp">
+      <Filter>GameSpy</Filter>
+    </ClCompile>
+    <ClCompile Include="floodprotectionmgr.cpp" />
+    <ClCompile Include="modpackage.cpp" />
+    <ClCompile Include="modpackagemgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\Run\_asserts.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="..\..\Run\_except.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="..\..\run\_logfile.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="..\..\..\RenegadeMe\Doc\cncwishlist.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="..\..\..\RenegadeMe\Doc\currentbugs.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="..\..\..\RenegadeMe\Doc\joinprocess.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="junkcode.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="..\..\..\RenegadeMe\Doc\priorities.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="..\..\Run\results.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+    <Text Include="..\..\..\RenegadeMe\Doc\todo.txt">
+      <Filter>Shortcuts</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="chat.rc">
+      <Filter>GUI</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Renegade.ico" />
+  </ItemGroup>
+</Project>

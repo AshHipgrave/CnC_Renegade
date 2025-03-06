@@ -260,7 +260,7 @@ void ServerControlClass::Parse_Message(void *buffer, int len, unsigned long addr
 		char text[MAX_SERVER_CONTROL_MESSAGE_SIZE + 1];
 		memcpy(text, message->Message, MAX_SERVER_CONTROL_MESSAGE_SIZE);
 		text[MAX_SERVER_CONTROL_MESSAGE_SIZE] = 0;
-		strupr(text);
+		_strupr(text);
 
 		switch (message->Type) {
 			/*

@@ -388,7 +388,7 @@ bool
 MixFileDatabaseClass::Is_Texture (LPCSTR filename)
 {
 	StringClass temp_str (filename, true);
-	::strlwr (temp_str.Peek_Buffer ());
+	::_strlwr (temp_str.Peek_Buffer ());
 
 	//
 	//	Check to see if this is either a compressed or uncompressed texture
@@ -410,7 +410,7 @@ MixFileDatabaseClass::Is_Texture (LPCSTR filename)
 void
 MixFileDatabaseClass::Swap_Texture_Extension (StringClass &filename)
 {
-	::strlwr (filename.Peek_Buffer ());
+	::_strlwr (filename.Peek_Buffer ());
 
 	//
 	//	Is this a tga file (uncompressed), or a dds file (compressed)?
@@ -548,7 +548,7 @@ MixFileDatabaseClass::Get_All (LPCTSTR dest_path, LPCTSTR search_mask)
 	//
 	//	Now, get all the matching files to the specified path
 	//
-	for (index = 0; index < file_list.Count (); index ++) {
+	for (int index = 0; index < file_list.Count (); index ++) {
 		StringClass full_path = (const char *)::Make_Path (dest_path, file_list[index]);
 		Get (full_path);
 	}
@@ -599,13 +599,13 @@ void
 MixFileDatabaseClass::Get_Filename (LPCTSTR path, StringClass &filename)
 {
 	filename = path;
-	::strlwr (filename.Peek_Buffer ());
+	::_strlwr (filename.Peek_Buffer ());
 
 	//
 	//	Check to see if the sub-directory is important, if it is, then
 	// return the sub-directory as well
 	//
-	char *subdir_token = ::strstr (filename, "+\\");
+	const char *subdir_token = ::strstr (filename, "+\\");
 	if (subdir_token != NULL) {
 
 		//

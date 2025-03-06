@@ -175,7 +175,7 @@ void	SaveGameManager::Pre_Load_Game
 	//
 	//	Is this a mix file?
 	//
-	if (::strcmpi (extension, ".mix") == 0) {
+	if (::_strcmpi (extension, ".mix") == 0) {
 		
 		StringClass thumb_filename(root_name,true);
 		thumb_filename+=".thu";
@@ -196,7 +196,7 @@ void	SaveGameManager::Pre_Load_Game
 			FileFactoryListClass::Get_Instance ()->Set_Search_Start(filename);
 		}
 
-	} else if (::strcmpi (extension, ".lsd") == 0) {		
+	} else if (::_strcmpi (extension, ".lsd") == 0) {		
 		lsd_filename = filename;
 		filename_to_load.Format ("%s.ldd", root_name);
 	} else {
@@ -325,7 +325,7 @@ bool	SaveGameManager::Smart_Peek_Description
 	//	Is this a mix file?
 	//
 	FileFactoryClass * mix_factory = NULL;
-	if (::strcmpi (extension, ".mix") == 0) {		
+	if (::_strcmpi (extension, ".mix") == 0) {		
 		
 		//
 		// Configure a mix file factory for this mix file
@@ -411,7 +411,7 @@ bool SaveGameManager::Peek_Description
 	//
 	if (mission_name_id == 0) {
 		mission_name.Convert_From ( map_filename );
-		WCHAR *extension = ::wcsrchr (mission_name, L'.');
+		WCHAR *extension = (wchar_t*)::wcsrchr(mission_name, L'.');
 		if (extension != NULL) {
 			extension[0] = 0;
 		}
@@ -479,7 +479,7 @@ bool SaveGameManager::Peek_Map_Name( const char * filename, StringClass &map_nam
 */
 void	SaveGameManager::Save_Level( void )
 {
-	Debug_Say(( "Save Level %s\n", MapFilename ));
+	Debug_Say(( "Save Level %s\n", *MapFilename ));
 	Save_Save_Load_System(	MapFilename,	
 									&_PhysStaticDataSaveSystem, 
 									&_PhysStaticObjectsSaveSystem,
@@ -492,7 +492,7 @@ void	SaveGameManager::Save_Level( void )
 
 void	SaveGameManager::Load_Level( void )
 {
-	Debug_Say(( "Load Level %s\n", MapFilename ));
+	Debug_Say(( "Load Level %s\n", *MapFilename ));
 	Load_Save_Load_System( MapFilename, false );	// false = no automatic post load processing (needs to be called explicitly)
 }
 

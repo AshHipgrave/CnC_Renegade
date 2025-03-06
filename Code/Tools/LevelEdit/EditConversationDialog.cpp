@@ -203,7 +203,7 @@ EditConversationDialogClass::OnInitDialog (void)
 	//
 	bool is_locked		= true;
 	int orator_count	= m_Conversation->Get_Orator_Count ();
-	for (index = 0; index < orator_count; index ++) {
+	for (int index = 0; index < orator_count; index ++) {
 		OratorClass *orator = m_Conversation->Get_Orator (index);
 
 		//
@@ -269,7 +269,7 @@ EditConversationDialogClass::OnInitDialog (void)
 	//	Add all the remark's to the list control
 	//
 	int count = m_Conversation->Get_Remark_Count ();
-	for (index = 0; index < count; index ++) {
+	for (int index = 0; index < count; index ++) {
 		
 		ConversationRemarkClass remark;
 		if (m_Conversation->Get_Remark_Info (index, remark)) {
@@ -424,7 +424,7 @@ EditConversationDialogClass::OnOK (void)
 	//
 	//	Build a list of orators for the conversation
 	//	
-	for (index = 0; index < ORATOR_MAX; index ++) {
+	for (int index = 0; index < ORATOR_MAX; index ++) {
 
 		//
 		//	Is this orator configured?

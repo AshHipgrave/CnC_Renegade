@@ -676,8 +676,8 @@ unsigned long Upstream_Detect(unsigned long server_ip, unsigned long my_ip, int 
 			if (ttl > max_ttl) {
 				ttl = base_ttl;
 			}
-			int result = setsockopt(test_socket, IPPROTO_IP, IP_TTL, (char*)&ttl, sizeof(ttl));
-			if (result == SOCKET_ERROR) {
+			int resultCode = setsockopt(test_socket, IPPROTO_IP, IP_TTL, (char*)&ttl, sizeof(ttl));
+			if (resultCode == SOCKET_ERROR) {
 				DebugString("setsockopt failed to set IP_TTL = %d on test socket - error code %d\n", ttl, WSAGetLastError());
 				failure_code = BANDTEST_NO_TTL_SET;
 			}
@@ -784,7 +784,7 @@ unsigned long Upstream_Detect(unsigned long server_ip, unsigned long my_ip, int 
 	*/
 	unsigned long downstream_bandwidth = upstream_bandwidth;
 	int old_band = Get_Registry_Int("Up", 0);
-	unsigned long diff = abs(upstream_bandwidth - old_band);
+	unsigned long diff = abs(static_cast<long>(upstream_bandwidth - old_band));
 	bool calc_down = true;
 	if (diff < upstream_bandwidth / 10) {
 		downstream_bandwidth = Get_Registry_Int("Down", upstream_bandwidth);
@@ -933,8 +933,8 @@ unsigned long Upstream_Detect(unsigned long server_ip, unsigned long my_ip, int 
 		** Set the TTL back to max.
 		*/
 		int new_ttl = 255;
-		int result = setsockopt(ICMPRawSocket, IPPROTO_IP, IP_TTL, (char*)&new_ttl, sizeof(new_ttl));
-		if (result == SOCKET_ERROR) {
+		int resultCode = setsockopt(ICMPRawSocket, IPPROTO_IP, IP_TTL, (char*)&new_ttl, sizeof(new_ttl));
+		if (resultCode == SOCKET_ERROR) {
 			DebugString("setsockopt failed to set IP_TTL = %d - error code %d\n", new_ttl, WSAGetLastError());
 			failure_code = BANDTEST_NO_TTL_SET;
 			Close_Raw_Sockets();
@@ -958,10 +958,10 @@ unsigned long Upstream_Detect(unsigned long server_ip, unsigned long my_ip, int 
 			** Do more pings if the ping time is low. User a smaller timeout too.
 			*/
 			int num_pings = 15;
-			unsigned long timeout = ping_times[0] * 3;
+			unsigned long time_out = ping_times[0] * 3;
 			if (ping_times[0] < 100) {
 				num_pings = 50;
-				timeout = 200;
+				time_out = 200;
 			} else {
 				if (ping_times[0] > 250) {
 					num_pings = 6;
@@ -972,7 +972,7 @@ unsigned long Upstream_Detect(unsigned long server_ip, unsigned long my_ip, int 
 			}
 
 			DebugString("Sending large pings\n");
-			pings = Ping_Host(ntohl(router_addr.sin_addr.s_addr), my_ip, num_pings, 540, ping_times, timeout);
+			pings = Ping_Host(ntohl(router_addr.sin_addr.s_addr), my_ip, num_pings, 540, ping_times, time_out);
 
 			if (pings) {
 				//lowest_ping = Lowest_Ping(pings, ping_times);
@@ -1191,7 +1191,7 @@ void Ping_Profile(SOCKADDR_IN *router_addr, unsigned long my_ip)
 	/*
 	** Draw the pings onto the graph.
 	*/
-	for (i=0 ; i<ping_number ; i++) {
+	for (int i=0 ; i<ping_number ; i++) {
 		float ping = ping_averages[i];
 		int position = (int)((ping - min_ping) * scale);
 
@@ -1202,9 +1202,9 @@ void Ping_Profile(SOCKADDR_IN *router_addr, unsigned long my_ip)
 	/*
 	** Dump it out.
 	*/
-	for (i=0 ; i<30 ; i++) {
+	for (int i=0 ; i<30 ; i++) {
 		DebugString(temp_graph[i]);
-		cprintf(temp_graph[i]);
+		_cprintf(temp_graph[i]);
 	}
 }
 

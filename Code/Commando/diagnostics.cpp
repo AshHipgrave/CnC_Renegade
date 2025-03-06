@@ -386,7 +386,7 @@ void cDiagnostics::Render(void)
 				cNetUtil::Address_To_String(PTheGameData->Get_Ip_Address()),
 				PTheGameData->Get_Port());
 
-			Add_Diagnostic("mapname:            %s", PTheGameData->Get_Map_Name());
+			Add_Diagnostic("mapname:            %s", *PTheGameData->Get_Map_Name());
 			Add_Diagnostic("HostedGameNumber:   %d", cGameData::Get_Hosted_Game_Number());
 		}
 

@@ -149,7 +149,7 @@ class W3dMaterialDescClass
 {
 public:
 
-	typedef enum ErrorType
+	enum ErrorType
 	{
 		OK = 0,							// material description was built successfully
 		INCONSISTENT_PASSES,			// material doesn't have same number of passes

@@ -643,14 +643,14 @@ bool TextureFileCache::Open_Texture_Handle(const char *fname)
 {
 	if (TextureHandle) {
 		assert(CurrentTexture);
-		if (!strcmpi(fname, CurrentTexture)) {
+		if (!_strcmpi(fname, CurrentTexture)) {
 			return(true);
 		}
 		// Wrong texture, close it down so we can open another.
 		Close_Texture_Handle();
 	}
 	if (!CurrentTexture) {
-		CurrentTexture = strdup(fname);
+		CurrentTexture = _strdup(fname);
 	}			  
 			
 	#if 0					 

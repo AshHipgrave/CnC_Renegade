@@ -611,7 +611,7 @@ DECLARE_SCRIPT (MX0_Engineer1, "Damage_multiplier:float")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "H_A_J21C") == 0)
+		if (_stricmp(anim, "H_A_J21C") == 0)
 		{
 			doing_anim = false;			
 		}
@@ -885,7 +885,7 @@ DECLARE_SCRIPT (MX0_Engineer2, "Damage_multiplier:float")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "H_A_J21C") == 0)
+		if (_stricmp(anim, "H_A_J21C") == 0)
 		{
 			doing_anim = false;			
 		}
@@ -1245,7 +1245,7 @@ DECLARE_SCRIPT (MX0_SniperAction, "FaceObj:int")
 
 	void Damaged( GameObject * obj, GameObject * damager, float amount ) 
 	{
-		Commands->Apply_Damage(obj, 10000.0f, "Blamokiller");
+		Commands->Apply_Damage(obj, 10000.0f, "Blamokiller", NULL);
 
 		if ( damager == STAR )
 		{
@@ -1260,7 +1260,7 @@ DECLARE_SCRIPT (MX0_SniperAction, "FaceObj:int")
 		}
 		else
 		{
-			Commands->Apply_Damage(obj, 10000.0f, "Blamokiller");
+			Commands->Apply_Damage(obj, 10000.0f, "Blamokiller", NULL);
 		}
 	}
 
@@ -1455,7 +1455,7 @@ DECLARE_SCRIPT(MX0_GDI_ORCA, "" )
 
 			// "Eagle Base, we must be close. There's a NOD Harvester here..."
 			const char *conv_name = ("MX0_A03_02");
-			int conv_id = Commands->Create_Conversation (conv_name);
+			int conv_id = Commands->Create_Conversation (conv_name, 0, 0, true);
 			Commands->Join_Conversation(NULL, conv_id, true, true, true);
 			Commands->Start_Conversation (conv_id, 1);
 			Commands->Monitor_Conversation (obj, conv_id);
@@ -1478,7 +1478,7 @@ DECLARE_SCRIPT(MX0_GDI_ORCA, "" )
 		{
 			// "Orca6: "Orca 6 to Eagle Base. I have visual on the harvester. Starting my run, now."
 			const char *conv_name = ("MX0_A03_03");
-			int conv_id = Commands->Create_Conversation (conv_name);
+			int conv_id = Commands->Create_Conversation (conv_name, 0, 0, true);
 			Commands->Join_Conversation(NULL, conv_id, true, true, true);
 			Commands->Start_Conversation (conv_id, 1);
 		}
@@ -1494,7 +1494,7 @@ DECLARE_SCRIPT(MX0_GDI_ORCA, "" )
 			GameObject *Trooper_One = Commands->Find_Object( Trooper_One_Id );
 
 			// "Trooper1: Woah. "That Rocked!" Orca6: "This is Orca 6 -- bingo Fuel. Returning to Base..."
-			int conv_id = Commands->Create_Conversation ( "MX0_A03_04" );
+			int conv_id = Commands->Create_Conversation ( "MX0_A03_04", 0, 0, true);
 			Commands->Join_Conversation(Trooper_One, conv_id, false, false, true);
 			Commands->Join_Conversation(NULL, conv_id, true, true, true);
 			Commands->Start_Conversation (conv_id, 2);
@@ -1550,7 +1550,7 @@ DECLARE_SCRIPT(MX0_NOD_INFANTRY, "troop_num:int")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.H_A_TroopDrop") == 0)
+		if (_stricmp(anim, "S_A_Human.H_A_TroopDrop") == 0)
 		{
 			Commands->Send_Custom_Event( obj, obj, 1, 0, 0.33f );
 		}
@@ -1989,9 +1989,8 @@ DECLARE_SCRIPT (MX0_A03_CONTROLLER_DAK, "" )
 			{
 				if (Trooper_One)
 				{
-					GameObject *Trooper_One = Commands->Find_Object( Trooper_One_Id );
 					// Trooper1: "Nice! That'll cost 'em!"
-					int conv_id = Commands->Create_Conversation ( "MX0_A03_08" );
+					int conv_id = Commands->Create_Conversation ( "MX0_A03_08", 0, 0, true );
 					Commands->Join_Conversation( Trooper_One, conv_id, false, false, true);
 					Commands->Start_Conversation (conv_id, 0);
 				}
@@ -2116,7 +2115,7 @@ DECLARE_SCRIPT ( MX0_A03_HUMVEE, "" ) // moves humvee
 		Commands->Attach_Script( obj, "M00_Send_Object_ID", "1500020,1,1.0f"); 
 
 		const char *conv_name = ("MX0_A03_01");
-		int conv_id = Commands->Create_Conversation (conv_name);
+		int conv_id = Commands->Create_Conversation (conv_name, 0, 0, true);
 		Commands->Join_Conversation(NULL, conv_id, true, true, true);
 		Commands->Start_Conversation (conv_id, 1);
 
@@ -2134,13 +2133,13 @@ DECLARE_SCRIPT ( MX0_A03_HUMVEE, "" ) // moves humvee
 		{
 			// Commands->Debug_Message( "***** DAK ***** finding Object Buggie.\n" );
 			Current_Target = Target_Id[target];
-			GameObject *target = Commands->Find_Object( Current_Target );
+			GameObject *current_target = Commands->Find_Object( Current_Target );
 
-			if ( target ) 
+			if (current_target)
 			{
 				ActionParamsStruct params;
 				params.Set_Basic(this, INNATE_PRIORITY_ENEMY_SEEN, 1);
-				params.Set_Attack(target, 60.0f, 0.25f, true);
+				params.Set_Attack(current_target, 60.0f, 0.25f, true);
 				Commands->Action_Attack(obj, params);
 			}
 		}
@@ -2148,13 +2147,13 @@ DECLARE_SCRIPT ( MX0_A03_HUMVEE, "" ) // moves humvee
 		{
 			target = target + 1;
 			Current_Target = Target_Id[target];
-			GameObject *target = Commands->Find_Object( Current_Target );
+			GameObject * current_target = Commands->Find_Object( Current_Target );
 
-			if ( target )
+			if (current_target)
 			{
 				ActionParamsStruct params;
 				params.Set_Basic(this, INNATE_PRIORITY_ENEMY_SEEN, 1);
-				params.Set_Attack(target, 60.0f, 0.25f, true);
+				params.Set_Attack(current_target, 60.0f, 0.25f, true);
 				Commands->Action_Attack(obj, params);
 			}
 			else // no targets. attack whatever you can see.
@@ -2177,9 +2176,9 @@ DECLARE_SCRIPT ( MX0_A03_HUMVEE, "" ) // moves humvee
 
 		if ( type == 2 ) // resume fire on buggy. halt after 3 - 6 seconds.
 		{
-			GameObject *target = Commands->Find_Object( Current_Target );
+			GameObject * current_target_obj = Commands->Find_Object( Current_Target );
 
-			if ( target )
+			if (current_target_obj)
 			{
 				ActionParamsStruct params;
 				params.Set_Basic(this, INNATE_PRIORITY_ENEMY_SEEN, 1);
@@ -2254,12 +2253,12 @@ DECLARE_SCRIPT ( MX0_A03_TANK, "" ) // moves tank
 		if ( type == 0 ) // attack Target_Id[target]
 		{
 			Current_Target = Target_Id[target];
-			GameObject *target = Commands->Find_Object ( Current_Target );
-			if ( target )
+			GameObject * current_target = Commands->Find_Object ( Current_Target );
+			if (current_target)
 			{
 				ActionParamsStruct params;
 				params.Set_Basic(this, INNATE_PRIORITY_ENEMY_SEEN, 0);
-				params.Set_Attack( target, 60.0f, 0.25f, true);
+				params.Set_Attack(current_target, 60.0f, 0.25f, true);
 				Commands->Action_Attack(obj, params);
 			}
 		}
@@ -2359,7 +2358,7 @@ DECLARE_SCRIPT ( MX0_A03_NOD_HARVESTER, "" )
 	{
 		if ( obj )
 		{
-			Commands->Set_Animation( obj, "V_NOD_HRVSTR.V_NOD_HRVSTR", false);
+			Commands->Set_Animation( obj, "V_NOD_HRVSTR.V_NOD_HRVSTR", false, NULL, 0.0f, -1.0f, false);
 		}
 	}
 
@@ -2481,7 +2480,7 @@ DECLARE_SCRIPT( MX0_A03_GDI_TROOPER_ONE, "" )
 			if ( Harvester_Not_Destroyed )
 			{
 				// Trooper1: Blast that Harvester for us, sir!
-				int conv_id = Commands->Create_Conversation ( "MX0_A03_05" );
+				int conv_id = Commands->Create_Conversation ( "MX0_A03_05", 0, 0, true );
 				Commands->Join_Conversation( obj, conv_id, false, false, true);
 				Commands->Start_Conversation (conv_id, 0);
 

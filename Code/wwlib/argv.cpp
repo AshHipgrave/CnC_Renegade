@@ -55,7 +55,7 @@ char 		*ArgvClass::Argv[MAX_ARGC];
  * CurrentPos -- Create an instance to parse argv with.                                        * 
  *                                                                                             * 
  * INPUT:                                                                                      * 
- *    	bool case_sensitive - Do you want to perform a case sensitive search (stricmp)?		  *
+ *    	bool case_sensitive - Do you want to perform a case sensitive search (_stricmp)?		  *
  *			bool exact_size     - Do you want string of same lenght (strncmp) ?						  *
  *                                                                                             * 
  * OUTPUT:                                                                                     * 
@@ -122,7 +122,7 @@ const char *ArgvClass::Find_Again(const char *arg)
 			if (Is_Exact_Size()) {
 				// Note case sensitive, Exact Size.
 				for (; CurrentPos < Argc; CurrentPos++) {
-					if (!stricmp(arg, Argv[CurrentPos])) {
+					if (!_stricmp(arg, Argv[CurrentPos])) {
 						return Argv[CurrentPos];
 					}
 				}
@@ -130,7 +130,7 @@ const char *ArgvClass::Find_Again(const char *arg)
 				// Note case sensitive, Match first strlen(arg).
 				int len = strlen(arg);
 				for (; CurrentPos < Argc; CurrentPos++) {
-					if (!strnicmp(arg, Argv[CurrentPos], len)) {
+					if (!_strnicmp(arg, Argv[CurrentPos], len)) {
 						return Argv[CurrentPos];
 					}
 				}
@@ -213,7 +213,7 @@ int ArgvClass::Init(char *lpCmdLine, char *fileprefix)
 		// If it was not the file or the load failed...then add parameter.
 		if (!was_file) {
 			// Copy string over and continue.
-			Argv[Argc] = strdup(ptr);
+			Argv[Argc] = _strdup(ptr);
 			Argc++;
 		}
 
@@ -283,7 +283,7 @@ bool ArgvClass::Load_File(const char *fname)
 
 				// If there is anyting in the string. (NAK: old code used to fail for 1 char options)
 				if (strlen(string)) {
-					Argv[Argc] = strdup(string);
+					Argv[Argc] = _strdup(string);
 					Argc++;
 				}
 			}
@@ -414,13 +414,13 @@ void ArgvClass::Update_Value(const char *attrib, const char *value)
 		if (((CurrentPos+1) < Argc) && (Argv[CurrentPos+1][0] != '-'))  // update old value
 		{
 			free(Argv[CurrentPos+1]);
-			Argv[CurrentPos+1]=strdup(value);
+			Argv[CurrentPos+1]=_strdup(value);
 		}
 		else  // add new value
 		{
 			// shift vals down to make room
 			memmove(&(Argv[CurrentPos+2]),&(Argv[CurrentPos+1]),sizeof(char *) * (MAX_ARGC-CurrentPos-2));
-			Argv[CurrentPos+1]=strdup(value);
+			Argv[CurrentPos+1]=_strdup(value);
 			Argc++;
 		}
 	}
@@ -447,12 +447,12 @@ void ArgvClass::Add_Value(const char *attrib, const char *value)
 {
 	if (attrib)
 	{
-		Argv[Argc]=strdup(attrib);
+		Argv[Argc]=_strdup(attrib);
 		Argc++;
 
 		if (value)
 		{
-			Argv[Argc]=strdup(value);
+			Argv[Argc]=_strdup(value);
 			Argc++;
 		}
 	}

@@ -82,7 +82,7 @@ ULONG cBandwidth::Get_Bandwidth_Bps_From_Type(BANDWIDTH_TYPE_ENUM bandwidth_type
 }
 
 //-----------------------------------------------------------------------------
-const unsigned short *cBandwidth::Get_Bandwidth_String_From_Type(BANDWIDTH_TYPE_ENUM bandwidth_type)
+const wchar_t *cBandwidth::Get_Bandwidth_String_From_Type(BANDWIDTH_TYPE_ENUM bandwidth_type)
 {
 	static char _bandwidth_auto_txt[128];
 	static WideStringClass s;
@@ -139,7 +139,7 @@ BANDWIDTH_TYPE_ENUM cBandwidth::Get_Bandwidth_Type_From_String(LPCSTR bandwidth_
       return BANDWIDTH_LANT1;
    } else if (cMiscUtil::Is_String_Same(bandwidth_string, "BANDWIDTH_CUSTOM")) {
       return BANDWIDTH_CUSTOM;
-   } else if (strnicmp(bandwidth_string, "BANDWIDTH_AUTO ", 15) == 0) {
+   } else if (_strnicmp(bandwidth_string, "BANDWIDTH_AUTO ", 15) == 0) {
       return BANDWIDTH_AUTO;
    } else {
       DIE;

@@ -589,7 +589,7 @@ bool VTOLVehicleDefClass::Load(ChunkLoadClass &cload)
 
 bool VTOLVehicleDefClass::Is_Type(const char * type_name)
 {
-	if (stricmp(type_name,VTOLVehicleDefClass::Get_Type_Name()) == 0) {
+	if (_stricmp(type_name,VTOLVehicleDefClass::Get_Type_Name()) == 0) {
 		return true;
 	} else {
 		return VehiclePhysDefClass::Is_Type(type_name);

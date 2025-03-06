@@ -1093,7 +1093,7 @@ LPCSTR cNetwork::Get_Client_Enumeration_String(void)
    strcpy(ClientEnumerationString, "");
    for (int rhost_id = PServerConnection->Get_Min_RHost(); rhost_id <= PServerConnection->Get_Max_RHost(); rhost_id++) {
 		if (Get_Server_Rhost(rhost_id) != NULL) {
-         strcat(ClientEnumerationString, itoa(rhost_id, temp_str, 10));
+         strcat(ClientEnumerationString, _itoa(rhost_id, temp_str, 10));
          strcat(ClientEnumerationString, " ");
       }
 

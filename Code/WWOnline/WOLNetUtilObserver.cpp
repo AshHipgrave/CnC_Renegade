@@ -252,7 +252,7 @@ STDMETHODIMP NetUtilObserver::OnPing(HRESULT result, int time, unsigned long ip,
 
 		while (iter != mOuter->mPingRequests.end())
 			{
-			if (iter == ping)
+			if (&(*iter) == ping)
 				{
 				mOuter->mPingRequests.erase(iter);
 				mOuter->mPingsPending--;
@@ -405,7 +405,7 @@ void NetUtilObserver::ProcessLadderListResults(WOL::Ladder* list, long timeStamp
 			WWDEBUG_SAY(("WOL: LadderInfo [%08lX] Requested '%S', Received '%S'\n", type, requestName, ladderName));
 
 			// If the ladder name matches the requested name then there is ladder info available.
-			bool hasLadderData = (wcsicmp(requestName, ladderName) == 0);
+			bool hasLadderData = (_wcsicmp(requestName, ladderName) == 0);
 
 			if (type == LadderType_Clan)
 				{

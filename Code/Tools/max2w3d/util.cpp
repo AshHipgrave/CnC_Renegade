@@ -147,7 +147,7 @@ void Set_W3D_Name(char * set_name,const char * src)
 		else if (*(dot+1) == 0)
 			*dot = 0;
 	}
-	strupr(set_name);
+	_strupr(set_name);
 }
 
 /*********************************************************************************************** 
@@ -485,7 +485,7 @@ bool Is_Damage_Root(INode *node)
 
 	// Is the node's name in the form "damage.*"?
 	char *name = node->GetName();
-	if (strnicmp(name, "damage.", strlen("damage.")) != 0)
+	if (_strnicmp(name, "damage.", strlen("damage.")) != 0)
 		return false;
 
 /* This won't pick up references to a dummy object for some reason.
@@ -528,7 +528,7 @@ bool Is_Origin(INode * node)
 
 	// Is the node's name in the form "origin.*"?
 	char *name = node->GetName();
-	if (strnicmp(name, "origin.", strlen("origin.")) != 0)
+	if (_strnicmp(name, "origin.", strlen("origin.")) != 0)
 		return false;
 
 /* This won't pick up references to a dummy object for some reason.
@@ -568,7 +568,7 @@ bool Is_Base_Origin(INode * node)
 	// which would include "origin.00" "origin.000", etc.).
 	bool is_base_origin = false;
 	char *name = node->GetName();
-	if (stricmp(name, "origin.") == 0)
+	if (_stricmp(name, "origin.") == 0)
 		is_base_origin = true;
 	else if (strlen(name) > strlen("origin."))
 	{

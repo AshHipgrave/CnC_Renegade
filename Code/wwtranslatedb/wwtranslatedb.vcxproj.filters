@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ed8180e8-54b6-4c9b-a4f7-3541875fc2c8}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{371e355f-4866-4081-877b-b5a950e27e46}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stringtwiddler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tdbcategory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="translatedb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="translateobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stringtwiddler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tdbcategories.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tdbcategory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="translatedb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="translatedbids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="translateobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

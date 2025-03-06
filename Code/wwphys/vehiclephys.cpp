@@ -870,7 +870,7 @@ bool VehiclePhysDefClass::Load(ChunkLoadClass &cload)
 
 bool VehiclePhysDefClass::Is_Type(const char * type_name)
 {
-	if (stricmp(type_name,VehiclePhysDefClass::Get_Type_Name()) == 0) {
+	if (_stricmp(type_name,VehiclePhysDefClass::Get_Type_Name()) == 0) {
 		return true;
 	} else {
 		return RigidBodyDefClass::Is_Type(type_name);

@@ -217,8 +217,8 @@ public:
 };
 
 #ifdef ENABLE_WWPROFILE
-#define	WWPROFILE( name )						WWProfileSampleClass _wwprofile( name, false )
-#define	WWROOTPROFILE( name )				WWProfileSampleClass _wwprofile( name, true )
+#define	WWPROFILE( name )					{ WWProfileSampleClass _wwprofile( name, false ); }
+#define	WWROOTPROFILE( name )				{ WWProfileSampleClass _wwprofile( name, true );  }
 #else
 #define	WWPROFILE( name )
 #define	WWROOTPROFILE( name )

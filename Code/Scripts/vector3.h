@@ -73,6 +73,8 @@
 #include "always.h"
 #include "wwmath.h"
 #include <assert.h>
+#include <string>
+
 #ifdef _UNIX
 #include "osdep.h"
 #endif
@@ -185,6 +187,9 @@ public:
 	// Color Conversion
 	WWINLINE unsigned	long	Convert_To_ABGR( void ) const;
 	WWINLINE unsigned	long	Convert_To_ARGB( void ) const;
+
+	// To String
+	WWINLINE std::wstring ToString(void) const;
 };
 
 
@@ -920,6 +925,22 @@ WWINLINE unsigned long	Vector3::Convert_To_ARGB( void ) const
 			 (unsigned(X*255.0f)<<16) | 
 			 (unsigned(Y*255.0f)<<8) | 
 			 (unsigned(Z*255.0f));
+}
+
+/***********************************************************************************************
+ * Vector3::ToString -- Displays the vector as a string for logging and debugging.             *
+ *                                                                                             *
+ *                                                                                             *
+ *                                                                                             *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
+ *   03/06/2025MLL: Created.                                                                   *
+ *=============================================================================================*/
+WWINLINE std::wstring Vector3::ToString(void) const
+{
+    static wchar_t buffer[64];
+    swprintf(buffer, sizeof(buffer) / sizeof(buffer[0]), L"X: %.4f, Y: %.4f, Z: %.4f", X, Y, Z);
+    return std::wstring(buffer);
 }
 
 #endif /* Vector3_H */

@@ -608,7 +608,8 @@ Find_File
 			CString search_mask = current_dir + "\\*.*";
 
 			// Loop through all the files in the current directory
-			for (HANDLE hfilefind = ::FindFirstFile (search_mask, &find_info);
+			HANDLE hfilefind;
+			for (hfilefind = ::FindFirstFile (search_mask, &find_info);
 				  (hfilefind != INVALID_HANDLE_VALUE) && bcontinue && !bfound;
 				  bcontinue = ::FindNextFile (hfilefind, &find_info)) {
 
@@ -730,12 +731,13 @@ Build_List_From_String
 		int delim_len = ::strlen (delimiter);
 
 		// Determine how many entries there will be in the list
-		for (LPCTSTR entry = buffer;
+		LPCTSTR entry;
+		for (entry = buffer;
 			  (entry != NULL) && (entry[1] != 0);
 			  entry = ::strstr (entry, delimiter)) {
 			
 			// Move past the current delimiter (if necessary)
-			if ((::strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
+			if ((::_strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
 				entry += delim_len;
 			}
 
@@ -755,7 +757,7 @@ Build_List_From_String
 				  entry = ::strstr (entry, delimiter)) {
 				
 				// Move past the current delimiter (if necessary)
-				if ((::strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
+				if ((::_strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
 					entry += delim_len;
 				}
 
@@ -960,7 +962,7 @@ Get_LOD_File_Count
 	int lod_count = 0;
 
 	if ((base_filename.GetLength () > 6) &&
-		 ::strcmpi (&first_lod_filename[::lstrlen (first_lod_filename)-6], "L1.W3D") == 0) {
+		 ::_strcmpi (&first_lod_filename[::lstrlen (first_lod_filename)-6], "L1.W3D") == 0) {
 		base_filename = base_filename.Left (base_filename.GetLength () - 6);
 			
 		// Loop through the files in the directory and count up the ones that
@@ -1866,10 +1868,10 @@ fnEditToFloatProc
 		if (::strchr (string, '.') != 0) {
 			float float_value	= ::atof (string);
 			long int_value		= long(float_value * 100);
-			::itoa (int_value, (LPTSTR)lparam, 10);			
+			::_itoa (int_value, (LPTSTR)lparam, 10);			
 		} else {
 			long int_value		= ::atol (string) * 100;
-			::itoa (int_value, (LPTSTR)lparam, 10);						
+			::_itoa (int_value, (LPTSTR)lparam, 10);						
 		}
 
 		result = ::lstrlen ((LPTSTR)lparam);

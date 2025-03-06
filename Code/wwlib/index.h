@@ -692,11 +692,7 @@ int _USERENTRY IndexClass<INDEX, T>::search_compfunc(void const * ptr1, void con
  *   11/02/1996 JLB : Created.                                                                 *
  *=============================================================================================*/
 template<class INDEX, class T>
-#ifdef __BORLANDC__
-NodeElement const * IndexClass<INDEX, T>::Search_For_Node(INDEX const & id) const
-#else
-IndexClass<INDEX, T>::NodeElement const * IndexClass<INDEX, T>::Search_For_Node(INDEX const & id) const
-#endif
+typename IndexClass<INDEX, T>::NodeElement const * IndexClass<INDEX, T>::Search_For_Node(INDEX const & id) const
 {
 	/*
 	**	If there are no elements in the list, then it certainly can't find any matches.

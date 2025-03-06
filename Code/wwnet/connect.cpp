@@ -615,7 +615,7 @@ bool cConnection::Receive_Packet()
 				LaggedPackets.Delete(p);
 				LaggedPacketTimes.Delete(p);
 				ret_code = LaggedPacketRetCodes[p];
-				LaggedPacketRetCodes.Delete(p);
+				LaggedPacketRetCodes.DeleteIndex(p);
 				break;
 			}
 		}
@@ -2368,7 +2368,7 @@ void cConnection::Service_Send(bool is_urgent)
          }
 
 	      // destroy all
-			for (objnode = p_rhost->Get_Packet_List(UNRELIABLE_SEND_LIST).Head();
+			for (auto* objnode = p_rhost->Get_Packet_List(UNRELIABLE_SEND_LIST).Head();
             objnode != NULL; objnode = objnode->Next()) {
 
             cPacket * p_packet = objnode->Data();

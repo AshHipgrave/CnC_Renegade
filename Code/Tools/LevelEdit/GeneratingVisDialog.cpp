@@ -435,7 +435,7 @@ GeneratingVisDialogClass::Generate_Points
 	//
 	//	Now, ask all the nodes to generate vis points
 	//
-	for (index = 0; (index < count) && !m_bStop; index ++) {
+	for (int index = 0; (index < count) && !m_bStop; index ++) {
 		
 		//
 		// Update the UI

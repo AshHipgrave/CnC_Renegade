@@ -40,8 +40,6 @@
 #ifndef MPMATH_H
 #define MPMATH_H
 
-#include	"bool.h"
-
 //lint -e740 -e534 -e537 -e760
 //lint -d_LINT=1
 

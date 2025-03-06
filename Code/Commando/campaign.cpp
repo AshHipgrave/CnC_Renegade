@@ -103,12 +103,12 @@ void	CampaignManager::Init( void )
 		for ( int state = 0; state < 100; state++ ) {
 			StringClass section_name;
 			section_name.Format( "Backdrop%d", state );
-			int count =  campaignINI->Entry_Count( section_name );
-			if ( count != 0 ) {
+			int entry_count =  campaignINI->Entry_Count( section_name );
+			if (entry_count != 0 ) {
 				int index = BackdropDescriptions.Count();
 				BackdropDescriptions.Uninitialized_Add();
 				BackdropDescriptions[index].State = state;
-				for ( int entry = 0; entry < count; entry++ )	{
+				for ( int entry = 0; entry < entry_count; entry++ )	{
 					StringClass	description(0,true);
 					campaignINI->Get_String(description, section_name, campaignINI->Get_Entry( section_name, entry) );
 					BackdropDescriptions[index].Lines.Add( description );
@@ -301,7 +301,7 @@ void	CampaignManager::Continue( bool success )
 		GameInitMgrClass::Start_Game ( state_description, PLAYERTYPE_RENEGADE, 0 );
 
 		// Hack to not autosave for Mission 0 (M13)
-		if ( ::strnicmp( state_description, "M13", 3 ) != 0 ) {
+		if ( ::_strnicmp( state_description, "M13", 3 ) != 0 ) {
 			CombatManager::Request_Autosave();
 		}
 

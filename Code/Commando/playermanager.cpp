@@ -904,10 +904,10 @@ int cPlayerManager::Player_Compare(const void * elem1, const void * elem2)
 							//
 							// Sort lexicographically on name
 							//
-							//if (stricmp(p_player1->Get_Name(), p_player2->Get_Name()) < 0) {
+							//if (_stricmp(p_player1->Get_Name(), p_player2->Get_Name()) < 0) {
 							if (p_player1->Get_Name() < p_player2->Get_Name()) {
 								result = -1;
-							//} else if (stricmp(p_player1->Get_Name(), p_player2->Get_Name()) == 0) {
+							//} else if (_stricmp(p_player1->Get_Name(), p_player2->Get_Name()) == 0) {
 							} else if (p_player1->Get_Name() == p_player2->Get_Name()) {
 								//
 								// Enough!
@@ -1376,7 +1376,7 @@ void cPlayerManager::Render_Player_List(void)
 	*/
    List_Print(heading, Vector3(1, 1, 1));
 
-	for (j = 0; j < renderer_displayed_player_count; j++) {
+	for (int j = 0; j < renderer_displayed_player_count; j++) {
 		//
 		// Put a symbol next to my name so that it stands out
 		//

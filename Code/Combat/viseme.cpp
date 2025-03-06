@@ -19,6 +19,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <wwdebug.h>
+#include <cctype>
 #include "Viseme.h"
 
 #define IS_VOWEL(x)			( x && (x=='a' || x=='e' || x=='i' || x=='o' || x=='u') )
@@ -100,7 +101,7 @@ VisemeManager::VisemeManager(void)
 	VisemeTableItem *pItem = gsVisemeTable;
 
 	for (int i=0; i<numVisemeTableItems; i++,pItem++) {
-		int index = (int)tolower(pItem->LetterCombination[0]) - 'a';
+		int index = (int)std::tolower(pItem->LetterCombination[0]) - 'a';
 
 		if ( index >= 0 && index < NUM_VISEME_REFERENCES ) {
 			VisemeTableReferenceItem *pR = &VisemeReferenceTable[index];
@@ -262,7 +263,7 @@ int VisemeManager::Lookup(const char *pchar, const char * /*word*/, int viseme[]
 {
 	int length = 0;
 
-	char ch = (char)tolower(*pchar);
+	char ch = (char)std::tolower(*pchar);
 	int index = ch - 'a';
 
 	if ( index < 0 || index >= NUM_VISEME_REFERENCES )	{
@@ -275,7 +276,7 @@ int VisemeManager::Lookup(const char *pchar, const char * /*word*/, int viseme[]
 	VisemeTableItem *pI = &gsVisemeTable[pR->StartIndex + pR->Count - 1];
 	for (int i=0; i<pR->Count; i++,pI--) {
 		length = strlen(pI->LetterCombination);
-		if ( strnicmp(pchar, pI->LetterCombination, length) == 0 )
+		if ( _strnicmp(pchar, pI->LetterCombination, length) == 0 )
 		{
 			// found!
 			viseme[0] = pI->Visemes[0];

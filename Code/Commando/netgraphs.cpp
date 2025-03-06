@@ -428,7 +428,7 @@ void cNetwork::Bandwidth_Graph(Render2DTextClass * renderer,
 	//
 	if (cNetwork::I_Am_Server())	{
 		int top = (int)(0.2 * screen_height);
-		int count = NetworkObjectMgrClass::Get_Object_Count();
+		int obj_count = NetworkObjectMgrClass::Get_Object_Count();
 
 		int x_pos = screen_width - 75;
 
@@ -456,7 +456,7 @@ void cNetwork::Bandwidth_Graph(Render2DTextClass * renderer,
 		renderer->Set_Location(Vector2(x_pos, 370));
 		renderer->Draw_Text("OTHER", COLOR_WHITE);
 
-		for (int index = 0; index < count; index ++) {
+		for (int index = 0; index < obj_count; index ++) {
 
 			NetworkObjectClass * p_object = NetworkObjectMgrClass::Get_Object(index);
 			WWASSERT(p_object != NULL);
@@ -534,7 +534,7 @@ void cNetwork::Watch_Bandwidth(Render2DTextClass * renderer)
 
 	float x1 = 0;
 	float x2 = 0;
-	int i		= 0;
+	int i	 = 0;
 
 	do {
 		x2 = x1 + BandwidthBarLength;
@@ -614,17 +614,17 @@ void cNetwork::Watch_Bandwidth(Render2DTextClass * renderer)
          false,
 			-1);
 
-	   for (int i = PServerConnection->Get_Min_RHost(); i <= PServerConnection->Get_Max_RHost(); i++) {
+	   for (int idx = PServerConnection->Get_Min_RHost(); idx <= PServerConnection->Get_Max_RHost(); idx++) {
 
 			WWASSERT(
-				i >= cNetwork::PServerConnection->Get_Min_RHost() &&
-				i <= cNetwork::PServerConnection->Get_Max_RHost());
+				idx >= cNetwork::PServerConnection->Get_Min_RHost() &&
+				idx <= cNetwork::PServerConnection->Get_Max_RHost());
 
-			cRemoteHost * p_rhost = Get_Server_Rhost(i);
+			cRemoteHost * p_rhost = Get_Server_Rhost(idx);
 
 			if (p_rhost != NULL) {
 
-				sprintf(text, "s->c%d", i);
+				sprintf(text, "s->c%d", idx);
 				Bandwidth_Graph(
 					renderer,
 					text,
@@ -636,7 +636,7 @@ void cNetwork::Watch_Bandwidth(Render2DTextClass * renderer)
                true,
 					p_rhost->Get_Threshold_Priority());
 
-				sprintf(text, "s<-c%d", i);
+				sprintf(text, "s<-c%d", idx);
 				Bandwidth_Graph(
 					renderer,
 					text,

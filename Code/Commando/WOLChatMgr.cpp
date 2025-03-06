@@ -396,7 +396,7 @@ void WOLChatMgr::JoinLobby(const RefPtr<ChannelData>& channel)
 			GetLobbyDisplayName(channel, displayName);
 
 			WideStringClass message(0, true);
-			message.Format(TRANSLATE(IDS_CHAT_LOBBYJOIN), displayName);
+			message.Format(TRANSLATE(IDS_CHAT_LOBBYJOIN), *displayName);
 			DlgWOLWait::DoDialog((const wchar_t*)message, wait);
 			}
 		}
@@ -430,7 +430,7 @@ void WOLChatMgr::LeaveLobby(void)
 		GetLobbyDisplayName(channel, lobbyName);
 
 		WideStringClass title(0, true);
-		title.Format(TRANSLATE(IDS_CHAT_LOBBYLEAVE), lobbyName); 
+		title.Format(TRANSLATE(IDS_CHAT_LOBBYLEAVE), *lobbyName); 
 		DlgWOLWait::DoDialog(title, wait);
 		}
 	}
@@ -464,7 +464,7 @@ bool WOLChatMgr::IsLobbyValid(const RefPtr<ChannelData>& lobby)
 			{
 			// Lobbies that have the matching prefix are valid.
 			const wchar_t* lobbyName = lobby->GetName();
-			return (wcsnicmp(mLobbyPrefix, lobbyName, mLobbyPrefix.Get_Length()) == 0);
+			return (_wcsnicmp(mLobbyPrefix, lobbyName, mLobbyPrefix.Get_Length()) == 0);
 			}
 		}
 
@@ -501,7 +501,7 @@ void WOLChatMgr::GetLobbyDisplayName(const RefPtr<ChannelData>& lobby, WideStrin
 	
 	int prefixLength = mLobbyPrefix.Get_Length();
 
-	if (wcsnicmp(name, mLobbyPrefix, prefixLength) == 0)
+	if (_wcsnicmp(name, mLobbyPrefix, prefixLength) == 0)
 		{
 		const wchar_t* extName = (name + prefixLength);
 
@@ -638,7 +638,7 @@ bool WOLChatMgr::SquelchUser(const RefPtr<UserData>& user, bool onoff)
 		const wchar_t* text = TRANSLATE(stringID);
 
 		WideStringClass message(0, true);
-		message.Format(text, user->GetName());
+		message.Format(text, *user->GetName());
 		AddMessage(NULL, message, true, true);
 		}
 
@@ -1041,8 +1041,8 @@ void WOLChatMgr::HandleNotification(ChannelListEvent& event)
 			}
 		
 		Add_Ref();
-		WOLChatMgrEvent event = LobbyListChanged;
-		NotifyObservers(event);
+		WOLChatMgrEvent lobby_list_changed_event = LobbyListChanged;
+		NotifyObservers(lobby_list_changed_event);
 		Release_Ref();
 		}
 	}
@@ -1081,18 +1081,18 @@ void WOLChatMgr::HandleNotification(ChannelEvent& event)
 
 			if (status == ChannelJoined)
 				{
-				message.Format(TRANSLATE(IDS_CHAT_LOBBYJOINED), displayName);
+				message.Format(TRANSLATE(IDS_CHAT_LOBBYJOINED), *displayName);
 				}
 			else
 				{
-				message.Format(TRANSLATE(IDS_CHAT_LOBBYLEFT), displayName);
+				message.Format(TRANSLATE(IDS_CHAT_LOBBYLEFT), *displayName);
 				}
 
 			AddMessage(NULL, message, true, true);
 
 			Add_Ref();
-			WOLChatMgrEvent event = LobbyChanged;
-			NotifyObservers(event);
+			WOLChatMgrEvent lobby_changed_event = LobbyChanged;
+			NotifyObservers(lobby_changed_event);
 			Release_Ref();
 			}
 			break;
@@ -1100,8 +1100,8 @@ void WOLChatMgr::HandleNotification(ChannelEvent& event)
 		case ChannelBanned:
 			{
 			Add_Ref();
-			WOLChatMgrEvent event = BannedFromChannel;
-			NotifyObservers(event);
+			WOLChatMgrEvent banned_from_channel_event = BannedFromChannel;
+			NotifyObservers(banned_from_channel_event);
 			Release_Ref();
 			}
 			break;
@@ -1109,8 +1109,8 @@ void WOLChatMgr::HandleNotification(ChannelEvent& event)
 		case ChannelKicked:
 			{
 			Add_Ref();
-			WOLChatMgrEvent event = KickedFromChannel;
-			NotifyObservers(event);
+			WOLChatMgrEvent kicked_from_channel_event = KickedFromChannel;
+			NotifyObservers(kicked_from_channel_event);
 			Release_Ref();
 			}
 			break;
@@ -1151,8 +1151,8 @@ void WOLChatMgr::HandleNotification(UserEvent& userEvent)
 			mWOLSession->RequestUserDetails(user, (REQUEST_LOCALE|REQUEST_SQUADINFO));
 
 			Add_Ref();
-			WOLChatMgrEvent event = UserInListChanged;
-			NotifyObservers(event);
+            WOLChatMgrEvent user_in_list_changed_event = UserInListChanged;
+            NotifyObservers(user_in_list_changed_event);
 			Release_Ref();
 			}
 			break;
@@ -1163,12 +1163,12 @@ void WOLChatMgr::HandleNotification(UserEvent& userEvent)
 			mUserOutList.push_back(user);
 
 			WideStringClass kickMsg(0, true);
-			kickMsg.Format(TRANSLATE(IDS_CHAT_USERKICKED), user->GetName());
+			kickMsg.Format(TRANSLATE(IDS_CHAT_USERKICKED), *user->GetName());
 			AddMessage(NULL, kickMsg, true, true);
 
 			Add_Ref();
-			WOLChatMgrEvent event = UserOutListChanged;
-			NotifyObservers(event);
+			WOLChatMgrEvent user_out_list_changed_event = UserOutListChanged;
+			NotifyObservers(user_out_list_changed_event);
 			Release_Ref();
 			}
 			break;
@@ -1178,8 +1178,8 @@ void WOLChatMgr::HandleNotification(UserEvent& userEvent)
 			mUserOutList.push_back(userEvent.Subject());
 
 			Add_Ref();
-			WOLChatMgrEvent event = UserOutListChanged;
-			NotifyObservers(event);
+			WOLChatMgrEvent user_out_list_changed_event = UserOutListChanged;
+			NotifyObservers(user_out_list_changed_event);
 			Release_Ref();
 			}
 			break;
@@ -1187,7 +1187,7 @@ void WOLChatMgr::HandleNotification(UserEvent& userEvent)
 		case UserEvent::Banned:
 			{
 			WideStringClass banMsg(0, true);
-			banMsg.Format(TRANSLATE(IDS_CHAT_USERBANNED), userEvent.Subject()->GetName());
+			banMsg.Format(TRANSLATE(IDS_CHAT_USERBANNED), *userEvent.Subject()->GetName());
 			AddMessage(NULL, banMsg, true, true);
 			}
 			break;
@@ -1202,7 +1202,7 @@ void WOLChatMgr::HandleNotification(UserEvent& userEvent)
 				{
 				// Build a string containing the user's name
 				WideStringClass message(0, true);
-				message.Format(TRANSLATE(IDS_CHAT_LOCATEDUSER), user->GetName());
+				message.Format(TRANSLATE(IDS_CHAT_LOCATEDUSER), *user->GetName());
 
 				// Append the description of the user's location
 				WideStringClass location(64, true);

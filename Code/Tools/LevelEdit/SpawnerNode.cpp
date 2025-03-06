@@ -223,7 +223,7 @@ SpawnerNodeClass::Save (ChunkSaveClass &csave)
 		//
 		//	Save the list of spawn points transforms
 		//
-		for (index = 0; index < m_SpawnPointNodes.Count (); index ++) {
+		for (int index = 0; index < m_SpawnPointNodes.Count (); index ++) {
 			SpawnPointNodeClass *spawn_point = m_SpawnPointNodes[index];
 			if (spawn_point != NULL) {
 				Matrix3D tm = spawn_point->Get_Transform ();

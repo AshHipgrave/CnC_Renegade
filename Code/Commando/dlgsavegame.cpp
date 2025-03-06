@@ -52,13 +52,13 @@
 ////////////////////////////////////////////////////////////////
 //	Local constants
 ////////////////////////////////////////////////////////////////
-static enum
+enum
 {
 	MBEVENT_OVERWRITE_PROMPT	= 1,
 	MBEVENT_DELETE_PROMPT,
 };
 
-static enum
+enum
 {
 	COL_DATE	= 0,
 	COL_TIME,
@@ -221,7 +221,7 @@ SaveGameMenuClass::LoadListSortCallback (ListCtrlClass *list_ctrl, int item_inde
 			//
 			const WCHAR *name1 = list_ctrl->Get_Entry_Text (item_index1, 2);
 			const WCHAR *name2 = list_ctrl->Get_Entry_Text (item_index2, 2);
-			retval = ::wcsicmp (name1, name2);
+			retval = ::_wcsicmp (name1, name2);
 		}
 
 		//
@@ -534,10 +534,13 @@ SaveGameMenuClass::Reload_List (const char *current_filename)
 	//
 	//	Create an empty slot entry
 	//
-	int item_index = list_ctrl->Insert_Entry (0, L"");
-	if (item_index >= 0) {
-		list_ctrl->Set_Entry_Text (item_index, 2, TRANSLATE (IDS_MENU_EMPTY_SLOT));
-		list_ctrl->Set_Curr_Sel (item_index);
+	{
+		int item_index = list_ctrl->Insert_Entry(0, L"");
+		if (item_index >= 0)
+		{
+			list_ctrl->Set_Entry_Text(item_index, 2, TRANSLATE(IDS_MENU_EMPTY_SLOT));
+			list_ctrl->Set_Curr_Sel(item_index);
+		}
 	}
 
 	WIN32_FIND_DATA find_info	= { 0 };

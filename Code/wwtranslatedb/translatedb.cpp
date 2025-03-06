@@ -237,7 +237,7 @@ TranslateDBClass::Save (ChunkSaveClass &csave)
 		//
 		//	Loop over and save all the translation objects
 		//
-		for (index = 0; index < m_ObjectList.Count (); index ++) {			
+		for (int index = 0; index < m_ObjectList.Count (); index ++) {			
 			TDBObjClass *translate_obj = m_ObjectList[index];
 
 			//
@@ -616,7 +616,7 @@ TranslateDBClass::Import_C_Header (const char *filename)
 			bool found_end_block = false;
 			while (found_end_block == false && file_obj.Read_Line (line)) {
 
-				if (::strnicmp (line, "#define ", 8) == 0) {
+				if (::_strnicmp (line, "#define ", 8) == 0) {
 					
 					//
 					//	Break the #define into its parts
@@ -1299,7 +1299,7 @@ int Build_List_From_String
 			//
 			// Move past the current delimiter (if necessary)
 			//
-			if ((::strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
+			if ((::_strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
 				entry += delim_len;
 			}
 
@@ -1318,7 +1318,7 @@ int Build_List_From_String
 			// Parse the string and pull out its entries.
 			//
 			count = 0;
-			for (entry = buffer;
+			for (const char *entry = buffer;
 				  (entry != NULL) && (entry[1] != 0);
 				  entry = ::strstr (entry, delimiter))
 			{
@@ -1326,7 +1326,7 @@ int Build_List_From_String
 				//
 				// Move past the current delimiter (if necessary)
 				//
-				if ((::strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
+				if ((::_strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
 					entry += delim_len;
 				}
 
@@ -1334,9 +1334,10 @@ int Build_List_From_String
 				// Copy this entry into its own string
 				//
 				StringClass entry_string = entry;
-				char *delim_start = ::strstr (entry_string, delimiter);				
+				char* delim_start = const_cast<char*>( // HACK: const_cast, blegh!! (TODO: AshHipgrave - Fix this properly!)
+					::strstr(entry_string, delimiter));
 				if (delim_start != NULL) {
-					delim_start[0] = 0;
+					delim_start[0] = 0; 
 				}
 
 				//

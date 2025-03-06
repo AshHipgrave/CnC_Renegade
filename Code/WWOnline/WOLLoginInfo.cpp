@@ -533,7 +533,7 @@ int LoginInfo::IndexOf(const wchar_t* nick)
 
 			if (SUCCEEDED(result))
 				{
-				if (nickname && (strlen(nickname) > 0) && (stricmp(username, nickname) == 0))
+				if (nickname && (strlen(nickname) > 0) && (_stricmp(username, nickname) == 0))
 					{
 					return index;
 					}
@@ -594,7 +594,8 @@ void LoginInfo::StoreLogin(const char* nickname, const char* password,
 		const CComPtr<WOL::IChat>& chat = session->GetChatObject();
 
 		// Find the next empty slot
-		for (int index = 1; index <= MAX_NICKNAMES; ++index)
+		int index;
+		for (index = 1; index <= MAX_NICKNAMES; ++index)
 			{
 			const char* slotNick = NULL;
 			const char* slotPass = NULL;

@@ -250,7 +250,7 @@ FileMgrClass::Is_Empty_Path (LPCTSTR path)
 		::Delimit_Path (temp1);
 		::Delimit_Path (temp2);
 
-		retval = bool(::stricmp (temp1, temp2) ==  0);
+		retval = bool(::_stricmp (temp1, temp2) ==  0);
 	}
 
 	return retval;
@@ -266,7 +266,7 @@ bool
 FileMgrClass::Is_Path_Valid (LPCTSTR path)
 {
 	// The path is valid if its located under the asset tree
-	return bool(::strnicmp (path, m_BasePath, m_BasePath.GetLength ()) == 0);
+	return bool(::_strnicmp (path, m_BasePath, m_BasePath.GetLength ()) == 0);
 }
 
 
@@ -279,7 +279,7 @@ bool
 FileMgrClass::Is_Path_In_Asset_Tree (LPCTSTR path)
 {
 	CString full_path = Make_Full_Path (path);		
-	return bool(::strnicmp (full_path, m_BasePath, m_BasePath.GetLength ()) == 0);
+	return bool(::_strnicmp (full_path, m_BasePath, m_BasePath.GetLength ()) == 0);
 }
 
 
@@ -1078,7 +1078,8 @@ FileMgrClass::Find_Files
 	// Find all files that match this wildcard
 	WIN32_FIND_DATA find_info = { 0 };
 	BOOL bcontinue = TRUE;
-	for (HANDLE hfile_find = ::FindFirstFile (file_spec, &find_info);
+	HANDLE hfile_find;
+	for (hfile_find = ::FindFirstFile (file_spec, &find_info);
 		  (hfile_find != INVALID_HANDLE_VALUE) && bcontinue;
 		  bcontinue = ::FindNextFile (hfile_find, &find_info)) {
 

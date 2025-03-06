@@ -252,7 +252,7 @@ InputConfigMgrClass::Delete_Configuration (int index)
 	Get_Config_Path (config_path);
 
 	StringClass full_path;
-	full_path.Format ("%s\\%s", config_path, ConfigList[index].Get_Filename ());
+	full_path.Format ("%s\\%s", *config_path, ConfigList[index].Get_Filename ());
 
 	//
 	//	Delete the configuration file
@@ -448,7 +448,7 @@ InputConfigMgrClass::Get_Unique_Config_Filename (StringClass &filename)
 		//
 		//	Check to see if this file exists
 		//
-		full_path.Format ("%s\\%s", (const char *)config_path, filename);
+		full_path.Format ("%s\\%s", (const char *)config_path, *filename);
 
 	} while (::GetFileAttributes (full_path) != 0xFFFFFFFF);
 

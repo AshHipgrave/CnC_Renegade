@@ -258,10 +258,10 @@ public:
 	///////////////////////////////////////////////////////////////////
 	void	Add_State
 	(
-		STATE_OBJ::THINK_PTR think_ptr,
-		STATE_OBJ::REQUEST_END_PTR request_ptr,
-		STATE_OBJ::BEGIN_PTR begin_ptr,
-		STATE_OBJ::END_PTR end_ptr
+		typename STATE_OBJ::THINK_PTR think_ptr,
+		typename STATE_OBJ::REQUEST_END_PTR request_ptr,
+		typename STATE_OBJ::BEGIN_PTR begin_ptr,
+		typename STATE_OBJ::END_PTR end_ptr
 	)
 	{
 		StateClass<T> state;

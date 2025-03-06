@@ -74,7 +74,7 @@ RCStringExtractorClass::Find_String
 	//
 	//	Did we find the keyword?
 	//
-	char *buffer = ::strstr (new_line, keyword);
+	const char *buffer = ::strstr (new_line, keyword);
 	if (buffer != NULL) {
 		buffer += ::lstrlen (keyword);
 
@@ -105,7 +105,7 @@ RCStringExtractorClass::Find_String
 			//	Record the start and end of the string
 			//
 			bool found_end = false;
-			char *start = buffer;
+			char *start = (char*)buffer;
 			while (buffer[0] != 0) {
 				if (buffer[0] == '\"') {
 					found_end = true;
@@ -116,7 +116,7 @@ RCStringExtractorClass::Find_String
 			}
 
 			if (found_end) {
-				char *end = buffer;
+				char *end = (char*) buffer;
 
 				//
 				//	Return the contents to the caller
@@ -308,7 +308,7 @@ RCStringExtractorClass::Find_Starting_Index (void)
 			//	Is this one of the strings we care about?
 			//
 			const StringClass &string_desc = obj->Get_ID_Desc ();
-			if (::strnicmp (Prefix, string_desc, prefix_len) == 0) {
+			if (::_strnicmp (Prefix, string_desc, prefix_len) == 0) {
 				
 				//
 				//	Check to see if this is the largest index we've found yet

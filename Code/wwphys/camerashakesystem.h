@@ -72,7 +72,7 @@ public:
 	void		Timestep(float dt);
 	void		Update_Camera(CameraClass & camera);
 
-protected:
+public:
 
 	/**
 	** CameraShakerClass 

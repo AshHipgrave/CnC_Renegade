@@ -75,7 +75,7 @@ void M00_Controller_Trigger_RMV (GameObject * obj, GameObject * target, float ti
 	if ((time_lower_bound == 0.0) && (time_upper_bound == 0.0))
 	{
 		if (target)
-			Commands->Send_Custom_Event(obj, target, custom_type, custom_param);
+			Commands->Send_Custom_Event(obj, target, custom_type, custom_param, 0.0f);
 	}
 	else if ((time_lower_bound != 0.0) && (time_upper_bound == 0.0))
 	{
@@ -1152,7 +1152,7 @@ DECLARE_SCRIPT(M00_Trigger_When_Animation_Complete_RMV, "Start_Now=1:int, Receiv
 			if (target)
 			{
 				SCRIPT_DEBUG_MESSAGE(("M00_Trigger_When_Animation_Complete_RMV found its target object.\n"));
-				if (stricmp(anim, name))
+				if (_stricmp(anim, name))
 				{
 					M00_Controller_Trigger_RMV(obj, target, time_low, time_up, type, param);
 				}

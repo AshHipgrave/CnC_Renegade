@@ -73,7 +73,7 @@ EditorMixFileCreator::Add_File (const char *full_path, const char *name)
 	Substitute_File (full_path, name, substitutefullpath, substitutename);
 
 	StringClass lower_name = substitutename;
-	::strlwr (lower_name.Peek_Buffer ());
+	::_strlwr (lower_name.Peek_Buffer ());
 
 	//
 	//	Is this file already in the system?

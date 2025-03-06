@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugE|Win32">
+      <Configuration>DebugE</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ProfileE|Win32">
+      <Configuration>ProfileE</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <SccProjectName>"$/Commando/Code/Tools/LevelEdit", LDKBAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{7413986F-F312-4AEE-BC64-AF811ED53117}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <VCToolsVersion>14.42.34433</VCToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <VCToolsVersion>14.42.34433</VCToolsVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35707.178</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">
+    <OutDir>.\DebugE\</OutDir>
+    <IntDir>.\DebugE\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">
+    <OutDir>.\ProfileE\</OutDir>
+    <IntDir>.\ProfileE\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\wwui;..\..\combat;..\..\wwdebug;..\..\wwmath;..\..\ww3d2;..\..\wwphys;..\..\wwlib;..\..\srsdk1x\include;..\..\wwaudio;..\..\miles6\include;..\..\wwsaveload;..\..\wwnet;..\..\wwtranslatedb;..\..\wwbitpack;..\..\wwutil;..\..\NvDXTLib\Inc;..\..\directX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WIN32;_WINDOWS;PARAM_EDITING_ON;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\DebugE/LevelEdit.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\DebugE/</AssemblerListingLocation>
+      <ObjectFileName>.\DebugE/</ObjectFileName>
+      <ProgramDataBaseFileName>.\DebugE/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>combate.lib;ww3d2e.lib;wwbitpack.lib;imagehlp.lib;wwtranslatedb.lib;wwnet.lib;ws2_32.lib;wwaudioe.lib;..\..\miles6\lib\win\mss32.lib;wwdebuge.lib;wwmath.lib;wwphyse.lib;wwlib.lib;winmm.lib;vfw32.lib;wwutil.lib;wwsaveloade.lib;d3dx8.lib;d3d8.lib;dxguid.lib;dinput8.lib;NvDXTLib.lib;version.lib;wwui.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\..\Run\LevelEditD.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\Libs\debug;..\..\Libs\profile;..\..\NvDXTLib\Lib;..\..\directX\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\..\Run\LevelEditD.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>..\..\..\Run\LevelEditD.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\DebugE/LevelEdit.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\wwui;..\..\combat;..\..\wwdebug;..\..\wwmath;..\..\ww3d2;..\..\wwphys;..\..\wwlib;..\..\srsdk1x\include;..\..\wwaudio;..\..\miles6\include;..\..\wwsaveload;..\..\wwnet;..\..\wwtranslatedb;..\..\wwbitpack;..\..\wwutil;..\..\NvDXTLib\Inc;..\..\directX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WWDEBUG;WIN32;_WINDOWS;PARAM_EDITING_ON;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\ProfileE/LevelEdit.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\ProfileE/</AssemblerListingLocation>
+      <ObjectFileName>.\ProfileE/</ObjectFileName>
+      <ProgramDataBaseFileName>.\ProfileE/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>combate.lib;ww3d2e.lib;wwbitpack.lib;imagehlp.lib;wwtranslatedb.lib;wwnet.lib;ws2_32.lib;wwaudioe.lib;..\..\miles6\lib\win\mss32.lib;wwdebuge.lib;wwmath.lib;wwphyse.lib;wwlib.lib;winmm.lib;vfw32.lib;wwutil.lib;wwsaveloade.lib;d3dx8.lib;d3d8.lib;dxguid.lib;dinput8.lib;NvDXTLib.lib;version.lib;wwui.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\..\Run\LevelEdit.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\Libs\profile;..\..\directX\lib;..\..\NvDXTLib\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\ProfileE/LevelEdit.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>..\..\..\Run\LevelEdit.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\ProfileE/LevelEdit.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="assetdatabase.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="assetpackagemgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="AttenuationSphere.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Box3D.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="buildingchildnode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="BuildingNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CameraMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CameraSettingsForm.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CheckingOutDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CheckinStyleDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ChooseModPackageDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ColorBar.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ColorPicker.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ColorPickerDialogClass.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ColorUtils.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ConversationEditorMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ConversationPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ConversationPickerDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CoverAttackPointNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CoverSpotDefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CoverSpotInfoPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CoverSpotNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="DamageZoneNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="DefinitionUtils.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="DeviceSelectionDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="DialogToolbar.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="DockableForm.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="DummyObjectDefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="DummyObjectNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="editableheightfield.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditConversationDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditConversationListDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditConversationRemarkDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditDialogueDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditFilenameListDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditorAssetMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditorINI.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="editormixfile.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="editoronlydefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="editoronlyobjectnode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditorPhys.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditorPropSheet.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditorSaveLoad.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditRemarkDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditScript.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditStringDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EditStringTwiddlerDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="excel.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="excel8.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Export.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ExportPresetsDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="FileMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="FilePicker.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="FormToolbar.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GenerateBaseDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GenerateVisDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GeneratingEdgeSampledVisDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GeneratingLightVisDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GeneratingManualVisDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GeneratingPathfindDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GeneratingVisDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GenericTextDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GotoGroupDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GotoLocationDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GotoObjectByIDDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GotoObjectDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GrabHandles.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GroupMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="heightfieldeditor.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="HeightfieldMaterialSettingsDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="heightfieldmgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="heightfieldpage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="HistogramCtl.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Icons.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ImportTranslationDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="IncludeFilesDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="InstancesPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LevelEdit.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LevelEditDoc.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LevelEditView.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LevelSettingsDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LightAmbientForm.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LightDefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LightNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LightSolveOptionsDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LightSolveProgressDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="lightsolvesavesystem.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LODSettingsDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MainDialogBar.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MemLogDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MissingTranslationReportDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="mixfiledatabase.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ModelUtils.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MouseMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Mover.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MusicPropPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="NewAssetPackageDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="NewHeightfieldDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="NodeIDStartDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="NodeInfoPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="NodeMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="NodeScriptsPropPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ObjectNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="OptimizingVisDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="OutputForm.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="OverlapPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ParameterCtrls.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ParameterInheritanceDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PathfindSectorBuilder.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PathfindStartDefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PathfindStartNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PhysObjectEditDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PhysObjEditTab.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Picker.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PlaySoundDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PositionPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Preset.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetDependencyTab.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetDialogueTab.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetExport.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetGeneralTab.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetListDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetLogger.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetPicker.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetPropSheet.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetRemapDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetSettingsTab.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetsLibForm.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetTransitionTab.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PresetZoneTab.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ProfileSection.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ProgressUI.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="rcstringextractor.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="reportmgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SceneEditor.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ScriptEditDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ScriptMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SelectionBox.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SelectPresetDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SkyPropPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SoundNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SoundSettingsPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SpawnerNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SpawnPointNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SpecSheet.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Splash.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SplashScreen.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Create</PrecompiledHeader>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StringLibraryDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StringPicker.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StringPickerDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StringPickerMainDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StringsCategoryNameDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StringsCategoryViewDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="stringsmgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SunlightDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TerrainDefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TerrainLODPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TerrainNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TerrainSectionPersist.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">
+      </PrecompiledHeader>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TGAToDXT.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TileDefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TileNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TransitionEditDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TransitionNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TranslationExportDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="UIThread.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="UndoMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="UniqueList.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="UpdateAssetsDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="UpdatePresetDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="UpdatingDBDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ValueListDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Vector3Dialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisErrorReportDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisLog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisPointDefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisPointGenerator.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisPointNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisSectorSampler.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisStatsDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisualOptionsDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VisWindowDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="VSSClass.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="vss_i.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">
+      </PrecompiledHeader>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="WaypathDefinition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="WaypathInfoPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="WaypathNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="WaypointNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="WeatherPropPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="WelcomeDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ZoneEditDialog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ZoneInfoPage.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ZoneNode.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="_assetmgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="_wwaudio.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LevelEdit.rc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="VSS.IDL">
+      <MkTypLibCompatible Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">false</MkTypLibCompatible>
+      <SuppressStartupBanner Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">false</SuppressStartupBanner>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">Win32</TargetEnvironment>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">$(OutDir)VSS.tlb</TypeLibraryName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">./vss.h</HeaderFileName>
+      <MkTypLibCompatible Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">false</MkTypLibCompatible>
+      <SuppressStartupBanner Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">false</SuppressStartupBanner>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">Win32</TargetEnvironment>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">$(OutDir)VSS.tlb</TypeLibraryName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">./vss.h</HeaderFileName>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\wwlib\wwstring.h" />
+    <ClInclude Include="assetdatabase.h" />
+    <ClInclude Include="assetpackagemgr.h" />
+    <ClInclude Include="AttenuationSphere.h" />
+    <ClInclude Include="Box3D.h" />
+    <ClInclude Include="buildingchildnode.h" />
+    <ClInclude Include="BuildingNode.h" />
+    <ClInclude Include="CameraMgr.h" />
+    <ClInclude Include="camerasettingsform.h" />
+    <ClInclude Include="CheckingOutDialog.h" />
+    <ClInclude Include="CheckinStyleDialog.h" />
+    <ClInclude Include="ChooseModPackageDialog.h" />
+    <ClInclude Include="CollisionGroups.h" />
+    <ClInclude Include="ColorBar.h" />
+    <ClInclude Include="ColorPicker.h" />
+    <ClInclude Include="ColorPickerDialogClass.h" />
+    <ClInclude Include="ColorUtils.h" />
+    <ClInclude Include="ConversationEditorMgr.h" />
+    <ClInclude Include="ConversationPage.h" />
+    <ClInclude Include="ConversationPickerDialog.h" />
+    <ClInclude Include="CoverAttackPointNode.h" />
+    <ClInclude Include="CoverSpotDefinition.h" />
+    <ClInclude Include="CoverSpotInfoPage.h" />
+    <ClInclude Include="CoverSpotNode.h" />
+    <ClInclude Include="DamageZoneNode.h" />
+    <ClInclude Include="DefinitionParameter.h" />
+    <ClInclude Include="DefinitionUtils.h" />
+    <ClInclude Include="DeviceSelectionDialog.h" />
+    <ClInclude Include="DialogToolbar.h" />
+    <ClInclude Include="DockableForm.h" />
+    <ClInclude Include="DummyObject.h" />
+    <ClInclude Include="DummyObjectDefinition.h" />
+    <ClInclude Include="DummyObjectNode.h" />
+    <ClInclude Include="editableheightfield.h" />
+    <ClInclude Include="EditConversationDialog.h" />
+    <ClInclude Include="EditConversationListDialog.h" />
+    <ClInclude Include="EditConversationRemarkDialog.h" />
+    <ClInclude Include="EditDialogueDialog.h" />
+    <ClInclude Include="EditFilenameListDialog.h" />
+    <ClInclude Include="EditorAssetMgr.h" />
+    <ClInclude Include="editorbuild.h" />
+    <ClInclude Include="EditorChunkIDs.h" />
+    <ClInclude Include="EditorINI.h" />
+    <ClInclude Include="EditorLine.h" />
+    <ClInclude Include="editormixfile.h" />
+    <ClInclude Include="editoronlydefinition.h" />
+    <ClInclude Include="editoronlyobjectnode.h" />
+    <ClInclude Include="EditorPhys.h" />
+    <ClInclude Include="EditorPropSheet.h" />
+    <ClInclude Include="EditorSaveLoad.h" />
+    <ClInclude Include="EditRemarkDialog.h" />
+    <ClInclude Include="EditScript.h" />
+    <ClInclude Include="EditStringDialog.h" />
+    <ClInclude Include="excel.h" />
+    <ClInclude Include="excel8.h" />
+    <ClInclude Include="Export.h" />
+    <ClInclude Include="ExportPresetsDialog.h" />
+    <ClInclude Include="FileLocations.h" />
+    <ClInclude Include="FileMgr.h" />
+    <ClInclude Include="FilePicker.h" />
+    <ClInclude Include="FormToolbar.h" />
+    <ClInclude Include="GenerateBaseDialog.h" />
+    <ClInclude Include="GenerateVisDialog.h" />
+    <ClInclude Include="GeneratingEdgeSampledVisDialog.h" />
+    <ClInclude Include="GeneratingLightVisDialog.h" />
+    <ClInclude Include="GeneratingManualVisDialog.h" />
+    <ClInclude Include="GeneratingPathfindDialog.h" />
+    <ClInclude Include="GeneratingVisDialog.h" />
+    <ClInclude Include="GenericTextDialog.h" />
+    <ClInclude Include="GotoGroupDialog.h" />
+    <ClInclude Include="GotoLocationDialog.h" />
+    <ClInclude Include="GotoObjectByIDDialog.h" />
+    <ClInclude Include="GotoObjectDialog.h" />
+    <ClInclude Include="GrabHandles.h" />
+    <ClInclude Include="Grid3D.h" />
+    <ClInclude Include="GroupMgr.h" />
+    <ClInclude Include="heightfieldeditor.h" />
+    <ClInclude Include="HeightfieldMaterialSettingsDialog.h" />
+    <ClInclude Include="heightfieldmgr.h" />
+    <ClInclude Include="heightfieldpage.h" />
+    <ClInclude Include="HistogramCtl.h" />
+    <ClInclude Include="HitTestInfo.h" />
+    <ClInclude Include="Icons.h" />
+    <ClInclude Include="ImportTranslationDialog.h" />
+    <ClInclude Include="IncludeFilesDialog.h" />
+    <ClInclude Include="INISections.h" />
+    <ClInclude Include="InstancesPage.h" />
+    <ClInclude Include="LevelEdit.h" />
+    <ClInclude Include="LevelEditDoc.h" />
+    <ClInclude Include="LevelEditView.h" />
+    <ClInclude Include="LevelFeature.h" />
+    <ClInclude Include="LevelSettingsDialog.h" />
+    <ClInclude Include="LightAmbientForm.h" />
+    <ClInclude Include="LightDefinition.h" />
+    <ClInclude Include="LightNode.h" />
+    <ClInclude Include="LightSolveOptionsDialog.h" />
+    <ClInclude Include="LightSolveProgressDialog.h" />
+    <ClInclude Include="lightsolvesavesystem.h" />
+    <ClInclude Include="ListTypes.h" />
+    <ClInclude Include="LODSettingsDialog.h" />
+    <ClInclude Include="MainDialogBar.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MemLogDialog.h" />
+    <ClInclude Include="MissingTranslationReportDialog.h" />
+    <ClInclude Include="mixfiledatabase.h" />
+    <ClInclude Include="ModelUtils.h" />
+    <ClInclude Include="MouseMgr.h" />
+    <ClInclude Include="Mover.h" />
+    <ClInclude Include="MusicPropPage.h" />
+    <ClInclude Include="NewAssetPackageDialog.h" />
+    <ClInclude Include="NewHeightfieldDialog.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="NodeCategories.h" />
+    <ClInclude Include="NodeFunction.h" />
+    <ClInclude Include="NodeIDStartDialog.h" />
+    <ClInclude Include="NodeInfoPage.h" />
+    <ClInclude Include="NodeMgr.H" />
+    <ClInclude Include="NodeScriptsPropPage.h" />
+    <ClInclude Include="nodetemplate.h" />
+    <ClInclude Include="NodeTypes.h" />
+    <ClInclude Include="ObjectNode.h" />
+    <ClInclude Include="OptimizingVisDialog.h" />
+    <ClInclude Include="OutputForm.h" />
+    <ClInclude Include="OverlapPage.h" />
+    <ClInclude Include="ParameterCtrls.h" />
+    <ClInclude Include="ParameterInheritanceDialog.h" />
+    <ClInclude Include="PathfindSectorBuilder.h" />
+    <ClInclude Include="PathfindStartDefinition.h" />
+    <ClInclude Include="PathfindStartNode.h" />
+    <ClInclude Include="PhysObjectEditDialog.h" />
+    <ClInclude Include="PhysObjEditTab.h" />
+    <ClInclude Include="Picker.h" />
+    <ClInclude Include="PlaySoundDialog.h" />
+    <ClInclude Include="PositionPage.h" />
+    <ClInclude Include="Preset.h" />
+    <ClInclude Include="PresetDependencyTab.h" />
+    <ClInclude Include="PresetDialogueTab.h" />
+    <ClInclude Include="PresetExport.h" />
+    <ClInclude Include="PresetGeneralTab.h" />
+    <ClInclude Include="PresetListDialog.h" />
+    <ClInclude Include="PresetLogger.h" />
+    <ClInclude Include="PresetMgr.h" />
+    <ClInclude Include="PresetPicker.h" />
+    <ClInclude Include="PresetPropSheet.h" />
+    <ClInclude Include="PresetRemapDialog.h" />
+    <ClInclude Include="PresetSettingsTab.h" />
+    <ClInclude Include="PresetsLibForm.h" />
+    <ClInclude Include="PresetTransitionTab.h" />
+    <ClInclude Include="PresetZoneTab.h" />
+    <ClInclude Include="ProfileSection.h" />
+    <ClInclude Include="ProgressUI.h" />
+    <ClInclude Include="rcstringextractor.h" />
+    <ClInclude Include="RegKeys.h" />
+    <ClInclude Include="reportmgr.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SceneEditor.h" />
+    <ClInclude Include="ScriptEditDialog.h" />
+    <ClInclude Include="ScriptMgr.h" />
+    <ClInclude Include="SelectionBox.h" />
+    <ClInclude Include="SelectPresetDialog.h" />
+    <ClInclude Include="SkyPropPage.h" />
+    <ClInclude Include="SoundNode.h" />
+    <ClInclude Include="SoundSettingsPage.h" />
+    <ClInclude Include="SpawnerNode.h" />
+    <ClInclude Include="SpawnPointNode.h" />
+    <ClInclude Include="SpecSheet.h" />
+    <ClInclude Include="Splash.h" />
+    <ClInclude Include="SplashScreen.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="StringLibraryDialog.h" />
+    <ClInclude Include="StringPicker.h" />
+    <ClInclude Include="StringPickerDialog.h" />
+    <ClInclude Include="StringPickerMainDialog.h" />
+    <ClInclude Include="StringsCategoryNameDialog.h" />
+    <ClInclude Include="StringsCategoryViewDialog.h" />
+    <ClInclude Include="stringsmgr.h" />
+    <ClInclude Include="SunlightDialog.h" />
+    <ClInclude Include="TerrainDefinition.h" />
+    <ClInclude Include="TerrainLODPage.h" />
+    <ClInclude Include="TerrainNode.h" />
+    <ClInclude Include="TerrainSectionPersist.h" />
+    <ClInclude Include="TGAToDXT.h" />
+    <ClInclude Include="TileDefinition.h" />
+    <ClInclude Include="TileNode.h" />
+    <ClInclude Include="TransitionEditDialog.h" />
+    <ClInclude Include="TransitionNode.h" />
+    <ClInclude Include="TranslationExportDialog.h" />
+    <ClInclude Include="UIThread.h" />
+    <ClInclude Include="UndoMgr.h" />
+    <ClInclude Include="UniqueList.h" />
+    <ClInclude Include="UpdateAssetsDialog.h" />
+    <ClInclude Include="UpdatePresetDialog.h" />
+    <ClInclude Include="UpdatingDBDialog.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="ValueListDialog.h" />
+    <ClInclude Include="Vector3Dialog.h" />
+    <ClInclude Include="VisErrorReportDialog.h" />
+    <ClInclude Include="VisGenProgress.h" />
+    <ClInclude Include="VisLog.h" />
+    <ClInclude Include="VisMgr.h" />
+    <ClInclude Include="VisPointDefinition.h" />
+    <ClInclude Include="VisPointGenerator.h" />
+    <ClInclude Include="VisPointNode.h" />
+    <ClInclude Include="VisSectorSampler.h" />
+    <ClInclude Include="VisStatsDialog.h" />
+    <ClInclude Include="VisualOptionsDialog.h" />
+    <ClInclude Include="VisWindowDialog.h" />
+    <ClInclude Include="vss.h" />
+    <ClInclude Include="VSSClass.h" />
+    <ClInclude Include="WaypathDefinition.h" />
+    <ClInclude Include="WaypathInfoPage.h" />
+    <ClInclude Include="WaypathNode.h" />
+    <ClInclude Include="WaypointLine.h" />
+    <ClInclude Include="WaypointNode.h" />
+    <ClInclude Include="WeatherPropPage.h" />
+    <ClInclude Include="WelcomeDialog.h" />
+    <ClInclude Include="ZoneEditDialog.h" />
+    <ClInclude Include="ZoneInfoPage.h" />
+    <ClInclude Include="ZoneNode.h" />
+    <ClInclude Include="_assetmgr.h" />
+    <ClInclude Include="_wwaudio.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp" />
+    <Image Include="keyframe.bmp" />
+    <Image Include="marker.bmp" />
+    <Image Include="res\ani_tool.bmp" />
+    <Image Include="res\axis1.bmp" />
+    <Image Include="res\axis2.bmp" />
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\bmp00001.bmp" />
+    <Image Include="res\bmp00002.bmp" />
+    <Image Include="res\bmp00003.bmp" />
+    <Image Include="res\bottom_t.bmp" />
+    <Image Include="res\check1.ico" />
+    <Image Include="res\checkbox.bmp" />
+    <Image Include="res\conversa.bmp" />
+    <Image Include="res\convert1.ico" />
+    <Image Include="res\folder1.ico" />
+    <Image Include="res\folder_t.ico" />
+    <Image Include="res\ico00001.ico" />
+    <Image Include="res\ico00002.ico" />
+    <Image Include="res\ico00003.ico" />
+    <Image Include="res\ico00004.ico" />
+    <Image Include="res\ico00005.ico" />
+    <Image Include="res\ico00006.ico" />
+    <Image Include="res\ico00007.ico" />
+    <Image Include="res\ico00008.ico" />
+    <Image Include="res\ico00009.ico" />
+    <Image Include="res\ico00010.ico" />
+    <Image Include="res\ico00011.ico" />
+    <Image Include="res\ico00012.ico" />
+    <Image Include="res\ico00013.ico" />
+    <Image Include="res\ico00014.ico" />
+    <Image Include="res\ico00015.ico" />
+    <Image Include="res\ico00016.ico" />
+    <Image Include="res\ico00017.ico" />
+    <Image Include="res\ico00018.ico" />
+    <Image Include="res\ico00019.ico" />
+    <Image Include="res\ico00020.ico" />
+    <Image Include="res\ico00021.ico" />
+    <Image Include="res\ico00022.ico" />
+    <Image Include="res\ico00023.ico" />
+    <Image Include="res\ico00024.ico" />
+    <Image Include="res\ico00025.ico" />
+    <Image Include="res\ico00026.ico" />
+    <Image Include="res\ico00027.ico" />
+    <Image Include="res\ico00069.ico" />
+    <Image Include="res\ico3dfil.ico" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\icon2.ico" />
+    <Image Include="res\idi_.ico" />
+    <Image Include="res\idr_main.ico" />
+    <Image Include="res\instance.bmp" />
+    <Image Include="res\LevelEdit.ico" />
+    <Image Include="res\LevelEditDoc.ico" />
+    <Image Include="res\ltarrow.bmp" />
+    <Image Include="res\ltarrowd.bmp" />
+    <Image Include="res\mainfram.bmp" />
+    <Image Include="res\Meter.tga" />
+    <Image Include="res\openfold.ico" />
+    <Image Include="res\orator2.ico" />
+    <Image Include="res\orator3.ico" />
+    <Image Include="res\orator4.ico" />
+    <Image Include="res\orator5.ico" />
+    <Image Include="res\orator6.ico" />
+    <Image Include="res\orator7.ico" />
+    <Image Include="res\pathfind.ico" />
+    <Image Include="res\PhysTest.ico" />
+    <Image Include="res\preset_t.bmp" />
+    <Image Include="res\pri_high.ico" />
+    <Image Include="res\pri_low.ico" />
+    <Image Include="res\pri_low1.ico" />
+    <Image Include="res\rtarrow.bmp" />
+    <Image Include="res\rtarrowd.bmp" />
+    <Image Include="res\script.ico" />
+    <Image Include="res\sound.ico" />
+    <Image Include="res\splash.bmp" />
+    <Image Include="res\sunlight.ico" />
+    <Image Include="res\ta_cement.tga" />
+    <Image Include="res\ta_dummy.tga" />
+    <Image Include="res\ta_front.tga" />
+    <Image Include="res\terrain.ico" />
+    <Image Include="res\tile.ico" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\toolbar1.bmp" />
+    <Image Include="res\transiti.ico" />
+    <Image Include="res\vol_low1.ico" />
+    <Image Include="res\vss.ico" />
+    <Image Include="res\vss_user.ico" />
+    <Image Include="res\waypath.ico" />
+    <Image Include="res\welcome.bmp" />
+    <Image Include="res\zone.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="arrowcop.cur" />
+    <None Include="LevelEdit.reg" />
+    <None Include="res\bodybox.w3d" />
+    <None Include="res\buildingicon.w3d" />
+    <None Include="res\Camera.w3d" />
+    <None Include="res\carmarker.w3d" />
+    <None Include="res\coverspot.w3d" />
+    <None Include="res\cur00001.cur" />
+    <None Include="res\cursor1.cur" />
+    <None Include="res\dummy.w3d" />
+    <None Include="res\Filecopy.avi" />
+    <None Include="res\grid.w3d" />
+    <None Include="res\hand_poi.cur" />
+    <None Include="res\LevelEdit.rc2" />
+    <None Include="res\Light.w3d" />
+    <None Include="res\link.cur" />
+    <None Include="res\pointer_.cur" />
+    <None Include="res\PointLight.w3d" />
+    <None Include="res\Speaker.w3d" />
+    <None Include="res\Speaker2.w3d" />
+    <None Include="res\transbox.w3d" />
+    <None Include="res\WayMid.W3d" />
+    <None Include="res\WayStart.w3d" />
+    <None Include="res\WayStop.w3d" />
+    <None Include="res\way_b.w3d" />
+    <None Include="res\way_g.w3d" />
+    <None Include="res\way_r.w3d" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -137,12 +137,13 @@ void CardinalSpline3DClass::Update_Tangents(void)
 
 	}
 
-	float total_time = (Keys[1].Time - Keys[0].Time) + (Keys[end].Time - Keys[end-1].Time);
-	float in_factor = 2.0f * (Keys[end].Time - Keys[end-1].Time) / total_time;
-	float out_factor = 2.0f * (Keys[1].Time - Keys[0].Time) / total_time;
-	Tangents[end].InTangent *= in_factor;
-	Tangents[0].OutTangent *= out_factor;
-
+	{
+		float total_time = (Keys[1].Time - Keys[0].Time) + (Keys[end].Time - Keys[end - 1].Time);
+		float in_factor = 2.0f * (Keys[end].Time - Keys[end - 1].Time) / total_time;
+		float out_factor = 2.0f * (Keys[1].Time - Keys[0].Time) / total_time;
+		Tangents[end].InTangent *= in_factor;
+		Tangents[0].OutTangent *= out_factor;
+	}
 
 	// inner knots
 	for (int i=1; i<Keys.Count()-1; i++) {
@@ -278,12 +279,13 @@ void CardinalSpline1DClass::Update_Tangents(void)
 		Tangents[end].InTangent = (1.0f - Tightness[0])*(Keys[end].Point - Keys[end-1].Point); 			
 	}
 
-	float total_time = (Keys[1].Time - Keys[0].Time) + (Keys[end].Time - Keys[end-1].Time);
-	float in_factor = 2.0f * (Keys[end].Time - Keys[end-1].Time) / total_time;
-	float out_factor = 2.0f * (Keys[1].Time - Keys[0].Time) / total_time;
-	Tangents[end].InTangent *= in_factor;
-	Tangents[0].OutTangent *= out_factor;
-
+	{
+		float total_time = (Keys[1].Time - Keys[0].Time) + (Keys[end].Time - Keys[end - 1].Time);
+		float in_factor = 2.0f * (Keys[end].Time - Keys[end - 1].Time) / total_time;
+		float out_factor = 2.0f * (Keys[1].Time - Keys[0].Time) / total_time;
+		Tangents[end].InTangent *= in_factor;
+		Tangents[0].OutTangent *= out_factor;
+	}
 
 	// inner knots
 	for (int i=1; i<Keys.Count()-1; i++) {

@@ -116,7 +116,7 @@ IncludeFilesDialogClass::OnInitDialog (void)
 	
 	// Loop through all the level-specific include files and add them to the tree control
 	DynamicVectorClass<CString> &level_list = ::Get_File_Mgr ()->Get_Include_File_List ();
-	for (index = 0; index < level_list.Count (); index ++) {
+	for (int index = 0; index < level_list.Count (); index ++) {
 		int icon_index = (::strpbrk (level_list[index], "*?") != NULL) ? FILES_ICON : FILE_ICON;
 		m_IncludesTreeCtrl.InsertItem (level_list[index], icon_index, icon_index, m_hLevelFolder);
 	}
@@ -165,7 +165,7 @@ IncludeFilesDialogClass::OnOK (void)
 	}
 
 	// Loop through all the children of the level-specific folder
-	for (hchild = m_IncludesTreeCtrl.GetChildItem (m_hLevelFolder);
+	for (HTREEITEM hchild = m_IncludesTreeCtrl.GetChildItem (m_hLevelFolder);
 		  hchild != NULL;
 		  hchild = m_IncludesTreeCtrl.GetNextSiblingItem (hchild)) {
 		

@@ -2109,7 +2109,7 @@ void cGameData::On_Game_End(void)
 int	cGameData::Get_Mission_Number_From_Map_Name( const char * map_name )
 {
 	// If tutorial, return tutorial number
-	if ( ::strnicmp( map_name, "M00_T", 5 ) == 0 ) {
+	if ( ::_strnicmp( map_name, "M00_T", 5 ) == 0 ) {
 		#define	TUTORIAL_LOAD_MENU_NUMBER		90
 		return TUTORIAL_LOAD_MENU_NUMBER;
 	}

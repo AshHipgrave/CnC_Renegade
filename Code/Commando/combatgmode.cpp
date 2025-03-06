@@ -427,7 +427,7 @@ public:
 			while ( desc.Get_Length() && desc[desc.Get_Length()-1]<=' ' ) desc.Erase(desc.Get_Length()-1, 1 );
 
 			// Parse Big Translated Text
-			if ( ::strnicmp( "Text2", desc, 5 ) == 0 ) {
+			if ( ::_strnicmp( "Text2", desc, 5 ) == 0 ) {
 				desc.Erase( 0, 5 );
 				while ( desc.Get_Length() && desc[0] <= ' ' ) desc.Erase( 0, 1 );
 				float x,y;
@@ -450,7 +450,7 @@ public:
 			}
 
 			// Parse Translated Text
-			if ( ::strnicmp( "Text", desc, 4 ) == 0 ) {
+			if ( ::_strnicmp( "Text", desc, 4 ) == 0 ) {
 				desc.Erase( 0, 4 );
 				while ( desc.Get_Length() && desc[0] <= ' ' ) desc.Erase( 0, 1 );
 				float x,y;
@@ -473,7 +473,7 @@ public:
 			}
 
 			// Set Big Wrapping Width
-			if ( ::strnicmp( "Wrap2", desc, 5 ) == 0 ) {
+			if ( ::_strnicmp( "Wrap2", desc, 5 ) == 0 ) {
 				desc.Erase( 0, 5 );
 				while ( desc.Get_Length() && desc[0] <= ' ' ) desc.Erase( 0, 1 );
 				float w;
@@ -484,7 +484,7 @@ public:
 			}
 
 			// Set Wrapping Width
-			if ( ::strnicmp( "Wrap", desc, 4 ) == 0 ) {
+			if ( ::_strnicmp( "Wrap", desc, 4 ) == 0 ) {
 				desc.Erase( 0, 4 );
 				while ( desc.Get_Length() && desc[0] <= ' ' ) desc.Erase( 0, 1 );
 				float w;
@@ -495,7 +495,7 @@ public:
 			}
 
 			// Parse test Text
-			if ( ::strnicmp( "Test", desc, 4 ) == 0 ) {
+			if ( ::_strnicmp( "Test", desc, 4 ) == 0 ) {
 				desc.Erase( 0, 4 );
 				while ( desc.Get_Length() && desc[0] <= ' ' ) desc.Erase( 0, 1 );
 				float x,y;
@@ -519,7 +519,7 @@ public:
 			}
 
 			// Parse back model
-			if ( ::strnicmp( "Model", desc, 5 ) == 0 ) {
+			if ( ::_strnicmp( "Model", desc, 5 ) == 0 ) {
 				desc.Erase( 0, 5 );
 				while ( desc.Get_Length() && desc[0] <= ' ' ) desc.Erase( 0, 1 );
 
@@ -530,7 +530,7 @@ public:
 				backdrop.Set_Animation_Percentage( 0 );
 			}
 
-			if ( ::strnicmp( "Color", desc, 5 ) == 0 ) {
+			if ( ::_strnicmp( "Color", desc, 5 ) == 0 ) {
 				desc.Erase( 0, 5 );
 				while ( desc.Get_Length() && desc[0] <= ' ' ) desc.Erase( 0, 1 );
 				float r,g,b;
@@ -1138,7 +1138,7 @@ void CombatGameModeClass::Core_Restart(void)
 
 		// convert .LSD to .MIX
 		if ( new_name.Get_Length() > 4 &&
-			::stricmp( &new_name[new_name.Get_Length() - 4], ".LSD" ) == 0 ) {
+			::_stricmp( &new_name[new_name.Get_Length() - 4], ".LSD" ) == 0 ) {
 			new_name.Erase( new_name.Get_Length() - 4, 4 );
 			new_name += ".MIX";
 		}

@@ -456,9 +456,9 @@ void cTeamManager::Construct_Heading(WideStringClass & string)
 	//GAMESPY
 	//substring.Format(L"%-11s", The_Game()->Get_Team_Word());
 	if (cGameSpyAdmin::Is_Gamespy_Game()) {
-		substring.Format(L"%-36s", The_Game()->Get_Team_Word());
+		substring.Format(L"%-36s", *The_Game()->Get_Team_Word());
 	} else {
-		substring.Format(L"%-11s", The_Game()->Get_Team_Word());
+		substring.Format(L"%-11s", *The_Game()->Get_Team_Word());
 	}
 	string += substring;
 
@@ -565,7 +565,7 @@ void cTeamManager::Render_Team_List(void)
 			break;
 		}
 	}
-   for (j = 0; j < MAX_TEAMS; j++) {
+   for (int j = 0; j < MAX_TEAMS; j++) {
 	   cTeam * p_team = Team_Array[j];
 		WWASSERT(p_team != NULL);
 		renderer_team_colors[j]=p_team->Get_Color();
@@ -637,7 +637,7 @@ void cTeamManager::Render_Team_List(void)
    //
    List_Print(heading, Vector3(1, 1, 1));
 
-   for (j = 0; j < MAX_TEAMS; j++) {
+   for (int j = 0; j < MAX_TEAMS; j++) {
 		List_Print(renderer_team_strings[j], renderer_team_colors[j]);
    }
 

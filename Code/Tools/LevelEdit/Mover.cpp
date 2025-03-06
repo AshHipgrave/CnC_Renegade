@@ -318,7 +318,7 @@ MoverClass::Position_Nodes_Along_Ray
 	//
 	//	Re-position the nodes
 	//
-	for (index = 0; index < list.Count (); index ++) {
+	for (int index = 0; index < list.Count (); index ++) {
 		NodeClass *node = list[index];
 
 		PhysClass *phys_obj = node->Peek_Physics_Obj ();
@@ -917,7 +917,7 @@ MoverClass::Rotate_Nodes
 	//
 	// Loop through all the nodes and rotate them
 	//
-	for (index = 0; index < list.Count (); index ++) {
+	for (int index = 0; index < list.Count (); index ++) {
 		NodeClass *node = list[index];
 
 		//
@@ -978,7 +978,7 @@ MoverClass::Rotate_Nodes_Z
 	//
 	// Loop through all the nodes and rotate them
 	//
-	for (index = 0; index < list.Count (); index ++) {
+	for (int index = 0; index < list.Count (); index ++) {
 		NodeClass *node = list[index];
 
 		//

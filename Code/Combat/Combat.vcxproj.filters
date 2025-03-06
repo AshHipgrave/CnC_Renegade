@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{148e2002-2993-4c11-a155-c2da9f2b297d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{89cdc159-4309-437a-bab9-e4b277f18129}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Base Code">
+      <UniqueIdentifier>{13458632-7540-45ca-96bb-2ae110efe13b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base Code\Source  Files">
+      <UniqueIdentifier>{0d01eaf1-0e0c-45d8-bbf4-ae1c0d1b008a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base Code\Header  Files">
+      <UniqueIdentifier>{0c5bb4b5-4cbc-498c-88f4-aed4350af4b5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="action.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="activeconversation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="airstripgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="animcontrol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="armedgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="assetdep.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="backgroundmgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basecontroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basegameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="beacongameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="building.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="buildingaggregate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="buildingmonitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="buildingstate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ccamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="characterclasssettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cheatmgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cinematicgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clientcontrol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CNCModeSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="colors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="combat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="combatdazzle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="combatmaterialeffectmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="combatsaveload.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="combatsound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="comcentergameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="conversation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="conversationmgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="conversationremark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cover.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csdamageevent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="damage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="damageablegameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="damageablestaticphys.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="damagezone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diaglog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="doors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamicspeechanim.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="effectrecycler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="elevator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="encyclopediamgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="evasettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="explosion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ffactorylist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjobserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gametype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="globalsettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="harvester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hud.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hudinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="humanrecoil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="humanstate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inventory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mapmgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mendozabossgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="messagewindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="muzzlerecoil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objectives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objectivesviewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objlibrary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="orator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oratortypes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pathaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="persistentgameobjobserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pilot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="playerdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="playerterminal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="playertype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="powerplantgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="powerup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="purchasesettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="radar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="raveshawbossgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="refinerygameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reflist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="repairbaygameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sakurabossgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="samsite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="savegame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scexplosionevent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scobeliskevent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="screenfademanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptablegameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptcommands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scriptzone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simplegameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="smartgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sniper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="soldier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="soldierfactorygameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="soldierobserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundEnvironment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="specialeffectsgameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="statemachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="staticnetworkobject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="surfaceeffects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="systeminfolog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="teampurchasesettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="textwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="transition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="transitiongameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unitcoordinationzonemgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vehicle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vehicledriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vehiclefactorygameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="viseme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="warfactorygameobj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="weaponbag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="weaponmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="weapons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="weaponview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WeatherMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="assets.cpp">
+      <Filter>Base Code\Source  Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crandom.cpp">
+      <Filter>Base Code\Source  Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>Base Code\Source  Files</Filter>
+    </ClCompile>
+    <ClCompile Include="directinput.cpp">
+      <Filter>Base Code\Source  Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timemgr.cpp">
+      <Filter>Base Code\Source  Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="action.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actionparams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="activeconversation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="airstripgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="animcontrol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="apppackettypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="armedgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="assetdep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="backgroundmgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="basecontroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="basegameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="beacongameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="building.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="buildingaggregate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="buildingmonitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="buildingstate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ccamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="characterclasssettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cheatmgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cinematicgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clientcontrol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CNCModeSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="colors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="combat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="combatchunkid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="combatdazzle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="combatmaterialeffectmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="combatphysobserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="combatsaveload.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="combatsound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="comcentergameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="conversation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="conversationmgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="conversationremark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cover.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="csdamageevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="damage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="damageablegameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="damageablestaticphys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="damagezone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diaglog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="doors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dynamicspeechanim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="effectrecycler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="elevator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="encyclopediamgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="evasettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="explosion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ffactorylist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjobserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjref.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gametype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalsettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="harvester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hudinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="humanrecoil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="humanstate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mapmgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mendozabossgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="messagewindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="muzzlerecoil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="netclassids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objectives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objectivesviewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objlibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="orator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oratortypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pathaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="persistentgameobjobserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pilot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="playerdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="playerterminal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="playertype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="powerplantgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="powerup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="purchasesettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="radar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="raveshawbossgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="refinerygameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="repairbaygameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sakurabossgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="savegame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scexplosionevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scobeliskevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="screenfademanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptablegameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptcommands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptevents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scriptzone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simplegameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="smartgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sniper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="soldier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="soldierfactorygameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="soldierobserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEnvironment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spawn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="specialbuilds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="specialeffectsgameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="statemachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="staticnetworkobject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="surfaceeffects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="systeminfolog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="teampurchasesettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="textwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="transition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="transitiongameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unitcoordinationzonemgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vehicle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vehicledriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vehiclefactorygameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="viseme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="warfactorygameobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponbag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="weapons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WeatherMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="assets.h">
+      <Filter>Base Code\Header  Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crandom.h">
+      <Filter>Base Code\Header  Files</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>Base Code\Header  Files</Filter>
+    </ClInclude>
+    <ClInclude Include="directinput.h">
+      <Filter>Base Code\Header  Files</Filter>
+    </ClInclude>
+    <ClInclude Include="reflist.h">
+      <Filter>Base Code\Header  Files</Filter>
+    </ClInclude>
+    <ClInclude Include="string_ids.h">
+      <Filter>Base Code\Header  Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timemgr.h">
+      <Filter>Base Code\Header  Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

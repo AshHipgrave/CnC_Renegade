@@ -91,8 +91,9 @@ Frame_Rect
 	UCHAR green = GetRValue (color);
 	UCHAR blue = GetRValue (color);
 
+	int col;
 	int index = (rect.top * scanline_size) + (rect.left * 3);
-	for (int col = rect.left; col < rect.right; col ++) {
+	for (col = rect.left; col < rect.right; col ++) {
 		pbits[index++] = blue;
 		pbits[index++] = green;
 		pbits[index++] = red;
@@ -105,8 +106,9 @@ Frame_Rect
 		pbits[index++] = red;
 	}
 	
+	int row;
 	index = (rect.top * scanline_size) + (rect.left * 3);
-	for (int row = rect.top; row < rect.bottom; row ++) {
+	for (row = rect.top; row < rect.bottom; row ++) {
 		pbits[index]		= blue;
 		pbits[index + 1]	= green;
 		pbits[index + 2]	= red;

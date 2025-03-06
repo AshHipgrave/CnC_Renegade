@@ -329,7 +329,7 @@ ObjectivesViewerClass::fnCompareObjectivesCallback
 		//
 		const WCHAR *text1 = TranslateDBClass::Get_String (objective1->ShortDescriptionID);
 		const WCHAR *text2 = TranslateDBClass::Get_String (objective2->ShortDescriptionID);
-		result = ::wcsicmp (text1, text2);
+		result = ::_wcsicmp (text1, text2);
 	}
 
    return result;
