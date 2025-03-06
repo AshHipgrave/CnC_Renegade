@@ -62,7 +62,7 @@
 using namespace WWOnline;
 
 // Game List columns
-static enum
+enum
 	{
 	COL_ICON = 0,
 	COL_HOST_NAME,
@@ -232,17 +232,17 @@ void MPWolGameListMenuClass::On_Init_Dialog(void)
 	WOLLogonMgr::GetServerName(serverName);
 
 	WideStringClass string(128, true);
-	string.Format(TRANSLATE (IDS_MENU_CONNECTED_TO_FORMAT), serverName);
+	string.Format(TRANSLATE (IDS_MENU_CONNECTED_TO_FORMAT), *serverName);
 	Set_Dlg_Item_Text(IDC_SERVERNAME, string);
 
 	WideStringClass loginName(64, true);
 	WOLLogonMgr::GetLoginName(loginName);
 
-	string.Format(TRANSLATE (IDS_MENU_LOGIN_NAME_FORMAT), loginName);
+	string.Format(TRANSLATE (IDS_MENU_LOGIN_NAME_FORMAT), *loginName);
 	Set_Dlg_Item_Text(IDC_LOGINNAME, string);
 
 	WideStringClass conn(BandwidthCheckerClass::Get_Bandwidth_As_String(), true);
-	string.Format(TRANSLATE (IDS_MENU_SPEED_FORMAT), conn);
+	string.Format(TRANSLATE (IDS_MENU_SPEED_FORMAT), *conn);
 	Set_Dlg_Item_Text(IDC_CONNECTIONSPEED, string);
 
 	//---------------------------------------------------------------------------
@@ -1371,7 +1371,7 @@ int CALLBACK FlagsSortCallback(ListCtrlClass* list, int index1, int index2, uint
 
 		const WCHAR* name1 = list->Get_Entry_Text(index1, COL_HOST_NAME);
 		const WCHAR* name2 = list->Get_Entry_Text(index2, COL_HOST_NAME);
-		return wcsicmp(name1, name2);
+		return _wcsicmp(name1, name2);
 		}
 
 	return 0;
@@ -1441,7 +1441,7 @@ int CALLBACK NumericSortCallback(ListCtrlClass* list, int index1, int index2, ui
 			{
 			const WCHAR* name1 = list->Get_Entry_Text(index1, COL_HOST_NAME);
 			const WCHAR* name2 = list->Get_Entry_Text(index2, COL_HOST_NAME);
-			retval = wcsicmp(name1, name2);
+			retval = _wcsicmp(name1, name2);
 			}
 		}
 
@@ -1484,7 +1484,7 @@ int CALLBACK AlphaSortCallback(ListCtrlClass* list, int index1, int index2, uint
 
 	const WCHAR* text1 = list->Get_Entry_Text(index1, column);
 	const WCHAR* text2 = list->Get_Entry_Text(index2, column);
-	int retval = wcsicmp(text1, text2);
+	int retval = _wcsicmp(text1, text2);
 
 	// If the strings match then secondary sort by ping time.
 	if (retval == 0)

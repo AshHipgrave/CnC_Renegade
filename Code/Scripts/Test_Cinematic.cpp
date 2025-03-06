@@ -159,7 +159,7 @@ public:
 	{
 		ControlLine * control = new ControlLine;
 		control->Time = time;
-		control->Command = strdup( command );
+		control->Command = _strdup( command );
 		control->Next = NULL;
 
 		if ( Controls == NULL || Controls->Time > time ) {
@@ -727,13 +727,13 @@ public:
 		}
 
 		if ( obj_slot != -1 ) {
-			int id = ObjectSlots[ obj_slot ];
-			GameObject * obj = Commands->Find_Object( id );
+			int obj_id = ObjectSlots[ obj_slot ];
+			GameObject * obj = Commands->Find_Object(obj_id);
 			if ( obj ) {
 
 				if ( host_slot != -1 ) {
-					int id = ObjectSlots[ host_slot ];
-					GameObject * host = Commands->Find_Object( id );
+					int host_id = ObjectSlots[ host_slot ];
+					GameObject * host = Commands->Find_Object(host_id);
 					if	( host ) {
 						Commands->Attach_To_Object_Bone( obj, host, bone_name );
 					} else {
@@ -787,9 +787,9 @@ public:
 			GameObject * obj = Commands->Find_Object( id );
 			if ( obj ) {
 				Commands->Enable_Hibernation( obj, false );
-				char id[10];
-				sprintf( id, "%d", MyID );
-				Commands->Attach_Script( obj, "Test_Cinematic_Primary_Killed", id );
+				char my_id[10];
+				sprintf(my_id, "%d", MyID );
+				Commands->Attach_Script( obj, "Test_Cinematic_Primary_Killed", my_id);
 			} else {
 //				Commands->Debug_Message( "Slot Object not found %d\n", obj_slot );
 			}
@@ -898,7 +898,7 @@ public:
 	*/
 	bool	Title_Match( char * * command, char * title ) 
 	{
-		if ( ::strnicmp( *command, title, strlen( title ) ) == 0 ) {
+		if ( ::_strnicmp( *command, title, strlen( title ) ) == 0 ) {
 			*command += strlen( title );
 
 			while ( **command && **command != ',' ) {

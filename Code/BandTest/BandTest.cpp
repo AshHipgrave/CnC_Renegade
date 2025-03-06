@@ -1204,7 +1204,7 @@ void Ping_Profile(SOCKADDR_IN *router_addr, unsigned long my_ip)
 	*/
 	for (int i=0 ; i<30 ; i++) {
 		DebugString(temp_graph[i]);
-		cprintf(temp_graph[i]);
+		_cprintf(temp_graph[i]);
 	}
 }
 

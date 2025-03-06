@@ -166,7 +166,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\DirectX\include;..\;..\wwui;..\wwbitpack;..\combat;..\wwaudio;..\miles6\include;..\wolapi;..\wwutil;..\wwlzhl;..\wwnet;..\wwmath;..\ww3d2;..\wwphys;..\wwlib;..\wwdebug;..\wwsaveload;..\wwtranslatedb;..\BinkMovie;..\scontrol;..\GameSpy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;WWDEBUG;_WINDOWS;DIRECTX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WWDEBUG;_WINDOWS;DIRECTX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderOutputFile>.\Debug/commando.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>

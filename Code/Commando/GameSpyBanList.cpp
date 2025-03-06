@@ -173,7 +173,7 @@ bool cGameSpyBanList::Final_Player_Kick(int id) {
 	cPlayer *player = cPlayerManager::Find_Player(id);
 	if (player && player->Get_Is_Active().Is_True() && player->Is_Human()) {
 		StringClass user_name = player->Get_Name();
-		ConsoleBox.Print("%s was kicked\n", user_name);
+		ConsoleBox.Print("%s was kicked\n", *user_name);
 		player->Set_GameSpy_Kick_State(GAMESPY_KICK_STATE_KICKED);
 		cNetwork::Server_Kill_Connection(id);
 		cNetwork::Cleanup_After_Client(id);
@@ -208,8 +208,8 @@ bool cGameSpyBanList::Is_User_Banned(const char *nickname, const char *challenge
 		}
 
 		if (t->Get_Nick_Name() && nickname && strlen(t->Get_Nick_Name()) && strlen(nickname)) {
-			char *a = strdup(t->Get_Nick_Name());
-			char *b = strdup(nickname);
+			char *a = _strdup(t->Get_Nick_Name());
+			char *b = _strdup(nickname);
 
 			_strupr(a); _strupr(b);
 
@@ -338,7 +338,7 @@ void cGameSpyBanList::LoadBans(void) {
 			break;
 		}
 
-		BanEntry *t = new BanEntry(nickname, ip, hashid, ipmask, stricmp(ruletype, "Allow") == 0);
+		BanEntry *t = new BanEntry(nickname, ip, hashid, ipmask, _stricmp(ruletype, "Allow") == 0);
 		BanList->Add_Tail(t);
 	}
 	fclose(outf);

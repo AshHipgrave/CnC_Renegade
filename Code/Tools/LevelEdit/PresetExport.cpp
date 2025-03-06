@@ -155,7 +155,7 @@ PresetExportClass::Read_Column_Headers
 		//
 		const char * COL_HEADER_TEXT	= "Name\tPreset ID\t";
 		int header_len						= ::lstrlen (COL_HEADER_TEXT);
-		if (::strnicmp (line, COL_HEADER_TEXT, header_len) == 0) {
+		if (::_strnicmp (line, COL_HEADER_TEXT, header_len) == 0) {
 			
 			//
 			//	Build a list from the column header string
@@ -544,7 +544,7 @@ PresetExportClass::Find_Header (TextFileClass &file)
 		//
 		const char * HEADER_TEXT	= "Level Edit Preset Export.  Class ID: ";
 		int header_len					= ::lstrlen (HEADER_TEXT);
-		if (::strnicmp (line, HEADER_TEXT, header_len) == 0) {
+		if (::_strnicmp (line, HEADER_TEXT, header_len) == 0) {
 			
 			//
 			//	Convert the remaining characters to a class ID

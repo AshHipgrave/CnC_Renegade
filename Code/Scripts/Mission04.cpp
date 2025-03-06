@@ -688,13 +688,11 @@ The following are params for when the individual objectives are completed.
 					Commands->Join_Conversation( NULL, reminderConv, false, false, true);
 					Commands->Start_Conversation( reminderConv,  reminderConv );
 
-					GameObject * objectiveReminder = Commands->Find_Object ( 105760 );
 					if (objectiveReminder != NULL)
 					{
 						Commands->Send_Custom_Event( obj, objectiveReminder, M01_ADD_OBJECTIVE_POG_JDG, 6, 0 );
 					}
 				}
-
 				else if (prisoner_primary_active == true)
 				{
 					int reminderConv = Commands->Create_Conversation( "M04_Mission_Start_Conversation", 50, 1000, false);
@@ -1397,8 +1395,6 @@ DECLARE_SCRIPT(M04_MissileRoom_UpperGuard_01_JDG, "")//left side
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_START_ACTING_JDG)//player has entered area--back peddle towards the engine room
 		{
 			Vector3 gotoSpot (4.302f, -67.224f, -9);
@@ -1407,7 +1403,7 @@ DECLARE_SCRIPT(M04_MissileRoom_UpperGuard_01_JDG, "")//left side
 			params.Set_Basic(this, 100, M01_WALKING_WAYPATH_01_JDG);
 			params.Set_Movement( gotoSpot, RUN, .25f );
 			params.MoveBackup = true;
-			Commands->Action_Goto( obj, params );
+			Commands->Action_Goto( obj, params);
 		}
 
 		else if (param == M01_START_ATTACKING_01_JDG)//player has entered area--attack him
@@ -1437,17 +1433,15 @@ DECLARE_SCRIPT(M04_MissileRoom_UpperGuard_02_JDG, "")//right side
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_START_ACTING_JDG)//player has entered area--back peddle towards the engine room
 		{
-			Vector3 gotoSpot (-4.336f, -66.975f, -9);
-			ActionParamsStruct params;
+            Vector3 gotoSpot(-4.336f, -66.975f, -9);
+            ActionParamsStruct params;
 
 			params.Set_Basic(this, 100, M01_WALKING_WAYPATH_01_JDG);
 			params.Set_Movement( gotoSpot, RUN, .25f );
 			params.MoveBackup = true;
-			Commands->Action_Goto( obj, params );
+			Commands->Action_Goto( obj, params);
 		}
 
 		else if (param == M01_START_ATTACKING_01_JDG)//player has entered area--attack him
@@ -2527,11 +2521,6 @@ DECLARE_SCRIPT(M04_EngineRoom_ChiefEngineer_JDG, "")// M04_ENGINEROOM_CHIEF_ENGI
 				Vector3 myPosition = Commands->Get_Position ( obj );
 				Commands->Create_Sound ( "TargetHasBeenEngaged_2", myPosition, obj );
 
-				GameObject * jimmy = Commands->Find_Object (M04_ENGINEROOM_TECH_01_JDG);
-				GameObject * johnny = Commands->Find_Object (M04_ENGINEROOM_TECH_02_JDG);
-				GameObject * bobby = Commands->Find_Object (M04_ENGINEROOM_TECH_03_JDG);
-				GameObject * williams = Commands->Find_Object (M04_ENGINEROOM_TECH_04_JDG);
-
 				if (jimmy != NULL)
 				{
 					float delayTimer = Commands->Get_Random ( 0, 0.5f );
@@ -2690,11 +2679,6 @@ DECLARE_SCRIPT(M04_EngineRoom_ChiefEngineer_JDG, "")// M04_ENGINEROOM_CHIEF_ENGI
 		else if (complete_reason == ACTION_COMPLETE_CONVERSATION_ENDED)
 		{
 			Commands->Send_Custom_Event( obj, obj, 0, M01_PICK_A_NEW_LOCATION_JDG, 1 );
-
-			GameObject * jimmy = Commands->Find_Object (M04_ENGINEROOM_TECH_01_JDG);
-			GameObject * johnny = Commands->Find_Object (M04_ENGINEROOM_TECH_02_JDG);
-			GameObject * bobby = Commands->Find_Object (M04_ENGINEROOM_TECH_03_JDG);
-			GameObject * williams = Commands->Find_Object (M04_ENGINEROOM_TECH_04_JDG);
 
 			if (chiefs_location == GOING_TO_WILLIAMS_01)
 			{
@@ -3013,8 +2997,6 @@ DECLARE_SCRIPT(M04_EngineRoom_Prison_Guard_02_JDG, "")//M04_ENGINEROOM_PRISONGUA
 
 	void Custom (GameObject* obj, int type, int param, GameObject* sender)
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_START_ACTING_JDG && engineDestroyed == false)//controller is telling you to start acting
 		{
 		}
@@ -3135,8 +3117,6 @@ DECLARE_SCRIPT(M04_EngineRoom_Prisoner_01_JDG, "")//this guys ID number is M04_P
 
 	void Custom (GameObject* obj, int type, int param, GameObject* sender)
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_IVE_BEEN_KILLED_JDG)//prison guard one is dead
 		{
 			GameObject * prisonGuard01 = Commands->Find_Object ( M04_ENGINEROOM_PRISONGUARD_01_JDG );
@@ -3179,7 +3159,8 @@ DECLARE_SCRIPT(M04_EngineRoom_Prisoner_01_JDG, "")//this guys ID number is M04_P
 		}
 
 		else if (param == M01_MODIFY_YOUR_ACTION_03_JDG && wave_counter <= 4)//
-		{
+        {
+            ActionParamsStruct params;
 			params.Set_Basic( this, 100, M01_MODIFY_YOUR_ACTION_03_JDG);
 			params.Set_Animation( "H_A_J01C", false );//this is animation for hanging head down
 			Commands->Action_Play_Animation (obj, params);
@@ -3199,7 +3180,8 @@ DECLARE_SCRIPT(M04_EngineRoom_Prisoner_01_JDG, "")//this guys ID number is M04_P
 		}
 
 		else if (param == M01_MODIFY_YOUR_ACTION_JDG)//you've been freed--cheer you ungrateful bastard
-		{
+        {
+            ActionParamsStruct params;
 			freedYet = true;
 			char *animationName = M01_Choose_Cheer_Animation ( );
 			Commands->Action_Reset (  obj, 100 );
@@ -3408,8 +3390,6 @@ DECLARE_SCRIPT(M04_EngineRoom_Prisoner_03_JDG, "")//this guys ID number is M04_P
 
 	void Custom (GameObject* obj, int type, int param, GameObject* sender)
 	{
-		ActionParamsStruct params;
-
 		if (param == 3000)
 		{
 			Commands->Action_Reset (  obj, 100 );
@@ -3434,7 +3414,9 @@ DECLARE_SCRIPT(M04_EngineRoom_Prisoner_03_JDG, "")//this guys ID number is M04_P
 		}
 
 		else if (param == M01_MODIFY_YOUR_ACTION_JDG)//you've been freed--cheer you ungrateful bastard
-		{
+        {
+            ActionParamsStruct params;
+
 			freedYet = true;
 			char *animationName = M01_Choose_Cheer_Animation ( );
 			Commands->Action_Reset (  obj, 100 );
@@ -6094,8 +6076,6 @@ DECLARE_SCRIPT(M04_EngineRoom_Stationary_Tech_JDG, "Console_ID :int")
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (type == 0 && deadYet == false)//
 		{
 			if (param == M01_START_ACTING_JDG)
@@ -6120,7 +6100,8 @@ DECLARE_SCRIPT(M04_EngineRoom_Stationary_Tech_JDG, "Console_ID :int")
 			}
 
 			else if (param == M01_MODIFY_YOUR_ACTION_JDG)
-			{
+            {
+                ActionParamsStruct params;
 				Commands->Action_Reset ( obj, 100 );
 				params.Set_Basic(this, 50, M01_DOING_ANIMATION_01_JDG);
 				params.Set_Animation( "H_A_CON2", false );
@@ -6133,7 +6114,8 @@ DECLARE_SCRIPT(M04_EngineRoom_Stationary_Tech_JDG, "Console_ID :int")
 			}
 
 			else if (param == M01_IVE_BEEN_KILLED_JDG)//M04 PanicGuy 01 Twiddler
-			{
+            {
+                ActionParamsStruct params;
 				Commands->Innate_Disable(obj);
 				Commands->Action_Reset ( obj, 100 );
 				params.Set_Basic(this, 100, M01_FACING_SPECIFIED_DIRECTION_01_JDG);
@@ -6144,7 +6126,8 @@ DECLARE_SCRIPT(M04_EngineRoom_Stationary_Tech_JDG, "Console_ID :int")
 			}
 
 			else if (param == M01_MODIFY_YOUR_ACTION_03_JDG)
-			{
+            {
+                ActionParamsStruct params;
 				//Vector3 myPosition = Commands->Get_Position ( obj );
 				//Commands->Create_Sound ( "M04 PanicGuy 01 Twiddler", myPosition, obj );
 				Commands->Action_Reset ( obj, 100 );
@@ -6154,7 +6137,8 @@ DECLARE_SCRIPT(M04_EngineRoom_Stationary_Tech_JDG, "Console_ID :int")
 			}
 
 			else if (param == M01_MODIFY_YOUR_ACTION_04_JDG)//stand back up then start hunting player
-			{
+            {
+                ActionParamsStruct params;
 				Commands->Action_Reset ( obj, 100 );
 				params.Set_Basic(this, 100, M01_DOING_ANIMATION_05_JDG);
 				params.Set_Animation ("H_A_HOST_L2C", false);
@@ -6310,8 +6294,6 @@ DECLARE_SCRIPT(M04_Doorway_Enterer_JDG, "first_location:vector3")
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )	
 	{
-		ActionParamsStruct params;
-
 		switch (complete_reason)
 		{
 			case ACTION_COMPLETE_NORMAL: 
@@ -6322,6 +6304,7 @@ DECLARE_SCRIPT(M04_Doorway_Enterer_JDG, "first_location:vector3")
 							{
 								char *animationName = M01_Choose_Search_Animation ( );
 
+                                ActionParamsStruct params;
 								params.Set_Basic( this, 45, M01_DOING_ANIMATION_01_JDG );
 								params.Set_Animation( animationName, false );
 								Commands->Action_Play_Animation ( obj, params );
@@ -6387,27 +6370,27 @@ DECLARE_SCRIPT(M04_Hunter_Controller_JDG, "")//M04_ENGINEROOM_HUNTING_CONTROLLER
 				{
 					messagePlayed = false;
 					Vector3 hunter01_spawnlocation (-13.523f, 48.665f, -9.003f);
-					GameObject *hunter_01 = Commands->Create_Object ( "Nod_Minigunner_2SF_AutoRifle", hunter01_spawnlocation );
-					hunter_01_id = Commands->Get_ID ( hunter_01 );
-					Commands->Attach_Script(hunter_01, "M04_Hunter_JDG", "");
+					GameObject *spawned_hunter_01 = Commands->Create_Object ( "Nod_Minigunner_2SF_AutoRifle", hunter01_spawnlocation );
+					hunter_01_id = Commands->Get_ID (spawned_hunter_01);
+					Commands->Attach_Script(spawned_hunter_01, "M04_Hunter_JDG", "");
 				}
 
 				GameObject *hunter_02 = Commands->Find_Object ( hunter_02_id );
 				if (hunter_02 == NULL)
 				{
 					Vector3 hunter02_spawnlocation (11.943f, 42.201f, -15.000f);
-					GameObject *hunter_02 = Commands->Create_Object ( "Nod_Minigunner_2SF_AutoRifle", hunter02_spawnlocation );
-					hunter_02_id = Commands->Get_ID ( hunter_02 );
-					Commands->Attach_Script(hunter_02, "M04_Hunter_JDG", "");
+					GameObject * spawned_hunter_02 = Commands->Create_Object ( "Nod_Minigunner_2SF_AutoRifle", hunter02_spawnlocation );
+					hunter_02_id = Commands->Get_ID (spawned_hunter_02 );
+					Commands->Attach_Script(spawned_hunter_02, "M04_Hunter_JDG", "");
 				}
 
 				GameObject *hunter_03 = Commands->Find_Object ( hunter_03_id );
 				if (hunter_03 == NULL)
 				{
 					Vector3 hunter03_spawnlocation (3.834f, 60.196f, -15.000f);
-					GameObject *hunter_03 = Commands->Create_Object ( "Nod_Minigunner_2SF_AutoRifle", hunter03_spawnlocation );
-					hunter_03_id = Commands->Get_ID ( hunter_03 );
-					Commands->Attach_Script(hunter_03, "M04_Hunter_JDG", "");
+					GameObject * spawned_hunter_03 = Commands->Create_Object ( "Nod_Minigunner_2SF_AutoRifle", hunter03_spawnlocation );
+					hunter_03_id = Commands->Get_ID (spawned_hunter_03 );
+					Commands->Attach_Script(spawned_hunter_03, "M04_Hunter_JDG", "");
 				}
 			}
 
@@ -7318,7 +7301,7 @@ DECLARE_SCRIPT(M04_TibHold_Mutant_NoThreat_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_C_Human.H_C_Tubedie") == 0)
+		if (_stricmp(anim, "S_C_Human.H_C_Tubedie") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -9567,7 +9550,7 @@ DECLARE_SCRIPT(M04_TorpedoRoom_Target01_JDG, "")//DSP_L4TORPEDO
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "DSP_L4TORPEDO.DSP_L4TORPEDO") == 0)
+		if (_stricmp(anim, "DSP_L4TORPEDO.DSP_L4TORPEDO") == 0)
 		{
 			animationCount++;
 			if (animationCount >= 2)
@@ -9633,7 +9616,7 @@ DECLARE_SCRIPT(M04_TorpedoRoom_Target02_JDG, "")//DSP_L4TORPEDOR
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "DSP_L4TORPEDOR.DSP_L4TORPEDOR") == 0)
+		if (_stricmp(anim, "DSP_L4TORPEDOR.DSP_L4TORPEDOR") == 0)
 		{
 			animationCount++;
 			if (animationCount >= 2)
@@ -9959,7 +9942,6 @@ DECLARE_SCRIPT(M04_Pog_Controller_JDG, "")//104693
 
 					if (missile_target02_poked == false)
 					{
-						GameObject * missile_target02 = Commands->Find_Object ( 100422 );
 						if (missile_target02 != NULL)
 						{
 							missile_target02_active = true;
@@ -9970,7 +9952,6 @@ DECLARE_SCRIPT(M04_Pog_Controller_JDG, "")//104693
 
 					else if (missile_target03_poked == false)
 					{
-						GameObject * missile_target03 = Commands->Find_Object ( 100423 );
 						if (missile_target03 != NULL)
 						{
 							missile_target03_active = true;
@@ -9981,7 +9962,6 @@ DECLARE_SCRIPT(M04_Pog_Controller_JDG, "")//104693
 
 					else if (missile_target04_poked == false)
 					{
-						GameObject * missile_target04 = Commands->Find_Object ( 100420 );
 						if (missile_target04 != NULL)
 						{
 							missile_target04_active = true;
@@ -9997,7 +9977,6 @@ DECLARE_SCRIPT(M04_Pog_Controller_JDG, "")//104693
 
 					if (missile_target03_poked == false)
 					{
-						GameObject * missile_target03 = Commands->Find_Object ( 100423 );
 						if (missile_target03 != NULL)
 						{
 							missile_target03_active = true;
@@ -10008,7 +9987,6 @@ DECLARE_SCRIPT(M04_Pog_Controller_JDG, "")//104693
 
 					else if (missile_target04_poked == false)
 					{
-						GameObject * missile_target04 = Commands->Find_Object ( 100420 );
 						if (missile_target04 != NULL)
 						{
 							missile_target04_active = true;
@@ -10024,7 +10002,6 @@ DECLARE_SCRIPT(M04_Pog_Controller_JDG, "")//104693
 
 					if (missile_target04_poked == false)
 					{
-						GameObject * missile_target04 = Commands->Find_Object ( 100420 );
 						if (missile_target04 != NULL)
 						{
 							missile_target04_active = true;
@@ -10052,7 +10029,6 @@ DECLARE_SCRIPT(M04_Pog_Controller_JDG, "")//104693
 
 				if (torpedo_target01_poked == true )
 				{
-					GameObject * torpedo_target02 = Commands->Find_Object ( 100409 );
 					if (torpedo_target02 != NULL && torpedo_target02_poked == false)
 					{
 						torpedo_target02_active = true;

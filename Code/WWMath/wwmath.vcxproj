@@ -68,7 +68,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\wwlib;..\wwdebug;..\wwsaveload;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>G_CODE_BASE;DIRECTX;_DEBUG;WWDEBUG;WINVER=0x400;_WINDOWS;WIN32_LEAN_AND_MEAN;WIN32;_USE_INTEL_COMPILER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G_CODE_BASE;DIRECTX;_DEBUG;WWDEBUG;WINVER=0x400;_WINDOWS;WIN32_LEAN_AND_MEAN;WIN32;_USE_INTEL_COMPILER;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderOutputFile>.\Debug/wwmath.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>

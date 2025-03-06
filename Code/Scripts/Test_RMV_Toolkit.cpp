@@ -168,7 +168,7 @@ DECLARE_SCRIPT(RMV_Engineer_Wander, "Custom_Type:int, Custom_Param_1:int, Custom
 		Commands->Action_Reset(Owner(), 99);
 		evacuating = true;
 		
-		if (stricmp(evac, "None") == 0)
+		if (_stricmp(evac, "None") == 0)
 		{
 			return;
 		}

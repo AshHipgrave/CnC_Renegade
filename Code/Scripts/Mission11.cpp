@@ -1547,17 +1547,17 @@ DECLARE_SCRIPT(M11_C130_Dropoff_Dude_JDG, "")//also have M01_Hunt_The_Player_JDG
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_a_Human.H_A_X5D_ParaT_1") == 0)
+		if (_stricmp(anim, "S_a_Human.H_A_X5D_ParaT_1") == 0)
 		{
 			Commands->Attach_Script(obj, "M01_Hunt_The_Player_JDG","");	
 		}
 
-		else if (stricmp(anim, "S_a_Human.H_A_X5D_ParaT_2") == 0)
+		else if (_stricmp(anim, "S_a_Human.H_A_X5D_ParaT_2") == 0)
 		{
 			Commands->Attach_Script(obj, "M01_Hunt_The_Player_JDG","");	
 		}
 
-		else if (stricmp(anim, "S_a_Human.H_A_X5D_ParaT_3") == 0)
+		else if (_stricmp(anim, "S_a_Human.H_A_X5D_ParaT_3") == 0)
 		{
 			Commands->Attach_Script(obj, "M01_Hunt_The_Player_JDG","");	
 		}
@@ -1905,23 +1905,23 @@ DECLARE_SCRIPT(M11_WetBar_NeighborRoom_SpawnerController_JDG, "")
 	{
 		if (param == M01_SPAWNER_SPAWN_PLEASE_JDG)
 		{
-			GameObject * spawnedGuy01 = Commands->Find_Object ( spawn_01_ID );
-			GameObject * spawnedGuy02 = Commands->Find_Object ( spawn_02_ID );
-			GameObject * spawnedGuy03 = Commands->Find_Object ( spawn_03_ID );
+			GameObject * guy01 = Commands->Find_Object ( spawn_01_ID );
+			GameObject * guy02 = Commands->Find_Object ( spawn_02_ID );
+			GameObject * guy03 = Commands->Find_Object ( spawn_03_ID );
 
-			if (spawnedGuy01 == NULL)
+			if (guy01 == NULL)
 			{
 				GameObject * spawnedGuy01 = Commands->Trigger_Spawner( M11_WETBAR_SPAWNER_01_JDG );
 				spawn_01_ID = Commands->Get_ID ( spawnedGuy01 );
 			}
 
-			if (spawnedGuy02 == NULL)
+			if (guy02 == NULL)
 			{
 				GameObject * spawnedGuy02 = Commands->Trigger_Spawner( M11_WETBAR_SPAWNER_02_JDG );
 				spawn_02_ID = Commands->Get_ID ( spawnedGuy02 );
 			}
 
-			if (spawnedGuy03 == NULL)
+			if (guy03 == NULL)
 			{
 				GameObject * spawnedGuy03 = Commands->Trigger_Spawner( M11_WETBAR_SPAWNER_03_JDG );
 				spawn_03_ID = Commands->Get_ID ( spawnedGuy03 );
@@ -2379,25 +2379,25 @@ DECLARE_SCRIPT(M11_Barracks_SpawnerController_JDG, "")//M11_BARRACKS_SPAWNER_CON
 	{
 		if (param == M01_SPAWNER_SPAWN_PLEASE_JDG)
 		{
-			GameObject * spawnedGuy01 = Commands->Find_Object ( spawn_01_ID );
-			GameObject * spawnedGuy02 = Commands->Find_Object ( spawn_02_ID );
-			GameObject * spawnedGuy03 = Commands->Find_Object ( spawn_03_ID );
+			GameObject * guy01 = Commands->Find_Object ( spawn_01_ID );
+			GameObject * guy02 = Commands->Find_Object ( spawn_02_ID );
+			GameObject * guy03 = Commands->Find_Object ( spawn_03_ID );
 
-			if (spawnedGuy01 == NULL)
+			if (guy01 == NULL)
 			{
 				GameObject * spawnedGuy01 = Commands->Trigger_Spawner( M11_BARRACKS_SPAWNER_01_JDG );
 				Commands->Attach_Script(spawnedGuy01, "M11_Barracks_SpawnedDude_JDG", "");
 				spawn_01_ID = Commands->Get_ID ( spawnedGuy01 );
 			}
 
-			if (spawnedGuy02 == NULL)
+			if (guy02 == NULL)
 			{
 				GameObject * spawnedGuy02 = Commands->Trigger_Spawner( M11_BARRACKS_SPAWNER_02_JDG );
 				Commands->Attach_Script(spawnedGuy02, "M11_Barracks_SpawnedDude_JDG", "");
 				spawn_02_ID = Commands->Get_ID ( spawnedGuy02 );
 			}
 
-			if (spawnedGuy03 == NULL)
+			if (guy03 == NULL)
 			{
 				GameObject * spawnedGuy03 = Commands->Trigger_Spawner( M11_BARRACKS_SPAWNER_03_JDG );
 				Commands->Attach_Script(spawnedGuy03, "M11_Barracks_SpawnedDude_JDG", "");
@@ -2648,8 +2648,6 @@ DECLARE_SCRIPT(M11_Barracks_Scientist_JDG, "")//M11_BARRACKS_SCIENTIST_JDG 10040
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )	
 	{
-		ActionParamsStruct params;
-
 		if (complete_reason == ACTION_COMPLETE_CONVERSATION_ENDED)
 		{
 			if (action_id == scientist_conv01)
@@ -2673,7 +2671,8 @@ DECLARE_SCRIPT(M11_Barracks_Scientist_JDG, "")//M11_BARRACKS_SCIENTIST_JDG 10040
 			else if (action_id == scientist_conv02)
 			{
 				if (obj && STAR && deadYet == false)
-				{
+                {
+                    ActionParamsStruct params;
 					params.Set_Basic( this, 100, M01_DOING_ANIMATION_02_JDG );//stand up hands over head
 					params.Set_Animation ("H_A_HOST_L2C", false);
 					Commands->Action_Play_Animation (obj, params);
@@ -2684,7 +2683,8 @@ DECLARE_SCRIPT(M11_Barracks_Scientist_JDG, "")//M11_BARRACKS_SCIENTIST_JDG 10040
 			else if (action_id == scientist_conv03)
 			{
 				if (obj && STAR && deadYet == false)
-				{
+                {
+                    ActionParamsStruct params;
 					params.Set_Basic(this, 100, M01_WALKING_WAYPATH_02_JDG);
 					params.Set_Movement( Vector3 (14.045f, -8.178f, -38.236f), WALK, 1 );
 					Commands->Action_Goto( obj, params );
@@ -2694,7 +2694,8 @@ DECLARE_SCRIPT(M11_Barracks_Scientist_JDG, "")//M11_BARRACKS_SCIENTIST_JDG 10040
 			else if (action_id == scientist_conv04)
 			{
 				if (obj && STAR && deadYet == false)
-				{
+                {
+                    ActionParamsStruct params;
 					params.Set_Basic(this, 100, M01_WALKING_WAYPATH_03_JDG);
 					params.Set_Movement( Vector3 (0.115f, -10.796f, -34.233f), RUN, 1 );
 					Commands->Action_Goto( obj, params );
@@ -2705,7 +2706,8 @@ DECLARE_SCRIPT(M11_Barracks_Scientist_JDG, "")//M11_BARRACKS_SCIENTIST_JDG 10040
 		else if (action_id == M01_DOING_ANIMATION_02_JDG)
 		{
 			if (obj && STAR && deadYet == false)
-			{
+            {
+                ActionParamsStruct params;
 				params.Set_Basic( this, 100, M01_DOING_ANIMATION_03_JDG );//stand up loop--one time
 				params.Set_Animation ("H_A_HOST_L1B", false);
 				Commands->Action_Play_Animation (obj, params);
@@ -2715,7 +2717,8 @@ DECLARE_SCRIPT(M11_Barracks_Scientist_JDG, "")//M11_BARRACKS_SCIENTIST_JDG 10040
 		else if (action_id == M01_DOING_ANIMATION_03_JDG)
 		{
 			if (obj && STAR && deadYet == false)
-			{
+            {
+                ActionParamsStruct params;
 				params.Set_Basic( this, 100, M01_DOING_ANIMATION_04_JDG );//stand up--put hands down
 				params.Set_Animation ("H_A_HOST_L1C", false);
 				Commands->Action_Play_Animation (obj, params);
@@ -3203,8 +3206,6 @@ DECLARE_SCRIPT(M11_Barracks_ToiletMutant01_JDG, "")//this guys ID is M11_BARRACK
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_START_ACTING_JDG)
 		{
 			Commands->Innate_Enable(obj);
@@ -3245,8 +3246,6 @@ DECLARE_SCRIPT(M11_Barracks_ToiletMutant02_JDG, "")//this guys ID is M11_BARRACK
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_START_ACTING_JDG)
 		{
 			Commands->Innate_Enable(obj);
@@ -3382,7 +3381,7 @@ DECLARE_SCRIPT(M11_Mutant_TrajectoryBone_JDG, "")//
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "X11E_Trajectory.X11E_Trajectory") == 0)
+		if (_stricmp(anim, "X11E_Trajectory.X11E_Trajectory") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -3400,7 +3399,7 @@ DECLARE_SCRIPT(M11_Mutant_ShatterGlass_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "X11E_Shatter.X11E_Shatter") == 0)
+		if (_stricmp(anim, "X11E_Shatter.X11E_Shatter") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -3701,7 +3700,6 @@ DECLARE_SCRIPT(M11_MutantCrypt_Spawner06_Guy_JDG, "")//this one has been fixed f
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )	
 	{
-		ActionParamsStruct params;
 
 		if (complete_reason == ACTION_COMPLETE_NORMAL)
 		{
@@ -3741,13 +3739,15 @@ DECLARE_SCRIPT(M11_MutantCrypt_Spawner06_Guy_JDG, "")//this one has been fixed f
 			{
 				char *animationName = M01_Choose_Idle_Animation ( );
 
+                ActionParamsStruct params;
 				params.Set_Basic( this, 60, M01_DOING_ANIMATION_01_JDG );
 				params.Set_Animation (animationName, false);
 				Commands->Action_Play_Animation (obj, params);
 			}
 
 			else if (obj && action_id == M01_DOING_ANIMATION_01_JDG)
-			{
+            {
+                ActionParamsStruct params;
 				params.Set_Basic(this, 80, M01_PICK_A_NEW_LOCATION_JDG);
 				params.Set_Movement( Vector3(66.505f, 47.147f, -62.686f), .1f, 1 );
 
@@ -3764,6 +3764,7 @@ DECLARE_SCRIPT(M11_MutantCrypt_Spawner06_Guy_JDG, "")//this one has been fixed f
 
 					char *animationName = M11_Choose_Mutant_Attack_Animation ( );
 
+                    ActionParamsStruct params;
 					params.Set_Basic( this, 100, M01_DOING_ANIMATION_01_JDG );
 					params.Set_Animation (animationName, false);
 					Commands->Action_Play_Animation (obj, params);
@@ -4224,8 +4225,6 @@ DECLARE_SCRIPT(M11_MutantCrypt_Spawner03_Guy_JDG, "")
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )	
 	{
-		ActionParamsStruct params;
-
 		if (complete_reason == ACTION_COMPLETE_NORMAL)
 		{
 			if (obj && action_id == M01_PICK_A_NEW_LOCATION_JDG)
@@ -4273,6 +4272,7 @@ DECLARE_SCRIPT(M11_MutantCrypt_Spawner03_Guy_JDG, "")
 			{
 				char *animationName = M01_Choose_Idle_Animation ( );
 
+                ActionParamsStruct params;
 				params.Set_Basic( this, 60, M01_DOING_ANIMATION_01_JDG );
 				params.Set_Animation (animationName, false);
 				Commands->Action_Play_Animation (obj, params);
@@ -4297,6 +4297,7 @@ DECLARE_SCRIPT(M11_MutantCrypt_Spawner03_Guy_JDG, "")
 
 					char *animationName = M11_Choose_Mutant_Attack_Animation ( );
 
+                    ActionParamsStruct params;
 					params.Set_Basic( this, 100, M01_DOING_ANIMATION_01_JDG );
 					params.Set_Animation (animationName, false);
 					Commands->Action_Play_Animation (obj, params);
@@ -5436,7 +5437,7 @@ DECLARE_SCRIPT(M11_CeilingRepeller_JDG, "")
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_a_Human.H_a_X11D_repel") == 0)
+		if (_stricmp(anim, "S_a_Human.H_a_X11D_repel") == 0)
 		{
 			Commands->Attach_Script(obj, "M01_Hunt_The_Player_JDG","");	
 		}
@@ -6739,8 +6740,6 @@ DECLARE_SCRIPT(M11_Barracks_MutantUprising_BlackhandGuy_JDG, "")//M11_BARRACKS_M
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )	
 	{
-		ActionParamsStruct params;
-
 		switch (complete_reason)
 		{
 			case ACTION_COMPLETE_NORMAL: 
@@ -7087,22 +7086,22 @@ DECLARE_SCRIPT(M11_SimpleSydney_Script_JDG, "")//M11_SIMPLE_SYDNEY_MOBIUS_JDG	10
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_B_HUMAN.H_B_X11C_SYD_A") == 0)
+		if (_stricmp(anim, "S_B_HUMAN.H_B_X11C_SYD_A") == 0)
 		{
 			Commands->Send_Custom_Event ( obj, obj, 0, M01_MODIFY_YOUR_ACTION_02_JDG, 0 );
 		}
 
-		else if (stricmp(anim, "S_B_HUMAN.H_B_X11C_SYD_B") == 0)
+		else if (_stricmp(anim, "S_B_HUMAN.H_B_X11C_SYD_B") == 0)
 		{
 			Commands->Send_Custom_Event ( obj, obj, 0, M01_MODIFY_YOUR_ACTION_03_JDG, 0 );
 		}
 
-		else if (stricmp(anim, "S_B_HUMAN.H_B_X11C_SYD_C") == 0)
+		else if (_stricmp(anim, "S_B_HUMAN.H_B_X11C_SYD_C") == 0)
 		{
 			Commands->Send_Custom_Event ( obj, obj, 0, M01_MODIFY_YOUR_ACTION_JDG, 0 );
 		}
 
-		else if (stricmp(anim, "S_B_HUMAN.H_B_X11C_SYD_D") == 0)
+		else if (_stricmp(anim, "S_B_HUMAN.H_B_X11C_SYD_D") == 0)
 		{
 			//Commands->Send_Custom_Event ( obj, obj, 0, M01_MODIFY_YOUR_ACTION_JDG, 0 );
 		}
@@ -7213,8 +7212,6 @@ DECLARE_SCRIPT(M11_Cell_Mutant02_JDG, "")
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_START_ACTING_JDG)
 		{
 			ActionParamsStruct params;
@@ -7284,8 +7281,6 @@ DECLARE_SCRIPT(M11_Cell_Visceroid_JDG, "")
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_START_ACTING_JDG)
 		{
 			//Commands->Set_Player_Type ( obj, SCRIPT_PLAYERTYPE_MUTANT );
@@ -8613,7 +8608,7 @@ DECLARE_SCRIPT(M11_LabMutant_Simple_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_C_Human.H_C_X11E_Escape") == 0)
+		if (_stricmp(anim, "S_C_Human.H_C_X11E_Escape") == 0)
 		{
 			Commands->Enable_Hibernation(obj, true );
 
@@ -8627,7 +8622,7 @@ DECLARE_SCRIPT(M11_LabMutant_Simple_JDG, "")
 			Commands->Action_Attack (  obj, params );
 		}
 
-		else if (stricmp(anim, "S_C_Human.H_C_Tubedie") == 0)
+		else if (_stricmp(anim, "S_C_Human.H_C_Tubedie") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -11245,7 +11240,7 @@ DECLARE_SCRIPT(M11_CeilingRepeller2_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_a_Human.H_a_X11D_repel") == 0)
+		if (_stricmp(anim, "S_a_Human.H_a_X11D_repel") == 0)
 		{
 			Commands->Attach_Script(obj, "M01_Hunt_The_Player_JDG","");	
 		}

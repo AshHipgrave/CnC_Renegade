@@ -139,7 +139,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\Pluglib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader />
       <PrecompiledHeaderOutputFile>.\Debug/max2w3d.pch</PrecompiledHeaderOutputFile>
@@ -152,6 +152,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pluglibd.lib;mesh.lib;maxutil.lib;maxscrpt.lib;bmm.lib;comctl32.lib;core.lib;geom.lib;paramblk2.lib;%(AdditionalDependencies)</AdditionalDependencies>

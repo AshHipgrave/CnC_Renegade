@@ -105,7 +105,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\DirectX\include;..\miles6\include;..\wwlib;..\wwmath;..\wwdebug;..\ww3d2;..\wwsaveload;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;WWDEBUG;_LIB;WIN32;G_CODE_BASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;WWDEBUG;_LIB;WIN32;G_CODE_BASE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader />

@@ -95,7 +95,6 @@ StringClass::Get_String (int length, bool is_temp)
 		// TODO: Don't loop, there are better ways
 		unsigned mask=1;
 		for (int index = 0; index < MAX_TEMP_STRING; index ++, mask<<=1) {
-			unsigned mask=1<<index;
 			if (!(ReservedMask&mask)) {
 				ReservedMask|=mask;
 				

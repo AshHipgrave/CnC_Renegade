@@ -536,7 +536,7 @@ void SortedNTreeLeafClass<T>::Insertion_Sort (SortedNTreeLeafClass<T> *start, So
 		//
 		//	Does the new sibling come before the current leaf?
 		//
-		if (::stricmp (name, leaf->Get_Name ()) < 0) {				
+		if (::_stricmp (name, leaf->Get_Name ()) < 0) {				
 
 			//
 			//	Insert this sibling before the leaf

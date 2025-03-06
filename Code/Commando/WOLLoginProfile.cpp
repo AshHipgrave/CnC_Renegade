@@ -57,7 +57,7 @@ static const char* REG_VALUE_TEAMRANK = "RankTeam";
 static const char* REG_VALUE_CLANRANK = "RankClan";
 
 // Profile ranking columns
-static enum
+enum
 {
 	COL_LADDERNAME = 0,
 	COL_WINS,
@@ -147,7 +147,7 @@ LoginProfile* LoginProfile::Get(const wchar_t* loginName, bool createOK)
 		// Check the current profile first
 		if (_mCurrentProfile)
 			{
-			if (wcsicmp(_mCurrentProfile->GetName(), loginName) == 0)
+			if (_wcsicmp(_mCurrentProfile->GetName(), loginName) == 0)
 				{
 				_mCurrentProfile->Add_Ref();
 				return _mCurrentProfile;

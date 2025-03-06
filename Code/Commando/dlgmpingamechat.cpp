@@ -215,20 +215,20 @@ bool MPChatChildDialogClass::Process_Commands(const WCHAR* message)
 					curr_pos = Get_Parameter_From_String(curr_pos, user_name);
 
 					if (user_name.Get_Length() > 0) {
-						WideStringClass message(0, true);
-						message = curr_pos;
-						message.Trim();
+						WideStringClass msg(0, true);
+						msg = curr_pos;
+						msg.Trim();
 
 						// If the user is in this game then just send them a private message.
 						cPlayer* recipient = cPlayerManager::Find_Player(user_name);
 
 						if (recipient) {
 							int recipient_id = recipient->Get_Id();
-							Send_Message(message, TEXT_MESSAGE_PRIVATE, recipient_id);
+							Send_Message(msg, TEXT_MESSAGE_PRIVATE, recipient_id);
 						} else {
 							// Page external users.
 							WolGameModeClass* wolGame = reinterpret_cast<WolGameModeClass*>(gameMode);
-							wolGame->Page_WOL_User(user_name, message);
+							wolGame->Page_WOL_User(user_name, msg);
 						}
 					}
 				}
@@ -243,11 +243,11 @@ bool MPChatChildDialogClass::Process_Commands(const WCHAR* message)
 				if (gameMode && gameMode->Is_Active()) {
 					WolGameModeClass* wolGame = reinterpret_cast<WolGameModeClass*>(gameMode);
 
-					WideStringClass message(0, true);
-					message = curr_pos;
-					message.Trim();
+					WideStringClass msg(0, true);
+					msg = curr_pos;
+					msg.Trim();
 
-					wolGame->Reply_Last_Page(message);
+					wolGame->Reply_Last_Page(msg);
 				}
 			
 				return true;
@@ -283,11 +283,11 @@ bool MPChatChildDialogClass::Process_Commands(const WCHAR* message)
 					if (user_name.Get_Length() > 0) {
 						WolGameModeClass* wolGame = reinterpret_cast<WolGameModeClass*>(gameMode);
 
-						WideStringClass message(0, true);
-						message = curr_pos;
-						message.Trim();
+						WideStringClass msg(0, true);
+						msg = curr_pos;
+						msg.Trim();
 
-						wolGame->Invite_WOL_User(user_name, message);
+						wolGame->Invite_WOL_User(user_name, msg);
 					}
 				}
 			
@@ -494,9 +494,9 @@ MPChatChildDialogClass::Complete_Player_Name (const WCHAR *typed_name, WideStrin
 		//
 		//	Is this the best match so far?
 		//
-		if (::wcsnicmp (player_name, typed_name, typed_len) == 0) {
+		if (::_wcsnicmp (player_name, typed_name, typed_len) == 0) {
 			if (	completed_name.Get_Length () == 0 ||
-					::wcsicmp (player_name, completed_name) < 0)
+					::_wcsicmp (player_name, completed_name) < 0)
 			{
 				completed_name = player_name;
 			}

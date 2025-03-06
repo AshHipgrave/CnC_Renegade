@@ -3302,8 +3302,8 @@ RenderObjClass *	SoldierGameObj::Find_Head_Model( void )
 					//
 					//	Is this really a head model?
 					//
-					if ( ::stricmp (htree->Get_Name(), "S_A_HEAD") == 0 ||
-						  ::stricmp (htree->Get_Name(), "S_B_HEAD") == 0)
+					if ( ::_stricmp (htree->Get_Name(), "S_A_HEAD") == 0 ||
+						  ::_stricmp (htree->Get_Name(), "S_B_HEAD") == 0)
 					{
 						head_model = render_obj;
 						break;
@@ -3860,7 +3860,7 @@ void	SoldierGameObj::Apply_Damage_Extended( const OffenseObjectClass & damager, 
 
 					#define	VISCEROID_NAME			"Visceroid"
 					// Not from other visceroids
-					if ( ::stricmp( Get_Definition().Get_Name(), VISCEROID_NAME ) != 0 ) {
+					if ( ::_stricmp( Get_Definition().Get_Name(), VISCEROID_NAME ) != 0 ) {
 						// Create a visceroid
 						PhysicalGameObj * vis = ObjectLibraryManager::Create_Object( VISCEROID_NAME );
 						if ( vis != NULL ) {
@@ -4514,7 +4514,7 @@ void	SoldierGameObj::Set_Special_Damage_Mode( ArmorWarheadManager::SpecialDamage
 				int sub_count = Peek_Model()->Get_Num_Sub_Objects_On_Bone( bone );
 				while ( --sub_count >= 0 ) {
 					RenderObjClass * sub = Peek_Model()->Get_Sub_Object_On_Bone( sub_count, bone );
-					if ( ::stricmp(sub->Get_Name(), _SpecialDamageEmitters[emitter].EmitterName ) == 0 ) {
+					if ( ::_stricmp(sub->Get_Name(), _SpecialDamageEmitters[emitter].EmitterName ) == 0 ) {
 						Peek_Model()->Remove_Sub_Object( sub );
 					}
 					sub->Release_Ref();
@@ -4656,7 +4656,7 @@ void	SoldierGameObj::Add_RenderObj( RenderObjClass * obj )
 RenderObjClass *	SoldierGameObj::Find_RenderObj( const char * name )
 {
 	for ( int i = 0; i < RenderObjList.Count(); i++ ) {
-		if ( !stricmp( RenderObjList[i]->Get_Name(), name ) ) {
+		if ( !_stricmp( RenderObjList[i]->Get_Name(), name ) ) {
 			return RenderObjList[i];
 		}
 	}

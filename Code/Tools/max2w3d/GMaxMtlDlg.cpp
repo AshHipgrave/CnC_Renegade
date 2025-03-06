@@ -961,7 +961,7 @@ GameMtl* CreateNewGameMtl(){
 	int index = scene_mtls->FindMtl(mtl);
 	if(index == -1){
 		char tempbuf[32];
-		itoa(_Num_Of_NoNames++, tempbuf, 10);
+		_itoa(_Num_Of_NoNames++, tempbuf, 10);
 		str += tempbuf;
 		mtl->SetName(str);
 	}

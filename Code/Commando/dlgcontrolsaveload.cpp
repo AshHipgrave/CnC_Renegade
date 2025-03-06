@@ -46,7 +46,7 @@
 ////////////////////////////////////////////////////////////////
 //	Local constants
 ////////////////////////////////////////////////////////////////
-static enum
+enum
 {
 	MBEVENT_DELETE_PROMPT	= 1,
 	MBEVENT_SAVE_PROMPT
@@ -535,7 +535,7 @@ ControlSaveLoadMenuClass::ListSortCallback
 			//
 			//	Sort based on the names
 			//
-			retval = ::wcsicmp (config1->Get_Display_Name (), config2->Get_Display_Name ());
+			retval = ::_wcsicmp (config1->Get_Display_Name (), config2->Get_Display_Name ());
 		}	
 	}
 

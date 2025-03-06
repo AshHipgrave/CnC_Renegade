@@ -352,7 +352,7 @@ RenegadeDialogMgrClass::Shutdown (void)
 //
 ////////////////////////////////////////////////////////////////
 bool CALLBACK
-Default_On_Command (DialogBaseClass *dialog, int ctrl_id, int mesage_id, DWORD param)
+Default_On_Command (DialogBaseClass *dialogClass, int ctrl_id, int mesage_id, DWORD param)
 {
 	bool handled = true;
 
@@ -375,7 +375,7 @@ Default_On_Command (DialogBaseClass *dialog, int ctrl_id, int mesage_id, DWORD p
 		case IDC_BACK:
 		case IDCANCEL:
 		{
-			dialog->End_Dialog ();
+			dialogClass->End_Dialog ();
 			break ;
 		}
 

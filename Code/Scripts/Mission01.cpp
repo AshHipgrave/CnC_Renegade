@@ -2521,7 +2521,7 @@ DECLARE_SCRIPT(M01_HON_Medlab_DropOff_Guy_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.H_A_TroopDrop") == 0)
+		if (_stricmp(anim, "S_A_Human.H_A_TroopDrop") == 0)
 		{
 			ActionParamsStruct params;
 			params.Set_Basic(this, 100, M01_WALKING_WAYPATH_01_JDG);
@@ -2533,8 +2533,6 @@ DECLARE_SCRIPT(M01_HON_Medlab_DropOff_Guy_JDG, "")
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )
 	{
-		ActionParamsStruct params;
-
 		if (action_id == M01_WALKING_WAYPATH_01_JDG && complete_reason == ACTION_COMPLETE_NORMAL)
 		{
 			Commands->Destroy_Object ( obj );
@@ -8049,7 +8047,7 @@ DECLARE_SCRIPT(M01_TurretBeach_GDI_Guy_01_JDG, "")//
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.H_A_X1E_Run") == 0)
+		if (_stricmp(anim, "S_A_Human.H_A_X1E_Run") == 0)
 		{
 			ActionParamsStruct params;
 
@@ -8096,7 +8094,7 @@ DECLARE_SCRIPT(M01_TurretBeach_GDI_Guy_02_JDG, "")
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.H_A_X1E_Run") == 0)
+		if (_stricmp(anim, "S_A_Human.H_A_X1E_Run") == 0)
 		{
 			ActionParamsStruct params;
 
@@ -8304,12 +8302,12 @@ DECLARE_SCRIPT(M01_DetentionCiv_Air_Evac_Waypath_JDG, "")
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_TransprtBone.XG_EV1_PathA") == 0)
+		if (_stricmp(anim, "XG_TransprtBone.XG_EV1_PathA") == 0)
 		{
 			Commands->Set_Animation ( obj, "XG_TransprtBone.XG_EV1_Pathloop", true, NULL, 0.0f, -1.0f, false);
 		}
 
-		else if (stricmp(anim, "XG_TransprtBone.XG_EV1_PathZ") == 0)
+		else if (_stricmp(anim, "XG_TransprtBone.XG_EV1_PathZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -8346,7 +8344,7 @@ DECLARE_SCRIPT(M01_DetentionCiv_Air_Evac_Chopper_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "v_GDI_trnspt.XG_EV1_trnsA") == 0)
+		if (_stricmp(anim, "v_GDI_trnspt.XG_EV1_trnsA") == 0)
 		{
 			Commands->Set_Animation ( obj, "v_GDI_trnspt.XG_EV1_trnsloop", true, NULL, 0.0f, -1.0f, false);
 
@@ -8372,7 +8370,7 @@ DECLARE_SCRIPT(M01_DetentionCiv_Air_Evac_Chopper_JDG, "")
 			}
 		}
 
-		else if (stricmp(anim, "v_GDI_trnspt.XG_EV1_trnsz") == 0)
+		else if (_stricmp(anim, "v_GDI_trnspt.XG_EV1_trnsz") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -8471,12 +8469,12 @@ DECLARE_SCRIPT(M01_DetentionGDI_Air_Evac_Waypath_JDG, "")
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_TransprtBone.XG_EV1_PathA") == 0)
+		if (_stricmp(anim, "XG_TransprtBone.XG_EV1_PathA") == 0)
 		{
 			Commands->Set_Animation ( obj, "XG_TransprtBone.XG_EV1_Pathloop", true, NULL, 0.0f, -1.0f, false);
 		}
 
-		else if (stricmp(anim, "XG_TransprtBone.XG_EV1_PathZ") == 0)
+		else if (_stricmp(anim, "XG_TransprtBone.XG_EV1_PathZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -8513,7 +8511,7 @@ DECLARE_SCRIPT(M01_DetentionGDI_Air_Evac_Chopper_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "v_GDI_trnspt.XG_EV1_trnsA") == 0)
+		if (_stricmp(anim, "v_GDI_trnspt.XG_EV1_trnsA") == 0)
 		{
 			Commands->Set_Animation ( obj, "v_GDI_trnspt.XG_EV1_trnsloop", true, NULL, 0.0f, -1.0f, false);
 
@@ -8539,7 +8537,7 @@ DECLARE_SCRIPT(M01_DetentionGDI_Air_Evac_Chopper_JDG, "")
 			}
 		}
 
-		else if (stricmp(anim, "v_GDI_trnspt.XG_EV1_trnsz") == 0)
+		else if (_stricmp(anim, "v_GDI_trnspt.XG_EV1_trnsz") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -8590,7 +8588,7 @@ DECLARE_SCRIPT(M01_Nod_Chinook_Reinforcement_Guy_JDG, "")//
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
 		{
 			Vector3 offset;
 			offset.X = Commands->Get_Random(1, 3);
@@ -8804,7 +8802,7 @@ DECLARE_SCRIPT(M01_HON_Chinook_Spawned_Soldier_03_GDI_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
 		{
 			Vector3 myHomeSpot(-209.853f, 505.532f, 4.017f);//going to hand of nod backside
 			ActionParamsStruct params;
@@ -8856,7 +8854,7 @@ DECLARE_SCRIPT(M01_HON_Chinook_Spawned_Soldier_04_GDI_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
 		{
 			Vector3 myHomeSpot(-204.157f, 508.650f, 4.017f);//going to hand of nod backside
 			ActionParamsStruct params;
@@ -9018,8 +9016,6 @@ DECLARE_SCRIPT(M01_BuggyScript_New_JDG, "")
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (type == M01_MODIFY_YOUR_ACTION_02_JDG)
 		{
 			minigunner01_id = param;
@@ -9033,7 +9029,9 @@ DECLARE_SCRIPT(M01_BuggyScript_New_JDG, "")
 		}
 
 		else if (param == M01_MODIFY_YOUR_ACTION_JDG)
-		{
+        {
+            ActionParamsStruct params;
+
 			params.Set_Basic( this, 100, M01_WALKING_WAYPATH_01_JDG );
 			params.Set_Movement( Vector3(0,0,0), 0.5f, 5 );
 			params.WaypathID = 103289;
@@ -9048,7 +9046,9 @@ DECLARE_SCRIPT(M01_BuggyScript_New_JDG, "")
 			GameObject * minigunner02 = Commands->Find_Object ( minigunner02_id );
 
 			if (minigunner01 != NULL)
-			{
+            {
+                ActionParamsStruct params;
+
 				params.Set_Basic( this, 100, M01_WALKING_WAYPATH_01_JDG );
 				params.Set_Movement( Vector3(0,0,0), 0.5f, 5 );
 				params.WaypathID = 103289;
@@ -9058,7 +9058,9 @@ DECLARE_SCRIPT(M01_BuggyScript_New_JDG, "")
 			}
 
 			else if (minigunner02 != NULL)
-			{
+            {
+                ActionParamsStruct params;
+
 				params.Set_Basic( this, 100, M01_WALKING_WAYPATH_01_JDG );
 				params.Set_Movement( Vector3(0,0,0), 0.5f, 5 );
 				params.WaypathID = 103289;
@@ -9377,7 +9379,7 @@ DECLARE_SCRIPT(M01_CHURCH_Chinook_Spawned_Soldier01_GDI, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
 		{
 			ActionParamsStruct params;
 			params.Set_Basic(this, 100, M01_WALKING_WAYPATH_01_JDG);
@@ -9663,7 +9665,7 @@ DECLARE_SCRIPT(M01_CHURCH_Chinook_Spawned_Soldier02_GDI, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
 		{
 			Commands->Send_Custom_Event( obj, obj, 0, M01_PICK_A_NEW_LOCATION_JDG, 0 );
 		}
@@ -9930,7 +9932,7 @@ DECLARE_SCRIPT(M01_COMM_Chinook_Spawned_Soldier_GDI, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
 		{
 			Commands->Send_Custom_Event( obj, obj, 0, M01_PICK_A_NEW_LOCATION_JDG, 0 );
 		}
@@ -11926,7 +11928,7 @@ DECLARE_SCRIPT(M01_ChurchArea_Air_Evac_Rope_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_rope.XG_EV5_ropeZ") == 0)
+		if (_stricmp(anim, "XG_EV5_rope.XG_EV5_ropeZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -11960,7 +11962,7 @@ DECLARE_SCRIPT(M01_ChurchArea_Air_Evac_Waypath_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_Path.XG_EV5_PathZ") == 0)
+		if (_stricmp(anim, "XG_EV5_Path.XG_EV5_PathZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12006,7 +12008,7 @@ DECLARE_SCRIPT(M01_ChurchArea_Air_Evac_Chopper_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsA") == 0)
+		if (_stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsA") == 0)
 		{
 			Commands->Debug_Message ( "**********************chopper has finished entry anim\n" );
 			Vector3 evacLocation = Commands->Get_Position ( obj );
@@ -12034,7 +12036,7 @@ DECLARE_SCRIPT(M01_ChurchArea_Air_Evac_Chopper_JDG, "")
 			Commands->Send_Custom_Event ( obj, obj, 0, M01_DO_END_MISSION_CHECK_JDG, 2 );
 		}
 
-		else if (stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsz") == 0)
+		else if (_stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsz") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12175,7 +12177,7 @@ DECLARE_SCRIPT(M01_Church_Priest_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12322,10 +12324,9 @@ DECLARE_SCRIPT(M01_Church_Interior_Nun_JDG, "")
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if ((param == M01_START_ACTING_JDG))//Player is entering church area--cue actors
-		{
+        {
+            ActionParamsStruct params;
 			params.Set_Basic( this, 90, 0 );
 			params.Set_Animation ("S_A_Human.H_A_Host_L2b", true);
 			Commands->Action_Play_Animation (obj, params);
@@ -12334,7 +12335,8 @@ DECLARE_SCRIPT(M01_Church_Interior_Nun_JDG, "")
 		}
 
 		else if ((param == M01_CHURCH_GUARD_IS_DEAD_JDG))//Your guard is dead--do something
-		{
+        {
+            ActionParamsStruct params;
 			Commands->Stop_Sound ( prayerSound, true );
 			Commands->Enable_Hibernation( obj, false );
 			params.Set_Basic( this, 90, M01_DOING_ANIMATION_01_JDG );
@@ -12356,7 +12358,7 @@ DECLARE_SCRIPT(M01_Church_Interior_Nun_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12466,10 +12468,9 @@ DECLARE_SCRIPT(M01_Church_LoveShack_Nun_JDG, "")
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if ((param == M01_START_ACTING_JDG))//Player is entering church area--cue actors
-		{
+        {
+            ActionParamsStruct params;
 			params.Set_Basic(this, 90, M01_WALKING_WAYPATH_01_JDG);
 			params.Set_Movement( Vector3(0,0,0), WALK, .25f );
 			params.WaypathID = 100750;
@@ -12479,7 +12480,8 @@ DECLARE_SCRIPT(M01_Church_LoveShack_Nun_JDG, "")
 		}
 
 		else if ((param == M01_LOVESHACK_GUARD_IS_DEAD_JDG))//Your guard is dead--follow havoc
-		{
+        {
+            ActionParamsStruct params;
 			Commands->Enable_Hibernation( obj, false );
 			params.Set_Basic( this, 100, M01_WALKING_WAYPATH_02_JDG );
 			params.Set_Movement( Vector3 (0,0,0), RUN, 1.0f );
@@ -12504,7 +12506,7 @@ DECLARE_SCRIPT(M01_Church_LoveShack_Nun_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12591,7 +12593,7 @@ DECLARE_SCRIPT(M01_BarnArea_Air_Evac_Rope_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_rope.XG_EV5_ropeZ") == 0)
+		if (_stricmp(anim, "XG_EV5_rope.XG_EV5_ropeZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12625,7 +12627,7 @@ DECLARE_SCRIPT(M01_BarnArea_Air_Evac_Waypath_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_Path.XG_EV5_PathZ") == 0)
+		if (_stricmp(anim, "XG_EV5_Path.XG_EV5_PathZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12690,7 +12692,7 @@ DECLARE_SCRIPT(M01_BarnArea_Air_Evac_Chopper_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsA") == 0)
+		if (_stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsA") == 0)
 		{
 			Commands->Debug_Message ( "**********************chopper has finished entry anim\n" );
 			Vector3 evacLocation = Commands->Get_Position ( obj );
@@ -12718,7 +12720,7 @@ DECLARE_SCRIPT(M01_BarnArea_Air_Evac_Chopper_JDG, "")
 			Commands->Send_Custom_Event ( obj, obj, 0, M01_DO_END_MISSION_CHECK_JDG, 2 );
 		}
 
-		else if (stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsz") == 0)
+		else if (_stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsz") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12816,10 +12818,9 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_01_JDG, "")//this guys ID is M01_BARN_PRISONER_
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_MODIFY_YOUR_ACTION_JDG)//babushka runs to hide spot
-		{
+        {
+            ActionParamsStruct params;
 			params.Set_Basic( this, 100, M01_DOING_ANIMATION_02_JDG );
 			params.Set_Animation( "S_A_HUMAN.H_A_HOST_L2C", false );
 			Commands->Action_Play_Animation ( obj, params );	
@@ -12865,7 +12866,7 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_01_JDG, "")//this guys ID is M01_BARN_PRISONER_
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -12986,13 +12987,12 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_02_JDG, "")//this guys ID is M01_BARN_PRISONER_
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_MODIFY_YOUR_ACTION_JDG)//goto your hiding spot
 		{
 			Commands->Enable_Hibernation( obj, false );
 			Commands->Action_Reset ( obj, 100 );
 
+            ActionParamsStruct params;
 			params.Set_Basic( this, 100, M01_DOING_ANIMATION_02_JDG );
 			params.Set_Animation( "S_A_HUMAN.H_A_HOST_L2C", false );
 			Commands->Action_Play_Animation ( obj, params );
@@ -13026,7 +13026,7 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_02_JDG, "")//this guys ID is M01_BARN_PRISONER_
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -13137,7 +13137,7 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_03_JDG, "")//this guys ID is M01_BARN_PRISONER_
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -13145,14 +13145,13 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_03_JDG, "")//this guys ID is M01_BARN_PRISONER_
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (param == M01_MODIFY_YOUR_ACTION_JDG)//guy runs to back shed
 		{
 			Commands->Set_Innate_Is_Stationary ( obj, false );
 			Commands->Enable_Hibernation( obj, false );
 			Commands->Action_Reset ( obj, 100 );
 
+            ActionParamsStruct params;
 			params.Set_Basic( this, 100, M01_DOING_ANIMATION_02_JDG );
 			params.Set_Animation( "S_A_HUMAN.H_A_HOST_L2C", false );
 			Commands->Action_Play_Animation ( obj, params );
@@ -13203,8 +13202,6 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_03_JDG, "")//this guys ID is M01_BARN_PRISONER_
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )	
 	{
-		ActionParamsStruct params;
-
 		if (complete_reason == ACTION_COMPLETE_NORMAL)
 		{
 			if (action_id == M01_WALKING_WAYPATH_01_JDG)//civ is at hiding spot--crouch
@@ -13265,7 +13262,8 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_03_JDG, "")//this guys ID is M01_BARN_PRISONER_
 			}
 
 			else if (action_id == M01_DOING_ANIMATION_02_JDG )//pow guy is standingup
-			{
+            {
+                ActionParamsStruct params;
 				params.Set_Basic( this, 100, M01_DOING_ANIMATION_03_JDG );
 				params.Set_Animation( "S_A_HUMAN.H_A_HOST_L1C", false );
 				Commands->Action_Play_Animation ( obj, params );
@@ -13273,7 +13271,8 @@ DECLARE_SCRIPT(M01_Barn_Prisoner_03_JDG, "")//this guys ID is M01_BARN_PRISONER_
 			}
 
 			else if (action_id == M01_DOING_ANIMATION_03_JDG )//play the Havoc conversation
-			{
+            {
+                ActionParamsStruct params;
 				params.Set_Basic( this, 100, M01_WALKING_WAYPATH_01_JDG );
 				params.Set_Movement( Vector3(-56.8f, 213.2f, 5.5f), 1.0f, 0.5f );
 				Commands->Action_Goto( obj, params );
@@ -13301,7 +13300,7 @@ DECLARE_SCRIPT(M01_GDIBasePOW_Air_Evac_Rope_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_rope.XG_EV5_ropeZ") == 0)
+		if (_stricmp(anim, "XG_EV5_rope.XG_EV5_ropeZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -13337,7 +13336,7 @@ DECLARE_SCRIPT(M01_GDIBasePOW_Air_Evac_Waypath_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_Path.XG_EV5_PathZ") == 0)
+		if (_stricmp(anim, "XG_EV5_Path.XG_EV5_PathZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -13368,7 +13367,7 @@ DECLARE_SCRIPT(M01_Evac_TroopBone_JDG, "")
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_troopBN.XG_EV5_troopBN") == 0)
+		if (_stricmp(anim, "XG_EV5_troopBN.XG_EV5_troopBN") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -13391,7 +13390,7 @@ DECLARE_SCRIPT(M01_GDIBaseCommander_Air_Evac_Waypath_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_Path.XG_EV5_PathZ") == 0)
+		if (_stricmp(anim, "XG_EV5_Path.XG_EV5_PathZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -13426,7 +13425,7 @@ DECLARE_SCRIPT(M01_GDIBaseCommander_Air_Evac_Rope_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "XG_EV5_rope.XG_EV5_ropeZ") == 0)
+		if (_stricmp(anim, "XG_EV5_rope.XG_EV5_ropeZ") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -13590,7 +13589,7 @@ DECLARE_SCRIPT(M01_GDIBase_FirstChinookFlamethrowerGuy_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "S_A_Human.h_a_troopdrop") == 0)
 		{
 			Vector3 myHomeSpot (-22.604f, 25.125f, 1.605f);
 			ActionParamsStruct params;
@@ -13625,7 +13624,7 @@ DECLARE_SCRIPT(M01_GDIBase_SecondChinookMinigunnerGuy_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "S_A_Human.h_a_troopdrop") == 0)
 		{
 			Vector3 myHomeSpot (-16.144f, 19.274f, 2.312f);
 			ActionParamsStruct params;
@@ -15321,7 +15320,7 @@ DECLARE_SCRIPT(M01_Sinking_Gunboat_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "V_GDI_GBOAT.XG_GBOAT_SINK") == 0)
+		if (_stricmp(anim, "V_GDI_GBOAT.XG_GBOAT_SINK") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -16108,7 +16107,7 @@ DECLARE_SCRIPT(M01_TurretBeach_Chinook_Spawned_Soldier_NOD, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)
 		{ 
 			GameObject *turret01 = Commands->Find_Object ( M01_TURRETBEACH_TURRET_01_ID );
 			GameObject *turret02 = Commands->Find_Object ( M01_TURRETBEACH_TURRET_02_ID );
@@ -17519,7 +17518,7 @@ DECLARE_SCRIPT(M01_GDIBaseCommander_Air_Evac_Chopper_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsA") == 0)
+		if (_stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsA") == 0)
 		{
 			Commands->Debug_Message ( "**********************chopper has finished entry anim\n" );
 			Vector3 evacLocation = Commands->Get_Position ( obj );
@@ -17546,7 +17545,7 @@ DECLARE_SCRIPT(M01_GDIBaseCommander_Air_Evac_Chopper_JDG, "")
 			Commands->Send_Custom_Event ( obj, obj, 0, M01_DO_END_MISSION_CHECK_JDG, 2 );
 		}
 
-		else if (stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsz") == 0)
+		else if (_stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsz") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -17914,7 +17913,7 @@ DECLARE_SCRIPT(M01_GDIBasePOW_Air_Evac_Chopper_JDG, "")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsA") == 0)
+		if (_stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsA") == 0)
 		{
 			Commands->Debug_Message ( "**********************chopper has finished entry anim\n" );
 			Vector3 evacLocation = Commands->Get_Position ( obj );
@@ -17936,7 +17935,7 @@ DECLARE_SCRIPT(M01_GDIBasePOW_Air_Evac_Chopper_JDG, "")
 			Commands->Send_Custom_Event ( obj, obj, 0, M01_DO_END_MISSION_CHECK_JDG, 2 );
 		}
 
-		else if (stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsz") == 0)
+		else if (_stricmp(anim, "v_GDI_trnspt.XG_EV5_trnsz") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -18002,7 +18001,7 @@ DECLARE_SCRIPT(M01_ConYard_Dropoff_Dude_JDG, "")
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.H_A_TroopDrop") == 0)
+		if (_stricmp(anim, "S_A_Human.H_A_TroopDrop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -18013,17 +18012,17 @@ DECLARE_SCRIPT(M01_C130_Dropoff_Dude_JDG, "")
 {
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_a_Human.H_A_X5D_ParaT_1") == 0)
+		if (_stricmp(anim, "S_a_Human.H_A_X5D_ParaT_1") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
 
-		else if (stricmp(anim, "S_a_Human.H_A_X5D_ParaT_2") == 0)
+		else if (_stricmp(anim, "S_a_Human.H_A_X5D_ParaT_2") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
 
-		else if (stricmp(anim, "S_a_Human.H_A_X5D_ParaT_3") == 0)
+		else if (_stricmp(anim, "S_a_Human.H_A_X5D_ParaT_3") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -18312,8 +18311,6 @@ DECLARE_SCRIPT(M01_TurretBeach_Turret_01_Script_JDG, "")//M01_TURRETBEACH_TURRET
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )
 	{
-		ActionParamsStruct params;
-
 		if (action_id == M01_START_ATTACKING_01_JDG)//hovercraft is dead...go back to attacking gunboat
 		{ 
 			GameObject * gunboat = Commands->Find_Object ( M01_TURRETBEACH_GUNBOAT_ID );
@@ -18864,7 +18861,7 @@ DECLARE_SCRIPT(M01_GDIBase_BaseCommander_JDG, "")//106050 Capt Duncan
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			if (gaveIonBeacon == false)
 			{
@@ -18943,7 +18940,7 @@ DECLARE_SCRIPT(M01_Base_GDI_Grenadier_JDG, "")//116383
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -19365,7 +19362,7 @@ DECLARE_SCRIPT(M01_Base_POW01_JDG, "")//116386
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -19494,7 +19491,7 @@ DECLARE_SCRIPT(M01_Base_POW02_JDG, "")//116385
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -19867,8 +19864,6 @@ DECLARE_SCRIPT(M01_GuardTower02_Sniper_Target01_JDG, "")
 
 	void Action_Complete( GameObject * obj, int action_id, ActionCompleteReason complete_reason )	
 	{
-		ActionParamsStruct params;
-
 		if (complete_reason == ACTION_COMPLETE_NORMAL)
 		{
 			if (action_id == M01_WALKING_WAYPATH_01_JDG )//youre now in middle of field--start conversation
@@ -20229,7 +20224,7 @@ DECLARE_SCRIPT(M01_HON_Chinook_Spawned_Soldier_01_GDI_JDG, "")
 	//Vector3 myGotoLocation (-187.848f, 526.480f, 3.518f);
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)	
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)	
 		{
 			Commands->Send_Custom_Event( obj, obj, 0, M01_WALKING_WAYPATH_01_JDG, 0 );
 			Commands->Send_Custom_Event( obj, obj, 0, M01_MODIFY_YOUR_ACTION_JDG, 5 );
@@ -20433,7 +20428,7 @@ DECLARE_SCRIPT(M01_HON_Chinook_Spawned_Soldier_02_GDI_JDG, "")
 	//Vector3 myGotoLocation (-188.670f, 530.083f, 3.518f);
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "s_a_human.h_a_troopdrop") == 0)	
+		if (_stricmp(anim, "s_a_human.h_a_troopdrop") == 0)	
 		{
 			Commands->Send_Custom_Event( obj, obj, 0, M01_WALKING_WAYPATH_01_JDG, 0 );
 		}
@@ -21660,7 +21655,7 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
+		if (_stricmp(anim, "S_A_Human.XG_EV5_troop") == 0)
 		{
 			Commands->Destroy_Object ( obj );
 		}
@@ -21703,8 +21698,6 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender ) 
 	{
-		ActionParamsStruct params;
-
 		if (type == 0)
 		{
 			if (param == M01_MODIFY_YOUR_ACTION_JDG)//leave the guard tower and take up second position outside guard tower
@@ -21712,6 +21705,7 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 				Vector3 newPosition (66.771f, -38.435f, -0.058f);
 				Vector3 myTarget (72.223f, -24.751f, -0.296f);
 
+                ActionParamsStruct params;
 				Commands->Set_Innate_Is_Stationary ( obj, false );
 				params.Set_Basic( this, 100, M01_WALKING_WAYPATH_01_JDG );
 				params.Set_Attack( myTarget, 1000, 0, true );
@@ -21728,6 +21722,7 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 				Vector3 newPosition (40.893f, -39.773f, -0.179f);
 				Vector3 myTarget (28.449f, -23.325f, 3.032f);
 
+                ActionParamsStruct params;
 				Commands->Set_Innate_Is_Stationary ( obj, false );
 				params.Set_Basic( this, 100, M01_WALKING_WAYPATH_02_JDG );
 				params.Set_Attack( myTarget, 1000, 0, true );
@@ -21742,7 +21737,8 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 
 				GameObject * nodMinigunner = Commands->Find_Object ( 116384 );
 				if (nodMinigunner != NULL)
-				{
+                {
+                    ActionParamsStruct params;
 					Vector3 newPosition (40.893f, -39.773f, -0.179f);
 					params.Set_Basic( this, 100, M01_START_ATTACKING_01_JDG );
 					params.Set_Movement(newPosition, RUN + 0.25f, 1);
@@ -21792,7 +21788,8 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 			}
 
 			else if (param == M01_GOTO_YOUR_EVAC_SPOT_JDG)
-			{
+            {
+                ActionParamsStruct params;
 				Commands->Enable_Hibernation( obj, false );
 				ducanRescued = true;
 				headingDownBackPath = false;
@@ -21810,7 +21807,8 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 				Commands->Action_Reset ( obj, 100 );
 				GameObject * myEvacController = Commands->Find_Object ( 106694 );
 				if (myEvacController != NULL)
-				{
+                {
+                    ActionParamsStruct params;
 					Commands->Set_Innate_Is_Stationary ( obj, false );
 					Vector3 myHomeSpot = Commands->Get_Position ( myEvacController );
 					params.Set_Basic( this, 100, M01_GOING_TO_EVAC_SPOT_JDG );
@@ -21839,7 +21837,8 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 				}
 
 				else
-				{
+                {
+                    ActionParamsStruct params;
 					still_in_GDI_Base = false;
 					Commands->Action_Reset ( obj, 100 );
 					headingDownBackPath = true;
@@ -21874,7 +21873,8 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 			{
 				GameObject * nodguy01 = Commands->Find_Object ( 116388 );
 				if (nodguy01 != NULL)
-				{
+                {
+                    ActionParamsStruct params;
 					Vector3 myNewSpot (58.784f, 55.223f, -0.551f);
 					Commands->Set_Innate_Is_Stationary ( obj, false );
 					params.Set_Basic( this, 100, M01_WALKING_WAYPATH_04_JDG );
@@ -21886,7 +21886,8 @@ DECLARE_SCRIPT(M01_Base_GDI_Minigunner_JDG, "")//116382
 				}
 
 				else
-				{
+                {
+                    ActionParamsStruct params;
 					Vector3 myNewSpot (58.784f, 55.223f, -0.551f);
 					Commands->Set_Innate_Is_Stationary ( obj, false );
 					params.Set_Basic( this, 100, M01_WALKING_WAYPATH_04_JDG );

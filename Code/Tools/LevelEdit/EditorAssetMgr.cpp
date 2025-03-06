@@ -204,7 +204,7 @@ EditorAssetMgrClass::Determine_Real_Location
 
 #endif //!PUBLIC_EDITOR_VER
 
-			} else if (::strnicmp ("h_a_", filename, 4) == 0) {
+			} else if (::_strnicmp ("h_a_", filename, 4) == 0) {
 				
 				//
 				//	We are 'assuming' this is a human animation file, so

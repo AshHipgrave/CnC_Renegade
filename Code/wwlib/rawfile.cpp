@@ -307,7 +307,7 @@ void RawFileClass::Reset(void)
  *                                                                                             *
  * HISTORY:                                                                                    *
  *   10/17/1994 JLB : Created.                                                                 *
- *	  11/25/2001 Jani : Changed the name storage from strdup to StringClass to benefit from our *
+ *	  11/25/2001 Jani : Changed the name storage from _strdup to StringClass to benefit from our *
  *							  Fast memory allocation system.
  *=============================================================================================*/
 char const * RawFileClass::Set_Name(char const * filename)

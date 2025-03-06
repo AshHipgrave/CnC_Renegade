@@ -702,7 +702,7 @@ void WOLNATInterfaceClass::HandleNotification(WWOnline::UserEvent& event)
 				char name_buffer[256];
 				name_buffer[0] = 0;
 				Get_Silly_String(&nick, name_buffer, 256);
-				if (stricmp(name_buffer, (char*)user.name) == 0) {
+				if (_stricmp(name_buffer, (char*)user.name) == 0) {
 					/*
 					** Ask the chat server what my IP is.
 					*/
@@ -776,7 +776,7 @@ void WOLNATInterfaceClass::HandleNotification(WWOnline::UserEvent& event)
 						char name_buffer[256];
 						name_buffer[0] = 0;
 						Get_Silly_String(&nick, name_buffer, 256);
-						if (stricmp(name_buffer, (char*)user.name) != 0) {
+						if (_stricmp(name_buffer, (char*)user.name) != 0) {
 
 							WWDEBUG_SAY(("WOLNATInterface: User isn't me.\n", (char*)user.name));
 
@@ -832,7 +832,7 @@ void WOLNATInterfaceClass::HandleNotification(WWOnline::GameOptionsMessage &mess
 				Get_Silly_String(&porky_options, slender_options, sizeof(slender_options));
 		fw_assert(ptr == slender_options);
 
-		if (strnicmp(slender_options, "NAT:", 4) == 0) {
+		if (_strnicmp(slender_options, "NAT:", 4) == 0) {
 
 			/*
 			** Add it to the options staging area.
@@ -896,7 +896,7 @@ void WOLNATInterfaceClass::HandleNotification(WWOnline::UserIPEvent &ipevent)
 		WOL::User user = ipevent();
 		char namebuf[32];
 		if (Get_My_Name(namebuf)) {
-			if (stricmp((char*)user.name, namebuf) == 0) {
+			if (_stricmp((char*)user.name, namebuf) == 0) {
 				unsigned long ip = user.ipaddr;
 				WWDEBUG_SAY(("WOLNATInterfaceClass::HandleNotification(WWOnline::UserIPEvent &ipevent) : ip = %08x\n"));
 				ChatExternalIP = ip;

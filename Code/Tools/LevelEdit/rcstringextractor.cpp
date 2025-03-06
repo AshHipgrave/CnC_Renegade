@@ -308,7 +308,7 @@ RCStringExtractorClass::Find_Starting_Index (void)
 			//	Is this one of the strings we care about?
 			//
 			const StringClass &string_desc = obj->Get_ID_Desc ();
-			if (::strnicmp (Prefix, string_desc, prefix_len) == 0) {
+			if (::_strnicmp (Prefix, string_desc, prefix_len) == 0) {
 				
 				//
 				//	Check to see if this is the largest index we've found yet

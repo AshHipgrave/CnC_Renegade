@@ -254,7 +254,7 @@ int cMiscUtil::Get_Exe_Key(void)
 	char filename[500];
    int succeeded;
 	succeeded = ::GetModuleFileName(NULL, filename, sizeof(filename));
-	::strupr(filename);
+	::_strupr(filename);
 	WWASSERT(succeeded);
       
    //
@@ -310,7 +310,7 @@ int cMiscUtil::Get_Exe_Key(void)
 	char filename[500];
    int succeeded;
 	succeeded = ::GetModuleFileName(NULL, filename, sizeof(filename));
-	::strupr(filename);
+	::_strupr(filename);
 	WWASSERT(succeeded);
       
 	StringClass string;

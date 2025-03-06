@@ -533,7 +533,7 @@ int LoginInfo::IndexOf(const wchar_t* nick)
 
 			if (SUCCEEDED(result))
 				{
-				if (nickname && (strlen(nickname) > 0) && (stricmp(username, nickname) == 0))
+				if (nickname && (strlen(nickname) > 0) && (_stricmp(username, nickname) == 0))
 					{
 					return index;
 					}

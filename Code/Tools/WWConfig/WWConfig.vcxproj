@@ -59,7 +59,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\DirectX\include;..\..\combat;..\..\wwdebug;..\..\wwmath;..\..\ww3d2;..\..\wwphys;..\..\wwlib;..\..\wwaudio;..\..\miles6\include;..\..\wwsaveload;..\..\wwnet;..\wwctrl;..\..\wwtranslatedb;..\..\wwbitpack;..\..\wwutil;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderOutputFile>.\Debug/WWConfig.pch</PrecompiledHeaderOutputFile>

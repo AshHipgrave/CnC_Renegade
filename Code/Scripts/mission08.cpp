@@ -4687,7 +4687,6 @@ DECLARE_SCRIPT(M08_Patrol_Inactive, "Waypath_ID=0:int, Waypath_Loc:Vector3, Cont
 
 	void Custom (GameObject * obj, int type, int param, GameObject * sender)
 	{
-		ActionParamsStruct params;
 		if(type == M08_INNATE_ON)
 		{
 			// No starting units can hear footsteps until otherwise alerted
@@ -4985,7 +4984,6 @@ DECLARE_SCRIPT(M08_Facility_Scientist_Inactive, "Point1_ID=0:int, Point2_ID=0:in
 
 	void Custom (GameObject * obj, int type, int param, GameObject * sender)
 	{
-		ActionParamsStruct params;
 		if(type == M08_INNATE_ON)
 		{
 			enemy_seen = false;
@@ -5114,8 +5112,8 @@ DECLARE_SCRIPT(M08_Facility_Scientist_Inactive, "Point1_ID=0:int, Point2_ID=0:in
 
 	void Killed (GameObject * obj, GameObject * killer)
 	{
-		int controller_id = Get_Int_Parameter("Controller_ID");
-		Commands->Send_Custom_Event(obj, Commands->Find_Object(controller_id), M08_SCIENTIST_KILLED, 1, 0.0f);
+		int controller_id_param = Get_Int_Parameter("Controller_ID");
+		Commands->Send_Custom_Event(obj, Commands->Find_Object(controller_id_param), M08_SCIENTIST_KILLED, 1, 0.0f);
 	}
 
 };
@@ -6747,7 +6745,6 @@ DECLARE_SCRIPT(M08_Mutant_Behavior, "")
 
 	void Custom (GameObject * obj, int type, int param, GameObject * sender)
 	{
-		ActionParamsStruct params;
 		if(type == M08_INNATE_ON && !freed)
 		{
 			

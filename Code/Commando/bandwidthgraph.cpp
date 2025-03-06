@@ -144,20 +144,20 @@ cBandwidthGraph::Bandwidth_Graph
 	//
 	// Bandwidth used (text)
 	//
-	StringClass text;
-   text.Format("%d", bps);
+	StringClass bandwidth_used_text;
+	bandwidth_used_text.Format("%d", bps);
 	PTextRenderer->Set_Location(Vector2(200, YPosition));
-	PTextRenderer->Draw_Text(text);
+	PTextRenderer->Draw_Text(bandwidth_used_text);
 
 	//
 	// Bandwidth budgeted (text)
 	//
 	if (target_bps >= 0)
 	{
-		StringClass text;
-   	text.Format("%d", target_bps);
+		StringClass bandwidth_budgeted_text;
+		bandwidth_budgeted_text.Format("%d", target_bps);
 		PTextRenderer->Set_Location(Vector2(245, YPosition));
-		PTextRenderer->Draw_Text(text);
+		PTextRenderer->Draw_Text(bandwidth_budgeted_text);
 		float target_x = target_bps / (float) BandwidthScaler * BarWidth;
 		PTextRenderer->Draw_Block(RectClass(target_x - 1, y1, target_x + 1, y2));
 	}
@@ -177,18 +177,20 @@ cBandwidthGraph::Bandwidth_Graph
 		// Text
 		//
 		// Bandwidth multiplier
+		StringClass bandwidth_multiplier_text;
 		if (is_loading) {
-			text.Format("BM:%-8.6f Ld", bandwidth_multiplier);
+			bandwidth_multiplier_text.Format("BM:%-8.6f Ld", bandwidth_multiplier);
 		} else {
-			text.Format("BM:%-8.6f", bandwidth_multiplier);
+			bandwidth_multiplier_text.Format("BM:%-8.6f", bandwidth_multiplier);
 		}
 		PTextRenderer->Set_Location(Vector2(400, YPosition));
-		PTextRenderer->Draw_Text(text);
+		PTextRenderer->Draw_Text(bandwidth_multiplier_text);
 
 		// Average object priority on this client
-		text.Format("AP:%-8.6f", average_priority);
+        StringClass avg_priority_text;
+		avg_priority_text.Format("AP:%-8.6f", average_priority);
 		PTextRenderer->Set_Location(Vector2(500, YPosition));
-		PTextRenderer->Draw_Text(text);
+		PTextRenderer->Draw_Text(avg_priority_text);
 
 	}
 
@@ -235,16 +237,16 @@ cBandwidthGraph::Think
 	float x2 = 0;
 	float y1 = YPosition;
 	float y2 = y1 + BarHeight;
-	int i		= 0;
+	int idx	 = 0;
 
 	do {
 		x2 = x1 + BarWidth;
-		PTextRenderer->Draw_Block(RectClass(x1, y1, x2, y2), (i % 2) ? COLOR_WHITE : COLOR_BLACK);
+		PTextRenderer->Draw_Block(RectClass(x1, y1, x2, y2), (idx % 2) ? COLOR_WHITE : COLOR_BLACK);
 		x1 = x2;
-		i++;
+		idx++;
 	} while (x2 < Render2DClass::Get_Screen_Resolution().Width());
 
-   //
+    //
 	// Label the scale
 	//
 	StringClass text;

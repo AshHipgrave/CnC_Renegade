@@ -117,7 +117,7 @@ ReportMgrClass::Export_File_Usage_Report (const char *filename)
 					CString rel_path = ::Get_File_Mgr ()->Make_Relative_Path (dep_list[new_index]);
 					
 					StringClass lower_name (rel_path, true);
-					::strlwr (lower_name.Peek_Buffer ());
+					::_strlwr (lower_name.Peek_Buffer ());
 					
 					//
 					//	Don't add this file to the list if its already there
@@ -140,7 +140,7 @@ ReportMgrClass::Export_File_Usage_Report (const char *filename)
 		//
 		for (int index = 0; index < file_list.Count (); index ++) {
 			StringClass lower_name (file_list[index], true);
-			::strlwr (lower_name.Peek_Buffer ());
+			::_strlwr (lower_name.Peek_Buffer ());
 
 			//
 			//	Only write this filename to the file if it

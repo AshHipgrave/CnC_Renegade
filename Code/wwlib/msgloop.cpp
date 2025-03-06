@@ -118,7 +118,7 @@ void Windows_Message_Handler(void)
 					processed = true;
 				}
 			}
-			break;
+			break; // TODO: AshHipgrave - Should this be "if (processed) break" ? In its current form it will terminate the loop after one iteration, regardless of if the message was processed or not (this screams bug, but it could be one the game has come to rely on it so I'm hesistant to change it right now).
 		}
 		if (processed) continue;
 

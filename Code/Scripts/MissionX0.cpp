@@ -611,7 +611,7 @@ DECLARE_SCRIPT (MX0_Engineer1, "Damage_multiplier:float")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "H_A_J21C") == 0)
+		if (_stricmp(anim, "H_A_J21C") == 0)
 		{
 			doing_anim = false;			
 		}
@@ -885,7 +885,7 @@ DECLARE_SCRIPT (MX0_Engineer2, "Damage_multiplier:float")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "H_A_J21C") == 0)
+		if (_stricmp(anim, "H_A_J21C") == 0)
 		{
 			doing_anim = false;			
 		}
@@ -1550,7 +1550,7 @@ DECLARE_SCRIPT(MX0_NOD_INFANTRY, "troop_num:int")
 
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.H_A_TroopDrop") == 0)
+		if (_stricmp(anim, "S_A_Human.H_A_TroopDrop") == 0)
 		{
 			Commands->Send_Custom_Event( obj, obj, 1, 0, 0.33f );
 		}
@@ -1989,7 +1989,6 @@ DECLARE_SCRIPT (MX0_A03_CONTROLLER_DAK, "" )
 			{
 				if (Trooper_One)
 				{
-					GameObject *Trooper_One = Commands->Find_Object( Trooper_One_Id );
 					// Trooper1: "Nice! That'll cost 'em!"
 					int conv_id = Commands->Create_Conversation ( "MX0_A03_08", 0, 0, true );
 					Commands->Join_Conversation( Trooper_One, conv_id, false, false, true);
@@ -2134,13 +2133,13 @@ DECLARE_SCRIPT ( MX0_A03_HUMVEE, "" ) // moves humvee
 		{
 			// Commands->Debug_Message( "***** DAK ***** finding Object Buggie.\n" );
 			Current_Target = Target_Id[target];
-			GameObject *target = Commands->Find_Object( Current_Target );
+			GameObject *current_target = Commands->Find_Object( Current_Target );
 
-			if ( target ) 
+			if (current_target)
 			{
 				ActionParamsStruct params;
 				params.Set_Basic(this, INNATE_PRIORITY_ENEMY_SEEN, 1);
-				params.Set_Attack(target, 60.0f, 0.25f, true);
+				params.Set_Attack(current_target, 60.0f, 0.25f, true);
 				Commands->Action_Attack(obj, params);
 			}
 		}
@@ -2148,13 +2147,13 @@ DECLARE_SCRIPT ( MX0_A03_HUMVEE, "" ) // moves humvee
 		{
 			target = target + 1;
 			Current_Target = Target_Id[target];
-			GameObject *target = Commands->Find_Object( Current_Target );
+			GameObject * current_target = Commands->Find_Object( Current_Target );
 
-			if ( target )
+			if (current_target)
 			{
 				ActionParamsStruct params;
 				params.Set_Basic(this, INNATE_PRIORITY_ENEMY_SEEN, 1);
-				params.Set_Attack(target, 60.0f, 0.25f, true);
+				params.Set_Attack(current_target, 60.0f, 0.25f, true);
 				Commands->Action_Attack(obj, params);
 			}
 			else // no targets. attack whatever you can see.
@@ -2177,9 +2176,9 @@ DECLARE_SCRIPT ( MX0_A03_HUMVEE, "" ) // moves humvee
 
 		if ( type == 2 ) // resume fire on buggy. halt after 3 - 6 seconds.
 		{
-			GameObject *target = Commands->Find_Object( Current_Target );
+			GameObject * current_target_obj = Commands->Find_Object( Current_Target );
 
-			if ( target )
+			if (current_target_obj)
 			{
 				ActionParamsStruct params;
 				params.Set_Basic(this, INNATE_PRIORITY_ENEMY_SEEN, 1);
@@ -2254,12 +2253,12 @@ DECLARE_SCRIPT ( MX0_A03_TANK, "" ) // moves tank
 		if ( type == 0 ) // attack Target_Id[target]
 		{
 			Current_Target = Target_Id[target];
-			GameObject *target = Commands->Find_Object ( Current_Target );
-			if ( target )
+			GameObject * current_target = Commands->Find_Object ( Current_Target );
+			if (current_target)
 			{
 				ActionParamsStruct params;
 				params.Set_Basic(this, INNATE_PRIORITY_ENEMY_SEEN, 0);
-				params.Set_Attack( target, 60.0f, 0.25f, true);
+				params.Set_Attack(current_target, 60.0f, 0.25f, true);
 				Commands->Action_Attack(obj, params);
 			}
 		}

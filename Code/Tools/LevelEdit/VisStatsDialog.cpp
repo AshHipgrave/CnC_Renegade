@@ -289,7 +289,7 @@ VisSectorSortCompareFn (LPARAM param1, LPARAM param2, LPARAM sort_info)
 		//	Determine the order based on which column the user clicked on
 		//
 		if (column_id == COL_NAME) {
-			retval = ::strcmpi (stats1->Get_Name (), stats2->Get_Name ());
+			retval = ::_strcmpi (stats1->Get_Name (), stats2->Get_Name ());
 		} else if (column_id == COL_POLY_COUNT) {
 			retval = stats1->Get_Polygon_Count () - stats2->Get_Polygon_Count ();
 		} else if (column_id == COL_TEXTURE_COUNT) {

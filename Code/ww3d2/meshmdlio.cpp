@@ -2033,7 +2033,7 @@ void MeshLoadContextClass::Add_Legacy_Material(ShaderClass shader,VertexMaterial
 	} else {
 		for (int ti=0; ti<Textures.Count(); ti++) {
 			if (Textures[ti] == tex) break;
-			if (stricmp(Textures[ti]->Get_Texture_Name(),tex->Get_Texture_Name()) == 0) break;
+			if (_stricmp(Textures[ti]->Get_Texture_Name(),tex->Get_Texture_Name()) == 0) break;
 		}
 		if (ti == Textures.Count()) {
 			mat->TextureIdx = Add_Texture(tex);

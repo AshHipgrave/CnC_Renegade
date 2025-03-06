@@ -156,7 +156,7 @@ SoundBufferClass::Set_Filename (const char *name)
 {
 	SAFE_FREE (m_Filename);
 	if (name != NULL) {
-		m_Filename = ::strdup (name);
+		m_Filename = ::_strdup (name);
 	}
 
 	return ;

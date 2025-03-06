@@ -124,7 +124,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\;..\wwbitpack;..\wwdebug;..\wwutil;..\wwlib;..\wwmath;..\wwsaveload;..\wolapi;..\wwonline;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>STRICT;_DEBUG;WWDEBUG;WIN32_LEAN_AND_MEAN;_WINDOWS;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>STRICT;_DEBUG;WWDEBUG;WIN32_LEAN_AND_MEAN;_WINDOWS;WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderOutputFile>.\Debug/wwnet.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>

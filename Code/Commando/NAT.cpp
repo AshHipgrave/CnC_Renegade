@@ -2150,7 +2150,7 @@ void FirewallHelperClass::Process_Game_Options(void)
 			{
 				int result = options->OptionData.ConnectionResult.Result[0] - 'a';
 				WWDEBUG_SAY(("FirewallHelper - Got OPTION_CONNECTION_RESULT %d from %s\n", result, options->OptionData.ConnectionResult.Name));
-				if (stricmp(PlayersName, options->OptionData.ConnectionResult.Name) == 0) {
+				if (_stricmp(PlayersName, options->OptionData.ConnectionResult.Name) == 0) {
 					PlayersConnectionResult = result;
 					unsigned long port;
 					sscanf(options->OptionData.ConnectionResult.Port, "%04x", &port);
@@ -2175,7 +2175,7 @@ void FirewallHelperClass::Process_Game_Options(void)
 				//fw_assert(port >= 1024 && port < 65536);
 
 				//if (port >= 1024 && port < 65536) {
-					if (stricmp(PlayersName, options->OptionData.Port.Name) == 0) {
+					if (_stricmp(PlayersName, options->OptionData.Port.Name) == 0) {
 						PlayersMangledPort = (unsigned short) port;
 						if (WOLNATInterface.Am_I_Server()) {
 							LastOptionsFromClient = TIMEGETTIME();
@@ -2213,9 +2213,8 @@ void FirewallHelperClass::Process_Game_Options(void)
 			case WOLNATInterfaceClass::OPTION_ABORT_NEGOTIATION:
 				WWDEBUG_SAY(("FirewallHelper - Got OPTION_ABORT_NEGOTIATION from %s\n", (char*)user.name));
 			{
-				ThreadLockClass locker(this);
 				if (WOLNATInterface.Am_I_Server()) {
-					if (stricmp((char*)user.name, PlayersName) == 0) {
+					if (_stricmp((char*)user.name, PlayersName) == 0) {
 						strcpy(CancelPlayer, (char*)user.name);
 					}
 				}
@@ -2317,7 +2316,7 @@ bool FirewallHelperClass::Remove_Player_From_Negotiation_Queue_If_Mutex_Availabl
 		*/
 		fw_assert(Get_Main_Thread_ID() == GetCurrentThreadId());
 		for (int i=0 ; i<ClientQueueRemoveList.Count() ; i++) {
-			if (stricmp(ClientQueueRemoveList[i]->Name, player_name) == 0) {
+			if (_stricmp(ClientQueueRemoveList[i]->Name, player_name) == 0) {
 				return(false);
 			}
 		}
@@ -2355,7 +2354,7 @@ bool FirewallHelperClass::Remove_Player_From_Negotiation_Queue(char *player_name
 
 	for (int i=0 ; i<ClientQueue.Count() ; i++) {
 		clientptr = ClientQueue[i];
-		if (stricmp(clientptr->Name, player_name) == 0) {
+		if (_stricmp(clientptr->Name, player_name) == 0) {
 			WWDEBUG_SAY(("FirewallHelper - Removed %s from ClientQueue\n", clientptr->Name));
 			delete clientptr;
 			ClientQueue.Delete(i);
@@ -2626,7 +2625,7 @@ bool FirewallHelperClass::Remote_Client_Cancelled(void)
 	ThreadLockClass locker(this);
 
 	if (WOLNATInterface.Am_I_Server() && CancelPlayer[0] != 0) {
-		if (stricmp(CancelPlayer, PlayersName) == 0) {
+		if (_stricmp(CancelPlayer, PlayersName) == 0) {
 			CancelPlayer[0] = 0;
 			return(true);
 		}
@@ -3103,7 +3102,7 @@ int FirewallHelperClass::Negotiate_Port(void)
 						/*
 						** Is it from the guy we are trying to talk to?
 						*/
-						if (stricmp(receive_packet, PlayersName) == 0) {
+						if (_stricmp(receive_packet, PlayersName) == 0) {
 
 							WWDEBUG_SAY(("FirewallHelper: Packet is from other guy\n"));
 
@@ -3346,7 +3345,7 @@ bool FirewallHelperClass::Get_Local_Chat_Connection_Address(void)
 	**
 	** 	TCP;ra2chat.westwood.com;7000
 	*/
-	fw_assert(strnicmp((char*)server_name, "TCP;", 4) == 0);
+	fw_assert(_strnicmp((char*)server_name, "TCP;", 4) == 0);
 	char *server_name_ptr = &server_name[4];
 	char *semi_colon_ptr = strchr(server_name_ptr, ';');
 

@@ -388,7 +388,7 @@ bool
 MixFileDatabaseClass::Is_Texture (LPCSTR filename)
 {
 	StringClass temp_str (filename, true);
-	::strlwr (temp_str.Peek_Buffer ());
+	::_strlwr (temp_str.Peek_Buffer ());
 
 	//
 	//	Check to see if this is either a compressed or uncompressed texture
@@ -410,7 +410,7 @@ MixFileDatabaseClass::Is_Texture (LPCSTR filename)
 void
 MixFileDatabaseClass::Swap_Texture_Extension (StringClass &filename)
 {
-	::strlwr (filename.Peek_Buffer ());
+	::_strlwr (filename.Peek_Buffer ());
 
 	//
 	//	Is this a tga file (uncompressed), or a dds file (compressed)?
@@ -599,7 +599,7 @@ void
 MixFileDatabaseClass::Get_Filename (LPCTSTR path, StringClass &filename)
 {
 	filename = path;
-	::strlwr (filename.Peek_Buffer ());
+	::_strlwr (filename.Peek_Buffer ());
 
 	//
 	//	Check to see if the sub-directory is important, if it is, then

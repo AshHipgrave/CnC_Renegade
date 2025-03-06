@@ -468,7 +468,7 @@ EvaViewerTabClass::ListSortCallback
 	//	Sort alphatically if the types are the same
 	//
 	if (player_type1 == player_type2) {
-		result = ::wcsicmp (object1->Get_Name (), object2->Get_Name ());
+		result = ::_wcsicmp (object1->Get_Name (), object2->Get_Name ());
 	} else {
 
 		//

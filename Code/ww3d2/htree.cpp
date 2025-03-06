@@ -796,7 +796,7 @@ void HTreeClass::Combo_Update
 int HTreeClass::Get_Bone_Index(const char * name) const
 {
 	for (int i=0; i < NumPivots; i++) {
-		if (stricmp(Pivot[i].Name,name) == 0) {
+		if (_stricmp(Pivot[i].Name,name) == 0) {
 			return i;
 		}
 	}

@@ -243,7 +243,7 @@ void ScriptImpClass::Set_Parameters_String(const char* params)
 	DebugPrint("Setting parameters for script '%s', params = '%s'\n",
 		Get_Name(), params);
 
-	char* working = strdup(params);
+	char* working = _strdup(params);
 
 	if ( strlen( working ) && working[ strlen( working ) - 1 ] == '\n' ) {
 		working[ strlen( working ) - 1 ] = 0;
@@ -397,7 +397,7 @@ void ScriptImpClass::Set_Parameter(int index, const char* str)
 		free((void*)mArgV[index]);
 	}
 
-	mArgV[index] = strdup(str);
+	mArgV[index] = _strdup(str);
 	assert(mArgV[index] != NULL);
 }
 
@@ -560,7 +560,7 @@ int ScriptImpClass::Get_Parameter_Index(const char* parameterName)
 		// Check for specified parameter
 		strtrim(param_ptr);
 
-		if (stricmp(param_ptr, parameterName) == 0) {
+		if (_stricmp(param_ptr, parameterName) == 0) {
 			return index;
 		}
 

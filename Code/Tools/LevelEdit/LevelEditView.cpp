@@ -135,7 +135,7 @@ CLevelEditView::~CLevelEditView (void)
 
     // Cache this information in the registry
 	 TCHAR temp_string[10];
-	 ::itoa (m_iWindowed, temp_string, 10);
+	 ::_itoa (m_iWindowed, temp_string, 10);
     theApp.WriteProfileString ("Config", "Windowed", temp_string);
 
 	::DeleteCriticalSection (&_CriticalSection);

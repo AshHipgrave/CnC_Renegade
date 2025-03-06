@@ -2894,10 +2894,10 @@ DECLARE_SCRIPT (MX0_GDI_Soldier_DLS, "Attack_Loc0=0:int, Attack_Loc1=0:int, Atta
 
 	void Custom( GameObject * obj, int type, int param, GameObject * sender )
 	{
-		ActionParamsStruct params;
-
 		if(type == MX0_SOLDIER_MOVE)
-		{
+        {
+            ActionParamsStruct params;
+
 			loc = param;
 			bool move_crouched = Commands->Get_Random_Int(0, 1) ? false : true;
 			params.Set_Basic( this, INNATE_PRIORITY_ENEMY_SEEN + 5, MX0_SOLDIER_MOVE );

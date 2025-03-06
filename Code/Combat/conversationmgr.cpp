@@ -582,7 +582,7 @@ ConversationMgrClass::Find_Conversation (const char *conversation_name)
 			//	Is this the conversation we were looking for?
 			//
 			if (	curr_conversation != NULL &&
-					::strcmpi (curr_conversation->Get_Name (), conversation_name) == 0)
+					::_strcmpi (curr_conversation->Get_Name (), conversation_name) == 0)
 			{
 				conversation = curr_conversation;
 				conversation->Add_Ref ();

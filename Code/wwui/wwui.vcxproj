@@ -127,7 +127,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\wwtranslatedb;..\wwsaveload;..\wwaudio;..\miles6\include;..\wwmath;..\ww3d2;..\wwlib;..\wwdebug;..\DirectX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;_WIN32_WINNT=0x400;WWDEBUG;WIN32;_LIB;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WIN32_WINNT=0x400;WWDEBUG;_LIB;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader />

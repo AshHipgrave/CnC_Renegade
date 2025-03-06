@@ -680,9 +680,9 @@ BuildingGameObj::Name_Prefix_Matches_This_Building (const char * name)
 		char * meshname = strchr(name,'.');
 		if (meshname != NULL) {
 			meshname++;
-			retval = (strnicmp(meshname,prefex,strlen(prefex)) == 0);
+			retval = (_strnicmp(meshname,prefex,strlen(prefex)) == 0);
 		} else {
-			retval = (strnicmp(name,prefex,strlen(prefex)) == 0);
+			retval = (_strnicmp(name,prefex,strlen(prefex)) == 0);
 		}
 	}
 

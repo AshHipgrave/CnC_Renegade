@@ -837,8 +837,8 @@ DECLARE_SCRIPT(M02_Objective_Zone, "")
 				}
 			case (400193):
 				{
-					GameObject * object = Commands->Create_Object("Invisible_Object", Vector3(0,0,0));
-					if (object)
+					GameObject * invisible_object = Commands->Create_Object("Invisible_Object", Vector3(0,0,0));
+					if (invisible_object)
 					{
 						Commands->Control_Enable (STAR, false);
 						Commands->Start_Timer (obj, this, 1.0f, 9);
@@ -847,7 +847,7 @@ DECLARE_SCRIPT(M02_Objective_Zone, "")
 						{
 							Commands->Send_Custom_Event (obj, controller, 1000, 1002, 25.0f);
 						}
-						Commands->Attach_Script (object, "Test_Cinematic", "X2K_Midtro.txt");
+						Commands->Attach_Script (invisible_object, "Test_Cinematic", "X2K_Midtro.txt");
 					}
 					break;
 				}
@@ -3399,8 +3399,8 @@ DECLARE_SCRIPT (M02_Nod_Soldier, "Area_Number:int,Area_Officer:int,Pre_Placed:in
 
 		// Set the unit's home point, save the value.
 
-		Vector3 my_home_point = Commands->Get_Position(obj);
-		Commands->Set_Innate_Soldier_Home_Location(obj, my_home_point, 20.0f);
+		Vector3 home_point = Commands->Get_Position(obj);
+		Commands->Set_Innate_Soldier_Home_Location(obj, home_point, 20.0f);
 
 		// Turn hibernation off for a moment.
 		

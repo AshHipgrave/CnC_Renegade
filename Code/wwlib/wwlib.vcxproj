@@ -68,7 +68,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\wwdebug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WINVER=0x400;_WINDOWS;WIN32_LEAN_AND_MEAN;WIN32;REGEX_MALLOC;STDC_HEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WINVER=0x400;_WINDOWS;WIN32_LEAN_AND_MEAN;WIN32;REGEX_MALLOC;STDC_HEADERS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderOutputFile>.\Debug/wwlib.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>

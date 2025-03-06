@@ -1,6 +1,6 @@
  BandTestD
 
- Timestamp is 67c8da1c (Wed Mar  5 23:11:24 2025)
+ Timestamp is 67c99189 (Thu Mar  6 12:14:01 2025)
 
  Preferred load address is 10000000
 
@@ -88,10 +88,10 @@
  0001:00004100       ?abs@@YAJJ@Z               10005100 f i BandTest.obj
  0001:00004140       _DllMain@12                10005140 f   BandTest.obj
  0001:00004160       ___local_stdio_printf_options 10005160 f i BandTest.obj
- 0001:00004180       __vcprintf_l               10005180 f i BandTest.obj
- 0001:000041d0       __vsnprintf_l              100051d0 f i BandTest.obj
- 0001:00004250       __vsprintf_l               10005250 f i BandTest.obj
- 0001:000042a0       _cprintf                   100052a0 f i BandTest.obj
+ 0001:00004180       __cprintf                  10005180 f i BandTest.obj
+ 0001:000041e0       __vcprintf_l               100051e0 f i BandTest.obj
+ 0001:00004230       __vsnprintf_l              10005230 f i BandTest.obj
+ 0001:000042b0       __vsprintf_l               100052b0 f i BandTest.obj
  0001:00004300       _sprintf                   10005300 f i BandTest.obj
  0001:00004360       _vsprintf                  10005360 f i BandTest.obj
  0001:000043a3       _bind@12                   100053a3 f   ws2_32:WS2_32.dll

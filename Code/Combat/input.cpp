@@ -1111,7 +1111,7 @@ short	Input::Get_Function( const char *name )
 	if ( name && name[0] ) {
 		// find function
 		for ( int function = 0; function < NUM_FUNCTIONS; function++ ) {
-			if ( !stricmp( name, Functions[function].Name ) ) {
+			if ( !_stricmp( name, Functions[function].Name ) ) {
 				return Functions[function].ID;
 			}
 		}
@@ -1159,7 +1159,7 @@ short	Input::Get_Key( const char *name )
 		// Check each button name
 		//
 		for (int index = 0; index < NUM_BUTTON_NAMES; index ++) {
-			if (::stricmp (name, ButtonNames[index].Name) == 0) {
+			if (::_stricmp (name, ButtonNames[index].Name) == 0) {
 				return ButtonNames[index].ID;
 			}
 		}
@@ -1168,7 +1168,7 @@ short	Input::Get_Key( const char *name )
 		// Check each slider name
 		//
 		for (int index = 0; index < NUM_SLIDER_NAMES; index ++) {
-			if (::stricmp (name, SliderNames[index].Name) == 0) {
+			if (::_stricmp (name, SliderNames[index].Name) == 0) {
 				return SliderNames[index].ID;
 			}
 		}

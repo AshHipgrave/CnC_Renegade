@@ -78,7 +78,7 @@ public:
 		OriginTransform(1),
 		ProgressMeter(NULL)
 	{
-		ModelName = strdup(model_name);
+		ModelName = _strdup(model_name);
 		OriginTransform = Origin->GetNodeTM(CurTime);
 	}
 	

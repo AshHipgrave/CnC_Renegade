@@ -128,7 +128,7 @@ TagBlockFile::TagBlockFile(const char *fname):
 	IndexList()
 {
 	// Open file up, create it if it does not exist.
-	// Pass in name to Open function so that the file name will be strdup'd.
+	// Pass in name to Open function so that the file name will be _strdup'd.
 	Open(fname, READ|WRITE);
 	
 	FileTime = RawFileClass::Get_Date_Time();

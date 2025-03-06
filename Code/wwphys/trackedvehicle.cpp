@@ -76,10 +76,10 @@ static bool _is_left_track_name(const char * name)
 	const char * sub_name = strchr(name,'.');
 	if (sub_name != NULL) {
 		sub_name++;
-		if (	(strnicmp(sub_name,LEFT_TRACK_NAME0,strlen(LEFT_TRACK_NAME0)) == 0) ||
-				(strnicmp(sub_name,LEFT_TRACK_NAME1,strlen(LEFT_TRACK_NAME1)) == 0) || 
-				(strnicmp(sub_name,LEFT_TRACK_NAME2,strlen(LEFT_TRACK_NAME2)) == 0) || 
-				(strnicmp(sub_name,LEFT_TRACK_NAME3,strlen(LEFT_TRACK_NAME3)) == 0)) 
+		if (	(_strnicmp(sub_name,LEFT_TRACK_NAME0,strlen(LEFT_TRACK_NAME0)) == 0) ||
+				(_strnicmp(sub_name,LEFT_TRACK_NAME1,strlen(LEFT_TRACK_NAME1)) == 0) || 
+				(_strnicmp(sub_name,LEFT_TRACK_NAME2,strlen(LEFT_TRACK_NAME2)) == 0) || 
+				(_strnicmp(sub_name,LEFT_TRACK_NAME3,strlen(LEFT_TRACK_NAME3)) == 0)) 
 		{
 			return true;
 		}
@@ -101,10 +101,10 @@ static bool _is_right_track_name(const char * name)
 	const char * sub_name = strchr(name,'.');
 	if (sub_name != NULL) {
 		sub_name++;
-		if (	(strnicmp(sub_name,RIGHT_TRACK_NAME0,strlen(RIGHT_TRACK_NAME0)) == 0) ||
-				(strnicmp(sub_name,RIGHT_TRACK_NAME1,strlen(RIGHT_TRACK_NAME1)) == 0) || 
-				(strnicmp(sub_name,RIGHT_TRACK_NAME2,strlen(RIGHT_TRACK_NAME2)) == 0) || 
-				(strnicmp(sub_name,RIGHT_TRACK_NAME3,strlen(RIGHT_TRACK_NAME3)) == 0)) 
+		if (	(_strnicmp(sub_name,RIGHT_TRACK_NAME0,strlen(RIGHT_TRACK_NAME0)) == 0) ||
+				(_strnicmp(sub_name,RIGHT_TRACK_NAME1,strlen(RIGHT_TRACK_NAME1)) == 0) || 
+				(_strnicmp(sub_name,RIGHT_TRACK_NAME2,strlen(RIGHT_TRACK_NAME2)) == 0) || 
+				(_strnicmp(sub_name,RIGHT_TRACK_NAME3,strlen(RIGHT_TRACK_NAME3)) == 0)) 
 		{
 			return true;
 		}
@@ -517,7 +517,7 @@ bool TrackedVehicleDefClass::Load(ChunkLoadClass &cload)
 
 bool TrackedVehicleDefClass::Is_Type(const char * type_name)
 {
-	if (stricmp(type_name,TrackedVehicleDefClass::Get_Type_Name()) == 0) {
+	if (_stricmp(type_name,TrackedVehicleDefClass::Get_Type_Name()) == 0) {
 		return true;
 	} else {
 		return VehiclePhysDefClass::Is_Type(type_name);

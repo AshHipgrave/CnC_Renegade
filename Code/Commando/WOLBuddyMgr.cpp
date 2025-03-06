@@ -515,7 +515,7 @@ void WOLBuddyMgr::GetLocationDescription(const RefPtr<UserData>& user, WideStrin
 						channelName = channel->GetName();
 						}
 
-					description.Format(format, channelName);
+					description.Format(format, *channelName);
 					}
 				}
 				break;
@@ -1262,8 +1262,8 @@ void WOLBuddyMgr::HandleNotification(BuddyEvent& event)
 	if (listChanged)
 		{
 		Add_Ref();
-		WOLBuddyMgrEvent event(BUDDYLIST_CHANGED, this);
-		NotifyObservers(event);
+		WOLBuddyMgrEvent buddy_list_changed_event(BUDDYLIST_CHANGED, this);
+		NotifyObservers(buddy_list_changed_event);
 		Release_Ref();
 		}
 	}
@@ -1330,8 +1330,8 @@ void WOLBuddyMgr::HandleNotification(UserEvent& event)
 			if (IsBuddy(username))
 				{
 				Add_Ref();
-				WOLBuddyMgrEvent event(BUDDYINFO_CHANGED, this);
-				NotifyObservers(event);
+				WOLBuddyMgrEvent buddy_info_changed_event(BUDDYINFO_CHANGED, this);
+				NotifyObservers(buddy_info_changed_event);
 				Release_Ref();
 				}
 			}
@@ -1342,8 +1342,8 @@ void WOLBuddyMgr::HandleNotification(UserEvent& event)
 			if (IsBuddy(event.Subject()->GetName()))
 				{
 				Add_Ref();
-				WOLBuddyMgrEvent event(BUDDYINFO_CHANGED, this);
-				NotifyObservers(event);
+				WOLBuddyMgrEvent buddy_info_changed_event(BUDDYINFO_CHANGED, this);
+				NotifyObservers(buddy_info_changed_event);
 				Release_Ref();
 				}
 		break;

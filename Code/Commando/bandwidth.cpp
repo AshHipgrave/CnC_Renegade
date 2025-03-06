@@ -139,7 +139,7 @@ BANDWIDTH_TYPE_ENUM cBandwidth::Get_Bandwidth_Type_From_String(LPCSTR bandwidth_
       return BANDWIDTH_LANT1;
    } else if (cMiscUtil::Is_String_Same(bandwidth_string, "BANDWIDTH_CUSTOM")) {
       return BANDWIDTH_CUSTOM;
-   } else if (strnicmp(bandwidth_string, "BANDWIDTH_AUTO ", 15) == 0) {
+   } else if (_strnicmp(bandwidth_string, "BANDWIDTH_AUTO ", 15) == 0) {
       return BANDWIDTH_AUTO;
    } else {
       DIE;

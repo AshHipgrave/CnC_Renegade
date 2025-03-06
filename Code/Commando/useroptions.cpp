@@ -100,7 +100,7 @@ bool cUserOptions::Parse_Command_Line(LPCSTR command)
 	//
 	// Get pointers to command line arguments just like if we were in DOS
 	//
-	char *command_line = strdup(command);
+	char *command_line = _strdup(command);
 	char *token = strtok(command_line, " ");
 	while (argc < ARRAY_SIZE(argv) && token != NULL) {
 		argv[argc++] = strtrim(token);
@@ -116,7 +116,7 @@ bool cUserOptions::Parse_Command_Line(LPCSTR command)
 
 	char *cmd;
 	for (int i=1 ; i<argc ; i++) {
-		cmd = strupr(argv[i]);
+		cmd = _strupr(argv[i]);
 
 		// Look for ip override.
 		if (strstr(cmd, "IP=")) {
@@ -198,7 +198,7 @@ bool cUserOptions::Parse_Command_Line(LPCSTR command)
 	// Gamespy params follow different param format
 	//
 
-	char *tmpstr = strdup(command);
+	char *tmpstr = _strdup(command);
 	tmpstr = _strupr(tmpstr);
 
 	char * ip_param = ::strstr(tmpstr, "+CONNECT");

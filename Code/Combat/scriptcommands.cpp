@@ -717,7 +717,7 @@ GameObject *Find_Random_Simple_Object ( const char *preset_name )
 				//
 				//	Is this one of the objects we can choose from?
 				//
-				if ( ::stricmp ( simple_obj->Get_Definition ().Get_Name (), preset_name ) == 0 ) {
+				if ( ::_stricmp ( simple_obj->Get_Definition ().Get_Name (), preset_name ) == 0 ) {
 					obj_list.Add (simple_obj);
 				}
 			}

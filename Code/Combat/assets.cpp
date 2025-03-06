@@ -137,7 +137,7 @@ void Create_Animation_Name( StringClass& anim_name, const char * anim_filename, 
 
 	if ( ::strchr( anim_name, '.' ) == 0 ) {	// Add model name
 		StringClass temp(true);
-		temp.Format( "%s.%s", model_name, anim_name );
+		temp.Format( "%s.%s", *model_name, *anim_name );
 		anim_name = temp;
 	}
 }

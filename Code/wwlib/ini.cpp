@@ -1652,7 +1652,7 @@ bool INIClass::Put_String(char const * section, char const * entry, char const *
 	**	Create and add the new entry.
 	*/
 	if (string != NULL && strlen(string) > 0) {
-		entryptr = new INIEntry(_strdup(entry), strdup(string));
+		entryptr = new INIEntry(_strdup(entry), _strdup(string));
 
 		if (entryptr == NULL) {
 			return(false);
@@ -1862,7 +1862,7 @@ int *	INIClass::Get_Alloc_Int_Array(char const * section, char const * entry, in
 	int count = 0;
 	char *str = _strdup(entryptr->Value);
 	char *token;
-	for (token = _strtok(str, " "); token; token = strtok(NULL, " ")) {
+	for (token = strtok(str, " "); token; token = strtok(NULL, " ")) {
 		count++;
 	}
 	free(str);
@@ -1872,7 +1872,7 @@ int *	INIClass::Get_Alloc_Int_Array(char const * section, char const * entry, in
 	retval	= new int[count+1];
 	count		= 0;
 	str		= _strdup(entryptr->Value);
-	for (token = _strtok(str, " "); token; token = strtok(NULL, " ")) {
+	for (token = strtok(str, " "); token; token = strtok(NULL, " ")) {
 		retval[count] = atoi(token);
 		count++;
 	}

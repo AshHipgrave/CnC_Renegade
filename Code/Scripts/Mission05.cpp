@@ -1729,11 +1729,9 @@ DECLARE_SCRIPT(M05_Triangle_Tank, "")
 
 	void Timer_Expired(GameObject * obj, int timer_id )
 	{
-		ActionParamsStruct params;
-
 		if(timer_id == TANK_TIMER)
-		{
-			ActionParamsStruct params;
+        {
+            ActionParamsStruct params;
 			attacking = false;
 			int random = Commands->Get_Random_Int(0,ARRAY_ELEMENT_COUNT(fire_loc)); 
 			
@@ -1797,8 +1795,6 @@ DECLARE_SCRIPT(M05_TownSquare_Tank, "")
 
 	void Timer_Expired(GameObject * obj, int timer_id )
 	{
-		ActionParamsStruct params;
-
 		if(timer_id == TANK_TIMER)
 		{
 			ActionParamsStruct params;
@@ -1865,8 +1861,6 @@ DECLARE_SCRIPT(M05_Bridge_Tank, "")
 
 	void Timer_Expired(GameObject * obj, int timer_id )
 	{
-		ActionParamsStruct params;
-
 		if(timer_id == TANK_TIMER)
 		{
 			ActionParamsStruct params;
@@ -5114,7 +5108,7 @@ DECLARE_SCRIPT(M05_Dump_Captives, "")
 			Commands->Select_Weapon(obj, "Weapon_Chaingun_AI" );
 
 			Vector3 curr_loc = Commands->Get_Position(obj);
-			Commands->Debug_Message("Current Location: %d", curr_loc);
+			Commands->Debug_Message("Current Location: %s", curr_loc.ToString().c_str());
 			Vector3 go_loc = Get_Circle_Position(obj, obj, 5.0f, 0.0f);
 			params.Set_Basic( this, INNATE_PRIORITY_ENEMY_SEEN + 5, GO_POWERUPS );
 			params.Set_Movement( go_loc, RUN, 0.5f );
@@ -5446,8 +5440,6 @@ DECLARE_SCRIPT(M05_Inn_Tank, "")
 
 	void Timer_Expired(GameObject * obj, int timer_id )
 	{
-		ActionParamsStruct params;
-
 		if(timer_id == TANK_TIMER)
 		{
 			ActionParamsStruct params;
@@ -7408,8 +7400,6 @@ DECLARE_SCRIPT(M05_Cathedral_Artillery, "Fire_Loc1=0:int, Fire_Loc2=0:int")
 
 	void Timer_Expired(GameObject * obj, int timer_id )
 	{
-		ActionParamsStruct params;
-
 		if(timer_id == TANK_TIMER)
 		{
 			ActionParamsStruct params;
@@ -7604,7 +7594,7 @@ DECLARE_SCRIPT(M05_APC_Deploy_Soldier, "APC_ID=0:int")
 	
 	void Animation_Complete(GameObject * obj, const char *anim)
 	{
-		if (stricmp(anim, "S_A_Human.H_A_XG_NAPC_OUT") == 0)
+		if (_stricmp(anim, "S_A_Human.H_A_XG_NAPC_OUT") == 0)
 		{
 			GameObject * apc = Commands->Find_Object(Get_Int_Parameter("APC_ID"));
 			Commands->Attach_To_Object_Bone(obj, NULL, NULL);

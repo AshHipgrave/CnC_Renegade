@@ -103,8 +103,8 @@ void W3dMapClass::Set_Filename(const char * fullpath)
 
 		_splitpath(fullpath,NULL,NULL,name,exten);
 		_makepath(fname,NULL,NULL,name,exten);
-		//strupr(fname);						(gth) need to preserve case since unix/PS2 is case sensitive...
-		Filename = strdup(fname); 
+		//_strupr(fname);						(gth) need to preserve case since unix/PS2 is case sensitive...
+		Filename = _strdup(fname); 
 	} else {
 		Filename = NULL;
 	}
@@ -709,7 +709,7 @@ void W3dMaterialDescClass::VertMatClass::Set_Name(const char * name)
 	if (Name) free(Name); 
 	
 	if (name) { 
-		Name = strdup(name); 
+		Name = _strdup(name); 
 	} else { 
 		Name = NULL; 
 	} 
