@@ -1068,8 +1068,8 @@ ColorBarClass::Update_Point_Info (void)
 	if (style & CBRS_HORZ) {
 
 		// Loop through all the color points
-		int index;
-		for (int index = 0; index < m_iColorPoints; index ++) {
+		int index = 0;
+		for (index = 0; index < m_iColorPoints; index ++) {
 
 			// Update the absolute starting position for this point
 			m_ColorPoints[index].StartPos = m_ColorArea.left + int(m_ColorPoints[index].PosPercent * width);

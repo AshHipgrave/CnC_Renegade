@@ -471,7 +471,7 @@ TagBlockIndex *TagBlockFile::Find_Block(const char *tagname)
 			// Is it a match?
          assert(name != NULL);
          assert(tagname != NULL);
-			if (!strcmpi(name, tagname)) {
+			if (!_strcmpi(name, tagname)) {
 				return(cur);
 			}
 		}

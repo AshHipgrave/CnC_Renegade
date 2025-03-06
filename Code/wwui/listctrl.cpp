@@ -502,7 +502,7 @@ ListCtrlClass::Default_Sort_Callback (ListCtrlClass *list_ctrl, int item_index1,
 	int retval = ::CompareStringW (LOCALE_USER_DEFAULT, NORM_IGNORECASE, name1, -1, name2, -1);
 
 	if (retval == 0) {
-		retval = wcsicmp(name1, name2);
+		retval = _wcsicmp(name1, name2);
 	} else {
 		retval -= 2;
 	}

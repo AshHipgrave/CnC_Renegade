@@ -249,7 +249,7 @@ DialogParserClass::Parse_Template
 					ctrl_type = MERCHANDISE_CTRL;
 				} else if (::wcsstr (text_buffer, L"TREEVIEW") != 0) {
 					ctrl_type = TREE_CTRL;
-				} else if (::wcsicmp(text_buffer, PROGRESS_CLASSW) == 0) {
+				} else if (::_wcsicmp(text_buffer, PROGRESS_CLASSW) == 0) {
 					ctrl_type = PROGRESS_BAR;
 				} else if (::wcsstr (text_buffer, L"HEALTHBAR") != 0) {
 					ctrl_type = HEALTH_BAR;
@@ -261,13 +261,13 @@ DialogParserClass::Parse_Template
 			//			
 			buffer = Skip_Dlg_Field (buffer, text_buffer, 256);
 
-			WCHAR *string_id = ::wcsstr (text_buffer, L"IDS_");
-			if (string_id != NULL) {
-				WideStringClass wide_string_id = string_id;				
+			WCHAR *window_string_id = ::wcsstr (text_buffer, L"IDS_");
+			if (window_string_id != NULL) {
+				WideStringClass wide_string_id = window_string_id;
 				StringClass ascii_string_id;
 				wide_string_id.Convert_To (ascii_string_id);
 				WideStringClass translation = TRANSLATE_BY_DESC(ascii_string_id);
-				::wcscpy (string_id, translation);
+				::wcscpy (window_string_id, translation);
 			}
 
 			//

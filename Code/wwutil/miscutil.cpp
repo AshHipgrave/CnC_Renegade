@@ -77,7 +77,7 @@ bool cMiscUtil::Is_String_Same(LPCSTR str1, LPCSTR str2)
    WWASSERT(str1 != NULL);
    WWASSERT(str2 != NULL);
 
-   return(::stricmp(str1, str2) == 0);
+   return(::_stricmp(str1, str2) == 0);
 }
 
 //-----------------------------------------------------------------------------
@@ -86,7 +86,7 @@ bool cMiscUtil::Is_String_Different(LPCSTR str1, LPCSTR str2)
    WWASSERT(str1 != NULL);
    WWASSERT(str2 != NULL);
 
-   return(::stricmp(str1, str2) != 0);
+   return(::_stricmp(str1, str2) != 0);
 }
 
 //-----------------------------------------------------------------------------
@@ -194,7 +194,7 @@ void cMiscUtil::Get_File_Id_String(LPCSTR filename, StringClass & str)
 
 	char working_filename[500];
 	strcpy(working_filename, filename);
-	::strupr(working_filename);
+	::_strupr(working_filename);
 
    //
    // Strip path off filename

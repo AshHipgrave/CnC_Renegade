@@ -179,12 +179,12 @@ void TCBSpline3DClass::Update_Tangents(void)
 		Vector3::Add(k0*dp_out, k1*dp_in, &Tangents[pi].InTangent);
 		Vector3::Add(k2*dp_out, k3*dp_in, &Tangents[pi].OutTangent);
 
-		float total_time = (Keys[pi+1].Time - Keys[pi-1].Time);
-		float in_factor = 2.0f * (Keys[pi].Time - Keys[pi-1].Time) / total_time;
-		float out_factor = 2.0f * (Keys[pi+1].Time - Keys[pi].Time) / total_time;
+		float new_total_time = (Keys[pi+1].Time - Keys[pi-1].Time);
+		float new_in_factor = 2.0f * (Keys[pi].Time - Keys[pi-1].Time) / new_total_time;
+		float new_out_factor = 2.0f * (Keys[pi+1].Time - Keys[pi].Time) / new_total_time;
 
-		Tangents[pi].InTangent *= in_factor;		// compensating for un-even keys
-		Tangents[pi].OutTangent *= out_factor;
+		Tangents[pi].InTangent *= new_in_factor;		// compensating for un-even keys
+		Tangents[pi].OutTangent *= new_out_factor;
 
 	}
 	TangentsDirty = false;

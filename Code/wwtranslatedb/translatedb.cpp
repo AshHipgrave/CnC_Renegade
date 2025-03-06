@@ -616,7 +616,7 @@ TranslateDBClass::Import_C_Header (const char *filename)
 			bool found_end_block = false;
 			while (found_end_block == false && file_obj.Read_Line (line)) {
 
-				if (::strnicmp (line, "#define ", 8) == 0) {
+				if (::_strnicmp (line, "#define ", 8) == 0) {
 					
 					//
 					//	Break the #define into its parts
@@ -1299,7 +1299,7 @@ int Build_List_From_String
 			//
 			// Move past the current delimiter (if necessary)
 			//
-			if ((::strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
+			if ((::_strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
 				entry += delim_len;
 			}
 
@@ -1326,7 +1326,7 @@ int Build_List_From_String
 				//
 				// Move past the current delimiter (if necessary)
 				//
-				if ((::strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
+				if ((::_strnicmp (entry, delimiter, delim_len) == 0) && (count > 0)) {
 					entry += delim_len;
 				}
 

@@ -48,6 +48,7 @@
 */
 class Blitter {
 	public:
+		virtual ~Blitter() = default;
 
 		/*
 		**	Blits from source to dest (starts at first pixel). This is the preferred
@@ -79,6 +80,8 @@ class Blitter {
 */
 class RLEBlitter {
 	public:
+
+		virtual ~RLEBlitter() = default;
 
 		/*
 		**	Blits from the RLE compressed source to the destination buffer. An optional

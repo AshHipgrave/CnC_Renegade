@@ -852,7 +852,7 @@ const DefParameterClass &
 DefParameterClass::operator= (const DefParameterClass &src)
 {
 	m_Value = src.m_Value;
-	DefParameterClass::operator= (src);
+	ParameterClass::operator= (src);
 	return *this;
 }
 
@@ -1926,7 +1926,7 @@ FilenameListParameterClass::operator== (const FilenameListParameterClass &src)
 		for (int index = 0; (index < count1) && retval; index ++) {
 			StringClass &filename1 = (*m_FilenameList)[index];
 			StringClass &filename2 = (*src.m_FilenameList)[index];
-			retval &= (::stricmp (filename1, filename2) == 0);
+			retval &= (::_stricmp (filename1, filename2) == 0);
 		}
 	}
 
@@ -2070,7 +2070,7 @@ ScriptListParameterClass::Are_Lists_Identical
 	for (int index = 0; (index < count1) && retval; index ++) {
 		StringClass &string1 = list1[index];
 		StringClass &string2 = list2[index];
-		retval &= (::stricmp (string1, string2) == 0);
+		retval &= (::_stricmp (string1, string2) == 0);
 	}
 
 	return retval;
