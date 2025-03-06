@@ -5,8 +5,8 @@ Custom fork of C&C: Renegade aimed at getting the game up and running on modern 
 
 ## Roadmap
 
-- [ ] **[In Progress]** Upgrade to a newer compiler and C++ language standard
-- [ ] Replace missing properitary third-party libraries with open source alternatives
+- [X] Upgrade to a newer compiler and C++ language standard
+- [ ] **[In Progress]** Replace missing properitary third-party libraries with open source alternatives
 - [ ] Migrate away from DirectX 8.0 to a more modern rendering framework
 - [ ] Add support for 64-bit (and eventually remove 32-bit support)
 - [ ] Ensure gameplay continues to work (e.g. story mode works and remains playable)
