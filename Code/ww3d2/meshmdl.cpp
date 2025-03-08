@@ -385,7 +385,8 @@ void MeshModelClass::get_deformed_screenspace_vertices(Vector4 *dst_vert,const R
 			Matrix4 tm = prj * htree->Get_Transform(idx);
 
 			// Count equal matrices (the vertices should be pre-sorted by matrices they use)
-			for (int cnt = vi; cnt < vertex_count; cnt++) if (idx!=bonelink[cnt]) break;
+			int cnt;
+			for (cnt = vi; cnt < vertex_count; cnt++) if (idx!=bonelink[cnt]) break;
 
 			// Transform to screenspace (x,y,z,w)
 			VectorProcessorClass::Transform(
@@ -771,7 +772,7 @@ void MeshModelClass::Init_For_NPatch_Rendering()
 		}
 	}
 
-	for (i=0;i<polygon_count;++i) {
+	for (unsigned int i=0;i<polygon_count;++i) {
 		bool duplicates[3];
 		duplicates[0]=DuplicateLocationHash.Exists(locations[polygon_indices[i][0]]);
 		duplicates[1]=DuplicateLocationHash.Exists(locations[polygon_indices[i][1]]);

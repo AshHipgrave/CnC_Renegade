@@ -355,8 +355,9 @@ bool HAnimManagerClass::Add_Anim(HAnimClass *new_anim)
 	//	Check to see if this animation has any embedded sounds that may
 	// need to play while its animating.
 	//
-	bool has_sound_trigger = AnimatedSoundMgrClass::Does_Animation_Have_Embedded_Sounds( new_anim );
-	new_anim->Set_Has_Embedded_Sounds( has_sound_trigger );
+	// TODO: AshHipgrave
+	//bool has_sound_trigger = AnimatedSoundMgrClass::Does_Animation_Have_Embedded_Sounds( new_anim );
+	//new_anim->Set_Has_Embedded_Sounds( has_sound_trigger );
 
 	return true;
 }

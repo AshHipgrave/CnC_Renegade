@@ -1100,14 +1100,12 @@ void ShatterSystem::Process_Clip_Pools
 
 		if (ClipPools[ipool].Count() > 0) {
 
-			int ivert,ipoly,ipass,istage;
-
 			/*
 			** Count the verts and polys
 			*/
 			int pcount = 0;
 			int vcount = 0;
-			for (ipoly=0;ipoly<ClipPools[ipool].Count();ipoly++) {
+			for (int ipoly=0;ipoly<ClipPools[ipool].Count();ipoly++) {
 				int poly_vert_count = ClipPools[ipool][ipoly].Get_Vertex_Count();
 				vcount += poly_vert_count;
 				pcount += poly_vert_count-2;
@@ -1130,7 +1128,7 @@ void ShatterSystem::Process_Clip_Pools
 			new_mesh->Set_Pass_Count(mtl_params.PassCount);
 			
 			bool has_textures = false;
-			for (ipass=0; ipass<model->Get_Pass_Count(); ipass++) {
+			for (int ipass=0; ipass<model->Get_Pass_Count(); ipass++) {
 				if (model->Peek_Single_Material(ipass) != NULL) {
 					matinfo->Add_Vertex_Material(model->Peek_Single_Material(ipass));
 				}
@@ -1143,11 +1141,11 @@ void ShatterSystem::Process_Clip_Pools
 			}
 			new_mesh->Set_Material_Info(matinfo);
 			
-			for (ipass=0; ipass<model->Get_Pass_Count(); ipass++) {
+			for (int ipass=0; ipass<model->Get_Pass_Count(); ipass++) {
 				new_mesh->Set_Vertex_Material(model->Peek_Single_Material(ipass),false,ipass);
 				new_mesh->Set_Shader(model->Get_Single_Shader(ipass),ipass);
 				
-				for (istage=0; istage<MeshMatDescClass::MAX_TEX_STAGES; istage++) {
+				for (int istage=0; istage<MeshMatDescClass::MAX_TEX_STAGES; istage++) {
 					TextureClass * tex = model->Peek_Single_Texture(ipass,istage);	
 					if (tex != NULL) {
 						new_mesh->Peek_Model()->Set_Single_Texture(tex,ipass,istage);
@@ -1162,14 +1160,14 @@ void ShatterSystem::Process_Clip_Pools
 			** Add the polygons and vertices to the mesh, transform the vertices
 			** back into the original mesh's coordinate system as we do this
 			*/
-			for (ipoly=0; ipoly<ClipPools[ipool].Count(); ipoly++) {
+			for (int ipoly=0; ipoly<ClipPools[ipool].Count(); ipoly++) {
 				
 				PolygonClass & poly = ClipPools[ipool][ipoly];
 				
 				new_mesh->Begin_Tri_Fan();
 				SHATTER_DEBUG_SAY(("Begin Tri Fan\n"));
 
-				for(ivert=0; ivert<poly.Get_Vertex_Count(); ivert++) {
+				for(int ivert=0; ivert<poly.Get_Vertex_Count(); ivert++) {
 
 					Vector3 pos,norm;
 					VertexClass & vert = poly[ivert];
@@ -1183,7 +1181,7 @@ void ShatterSystem::Process_Clip_Pools
 					new_mesh->Location_Inline(pos);
 					new_mesh->Normal(norm);
 
-					for (ipass=0; ipass<mtl_params.PassCount; ipass++) {
+					for (int ipass=0; ipass<mtl_params.PassCount; ipass++) {
 
 						unsigned mycolor=0;
 						
@@ -1216,7 +1214,7 @@ void ShatterSystem::Process_Clip_Pools
 						** then copy the vertex's uv's into into the new mesh.
 						*/
 						#pragma MESSAGE("HY- Naty, will dynamesh support multiple stages of UV?")
-						for (istage=0; istage<MeshMatDescClass::MAX_TEX_STAGES; istage++) {
+						for (int istage=0; istage<MeshMatDescClass::MAX_TEX_STAGES; istage++) {
 							if (mtl_params.UV[ipass][istage] != NULL) {
 								SHATTER_DEBUG_SAY(("UV: pass:%d stage: %d: %f %f\n",ipass,istage,vert.TexCoord[ipass][istage].X,vert.TexCoord[ipass][istage].Y));
 								new_mesh->UV(vert.TexCoord[ipass][istage],istage);

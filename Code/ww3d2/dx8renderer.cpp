@@ -259,10 +259,10 @@ void DX8TextureCategoryClass::Remove_Polygon_Renderer(DX8PolygonRendererClass* p
 
 void DX8FVFCategoryContainer::Remove_Texture_Category(DX8TextureCategoryClass* tex_category)
 {
-	for (unsigned pass=0;pass<passes;++pass) {
+	for (unsigned int pass=0;pass<passes;++pass) {
 		texture_category_list[pass].Remove(tex_category);
 	}
-	for (pass=0; pass<passes; pass++) {
+	for (unsigned int pass=0; pass<passes; pass++) {
 		// If any of the texture category lists has anything in it, no need to delete this container
 		if (texture_category_list[pass].Peek_Head() != NULL) return;
 	}
@@ -1081,13 +1081,13 @@ void DX8RigidFVFCategoryContainer::Add_Mesh(MeshClass* mesh_)
 	}
 	
 	for (int j=0; j<uvcount; j++) {
-		unsigned char *vb=(unsigned char*) l.Get_Vertex_Array();
+		unsigned char *vba=(unsigned char*) l.Get_Vertex_Array();
 		const Vector2*uvs=split_table.Get_UV_Array(j);
 		if (uvs) {
 			for (i=0; i<split_table.Get_Vertex_Count(); i++)
 			{
-				*(Vector2*)(vb+fi.Get_Tex_Offset(j))=uvs[i];
-				vb+=fi.Get_FVF_Size();
+				*(Vector2*)(vba+fi.Get_Tex_Offset(j))=uvs[i];
+				vba+=fi.Get_FVF_Size();
 			}		
 		}
 	}
@@ -1137,15 +1137,15 @@ void DX8FVFCategoryContainer::Insert_To_Texture_Category(
 		** the list always having matching texture categories next to each other.
 		*/
 		bool found_similar_category = false;
-		TextureCategoryListIterator it(&texture_category_list[pass]);
-		while (!it.Is_Done()) {
+		TextureCategoryListIterator it2(&texture_category_list[pass]);
+		while (!it2.Is_Done()) {
 			// Categorize according to first stage's texture for now
-			if (it.Peek_Obj()->Peek_Texture(0) == texs[0]) {
-				texture_category_list[pass].Add_After(new_tex_category,it.Peek_Obj());
+			if (it2.Peek_Obj()->Peek_Texture(0) == texs[0]) {
+				texture_category_list[pass].Add_After(new_tex_category, it2.Peek_Obj());
 				found_similar_category = true;
 				break;
 			}
-			it.Next();
+			it2.Next();
 		}
 
 		if (!found_similar_category) {
@@ -1443,7 +1443,7 @@ unsigned DX8TextureCategoryClass::Add_Mesh(
 	unsigned vertex_offset,
 	unsigned index_offset,
 	IndexBufferClass* index_buffer,
-	unsigned pass)
+	unsigned in_pass)
 {
 	int poly_count=split_table.Get_Polygon_Count();
 
@@ -1457,10 +1457,10 @@ unsigned DX8TextureCategoryClass::Add_Mesh(
 	for (int i=0;i<poly_count;++i) {
 		bool all_textures_same = true;
 		for (unsigned int stage = 0; stage < MeshMatDescClass::MAX_TEX_STAGES; stage++) {
-			all_textures_same = all_textures_same && (split_table.Peek_Texture(i, pass, stage) == textures[stage]);
+			all_textures_same = all_textures_same && (split_table.Peek_Texture(i, in_pass, stage) == textures[stage]);
 		}
-		VertexMaterialClass* mat=split_table.Peek_Material(i,pass);
-		ShaderClass shd=split_table.Peek_Shader(i,pass);
+		VertexMaterialClass* mat=split_table.Peek_Material(i, in_pass);
+		ShaderClass shd=split_table.Peek_Shader(i, in_pass);
 
 		if (all_textures_same && Equal_Material(mat,material) && shd==shader) {
 			polygons++;
@@ -1481,7 +1481,7 @@ unsigned DX8TextureCategoryClass::Add_Mesh(
 			stripify=false;
 		}
 #endif;
-		const TriIndex* src_indices=(const TriIndex*)split_table.Get_Polygon_Array(pass);//mmc->Get_Polygon_Array();
+		const TriIndex* src_indices=(const TriIndex*)split_table.Get_Polygon_Array(in_pass);//mmc->Get_Polygon_Array();
 
 		if (stripify) {
 			int* triangles=new int[index_count];
@@ -1489,10 +1489,10 @@ unsigned DX8TextureCategoryClass::Add_Mesh(
 			for (int i=0;i<poly_count;++i) {
 				bool all_textures_same = true;
 				for (unsigned int stage = 0; stage < MeshMatDescClass::MAX_TEX_STAGES; stage++) {
-					all_textures_same = all_textures_same && (split_table.Peek_Texture(i, pass, stage) == textures[stage]);
+					all_textures_same = all_textures_same && (split_table.Peek_Texture(i, in_pass, stage) == textures[stage]);
 				}
-				VertexMaterialClass* mat=split_table.Peek_Material(i,pass);
-				ShaderClass shd=split_table.Peek_Shader(i,pass);
+				VertexMaterialClass* mat=split_table.Peek_Material(i, in_pass);
+				ShaderClass shd=split_table.Peek_Shader(i, in_pass);
 
 				if (all_textures_same && Equal_Material(mat,material) && shd==shader) {
 					triangles[triangle_index_count++]=src_indices[i][0]+vertex_offset;
@@ -1572,10 +1572,10 @@ unsigned DX8TextureCategoryClass::Add_Mesh(
 			for (int i=0;i<poly_count;++i) {
 				bool all_textures_same = true;
 				for (unsigned int stage = 0; stage < MeshMatDescClass::MAX_TEX_STAGES; stage++) {
-					all_textures_same = all_textures_same && (split_table.Peek_Texture(i, pass, stage) == textures[stage]);
+					all_textures_same = all_textures_same && (split_table.Peek_Texture(i, in_pass, stage) == textures[stage]);
 				}
-				VertexMaterialClass* mat=split_table.Peek_Material(i,pass);
-				ShaderClass shd=split_table.Peek_Shader(i,pass);
+				VertexMaterialClass* mat=split_table.Peek_Material(i, in_pass);
+				ShaderClass shd=split_table.Peek_Shader(i, in_pass);
 
 				if (all_textures_same && Equal_Material(mat,material) && shd==shader) {
 					unsigned short idx;
@@ -1622,7 +1622,7 @@ void DX8TextureCategoryClass::Render(void)
 	#endif
 
 		for (unsigned i=0;i<MAX_TEXTURE_STAGES;++i) {
-			SNAPSHOT_SAY(("Set_Texture(%d,%s)\n",i,Peek_Texture(i) ? Peek_Texture(i)->Get_Texture_Name() : "NULL"));
+			SNAPSHOT_SAY(("Set_Texture(%d,%s)\n",i,Peek_Texture(i) ? (const char*)Peek_Texture(i)->Get_Texture_Name() : "NULL"));
 			DX8Wrapper::Set_Texture(i,Peek_Texture(i));
 		}
 
@@ -1633,8 +1633,8 @@ void DX8TextureCategoryClass::Render(void)
 	SNAPSHOT_SAY(("Set_Material(%s)\n",Peek_Material() ? Peek_Material()->Get_Name() : "NULL"));
 	DX8Wrapper::Set_Material(Peek_Material());
 
-	SNAPSHOT_SAY(("Set_Shader(0x%x)\n",Get_Shader()));
-	DX8Wrapper::Set_Shader(Get_Shader());
+	SNAPSHOT_SAY(("Set_Shader(0x%x)\n",Get_Shader().Get_Bits())); // TODO: AshHipgrave - Not sure if 'Get_Bits()' is correct.
+	DX8Wrapper::Set_Shader(Get_Shader().Get_Bits()); // TODO: AshHipgrave - Same as above.
 	
 	PolyRenderTaskClass * prt = render_task_head;
 	while (prt) {
@@ -1920,7 +1920,8 @@ void DX8MeshRendererClass::Register_Mesh_Type(MeshClass* mesh)
 			/*
 			** Search for an existing FVF Category Container that matches this mesh
 			*/
-			for (int i=0;i<texture_category_container_lists_rigid.Count();++i) {
+			int i;
+			for (i=0;i<texture_category_container_lists_rigid.Count();++i) {
 				FVFCategoryList * list=texture_category_container_lists_rigid[i];
 				WWASSERT(list);
 				DX8FVFCategoryContainer * container=list->Peek_Head();
@@ -2034,7 +2035,8 @@ void DX8MeshRendererClass::Add_To_Render_List(DecalMeshClass * decalmesh)
 
 void DX8MeshRendererClass::Render_Decal_Meshes(void)
 {
-	DX8Wrapper::Set_DX8_Render_State(D3DRS_ZBIAS,8);
+	DX8Wrapper::Set_DX8_Render_State(D3DRS_DEPTHBIAS, 8);
+	DX8Wrapper::Set_DX8_Render_State(D3DRS_SLOPESCALEDEPTHBIAS, 8);
 	
 	DecalMeshClass * decal_mesh = visible_decal_meshes;
 	while (decal_mesh != NULL) {
@@ -2043,7 +2045,8 @@ void DX8MeshRendererClass::Render_Decal_Meshes(void)
 	}
 	visible_decal_meshes = NULL;
 
-	DX8Wrapper::Set_DX8_Render_State(D3DRS_ZBIAS,0);
+    DX8Wrapper::Set_DX8_Render_State(D3DRS_DEPTHBIAS, 0);
+    DX8Wrapper::Set_DX8_Render_State(D3DRS_SLOPESCALEDEPTHBIAS, 0);
 }
 
 // ----------------------------------------------------------------------------

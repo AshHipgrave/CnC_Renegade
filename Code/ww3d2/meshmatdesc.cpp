@@ -762,11 +762,11 @@ void MeshMatDescClass::Post_Load_Process(bool lighting_enabled,MeshModelClass * 
 
 		if ((DCGSource[pass] != VertexMaterialClass::MATERIAL) && (ColorArray[0] != NULL)) {
 			unsigned * diffuse_array = ColorArray[0]->Get_Array();
-			Vector3 mtl_diffuse;
-			float mtl_opacity = 1.0f;
+			mtl_diffuse = Vector3(0.0f, 0.0f, 0.0f);
+			mtl_opacity = 1.0f;
 
-			VertexMaterialClass * prev_mtl = NULL;
-			VertexMaterialClass * mtl = Peek_Material(0,pass);
+			prev_mtl = NULL;
+			mtl = Peek_Material(0,pass);
 
 			for (int vidx=0; vidx<VertexCount; vidx++) {
 
@@ -850,7 +850,7 @@ void MeshMatDescClass::Post_Load_Process(bool lighting_enabled,MeshModelClass * 
 	** HACK: Kill BUMPENV passes on hardware that doesn't support BUMPENV
 	** HACK: Set lighting to false on all passes if all passes are of type NO DIFFUSE, NO AMBIENT, YES EMISSIVE
 	*/
-	for (pass=0; pass<PassCount; pass++) {
+	for (int pass=0; pass<PassCount; pass++) {
 		bool kill_pass = false;
 
 		if ( (Shader[pass].Get_Primary_Gradient() == ShaderClass::GRADIENT_BUMPENVMAP) &&
@@ -917,8 +917,8 @@ void MeshMatDescClass::Post_Load_Process(bool lighting_enabled,MeshModelClass * 
 			}
 
 			if ((DCGSource[pass] != VertexMaterialClass::MATERIAL) && (ColorArray[0] != NULL)) {
-				VertexMaterialClass * prev_mtl = NULL;
-				VertexMaterialClass * mtl = Peek_Material(0,pass);
+				prev_mtl = NULL;
+				mtl = Peek_Material(0,pass);
 				for (int vidx=0; vidx<VertexCount; vidx++) {
 					mtl = Peek_Material(vidx,pass);
 					if (mtl != prev_mtl) {
