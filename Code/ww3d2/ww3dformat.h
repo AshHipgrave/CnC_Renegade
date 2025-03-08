@@ -47,6 +47,7 @@
 
 #include "always.h"
 #include "wwstring.h"
+#include "d3d9types.h"
 
 class Vector4;
 class Targa;
@@ -176,6 +177,8 @@ void Get_WW3D_Format(WW3DFormat& src_format,unsigned& src_bpp,const Targa& targa
 // Pass false to the second parameter if you don't wish to consider compressed textures on hardware that supports them.
 // The parameter has no effect on hardware that doesn't support compression.
 WW3DFormat Get_Valid_Texture_Format(WW3DFormat format,bool is_compression_allowed);
+
+WW3DFormat Convert_D3D_Format_To_WW3D_Format(D3DFORMAT src_format);
 
 unsigned Get_Bytes_Per_Pixel(WW3DFormat format);
 

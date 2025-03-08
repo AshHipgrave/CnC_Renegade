@@ -143,7 +143,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\DirectX\include;..\wwlib;..\wwmath;..\wwdebug;..\wwcpuid;..\wwsaveload;..\wwaudio;..\miles6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WINVER=0x400;_WINDOWS;WIN32_LEAN_AND_MEAN;WIN32;VIEW_COMPRESSED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WINVER=0x400;_WINDOWS;WIN32_LEAN_AND_MEAN;WIN32;VIEW_COMPRESSED;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader />
@@ -158,6 +158,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Lib>
       <OutputFile>..\Libs\Debug\ww3d2C.lib</OutputFile>
@@ -1535,9 +1536,6 @@
     <None Include="RequiredAssets\ShatterAVel.tbl" />
     <None Include="RequiredAssets\ShatterPlanes0.w3d" />
     <None Include="RequiredAssets\ShatterVel.tbl" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="onepassxyznduv.vsh" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="RequiredAssets\AddProjectorGradient.tga" />

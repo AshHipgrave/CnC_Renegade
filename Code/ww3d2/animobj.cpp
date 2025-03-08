@@ -762,7 +762,8 @@ void Animatable3DObjClass::Update_Sub_Object_Transforms(void)
 			**	Play any sounds that are triggered by this frame of animation
 			*/
 			if ( ModeAnim.Motion->Has_Embedded_Sounds() ) {
-				ModeAnim.PrevFrame = AnimatedSoundMgrClass::Trigger_Sound(ModeAnim.Motion, ModeAnim.PrevFrame, ModeAnim.Frame, Get_Transform ());
+				// TODO: AshHipgrave
+				//ModeAnim.PrevFrame = AnimatedSoundMgrClass::Trigger_Sound(ModeAnim.Motion, ModeAnim.PrevFrame, ModeAnim.Frame, Get_Transform ());
 			}
 			break;
 
@@ -773,12 +774,15 @@ void Animatable3DObjClass::Update_Sub_Object_Transforms(void)
 			/*
 			**	Play any sounds that are triggered by this frame of animation
 			*/
-			if ( ModeInterp.Motion0->Has_Embedded_Sounds() ) {
-				ModeInterp.PrevFrame0 = AnimatedSoundMgrClass::Trigger_Sound(ModeInterp.Motion0, ModeInterp.PrevFrame0, ModeInterp.Frame0, Get_Transform ());
+            if (ModeInterp.Motion0->Has_Embedded_Sounds())
+            {
+                // TODO: AshHipgrave
+				//ModeInterp.PrevFrame0 = AnimatedSoundMgrClass::Trigger_Sound(ModeInterp.Motion0, ModeInterp.PrevFrame0, ModeInterp.Frame0, Get_Transform ());
 			}
 
 			if ( ModeInterp.Motion1->Has_Embedded_Sounds() ) {
-				ModeInterp.PrevFrame1 = AnimatedSoundMgrClass::Trigger_Sound(ModeInterp.Motion1, ModeInterp.PrevFrame1, ModeInterp.Frame1, Get_Transform ());
+                // TODO: AshHipgrave
+				//ModeInterp.PrevFrame1 = AnimatedSoundMgrClass::Trigger_Sound(ModeInterp.Motion1, ModeInterp.PrevFrame1, ModeInterp.Frame1, Get_Transform ());
 			}
 
   			break;
@@ -795,9 +799,12 @@ void Animatable3DObjClass::Update_Sub_Object_Transforms(void)
 				HAnimClass *motion = ModeCombo.AnimCombo->Peek_Motion(index);
 
 				if ( motion != NULL && motion->Has_Embedded_Sounds() ) {
+                    // TODO: AshHipgrave
+					/*
 					float prev_frame = AnimatedSoundMgrClass::Trigger_Sound(motion, ModeCombo.AnimCombo->Get_Prev_Frame(index),
 																				ModeCombo.AnimCombo->Get_Frame(index), Get_Transform ());
-					ModeCombo.AnimCombo->Set_Prev_Frame(index, prev_frame);
+                    ModeCombo.AnimCombo->Set_Prev_Frame(index, prev_frame);
+                    */
 				}
 				
 			}

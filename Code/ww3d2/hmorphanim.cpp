@@ -279,7 +279,7 @@ static int Build_List_From_String
 			// Parse the string and pull out its entries.
 			//
 			count = 0;
-			for (entry = buffer;
+			for (const char* entry = buffer;
 				  (entry != NULL) && (entry[1] != 0);
 				  entry = ::strstr (entry, delimiter))
 			{
@@ -295,7 +295,7 @@ static int Build_List_From_String
 				// Copy this entry into its own string
 				//
 				StringClass entry_string = entry;
-				char *delim_start = ::strstr (entry_string, delimiter);				
+				char *delim_start = (char*)::strstr(entry_string, delimiter);
 				if (delim_start != NULL) {
 					delim_start[0] = 0;
 				}
@@ -489,7 +489,7 @@ void HMorphAnimClass::Set_Name(const char * name)
 	// Try to find the separator (a period)
 	//
 	StringClass full_name	= name;
-	char *separator			= ::strchr (full_name, '.');
+	char *separator			= (char*)::strchr(full_name, '.');
 	if (separator != NULL) {
 		
 		//

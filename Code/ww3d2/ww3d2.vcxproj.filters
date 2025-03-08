@@ -693,11 +693,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="onepassxyznduv.vsh">
-      <Filter>DX8Asm</Filter>
-    </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="RequiredAssets\AddProjectorGradient.tga">
       <Filter>RequiredAssets</Filter>
     </Image>

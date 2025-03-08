@@ -42,7 +42,7 @@
 #include "targa.h"
 #include "dx8wrapper.h"
 #include "dx8caps.h"
-#include <d3d8.h>
+#include <d3d9.h>
 
  /*
 	WW3D_FORMAT_UNKNOWN=0,
@@ -362,6 +362,41 @@ WW3DFormat Get_Valid_Texture_Format(WW3DFormat format, bool is_compression_allow
 	}
 
 	return format;
+}
+
+WW3DFormat Convert_D3D_Format_To_WW3D_Format(D3DFORMAT src_format)
+{
+    switch (src_format)
+    {
+        case D3DFMT_R8G8B8:   return WW3D_FORMAT_R8G8B8;
+        case D3DFMT_A8R8G8B8: return WW3D_FORMAT_A8R8G8B8;
+        case D3DFMT_X8R8G8B8: return WW3D_FORMAT_X8R8G8B8;
+        case D3DFMT_R5G6B5:   return WW3D_FORMAT_R5G6B5;
+        case D3DFMT_X1R5G5B5: return WW3D_FORMAT_X1R5G5B5;
+        case D3DFMT_A1R5G5B5: return WW3D_FORMAT_A1R5G5B5;
+        case D3DFMT_A4R4G4B4: return WW3D_FORMAT_A4R4G4B4;
+        case D3DFMT_R3G3B2:   return WW3D_FORMAT_R3G3B2;
+        case D3DFMT_A8:       return WW3D_FORMAT_A8;
+        case D3DFMT_A8R3G3B2: return WW3D_FORMAT_A8R3G3B2;
+        case D3DFMT_X4R4G4B4: return WW3D_FORMAT_X4R4G4B4;
+        case D3DFMT_A8P8:     return WW3D_FORMAT_A8P8;
+        case D3DFMT_P8:       return WW3D_FORMAT_P8;
+        case D3DFMT_L8:       return WW3D_FORMAT_L8;
+        case D3DFMT_A8L8:     return WW3D_FORMAT_A8L8;
+        case D3DFMT_A4L4:     return WW3D_FORMAT_A4L4;
+        case D3DFMT_V8U8:     return WW3D_FORMAT_U8V8;
+        case D3DFMT_L6V5U5:   return WW3D_FORMAT_L6V5U5;
+        case D3DFMT_X8L8V8U8: return WW3D_FORMAT_X8L8V8U8;
+        case D3DFMT_DXT1:     return WW3D_FORMAT_DXT1;
+        case D3DFMT_DXT2:     return WW3D_FORMAT_DXT2;
+        case D3DFMT_DXT3:     return WW3D_FORMAT_DXT3;
+        case D3DFMT_DXT4:     return WW3D_FORMAT_DXT4;
+        case D3DFMT_DXT5:     return WW3D_FORMAT_DXT5;
+        default:
+            WWASSERT(0);
+    }
+
+    return WW3D_FORMAT_UNKNOWN;
 }
 
 unsigned Get_Bytes_Per_Pixel(WW3DFormat format)

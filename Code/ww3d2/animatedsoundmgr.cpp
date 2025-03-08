@@ -35,6 +35,9 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include "animatedsoundmgr.h"
+
+#if 0
+
 #include "ini.h"
 #include "inisup.h"
 #include "ffactory.h"
@@ -419,3 +422,4 @@ AnimatedSoundMgrClass::Trigger_Sound
 	return retval;
 }
 
+#endif

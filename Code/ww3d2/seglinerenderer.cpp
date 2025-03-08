@@ -202,7 +202,7 @@ void SegLineRendererClass::Render
 	RenderInfoClass & rinfo,
 	const Matrix3D & transform,
 	unsigned int num_points,
-	Vector3 * points,
+	Vector3 * in_points,
 	const SphereClass & obj_sphere
 )
 {
@@ -216,8 +216,7 @@ void SegLineRendererClass::Render
 	/* 
 	** Handle texture UV offset animation (done once for entire line).
 	*/
-	unsigned int delta = WW3D::Get_Sync_Time() - LastUsedSyncTime;
-	float del = (float)delta;
+	float del = (float)(WW3D::Get_Sync_Time() - LastUsedSyncTime);
 	Vector2 uv_offset = CurrentUVOffset + UVOffsetDeltaPerMS * del;
 
 	// ensure offsets are in [0, 1] range:
@@ -272,7 +271,7 @@ void SegLineRendererClass::Render
 		Matrix3D modelview=view2*transform;
 
 		VectorProcessorClass::Transform(&xformed_pts[0],
-			&points[chidx], modelview, point_cnt);
+			&in_points[chidx], modelview, point_cnt);
 
 
 		/*
