@@ -1634,16 +1634,16 @@ WWAudioClass::Allocate_2D_Handles (void)
 //
 ////////////////////////////////////////////////////////////////////////////////////////////
 HSAMPLE
-WWAudioClass::Get_2D_Sample (const AudibleSoundClass &sound_obj)
+WWAudioClass::Get_2D_Sample (const AudibleSoundClass &in_sound_obj)
 {
-	if (Is_OK_To_Give_Handle (sound_obj) == false) {
+	if (Is_OK_To_Give_Handle (in_sound_obj) == false) {
 		return (HSAMPLE)INVALID_MILES_HANDLE;
 	}
 
 	MMSLockClass lock;
 
-	float lowest_priority					= sound_obj.Get_Priority ();
-	float lowest_runtime_priority			= sound_obj.Get_Runtime_Priority ();
+	float lowest_priority					= in_sound_obj.Get_Priority ();
+	float lowest_runtime_priority			= in_sound_obj.Get_Runtime_Priority ();
 	AudibleSoundClass *lowest_pri_sound = NULL;
 	HSAMPLE lowest_pri_sample				= NULL;
 	HSAMPLE free_sample						= (HSAMPLE)INVALID_MILES_HANDLE;
@@ -1702,16 +1702,16 @@ WWAudioClass::Get_2D_Sample (const AudibleSoundClass &sound_obj)
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////
 H3DSAMPLE
-WWAudioClass::Get_3D_Sample (const Sound3DClass &sound_obj)
+WWAudioClass::Get_3D_Sample (const Sound3DClass &in_sound_obj)
 {
-	if (Is_OK_To_Give_Handle (sound_obj) == false) {
+	if (Is_OK_To_Give_Handle (in_sound_obj) == false) {
 		return (H3DSAMPLE)INVALID_MILES_HANDLE;
 	}
 
 	MMSLockClass lock;
 
-	float lowest_priority					= sound_obj.Get_Priority ();
-	float lowest_runtime_priority			= sound_obj.Get_Runtime_Priority ();
+	float lowest_priority					= in_sound_obj.Get_Priority ();
+	float lowest_runtime_priority			= in_sound_obj.Get_Runtime_Priority ();
 	AudibleSoundClass *lowest_pri_sound = NULL;
 	H3DSAMPLE lowest_pri_sample			= NULL;
 	H3DSAMPLE free_sample					= (H3DSAMPLE)INVALID_MILES_HANDLE;
@@ -3450,7 +3450,7 @@ WWAudioClass::Set_Active_Sound_Page (SOUND_PAGE page)
 	//
 	//	Resume any sounds that are playing in the new page
 	//
-	for (index = 0; index < m_Playlist[page].Count ();index ++) {
+	for (int index = 0; index < m_Playlist[page].Count ();index ++) {
 		m_Playlist[page][index]->Resume ();
 	}
 
