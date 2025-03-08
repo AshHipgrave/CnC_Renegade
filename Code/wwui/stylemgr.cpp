@@ -170,7 +170,7 @@ StyleMgrClass::Initialize (void)
 //
 ////////////////////////////////////////////////////////////////
 void
-StyleMgrClass::Initialize_From_INI (const char *filename)
+StyleMgrClass::Initialize_From_INI (const char *InFileName)
 {
 	Shutdown ();
 
@@ -184,7 +184,7 @@ StyleMgrClass::Initialize_From_INI (const char *filename)
 	//	Get the INI file
 	//
 	INIClass *ini_file = NULL;
-	FileClass *file_obj = _TheFileFactory->Get_File (filename);
+	FileClass *file_obj = _TheFileFactory->Get_File (InFileName);
 	if (file_obj != NULL && file_obj->Is_Available( ) ) {
 		ini_file = new INIClass (*file_obj);
 		_TheFileFactory->Return_File (file_obj);
@@ -232,7 +232,7 @@ StyleMgrClass::Initialize_From_INI (const char *filename)
 		//
 		//	Read information about each font and load it into the system
 		//
-		for (index = 0; index < FONT_MAX; index ++) {
+		for (int index = 0; index < FONT_MAX; index ++) {
 			
 			//
 			//	Read information about this font
@@ -315,7 +315,7 @@ StyleMgrClass::Shutdown (void)
 	//
 	//	Unregister this font with windows
 	//
-	for (index = 0; index < FontFileList.Count (); index ++) {
+	for (int index = 0; index < FontFileList.Count (); index ++) {
 		::RemoveFontResource (FontFileList[index]);
 	}
 

@@ -161,7 +161,7 @@ RenegadeTerrainMaterialPassClass::Allocate (int vertex_count)
 	//
 	//	Allocate the vertex index map
 	//
-	for (index = 0; index < PASS_COUNT; index ++) {
+	for (int index = 0; index < PASS_COUNT; index ++) {
 		VertexIndexMap[index] = new int[vertex_count];
 		::memset (VertexIndexMap[index], -1, sizeof (int) * vertex_count);
 	}

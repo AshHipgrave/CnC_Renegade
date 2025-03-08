@@ -410,7 +410,7 @@ PathfindClass::Save_Portals (ChunkSaveClass &csave)
 	//	Now save the waypath portals
 	//
 	count = m_WaypathPortalList.Count ();
-	for (index = 0; index < count && retval; index ++) {		
+	for (int index = 0; index < count && retval; index ++) {		
 		PathfindPortalClass *portal = m_WaypathPortalList[index];
 
 		//
@@ -724,7 +724,7 @@ void
 PathfindClass::Collect_Sectors
 (
 	DynamicVectorClass<PathfindSectorClass *> &	list,
-	const AABoxClass &									box,
+	const AABoxClass &									in_box,
 	PathfindSectorClass *								exclude_sector
 )
 {
@@ -879,7 +879,7 @@ PathfindClass::Reset_Portals (void)
 	//
 	//	Release our hold on each of the temporary portals
 	//
-	for (index = 0; index < m_TemporaryPortalList.Count (); index ++) {
+	for (int index = 0; index < m_TemporaryPortalList.Count (); index ++) {
 		PathfindPortalClass *portal = m_TemporaryPortalList[index];
 		REF_PTR_RELEASE (portal);
 	}
@@ -887,7 +887,7 @@ PathfindClass::Reset_Portals (void)
 	//
 	//	Release our hold on each of the waypath portals
 	//
-	for (index = 0; index < m_WaypathPortalList.Count (); index ++) {
+	for (int index = 0; index < m_WaypathPortalList.Count (); index ++) {
 		PathfindPortalClass *portal = m_WaypathPortalList[index];
 		REF_PTR_RELEASE (portal);
 	}
@@ -1467,7 +1467,7 @@ PathfindClass::Free_Waypath_Sectors_And_Portals (void)
 	//
 	//	Loop over all the sectors in our list
 	//
-	for (index = 0; index < m_SectorList.Count (); index ++) {
+	for (int index = 0; index < m_SectorList.Count (); index ++) {
 		PathfindSectorClass *sector = m_SectorList[index];
 		
 		//

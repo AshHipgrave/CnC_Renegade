@@ -1546,7 +1546,7 @@ PathSolveClass::Post_Process_Path (void)
 	PATH_POINT *path_points = new PATH_POINT[count];
 
 	Vector3 next_point = m_DestPos;
-	for (index = m_Path.Count () - 2; index > 0; index --) {
+	for (int index = m_Path.Count () - 2; index > 0; index --) {
 
 		//
 		//	Do we have a portal we can clip the point to?
@@ -1584,7 +1584,7 @@ PathSolveClass::Post_Process_Path (void)
 	}
 
 	next_point = m_StartPos;
-	for (index = 1; index < m_Path.Count () - 1; index ++) {
+	for (int index = 1; index < m_Path.Count () - 1; index ++) {
 
 		//
 		//	Do we have a portal we can clip the point to?
@@ -1624,7 +1624,7 @@ PathSolveClass::Post_Process_Path (void)
 	//
 	//	Now average the points
 	//
-	for (index = 1; index < m_Path.Count () - 1; index ++) {
+	for (int index = 1; index < m_Path.Count () - 1; index ++) {
 		Vector3 avg_point = (path_points[index].forward + path_points[index].backward) * 0.5F;
 		m_Path[index].m_Point = avg_point;
 	}
@@ -1635,7 +1635,7 @@ PathSolveClass::Post_Process_Path (void)
 	//
 	//	Relax the points
 	//
-	for (index = m_Path.Count () - 2; index > 1; index --) {
+	for (int index = m_Path.Count () - 2; index > 1; index --) {
 		Vector3 &prev_point				= m_Path[index + 1].m_Point;
 		Vector3 &next_point				= m_Path[index - 1].m_Point;
 		PathfindPortalClass *portal	= m_Path[index].m_Portal;
