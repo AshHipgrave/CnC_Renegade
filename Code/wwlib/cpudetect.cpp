@@ -975,7 +975,7 @@ void CPUDetectClass::Init_Processor_Log()
 	case 2: cpu_type="Dual"; break;
 	case 3: cpu_type="*Intel Reserved*"; break;
 	}
-	SYSLOG(("Processor type: %s\r\n",*cpu_type));
+	SYSLOG(("Processor type: %s\r\n",cpu_type));
 
 	SYSLOG(("\r\n"));
 
@@ -1273,6 +1273,11 @@ void Get_OS_Info(
 			}
 			os_info.Code="WINXX";
 			return;
+		}
+		else
+		{
+			// TODO: AshHipgrave - Temp fix. If we've hit this then we're running an OS later than Windows XP
+			os_info.Code = "UNKNOWN";
 		}
 	}
 }
