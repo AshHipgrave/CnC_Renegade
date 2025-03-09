@@ -16,6 +16,7 @@
     <SccLocalPath>.</SccLocalPath>
     <Keyword>MFCProj</Keyword>
     <ProjectGuid>{280DFEB2-2FA0-4146-AA09-532C7D82E6AF}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -46,9 +47,10 @@
     <_ProjectFileVersion>17.0.35707.178</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
+    <OutDir>..\..\..\Run\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)D</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>.\Release\</OutDir>
@@ -75,7 +77,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>wwnet.lib;wwaudio.lib;..\..\miles6\lib\win\mss32.lib;wwsaveload.lib;ww3d2.lib;wwdebug.lib;wwlib.lib;wwmath.lib;wwphys.lib;wwutil.lib;winmm.lib;ddraw.lib;dinput8.lib;dxguid.lib;dsound.lib;vfw32.lib;wsock32.lib;wwtranslatedb.lib;d3dx9.lib;d3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\..\..\Run\WWConfigD.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>../../directx\lib;../../libs/debug;../../umbra/lib/win32-x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>

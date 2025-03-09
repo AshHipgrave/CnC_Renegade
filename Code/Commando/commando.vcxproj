@@ -19,6 +19,7 @@
     <SccProjectName>"$/Commando/Code/Commando", LOGAAAAA</SccProjectName>
     <SccLocalPath>.</SccLocalPath>
     <ProjectGuid>{0DE9539A-57DE-463C-B268-EE8AA8C8CDC4}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -63,9 +64,10 @@
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
+    <OutDir>..\..\..\Run\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)D</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -182,7 +184,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\directx\lib\d3dx8.lib;dinput.lib;wwui.lib;wwaudio.lib;..\miles6\lib\win\mss32.lib;wwsaveload.lib;ww3d2.lib;wwdebug.lib;wwlib.lib;wwmath.lib;wwnet.lib;wwphys.lib;wwutil.lib;winmm.lib;dxguid.lib;dsound.lib;vfw32.lib;wsock32.lib;combat.lib;wwtranslatedb.lib;version.lib;binkmovie.lib;binkw32.lib;bandtest.lib;scontrol.lib;gamespy.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\..\Run\RenegadeD.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>../libs/debug;../srsdk1x/msvc6\lib\debug;../directx\lib;../umbra/lib/win32-x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
