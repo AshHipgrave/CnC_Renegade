@@ -285,7 +285,7 @@ void SCAnnouncement::Act(void)
 		    if (sender)
 					{
 					WideStringClass message(0, true);
-					message.Format(L"%s: %s", *sender->Get_Name(), string);
+					message.Format(L"%s: %s", sender->Get_Name(), string);
 					CombatManager::Get_Message_Window()->Add_Message(message, sender->Get_Color());
 					}
 				else

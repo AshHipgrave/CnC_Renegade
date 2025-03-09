@@ -35,7 +35,7 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include "StdAfx.h"
-#include "NvDXTLib.h"
+//#include "NvDXTLib.h"
 #include "Targa.h"
 #include "TGAToDXT.H"
 #include <io.h>
@@ -79,6 +79,10 @@ TGAToDXTClass::~TGAToDXTClass()
 ///////////////////////////////////////////////////////////////////////////////
 bool TGAToDXTClass::Convert (const char *inputpathname, const char *outputpathname, FILETIME *writetimeptr, bool &redundantalpha)
 {
+	// TODO: AshHipgrave - Reimplement this
+
+	return false;
+	/*
 	bool  success;
 	Targa targa;
 	long	error;
@@ -165,6 +169,7 @@ bool TGAToDXTClass::Convert (const char *inputpathname, const char *outputpathna
 	}
 
 	return (success);
+	*/
 }
 
 

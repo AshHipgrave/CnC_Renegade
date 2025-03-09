@@ -59,7 +59,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\wwui;..\..\combat;..\..\wwdebug;..\..\wwmath;..\..\ww3d2;..\..\wwphys;..\..\wwlib;..\..\srsdk1x\include;..\..\wwaudio;..\..\miles6\include;..\..\wwsaveload;..\..\wwnet;..\..\wwtranslatedb;..\..\wwbitpack;..\..\wwutil;..\..\NvDXTLib\Inc;..\..\directX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WIN32;_WINDOWS;PARAM_EDITING_ON;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WIN32;_WINDOWS;PARAM_EDITING_ON;_CRT_SECURE_NO_WARNINGS;PUBLIC_EDITOR_VER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -75,7 +75,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>combate.lib;ww3d2e.lib;wwbitpack.lib;imagehlp.lib;wwtranslatedb.lib;wwnet.lib;ws2_32.lib;wwaudioe.lib;..\..\miles6\lib\win\mss32.lib;wwdebuge.lib;wwmath.lib;wwphyse.lib;wwlib.lib;winmm.lib;vfw32.lib;wwutil.lib;wwsaveloade.lib;d3dx8.lib;d3d8.lib;dxguid.lib;dinput8.lib;NvDXTLib.lib;version.lib;wwui.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>combate.lib;ww3d2e.lib;wwbitpack.lib;imagehlp.lib;wwtranslatedb.lib;wwnet.lib;ws2_32.lib;wwaudioe.lib;..\..\miles6\lib\win\mss32.lib;wwdebuge.lib;wwmath.lib;wwphyse.lib;wwlib.lib;winmm.lib;vfw32.lib;wwutil.lib;wwsaveloade.lib;d3dx9.lib;d3d9.lib;dxguid.lib;dinput8.lib;version.lib;wwui.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>..\..\Libs\debug;..\..\Libs\profile;..\..\NvDXTLib\Lib;..\..\directX\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>

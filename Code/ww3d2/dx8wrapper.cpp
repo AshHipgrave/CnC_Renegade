@@ -162,8 +162,8 @@ static DynamicVectorClass<StringClass>					_RenderDeviceShortNameTable;
 static DynamicVectorClass<RenderDeviceDescClass>	_RenderDeviceDescriptionTable;
 
 
-typedef IDirect3D9* (WINAPI *Direct3DCreate8Type) (UINT SDKVersion);
-Direct3DCreate8Type	Direct3DCreate8Ptr = NULL;
+typedef IDirect3D9* (WINAPI *Direct3DCreate9Type) (UINT SDKVersion);
+Direct3DCreate9Type	Direct3DCreate9Ptr = NULL;
 HINSTANCE D3D8Lib = NULL;
 
 
@@ -245,18 +245,18 @@ bool DX8Wrapper::Init(void * hwnd, bool lite)
 	Invalidate_Cached_Render_States();
 
 	if (!lite) {
-		D3D8Lib = LoadLibrary("D3D8.DLL");
+		D3D8Lib = LoadLibrary("D3D9.DLL");
 
 		if (D3D8Lib == NULL) return false;
 
-		Direct3DCreate8Ptr = (Direct3DCreate8Type) GetProcAddress(D3D8Lib, "Direct3DCreate8");
-		if (Direct3DCreate8Ptr) {
+		Direct3DCreate9Ptr = (Direct3DCreate9Type) GetProcAddress(D3D8Lib, "Direct3DCreate9");
+		if (Direct3DCreate9Ptr) {
 
 			/*
 			** Create the D3D interface object
 			*/
 			WWDEBUG_SAY(("Create Direct3D8\n"));
-			D3DInterface = Direct3DCreate8Ptr(D3D_SDK_VERSION);		// TODO: handle failure cases...
+			D3DInterface = Direct3DCreate9Ptr(D3D9b_SDK_VERSION);		// TODO: handle failure cases...
 			if (D3DInterface == NULL) {
 				return(false);
 			}
@@ -723,7 +723,7 @@ bool DX8Wrapper::Set_Render_Device(int dev, int width, int height, int bits, int
 	if (windowed != -1)	IsWindowed = (windowed != 0);
 
 	WWDEBUG_SAY(("Attempting Set_Render_Device: name: %s, width: %d, height: %d, windowed: %d\r\n",
-		*_RenderDeviceNameTable[CurRenderDevice],ResolutionWidth,ResolutionHeight,(IsWindowed ? 1 : 0)));
+		_RenderDeviceNameTable[CurRenderDevice],ResolutionWidth,ResolutionHeight,(IsWindowed ? 1 : 0)));
 
 	WWASSERT(D3DDevice == NULL);
 

@@ -559,7 +559,8 @@ ExporterClass::Find_Files (const char *search_mask, STRING_LIST &file_list)
 	//
 	WIN32_FIND_DATA find_info = { 0 };
 	BOOL keep_going = TRUE;
-	for (HANDLE hfile_find = ::FindFirstFile (search_mask, &find_info);
+	HANDLE hfile_find = INVALID_HANDLE_VALUE;
+	for (hfile_find = ::FindFirstFile (search_mask, &find_info);
 		  (hfile_find != INVALID_HANDLE_VALUE) && keep_going;
 		  keep_going = ::FindNextFile (hfile_find, &find_info))
 	{			
@@ -725,7 +726,8 @@ ExporterClass::Clean_Directory (LPCTSTR local_dir)
 	DynamicVectorClass<CString> file_list;
 	BOOL keep_going = TRUE;
 	WIN32_FIND_DATA find_info = { 0 };
-	for (HANDLE hfind = ::FindFirstFile (search_mask, &find_info);
+	HANDLE hfind = INVALID_HANDLE_VALUE;
+	for (hfind = ::FindFirstFile (search_mask, &find_info);
 		  (hfind != INVALID_HANDLE_VALUE) && keep_going;
 		  keep_going = ::FindNextFile (hfind, &find_info))
 	{

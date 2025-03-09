@@ -960,7 +960,7 @@ PathfindSectorBuilderClass::Do_Real_Physics_Sim
 		}
 
 		bool keep_going = true;
-		for (attempt = 0; keep_going && (attempt < 20); attempt ++) {
+		for (int attempt = 0; keep_going && (attempt < 20); attempt ++) {
 
 			Vector3 curr_pos = _PhysSimObj->Get_Position ();
 
@@ -1432,7 +1432,7 @@ PathfindSectorBuilderClass::Check_Edge
 	//	Check the given number of cells in the left direction
 	//
 	curr_cell = start_box;
-	for (x = 0; retval && x < count_right; x++) {
+	for (int x = 0; retval && x < count_right; x++) {
 		
 		//
 		// Can we move one step in this direction?
@@ -1482,7 +1482,7 @@ PathfindSectorBuilderClass::Check_Edge
 	//	Check the given number of cells in the down direction
 	//
 	curr_cell = start_box;
-	for (y = 0; retval && y < count_down; y++) {
+	for (int y = 0; retval && y < count_down; y++) {
 		
 		//
 		// Can we move one step in this direction?
@@ -1627,7 +1627,7 @@ PathfindSectorBuilderClass::Find_Perimeter (FloodfillBoxClass *start_box, BOX_PE
 		upper_left1 = upper_left1->Peek_Neighbor (DIR_LEFT);
 	}
 
-	for (index = 0; index < perimeter->count_up; index ++) {
+	for (int index = 0; index < perimeter->count_up; index ++) {
 		upper_left2 = upper_left2->Peek_Neighbor (DIR_UP);
 	}
 
