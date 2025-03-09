@@ -7,14 +7,14 @@ Custom fork of C&C: Renegade aimed at getting the game up and running on modern 
 
 - [X] Upgrade to a newer compiler and C++ language standard
 - [ ] **[In Progress]** Replace missing properitary third-party libraries with open source alternatives
-    - [X] DirectX 8.0 SDK - Replaced with DirectX 9 (interim solution)
+    - [X] ~~DirectX 8.0 SDK~~ - Replaced with DirectX 9 (interim solution)
     - [ ] RAD Bink SDK
-    - [X] RAD Miles Sound System SDK - Replaced with a stub header and library.
+    - [X] ~~RAD Miles Sound System SDK~~ - Replaced with a stub header and library.
     - [ ] NvDXTLib SDK
     - [ ] Lightscape SDK
     - [ ] Umbra SDK
     - [ ] GameSpy SDK
-    - [ ] GNU Regex
+    - [X] ~~GNU Regex~~ - Replaced with STL regex library
     - [ ] SafeDisk API
     - [ ] Microsoft Cab Archive Library
     - [ ] RTPatch Library
