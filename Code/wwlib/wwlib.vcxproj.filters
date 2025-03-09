@@ -77,9 +77,6 @@
     <ClCompile Include="gcd_lcm.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="gnu_regex.c">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="hash.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -350,9 +347,6 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="gcd_lcm.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="gnu_regex.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="growmix.h">

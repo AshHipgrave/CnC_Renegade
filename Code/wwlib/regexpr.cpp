@@ -22,27 +22,7 @@
 #include "regexpr.h"
 #include "wwstring.h"
 #include <assert.h>
-
-// Pull in the gnu_regex library's definitions.
-#define __STDC__ 1
-extern "C" {
-#include "gnu_regex.h"
-}
-
-
-// The regular expression syntax options that RegularExpressionClass uses.
-// The dirty details of each option are described in "gnu_regex.h"
-#define OUR_SYNTAX_OPTIONS																									\
-	RE_CHAR_CLASSES |					/* Support character classes such as [:alpha:] and [:digit:] */	\
-	RE_CONTEXT_INDEP_ANCHORS |		/* ^ and $ are always anchors (outside bracket expressions)  */	\
-	RE_CONTEXT_INDEP_OPS |			/* operators such as + * ? are always considered operators   */	\
-	RE_CONTEXT_INVALID_OPS |		/* operators are invalid as the first characters in a string */	\
-	RE_INTERVALS |						/* { } are used to define intervals                          */	\
-	RE_NO_BK_BRACES |					/* { } are interval markers and \{ \} are literals           */	\
-	RE_NO_BK_PARENS |					/* ( ) are group markers and \( \) are literals              */	\
-	RE_NO_BK_VBAR |					/* | is the OR operator and \| is a literal                  */	\
-	RE_NO_EMPTY_RANGES				/* [z-a] is an invalid range but [a-z] is valid              */
-
+#include <regex>
 
 /*
 ** Definition of private DataStruct for RegularExpressionClass
@@ -64,14 +44,6 @@ struct RegularExpressionClass::DataStruct
 
 	void ClearExpression (void)
 	{
-		// If the expression was valid, let the gnu_regex library
-		// deallocate any memory it had allocated for it.
-		if (IsValid)
-			regfree(&CompiledExpr);
-
-		// Blank out the expression structure.
-		memset(&CompiledExpr, 0, sizeof(CompiledExpr));
-
 		// Erase the expression string.
 		ExprString = "";
 
@@ -85,7 +57,7 @@ struct RegularExpressionClass::DataStruct
 
 	// gnu_regex compiled version of the regular expression used
 	// during matching or any form of evaluation
-	regex_t		CompiledExpr;
+	std::regex  	CompiledExpr;
 
 	// True if CompiledExpr is valid.
 	bool			IsValid;
@@ -142,25 +114,19 @@ bool RegularExpressionClass::Compile (const char *expression)
 	// call Compile() twice on one object.
 	Data->ClearExpression();
 
-	// Set the regular expression module to the syntax that we
-	// would like to use.
-	reg_syntax_t old_syntax = re_set_syntax(OUR_SYNTAX_OPTIONS);
-
-	// Compile the given expression.
-	const char *error_str = re_compile_pattern(expression,
-		strlen(expression), &Data->CompiledExpr);
-
-	// Restore the old syntax setting.
-	re_set_syntax(old_syntax);
-
-	// If no error string was returned, the expression was good!
-	if (error_str == 0)
+	try
 	{
+		std::regex error_str = std::regex(expression);
+
 		Data->IsValid = true;
 		Data->ExprString = expression;
+
 		return true;
 	}
-	return false;
+	catch (const std::regex_error* regex_error)
+	{
+		return false;
+	}
 }
 
 
@@ -179,24 +145,9 @@ bool RegularExpressionClass::Match (const char *string) const
 	if (!Data->IsValid)
 		return false;
 
-	// Set the regular expression module to the syntax that we
-	// would like to use.
-	reg_syntax_t old_syntax = re_set_syntax(OUR_SYNTAX_OPTIONS);
+	bool bHasMatch = std::regex_search(string, Data->CompiledExpr);
 
-	// Try to match the given string with our regular expression.
-	int retval = re_match(&Data->CompiledExpr, string, strlen(string), 0, 0);
-
-	// Restore the old syntax setting.
-	re_set_syntax(old_syntax);
-
-	// -1 means no match, -2 means internal gnu_regex lib error, otherwise
-	// re_match returned the number of characters matched. A 0 character
-	// match is valid, and distinctly different than no match at all.
-	if (retval < 0)
-		return false;
-
-	// The given string matched our regular expression!
-	return true;
+	return bHasMatch;
 }
 
 
