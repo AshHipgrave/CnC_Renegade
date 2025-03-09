@@ -291,7 +291,7 @@ FileClass * SimpleFileFactoryClass::Get_File( char const *filename )
 					}
 				}
 			} else {
-				new_name.Format("%s%s",*SubDirectory,*stripped_name);
+				new_name.Format("%s%s",SubDirectory,stripped_name);
 			}
 		}
 

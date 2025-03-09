@@ -762,7 +762,7 @@ SceneEditorClass::Delete_Nodes (void)
 	//
 	// Perfrom the actual delete operation
 	//
-	for (index = 0; index < affected_list.Count (); index ++) {
+	for (int index = 0; index < affected_list.Count (); index ++) {
 		Delete_Node (affected_list[index], false);
 	}
 	
@@ -2092,7 +2092,7 @@ SceneEditorClass::DoObjectGoto (NodeClass *node1, NodeClass *node2)
 	//
 	//	Unregister all the waypaths with the pathfinding system
 	//
-	for (	node = NodeMgrClass::Get_First (NODE_TYPE_WAYPATH);
+	for (NodeClass*	node = NodeMgrClass::Get_First (NODE_TYPE_WAYPATH);
 			node != NULL;
 			node = NodeMgrClass::Get_Next (node, NODE_TYPE_WAYPATH))
 	{
@@ -2241,7 +2241,7 @@ SceneEditorClass::Import_Lights
 	//
 	//	Add the lights to the level
 	//
-	for (index = 0; index < light_list.Count (); index ++) {
+	for (int index = 0; index < light_list.Count (); index ++) {
 		
 		LightClass *light = light_list[index];
 		if (light != NULL) {
@@ -2689,7 +2689,7 @@ SceneEditorClass::Replace_Selection (void)
 			//
 			//	Add the new nodes to the selection set
 			//
-			for (index = 0; index < new_nodes.Count (); index ++) {
+			for (int index = 0; index < new_nodes.Count (); index ++) {
 				NodeClass *new_node = new_nodes[index];
 				m_SelectionMgr->Add_Node (new_node);
 			}

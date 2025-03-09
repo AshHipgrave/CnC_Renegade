@@ -627,7 +627,7 @@ EditableHeightfieldClass::Update_Normals (int min_x, int min_y, int max_x, int m
 	//	Loop over each vertex that's affected and add the plane normal of the
 	// 6 triangles that are formed from this vertex .
 	//
-	for (y_pos = min_y; y_pos <= max_y; y_pos ++) {
+	for (int y_pos = min_y; y_pos <= max_y; y_pos ++) {
 		int vert_index = (y_pos * GridPointsX) + min_x;
 		for (int x_pos = min_x; x_pos <= max_x; x_pos ++) {
 
@@ -981,7 +981,7 @@ EditableHeightfieldClass::Smooth_Foundation_Heightfield
 	//
 	//	Loop over all the verts in this region and apply the deformation
 	//
-	for (y_pos = min_y; y_pos <= max_y; y_pos ++) {
+	for (int y_pos = min_y; y_pos <= max_y; y_pos ++) {
 		int curr_offset = (y_pos * GridPointsX) + min_x;
 
 		for (int x_pos = min_x; x_pos <= max_x; x_pos ++) {
@@ -1432,7 +1432,7 @@ EditableHeightfieldClass::Save (ChunkSaveClass &csave)
 		//
 		//	Save the array of texture weights per vertex per pass
 		//
-		for (index = 0; index < GridPointCount; index ++) {			
+		for (int index = 0; index < GridPointCount; index ++) {			
 			for (int pass = 0; pass < MAX_TEXTURE_PASSES; pass ++) {
 				csave.Write (&TextureWeights[pass][index], sizeof (float));
 			}
@@ -1455,7 +1455,7 @@ EditableHeightfieldClass::Save (ChunkSaveClass &csave)
 	//
 	csave.Begin_Chunk (CHUNKID_MATERIAL_LIST);
 
-		for (index = 0; index < MAX_TEXTURE_PASSES; index ++) {
+		for (int index = 0; index < MAX_TEXTURE_PASSES; index ++) {
 			
 			//
 			//	Is there a material to save?
@@ -1848,9 +1848,9 @@ EditableHeightfieldClass::Create
 			} else {
 
 				int pixel_x0 = (int)pixel_x;
-				int pixel_x1 = min (pixel_x0 + 1, bmp_info.bmWidth - 1);
+				int pixel_x1 = min (static_cast<LONG>(pixel_x0 + 1), bmp_info.bmWidth - 1);
 				int pixel_y0 = (int)pixel_y;
-				int pixel_y1 = min (pixel_y0 + 1, bmp_info.bmHeight - 1);
+				int pixel_y1 = min (static_cast<LONG>(pixel_y0 + 1), bmp_info.bmHeight - 1);
 
 				//
 				//	Get the z-values of the four corners of the pixel

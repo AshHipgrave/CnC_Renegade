@@ -1108,7 +1108,7 @@ VisPointGeneratorClass::Generate_Camera_Locations (const Matrix3D &real_vis_poin
 	//
 	int start_index = 0;
 	NodeClass *current_node = NULL;
-	for (index = 0; index < m_CameraSimPointCount; index ++) {
+	for (int index = 0; index < m_CameraSimPointCount; index ++) {
 
 		//
 		//	Has the node changed?

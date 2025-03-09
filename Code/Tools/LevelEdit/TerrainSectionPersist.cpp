@@ -431,7 +431,7 @@ TerrainSectionPersistListClass::Initialize_Virgin_Sections (void)
 	//
 	//	Recurse into each sub-section
 	//
-	for (index = 0; index < Count (); index ++) {
+	for (int index = 0; index < Count (); index ++) {
 		(*this)[index]->Initialize_Virgin_Sections ();
 	}
 

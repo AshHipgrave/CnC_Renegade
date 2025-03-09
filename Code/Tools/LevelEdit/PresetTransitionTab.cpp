@@ -197,7 +197,7 @@ PresetTransitionTabClass::Apply_Changes (void)
 	// the to the vector.
 	//
 	count = m_ListCtrl.GetItemCount ();
-	for (index = 0; index < count; index ++) {
+	for (int index = 0; index < count; index ++) {
 		TransitionDataClass *transition = (TransitionDataClass *)m_ListCtrl.GetItemData (index);
 		if (transition != NULL) {
 			m_TransitionList->Add (transition);
