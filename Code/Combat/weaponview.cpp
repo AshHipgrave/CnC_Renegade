@@ -708,19 +708,19 @@ static void	Aquire_Weapon_Assets( const WeaponClass * weapon )
 
 			// Get Weapon Anims, use the idle anim for enter and exit
 			int state = ( i >= WEAPON_STATE_ENTER ) ? WEAPON_STATE_IDLE : i;
-			anim_name.Format( "%s.F_GA_%s_%s", *weapon_htree_name, *weapon_name, WeaponActionNames[state] );
+			anim_name.Format( "%s.F_GA_%s_%s", (const char*)weapon_htree_name, (const char*)weapon_name, WeaponActionNames[state] );
 //			Debug_Say(( "Loading Weapon Anim %s\n", anim_name ));
 			WeaponAnims[i] = WW3DAssetManager::Get_Instance()->Get_HAnim( anim_name );
 			if ( WeaponAnims[i] == NULL ) {
-				Debug_Say(( "Missing Weapon Anim %s\n", *anim_name ));
+				Debug_Say(( "Missing Weapon Anim %s\n", (const char*)anim_name ));
 			}
 
 			// Get Hands Anims
-			anim_name.Format( "F_SKELETON.F_HA_%s_%s", *weapon_name, WeaponActionNames[i] );
+			anim_name.Format( "F_SKELETON.F_HA_%s_%s", (const char*)weapon_name, WeaponActionNames[i] );
 //			Debug_Say(( "Loading Hands Anim %s\n", anim_name ));
 			HandsAnims[i] = WW3DAssetManager::Get_Instance()->Get_HAnim( anim_name );
 			if ( HandsAnims[i] == NULL ) {
-				Debug_Say(( "Missing Hands Anim %s\n", *anim_name ));
+				Debug_Say(( "Missing Hands Anim %s\n", (const char*)anim_name ));
 				HandsAnims[i] = WW3DAssetManager::Get_Instance()->Get_HAnim( "F_SKELETON.F_HA_PIST_IDLE" );
 			}
 		}
@@ -833,7 +833,7 @@ static void	Set_Bob( int bob_state )
 		if ( !name.Is_Empty() ) {
 			BobHTree = WW3DAssetManager::Get_Instance()->Get_HTree( name );
 			StringClass anim(0,true);
-			anim.Format( "%s.%s", *name, *name );
+			anim.Format( "%s.%s", (const char*)name, (const char*)name );
 			BobHAnim = WW3DAssetManager::Get_Instance()->Get_HAnim( anim );
 		}
 	}

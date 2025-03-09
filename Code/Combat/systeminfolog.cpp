@@ -276,7 +276,7 @@ void PlayerInfoLog::Append_To_Log(PlayerDataClass* data)
 #ifdef WWDEBUG
 	StringClass tmp;
 	StringClass work(0,true);
-	ADD_HISTORY(("Map name: %s\r\n",*CurrentMapName));
+	ADD_HISTORY(("Map name: %s\r\n", (const char*)CurrentMapName));
 	ADD_HISTORY(("Game time: %2.2f\r\n",data->Get_Game_Time()));
 	ADD_HISTORY(("Session time: %2.2f\r\n",data->Get_Session_Time()));
 	ADD_HISTORY(("Enemies killed: %d\r\n",data->Get_Enemies_Killed()));
@@ -318,7 +318,7 @@ void PlayerInfoLog::Get_Compact_Log(StringClass& string)
 		team1size=10*Team1TotalSizes/Team1SizeReported;
 	}
 
-	string.Format("%s\t%d.%d\t%d.%d\t",*CurrentMapName,team0size/10,team0size%10,team1size/10,team1size%10);
+	string.Format("%s\t%d.%d\t%d.%d\t", (const char*)CurrentMapName,team0size/10,team0size%10,team1size/10,team1size%10);
 
 	Team0SizeReported=0;
 	Team1SizeReported=0;

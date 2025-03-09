@@ -76,11 +76,11 @@ cAppPacketStats::Dump_Diagnostics
 	WWDEBUG_SAY(("\n"));
 	WWDEBUG_SAY(("---------------------------------------------------------\n"));
 	WWDEBUG_SAY(("cAppPacketStats::Dump_Diagnostics:\n"));
-	WWDEBUG_SAY(("%s\n", *Get_Heading()));
+	WWDEBUG_SAY(("%s\n", (const char*)Get_Heading()));
 
 	for (BYTE i = 0; i < APPPACKETTYPE_COUNT; i++)
 	{
-		WWDEBUG_SAY(("%s\n", *Get_Description(i)));
+		WWDEBUG_SAY(("%s\n", (const char*)Get_Description(i)));
 	}
 
 	WWDEBUG_SAY(("\n"));

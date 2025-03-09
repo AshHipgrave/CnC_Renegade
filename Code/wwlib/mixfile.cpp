@@ -125,7 +125,7 @@ MixFileFactoryClass::MixFileFactoryClass( const char * mix_filename, FileFactory
 		if ( IsValid ) {
 			BaseOffset	= 0;
 			NamesOffset	= header.names_offset;
-			WWDEBUG_SAY(( "MixFileFactory( %s ) loaded successfully  %d files\n", *MixFilename, FileInfo.Length() ));
+			WWDEBUG_SAY(( "MixFileFactory( %s ) loaded successfully  %d files\n", (const char*)MixFilename, FileInfo.Length() ));
 		} else {
 			FileInfo.Resize(0);
 		}	
