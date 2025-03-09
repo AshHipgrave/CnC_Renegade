@@ -335,12 +335,12 @@ void DynamicShadowTexMgrClass::Set_Max_Simultaneous_Shadows(unsigned int max)
 	ShadowTextures.Resize(max);
 
 	if (curlen>ShadowTextures.Length()) curlen=ShadowTextures.Length();
-	for (i=0; i<curlen; i++) {
+	for (int i=0; i<curlen; i++) {
 		if (!ShadowTextures[i]) {
 			ShadowTextures[i] = Allocate_Render_Target_Texture();
 		}
 	}
-	for (; i<ShadowTextures.Length(); i++) {
+	for (int i = 0; i<ShadowTextures.Length(); i++) {
 		ShadowTextures[i] = Allocate_Render_Target_Texture();
 	}
 }
@@ -827,7 +827,7 @@ void PhysicsSceneClass::Apply_Projectors
 		it.Next();
 	}
 
-	DX8Wrapper::Set_Render_Target((IDirect3DSurface8 *)NULL);
+	DX8Wrapper::Set_Render_Target((IDirect3DSurface9 *)NULL);
 }
 
 void PhysicsSceneClass::Apply_Projector_To_Objects
@@ -1004,7 +1004,7 @@ static void Create_Render_Target_Test(TextureClass* render_target)
 //	WW3D::Render(*model,*context);
 	WW3D::End_Render(false);
 
-	DX8Wrapper::Set_Render_Target((IDirect3DSurface8 *)NULL);
+	DX8Wrapper::Set_Render_Target((IDirect3DSurface9 *)NULL);
 	DX8Wrapper::Set_Transform(D3DTS_PROJECTION,old_projection_transform);
 	DX8Wrapper::Set_Transform(D3DTS_VIEW,old_view_transform);
 	DX8Wrapper::Set_Transform(D3DTS_WORLD,old_world_transform);
@@ -1196,7 +1196,7 @@ void PhysicsSceneClass::Generate_Static_Shadow_Projectors(void)
 			Setup_Static_Directional_Shadow(*obj,sunvector,render_target);
 		}
 
-		DX8Wrapper::Set_Render_Target((IDirect3DSurface8 *)NULL);
+		DX8Wrapper::Set_Render_Target((IDirect3DSurface9 *)NULL);
 		REF_PTR_RELEASE(render_target);
 	}
 	StaticProjectorsDirty=false;

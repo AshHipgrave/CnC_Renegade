@@ -4956,6 +4956,9 @@ EXTERN_C HRESULT DWRITE_EXPORT DWriteCreateFactory(
 #define MAKE_DWRITE_HR(severity, code) MAKE_HRESULT(severity, FACILITY_DWRITE, (DWRITE_ERR_BASE + code))
 #define MAKE_DWRITE_HR_ERR(code) MAKE_DWRITE_HR(SEVERITY_ERROR, code)
 
+// AshHipgrave - From Windows 8 onwards, these definitions were moved into WinErr.h so we can exclude them
+#if defined(_WIN32_WINNT) && _WIN32_WINNT < 0x0602
+
 /// <summary>
 /// Indicates an error in an input file such as a font file.
 /// </summary>
@@ -4991,5 +4994,7 @@ EXTERN_C HRESULT DWRITE_EXPORT DWriteCreateFactory(
 /// The given interface is already registered.
 /// </summary>
 #define DWRITE_E_ALREADYREGISTERED      MAKE_DWRITE_HR_ERR(0x006)
+
+#endif
 
 #endif /* DWRITE_H_INCLUDED */

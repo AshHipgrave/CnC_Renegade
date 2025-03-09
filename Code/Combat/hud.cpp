@@ -1004,7 +1004,7 @@ float		WeaponChartIconScale = 0.45f / 640.0f;
 
 static	void	Clear_Weapon_Chart_Icons( void )
 {
-	if ( WeaponChartIcons.Count != 0 ) {
+	if ( WeaponChartIcons.Count() != 0 ) {
 		int i;
 		for ( i = 0; i < WeaponChartIcons.Count(); i++) {
 			delete WeaponChartIcons[i];
@@ -1981,10 +1981,10 @@ static	void	Objective_Update( void )
 					dont_clear = true;
 
 					// AND, make an extra renderer for the radar star
-					Render2DClass * renderer = new Render2DClass();
-					if ( renderer ) {
-						renderer->Set_Texture( "HUD_STAR.TGA" );
-						renderer->Set_Coordinate_Range( Render2DClass::Get_Screen_Resolution() );
+					Render2DClass * radar_renderer = new Render2DClass();
+					if (radar_renderer) {
+						radar_renderer->Set_Texture( "HUD_STAR.TGA" );
+						radar_renderer->Set_Coordinate_Range( Render2DClass::Get_Screen_Resolution() );
 
 						RectClass	star_box( -32, -32, 32, 32 );
 						star_box.Scale( fly );
@@ -1997,17 +1997,17 @@ static	void	Objective_Update( void )
 						star_fly_end.Y *= 0.8f;
 
 						star_box += star_fly_end;
-						Vector2	offset = star_fly_start - star_fly_end;
-						offset *= fly;
-						star_box += offset;
+						Vector2	radar_offset = star_fly_start - star_fly_end;
+						radar_offset *= fly;
+						star_box += radar_offset;
 
 						Vector3 color3( 0,1,0 );
 						if ( ObjectiveManager::Get_Objective(index) != NULL ) {
 							color3 = ObjectiveManager::Get_Objective(index)->Type_To_Color();
 						}
 						unsigned int color = color3.Convert_To_ARGB();
-						renderer->Add_Quad( star_box, color  );
-						ObjectivePogRenderers.Add( renderer );
+						radar_renderer->Add_Quad( star_box, color  );
+						ObjectivePogRenderers.Add(radar_renderer);
 					}
 
 				} else {
@@ -2503,10 +2503,10 @@ static	void	Info_Update_Health_Shield( void )
 //		StringClass	text;
 //		text.Format( "%03d", (int)shield );
 		long lshield=WWMath::Float_To_Long(shield);
-		WCHAR tmp_text[5];
-		Generate_WChar_Text_From_Number(tmp_text,4,3,lshield);
+		WCHAR tmp_text_shield[5];
+		Generate_WChar_Text_From_Number(tmp_text_shield,4,3,lshield);
 		InfoShieldCountRenderer->Set_Location( draw.Upper_Left() + Vector2( 4,4) );
-		InfoShieldCountRenderer->Draw_Text( tmp_text );
+		InfoShieldCountRenderer->Draw_Text(tmp_text_shield);
 	} else {
 		InfoShieldCountRenderer->Reset();
 	}
@@ -2729,7 +2729,7 @@ typedef enum {
 	NUM_RENDER_IMAGES,
 };
 #else
-typedef enum {
+enum {
 	RETICLE	= 0,
 	RETICLE_HIT,
 	ACTION_STATUSBAR_RENDERER,

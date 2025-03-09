@@ -635,10 +635,10 @@ void StarfieldClass::Render()
 			DynamicVBAccessClass::WriteLockClass lock (&dynamicvb);
 			VertexFormatXYZNDUV2 *vertex = lock.Get_Formatted_Vertex_Array();
 
-			for (unsigned v = 0; v < ActiveVertexCount; v += VERTICES_PER_TRIANGLE) {
+			for (v = 0; v < ActiveVertexCount; v += VERTICES_PER_TRIANGLE) {
 				for (unsigned t = 0; t < VERTICES_PER_TRIANGLE; t++) {
 
-					unsigned i = v + t;
+					i = v + t;
 
 					vertex->x		 = VertexArray [i].X;
 					vertex->y		 = VertexArray [i].Y;
@@ -1561,7 +1561,7 @@ void SkyGlowClass::Render()
  * HISTORY:                                                                                    *
  *   09/15/00    IML : Created.                                                                *
  *=============================================================================================*/
-LightningBoltClass::LightningBoltClass (int branchcount, Matrix3D &m, float length, float childlength, float width, float amplitude)
+LightningBoltClass::LightningBoltClass (int inbranchcount, Matrix3D &m, float length, float childlength, float width, float amplitude)
 	: Branches (NULL)
 {
 	const int		 randomness					  = 100;
@@ -1604,7 +1604,7 @@ LightningBoltClass::LightningBoltClass (int branchcount, Matrix3D &m, float leng
 	// Optimization: Sorting is not required because all of the line segments are coplanar.
 	Set_Disable_Sorting (true);
 
-	BranchCount = (vertexcount == maxvertexcount) ? branchcount : 0;
+	BranchCount = (vertexcount == maxvertexcount) ? inbranchcount : 0;
 
 	// Create the child lightning bolts.
 	if (BranchCount > 0) {

@@ -684,7 +684,7 @@ ActiveConversationClass::Save (ChunkSaveClass &csave)
 	//
 	//	Save each of the orators
 	//
-	for (index = 0; index < OratorList.Count (); index ++) {
+	for (int index = 0; index < OratorList.Count (); index ++) {
 		csave.Begin_Chunk (CHUNKID_ORATOR);
 			OratorList[index]->Save (csave);
 		csave.End_Chunk ();

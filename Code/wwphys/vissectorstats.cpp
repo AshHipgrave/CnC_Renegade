@@ -174,13 +174,13 @@ VisSectorStatsClass::~VisSectorStatsClass(void)
  * HISTORY:                                                                                    *
  *   6/6/2000   gth : Created.                                                                 *
  *=============================================================================================*/
-void VisSectorStatsClass::Compute_Stats(StaticPhysClass * obj,VisTableClass * vistable)
+void VisSectorStatsClass::Compute_Stats(StaticPhysClass * in_obj,VisTableClass * vistable)
 {
 	/*
 	** Save the vis id and a point above the center of the object
 	*/
-	VisId = obj->Get_Vis_Object_ID();
-	CenterPoint = obj->Get_Cull_Box().Center + Vector3(0.0f,0.0f,2.0f);
+	VisId = in_obj->Get_Vis_Object_ID();
+	CenterPoint = in_obj->Get_Cull_Box().Center + Vector3(0.0f,0.0f,2.0f);
 
 	/*
 	** Reset the texture statistics tracker
@@ -223,7 +223,7 @@ void VisSectorStatsClass::Compute_Stats(StaticPhysClass * obj,VisTableClass * vi
 	/*
 	** Save a reference to the physics object
 	*/
-	REF_PTR_SET (PhysObj, obj);
+	REF_PTR_SET (PhysObj, in_obj);
 }
 
 

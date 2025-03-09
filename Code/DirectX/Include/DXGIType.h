@@ -2,12 +2,16 @@
 #ifndef __dxgitype_h__
 #define __dxgitype_h__
 
-
 #include "dxgiformat.h"
 
 #define _FACDXGI    0x87a
 #define MAKE_DXGI_HRESULT(code) MAKE_HRESULT(1, _FACDXGI, code)
 #define MAKE_DXGI_STATUS(code)  MAKE_HRESULT(0, _FACDXGI, code)
+
+#include <sdkddkver.h>
+
+// AshHipgrave - From Windows 8 onwards, these definitions were moved into WinErr.h so we can exclude them
+#if defined(_WIN32_WINNT) && _WIN32_WINNT < 0x0602
 
 #define DXGI_STATUS_OCCLUDED                    MAKE_DXGI_STATUS(1)
 #define DXGI_STATUS_CLIPPED                     MAKE_DXGI_STATUS(2)
@@ -34,7 +38,7 @@
 #define DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED   MAKE_DXGI_HRESULT(35)
 #define DXGI_ERROR_REMOTE_OUTOFMEMORY           MAKE_DXGI_HRESULT(36)
 
-
+#endif
 
 #define DXGI_CPU_ACCESS_NONE                    ( 0 )
 #define DXGI_CPU_ACCESS_DYNAMIC                 ( 1 )
@@ -118,6 +122,23 @@ typedef struct DXGI_SAMPLE_DESC
     UINT Count;
     UINT Quality;
 } DXGI_SAMPLE_DESC;
+
+typedef struct DXGI_JPEG_DC_HUFFMAN_TABLE
+{
+    BYTE CodeCounts[12];
+    BYTE CodeValues[12];
+} DXGI_JPEG_DC_HUFFMAN_TABLE;
+
+typedef struct DXGI_JPEG_AC_HUFFMAN_TABLE
+{
+    BYTE CodeCounts[16];
+    BYTE CodeValues[162];
+} DXGI_JPEG_AC_HUFFMAN_TABLE;
+
+typedef struct DXGI_JPEG_QUANTIZATION_TABLE
+{
+    BYTE Elements[64];
+} DXGI_JPEG_QUANTIZATION_TABLE;
 
 #endif // __dxgitype_h__
 

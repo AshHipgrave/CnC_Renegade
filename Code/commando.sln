@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BandTest", "BandTest\BandTest.vcxproj", "{9EEEDD2E-5EAA-494A-8F1F-F500C767B835}"
 EndProject
@@ -9,8 +9,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Combat", "Combat\Combat.vcxproj", "{922AAF94-42CB-48DD-B767-DF8E9A635243}"
 EndProject
 Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "GameSpy", "GameSpy\GameSpy.dsp", "{93D74BBE-94ED-4071-A408-31D2F56A35CE}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LevelEdit", "Tools\LevelEdit\LevelEdit.vcxproj", "{7413986F-F312-4AEE-BC64-AF811ED53117}"
 EndProject
@@ -21,6 +19,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWAudio", "WWAudio\WWAudio.vcxproj", "{BCFDC434-827A-44DF-B439-29D28298F6AA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWConfig", "Tools\WWConfig\WWConfig.vcxproj", "{280DFEB2-2FA0-4146-AA09-532C7D82E6AF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{989D1310-CD48-40FB-9851-BBA30553CE35} = {989D1310-CD48-40FB-9851-BBA30553CE35}
+		{BCFDC434-827A-44DF-B439-29D28298F6AA} = {BCFDC434-827A-44DF-B439-29D28298F6AA}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWCtrl", "Tools\WWCtrl\WWCtrl.vcxproj", "{E268C36C-34D4-4FC5-9657-ECC385CC76CD}"
 EndProject

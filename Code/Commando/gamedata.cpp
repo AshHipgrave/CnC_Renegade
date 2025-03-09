@@ -639,7 +639,7 @@ bool cGameData::Is_Map_Valid(char **out_filename)
 }
 
 
-#define PRINT_CONFIG_ERROR	ConsoleBox.Print("File %s - Error:\r\n\t ", Get_Ini_Filename());
+#define PRINT_CONFIG_ERROR	ConsoleBox.Print("File %s - Error:\r\n\t ", *Get_Ini_Filename());
 
 //-----------------------------------------------------------------------------
 bool cGameData::Is_Valid_Settings(WideStringClass& outMsg, bool check_as_server)
@@ -1131,8 +1131,8 @@ void cGameData::Load_From_Server_Config(LPCSTR config_file)
 		StringClass item_name(0,true);
 		item_name.Format("MapName%02d", j);
 		p_ini->Get_String(	INI_SECTION_NAME, item_name, "", map_name, sizeof(map_name));
-		StringClass map(map_name,true);
-		MapCycle[j] = map;
+		StringClass map_str(map_name,true);
+		MapCycle[j] = map_str;
 	}
 
 	//char motd[2 * MAX_MOTD_LENGTH];
@@ -1533,7 +1533,7 @@ unsigned long cGameData::Get_Config_File_Mod_Time(void)
 	RawFileClass file(full_filename);
 
 	if (!file.Is_Available()) {
-      full_filename.Format("data\\%s", IniFilename);
+      full_filename.Format("data\\%s", *IniFilename);
 		file.Set_Name(full_filename);
    }
 
@@ -1883,7 +1883,7 @@ void cGameData::Show_Game_Settings_Limits(void)
 	PTextRenderer->Build_Sentence(renderer_time_text);
 	PTextRenderer->Draw_Sentence();
 
-	for (j=0;j<OldBottomText.Count();++j) {
+	for (int j=0;j<OldBottomText.Count();++j) {
 		y -= 1.2 * charHeight;
 		loc[1]=cMathUtil::Round(y);
 		PTextRenderer->Set_Location(loc);
@@ -1960,7 +1960,7 @@ void cGameData::Get_Time_Limit_Text(WideStringClass& text)
       WideStringClass time_string(0, true);
       time_string.Format(L"%02d:%02d:%02d", hours, mins, seconds);
 
-		text.Format(L"%s: %s", TRANSLATION(IDS_MP_TIME_REMAINING), time_string);
+		text.Format(L"%s: %s", TRANSLATION(IDS_MP_TIME_REMAINING), *time_string);
    }
 
 }

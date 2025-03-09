@@ -323,7 +323,7 @@ TextWindowClass::Set_Backdrop
 		//	Tile the endcaps appropriately
 		//
 		section_count = screen_rect.Height () / endcap_height;
-		for (index = 0; index < section_count; index ++) {
+		for (int index = 0; index < section_count; index ++) {
 
 			//
 			//	Submit the geometry

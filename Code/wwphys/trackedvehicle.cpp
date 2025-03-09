@@ -246,6 +246,7 @@ void TrackedVehicleClass::Add_Track_Mappers(MeshClass * mesh,int track_type)
 	/*
 	** First check if this model has a linear offset mapper in any of its vertex materials
 	*/
+
 	bool has_mapper = false;
 	MaterialInfoClass * matinfo = mesh->Get_Material_Info();
 
@@ -269,7 +270,7 @@ void TrackedVehicleClass::Add_Track_Mappers(MeshClass * mesh,int track_type)
 	if (has_mapper) {
 		mesh->Make_Unique();
 		
-		MaterialInfoClass * matinfo = mesh->Get_Material_Info();
+		matinfo = mesh->Get_Material_Info();
 
 		if (matinfo != NULL) {
 			for (int i=0; i<matinfo->Vertex_Material_Count(); i++) {

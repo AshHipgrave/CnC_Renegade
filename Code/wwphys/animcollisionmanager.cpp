@@ -1302,7 +1302,7 @@ bool AnimCollisionManagerClass::Check_Collision(CollideableObjClass & collisiono
 			/*
 			** Otherwise, try to push the object out of our way.
 			*/
-			int collision_bits = collisionobj.Clear_Collision_Bits();
+			collision_bits = collisionobj.Clear_Collision_Bits();
   			if (Push_Collided_Object(obj,delta_transform) == false) {
 				VERBOSE_LOG(("SAPO %s Failed to push a rider\r\n",Parent.Peek_Model()->Get_Name()));
 				revert = true;
@@ -1461,7 +1461,7 @@ bool AnimCollisionManagerClass::Load(ChunkLoadClass &cload)
 	if (!prev_anim_name.Is_Empty()) {
 		HAnimClass * anim = WW3DAssetManager::Get_Instance()->Get_HAnim(prev_anim_name);
 		if ( anim == NULL ) {
-			WWDEBUG_SAY(( "FAILED TO FIND PREV ANIM IN AnimCollisionManagerClass::Internal_Set_Animation(\"%s\")\n", prev_anim_name ));
+			WWDEBUG_SAY(( "FAILED TO FIND PREV ANIM IN AnimCollisionManagerClass::Internal_Set_Animation(\"%s\")\n", *prev_anim_name ));
 		}
 		REF_PTR_SET(PrevAnimation,anim);
 	}
