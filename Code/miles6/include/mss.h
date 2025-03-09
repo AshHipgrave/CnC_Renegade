@@ -300,6 +300,9 @@ typedef enum
 
 #define AIL_3D_2_SPEAKER 0
 #define AIL_3D_HEADPHONE 1
+// @third party code - BEGIN C&C: Renegade
+#define AIL_3D_SURROUND  2
+// @third party code - END C&C: Renegade
 #define AIL_3D_4_SPEAKER 3
 
 #define DIG_MIXER_CHANNELS 1

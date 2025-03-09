@@ -633,7 +633,7 @@ BeaconGameObj::Think (void)
 				// sound.
 				//
 				WeaponClass	*curr_weapon = weapon_bag->Get_Weapon ();
-				if (curr_weapon != NULL && curr_weapon->Get_ID () == WeaponDefinition->Get_ID ()) {
+				if (curr_weapon != NULL && curr_weapon->Get_ID () == (int)WeaponDefinition->Get_ID ()) {
 					curr_weapon->Stop_Firing_Sound ();
 				}
 			}
@@ -1264,9 +1264,9 @@ BeaconGameObj::Was_Owner_Interrupted (void)
 		//	Check each "boolean" control (jumping, etc)
 		//
 		if (retval == false) {
-			for (	index = ControlClass::BOOLEAN_ONE_TIME_FIRST;
-					index <= ControlClass::BOOLEAN_DROP_FLAG;
-					index ++)
+			for (int index = ControlClass::BOOLEAN_ONE_TIME_FIRST;
+					 index <= ControlClass::BOOLEAN_DROP_FLAG;
+					 index ++)
 			{
 				//
 				//	Check this input to see if the soldier is moving

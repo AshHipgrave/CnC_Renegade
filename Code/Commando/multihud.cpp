@@ -706,34 +706,34 @@ void MultiHUDClass::Show_Player_Rhost_Data(SmartGameObj * smart_obj)
 
 				y = 50;
 
-				StringClass text("Name         ", true);
-				StringClass sub_string;
+				StringClass dbg_text("Name         ", true);
+				StringClass dbg_sub_string;
 
-				sub_string.Format( "RHost ID   ");
-				text += sub_string;
+				dbg_sub_string.Format( "RHost ID   ");
+				dbg_text += dbg_sub_string;
 
-				sub_string.Format( "Ave Pri    ");
-				text += sub_string;
+				dbg_sub_string.Format( "Ave Pri    ");
+				dbg_text += dbg_sub_string;
 
-				sub_string.Format( "Band Mult   ");
-				text += sub_string;
+				dbg_sub_string.Format( "Band Mult   ");
+				dbg_text += dbg_sub_string;
 
-				sub_string.Format( "Target BPS     ");
-				text += sub_string;
+				dbg_sub_string.Format( "Target BPS     ");
+				dbg_text += dbg_sub_string;
 
-				sub_string.Format( "Resend dly  ");
-				text += sub_string;
+				dbg_sub_string.Format( "Resend dly  ");
+				dbg_text += dbg_sub_string;
 
-				sub_string.Format( "Min/Max/Ave ping      ");
-				text += sub_string;
+				dbg_sub_string.Format( "Min/Max/Ave ping      ");
+				dbg_text += dbg_sub_string;
 
-				sub_string.Format( "Tot rsnds ");
-				text += sub_string;
+				dbg_sub_string.Format( "Tot rsnds ");
+				dbg_text += dbg_sub_string;
 
-				sub_string.Format( "Duration");
-				text += sub_string;
+				dbg_sub_string.Format( "Duration");
+				dbg_text += dbg_sub_string;
 
-				Render_Debug_Text(text, x, y);
+				Render_Debug_Text(dbg_text, x, y);
 			}
 		}
    }
@@ -911,7 +911,7 @@ void MultiHUDClass::Think(void)
 	}
 
 	{
-	int count = StaticNetworkObjectClass::Get_Static_Network_Object_Count ();
+	count = StaticNetworkObjectClass::Get_Static_Network_Object_Count ();
 	for (int index = 0; index < count; index ++) {
 
 		StaticNetworkObjectClass * p_object = (StaticNetworkObjectClass * ) StaticNetworkObjectClass::Get_Static_Network_Object (index);

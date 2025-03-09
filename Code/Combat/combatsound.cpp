@@ -59,7 +59,7 @@ void	CombatSoundManager::Init( void )
 		WWAudioClass::Get_Instance()->Add_Logical_Type( i, CombatSoundTypeNames[i] );
 	}
 
-	for ( i = SOUND_TYPE_DESIGNER01; i <= SOUND_TYPE_DESIGNER09; i++ ) {
+	for (int i = SOUND_TYPE_DESIGNER01; i <= SOUND_TYPE_DESIGNER09; i++ ) {
 		
 		StringClass type_name;
 		type_name.Format ("Designer%02d", (i - SOUND_TYPE_DESIGNER01) + 1);

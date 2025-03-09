@@ -71,8 +71,8 @@ enum
 	COL_SCORE
 };
 
-static const BUILDING_COUNT		= 5;
-static const BUILDING_SLOT_COUNT	= 6;
+static const int BUILDING_COUNT		= 5;
+static const int BUILDING_SLOT_COUNT	= 6;
 
 
 ////////////////////////////////////////////////////////////////
@@ -279,7 +279,7 @@ CNCBattleInfoDialogClass::Configure_Icons (void)
 	//
 	//	Hide the remaining (unused) controls
 	//
-	for (index = next_slot; index < BUILDING_SLOT_COUNT; index ++) {
+	for (int index = next_slot; index < BUILDING_SLOT_COUNT; index ++) {
 		Get_Dlg_Item (GDI_BUILDING_CTRLS[index].icon_ctrl_id)->Show (false);
 		Get_Dlg_Item (GDI_BUILDING_CTRLS[index].health_ctrl_id)->Show (false);
 	}
@@ -288,7 +288,7 @@ CNCBattleInfoDialogClass::Configure_Icons (void)
 	//	Fill in the NOD buildings
 	//
 	next_slot = 0;
-	for (index = 0; index < BUILDING_COUNT; index ++) {
+	for (int index = 0; index < BUILDING_COUNT; index ++) {
 
 		//
 		//	Find the building
@@ -320,7 +320,7 @@ CNCBattleInfoDialogClass::Configure_Icons (void)
 	//
 	//	Hide the remaining (unused) controls
 	//
-	for (index = next_slot; index < BUILDING_SLOT_COUNT; index ++) {
+	for (int index = next_slot; index < BUILDING_SLOT_COUNT; index ++) {
 		Get_Dlg_Item (NOD_BUILDING_CTRLS[index].icon_ctrl_id)->Show (false);
 		Get_Dlg_Item (NOD_BUILDING_CTRLS[index].health_ctrl_id)->Show (false);
 	}

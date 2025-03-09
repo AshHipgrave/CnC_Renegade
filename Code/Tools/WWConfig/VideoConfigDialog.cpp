@@ -357,7 +357,7 @@ VideoConfigDialogClass::Update_Resolution_Slider (void)
 	//
 	//	Setup the tick marks
 	//
-	for (index = 0; index < ResolutionList.Count (); index ++) {
+	for (int index = 0; index < ResolutionList.Count (); index ++) {
 		m_ResSliderCtrl.SetTic (index);
 	}
 

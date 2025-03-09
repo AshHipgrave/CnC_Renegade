@@ -732,7 +732,7 @@ PathfindClass::Collect_Sectors
 	//	Collect all the sectors this box intersects
 	//
 	m_SectorTree.Reset_Collection ();
-	m_SectorTree.Collect_Objects (box);
+	m_SectorTree.Collect_Objects (in_box);
 
 	//
 	//	Return the list of sectors to the caller

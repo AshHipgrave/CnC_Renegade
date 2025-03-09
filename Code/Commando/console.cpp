@@ -764,7 +764,7 @@ WWPROFILE( "Input Active" );
 			//
 			//	Add all the 2D sounds to the message
 			//
-			for (sample_index = 0; sample_index < count_3d; sample_index ++) {
+			for (int sample_index = 0; sample_index < count_3d; sample_index ++) {
 				temp_string.Format (" %d.", sample_index + 1);
 				message += temp_string;
 
@@ -1555,7 +1555,7 @@ void	ConsoleGameModeClass::End_Profile_Log()
 	WWDEBUG_SAY(("\n\n"));
 	node=profile_log_head;
 	while (node) {
-		WWDEBUG_SAY(("%s\n",node->Get_String()));
+		WWDEBUG_SAY(("%s\n",*node->Get_String()));
 		node=node->Succ();
 	}
 
@@ -1710,52 +1710,52 @@ void	ConsoleGameModeClass::Update_Memory_Log( void )
 	const float OOMEGABYTE = 1.0f / MEGABYTE;
 
 	StringClass	memory_string(2048);
-	StringClass working_string(true);
+	StringClass working_str(true);
 
 	memory_string.Format("Memory Category     Current(Mb)    Peak(Mb)\n");
 	int total = 0;
 	for (int i=0; i<WWMemoryLogClass::Get_Category_Count(); i++) {
 
 		// (gth) to compute Mb should I divide by the nearest power of two to a million?
-		working_string.Format("%-18s  %-10.2f     %-10.2f\r\n",
+		working_str.Format("%-18s  %-10.2f     %-10.2f\r\n",
 										WWMemoryLogClass::Get_Category_Name(i),
 										(float)WWMemoryLogClass::Get_Current_Allocated_Memory(i) * OOMEGABYTE,
 										(float)WWMemoryLogClass::Get_Peak_Allocated_Memory(i) * OOMEGABYTE);
-		memory_string += working_string;
+		memory_string += working_str;
 		total += WWMemoryLogClass::Get_Current_Allocated_Memory(i);
 	}
 
 #if (UMBRASUPPORT)
 	float umbra_mem = UmbraSupport::Get_Umbra_Memory_Consumption();
 	total += umbra_mem;
-	working_string.Format("Umbra:              %-10.2f\r\n",umbra_mem * OOMEGABYTE);
-	memory_string += working_string;
+	working_str.Format("Umbra:              %-10.2f\r\n",umbra_mem * OOMEGABYTE);
+	memory_string += working_str;
 #endif
 
-	working_string.Format("SUB TOTAL:          %-10.2f\r\n\r\n",(float)total * OOMEGABYTE);
-	memory_string += working_string;
+	working_str.Format("SUB TOTAL:          %-10.2f\r\n\r\n",(float)total * OOMEGABYTE);
+	working_str += working_str;
 
 	// display the estimated space used by textures residing in system ram
 	int tex_size=TextureClass::_Get_Total_Texture_Size();
-	working_string.Format("%-18s  %-10.2f\r\n","Textures(est)",(float)tex_size * OOMEGABYTE);
-	memory_string += working_string;
+	working_str.Format("%-18s  %-10.2f\r\n","Textures(est)",(float)tex_size * OOMEGABYTE);
+	memory_string += working_str;
 	total+=tex_size;
 
 	// display estimated vertex buffer space
 	unsigned vb_size=VertexBufferClass::Get_Total_Allocated_Memory();
-	working_string.Format("%-18s  %-10.2f\r\n","Vertex Buffers(est)",(float)vb_size * OOMEGABYTE);
-	memory_string += working_string;
+	working_str.Format("%-18s  %-10.2f\r\n","Vertex Buffers(est)",(float)vb_size * OOMEGABYTE);
+	memory_string += working_str;
 	total+=vb_size;
 
 	// display estimated index buffer space
 	unsigned ib_size=IndexBufferClass::Get_Total_Allocated_Memory();
-	working_string.Format("%-18s  %-10.2f\r\n","Index Buffers(est)",(float)ib_size * OOMEGABYTE);
-	memory_string += working_string;
+	working_str.Format("%-18s  %-10.2f\r\n","Index Buffers(est)",(float)ib_size * OOMEGABYTE);
+	memory_string += working_str;
 	total+=ib_size;
 
 	// total!
-	working_string.Format("TOTAL:              %-10.2f\r\n\r\n",(float)total * OOMEGABYTE);
-	memory_string += working_string;
+	working_str.Format("TOTAL:              %-10.2f\r\n\r\n",(float)total * OOMEGABYTE);
+	memory_string += working_str;
 
 	StatisticsDisplayManager::Set_Stat( "memory", memory_string, 0xffffffff );
 }

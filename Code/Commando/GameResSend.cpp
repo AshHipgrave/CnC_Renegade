@@ -128,7 +128,7 @@ void SendGameResults(unsigned long gameID, cGameData* theGame, SList<cPlayer>* p
 	if (ConsoleBox.Is_Exclusive()) {
 		strcpy((char*)&cardInfo[0], "ConsoleMode");
 	} else {
-		const D3DADAPTER_IDENTIFIER8& adapter = DX8Wrapper::Get_Current_Adapter_Identifier();
+		const D3DADAPTER_IDENTIFIER9& adapter = DX8Wrapper::Get_Current_Adapter_Identifier();
 		cardInfo[0] = adapter.VendorId;
 		cardInfo[1] = adapter.DeviceId;
 		cardInfo[2] = adapter.SubSysId;
@@ -263,7 +263,7 @@ void SendGameResults(unsigned long gameID, cGameData* theGame, SList<cPlayer>* p
 	int winnerID = theGame->Get_Winner_ID();
 	playerNode = playerList->Head();
 
-	for (index = 0; index < playerList->Get_Count(); index++)
+	for (int index = 0; index < playerList->Get_Count(); index++)
 		{
 		cPlayer* player = playerNode->Data();
 

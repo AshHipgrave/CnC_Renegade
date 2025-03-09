@@ -53,6 +53,11 @@
 // D2D specific codes
 //
 
+#include <sdkddkver.h>
+
+// AshHipgrave - From Windows 8 onwards, these definitions were moved into WinErr.h so we can exclude them
+#if defined(_WIN32_WINNT) && _WIN32_WINNT < 0x0602
+
 //
 // The object was not in the correct state to process the method.
 //
@@ -204,3 +209,5 @@
 // The requested size is larger than the guaranteed supported texture size.
 // 
 #define D2DERR_EXCEEDS_MAX_BITMAP_SIZE     MAKE_D2DHR_ERR(0x01D)
+
+#endif

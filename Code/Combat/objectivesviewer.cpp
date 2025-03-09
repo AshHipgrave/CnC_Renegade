@@ -202,7 +202,7 @@ ObjectivesViewerClass::Update (void)
 	//
 	//	Add all the objectives to the text window
 	//
-	for (index = 0; index < objective_count; index ++){
+	for (int index = 0; index < objective_count; index ++){
 		Objective *objective = sorted_list[index];
 		
 		const WCHAR *text				= TranslateDBClass::Get_String (objective->ShortDescriptionID);

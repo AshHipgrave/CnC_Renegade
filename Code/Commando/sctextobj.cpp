@@ -286,13 +286,13 @@ cScTextObj::Act(void)
 			if (Type == TEXT_MESSAGE_PRIVATE)
 			{
 				formatted_text.Format(L"%s (%s %s): ",
-					sender_name,
+					*sender_name,
 					TRANSLATION(IDS_MP_TO),
-					recipient_name);
+					*recipient_name);
 			}
 			else
 			{
-				formatted_text.Format(L"%s: ", sender_name);
+				formatted_text.Format(L"%s: ", *sender_name);
 			}
 
 			//

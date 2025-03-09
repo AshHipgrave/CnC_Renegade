@@ -2064,7 +2064,7 @@ void WolGameModeClass::HandleNotification(WOLPagedEvent& event)
 	switch (event.GetAction()) {
 		case PAGE_RECEIVED: {
 			WideStringClass message(255, true);
-			message.Format(L"%s: %s", page->GetPagersName(), page->GetPageMessage());
+			message.Format(L"%s: %s", page->GetPagersName(), *page->GetPageMessage());
 			CombatManager::Get_Message_Window()->Add_Message(message, COLOR_PAGED_TEXT);
 			WWAudioClass::Get_Instance()->Create_Instant_Sound("Private_Message", Matrix3D(1));
 			break;
@@ -2080,7 +2080,7 @@ void WolGameModeClass::HandleNotification(WOLPagedEvent& event)
 		case PAGE_NOT_THERE:
 		case PAGE_TURNED_OFF: {
 			WideStringClass message(255, true);
-			message.Format(L"%s %s", TRANSLATE(IDS_WOL_PAGEUSERERROR), page->GetPageMessage());
+			message.Format(L"%s %s", TRANSLATE(IDS_WOL_PAGEUSERERROR), *page->GetPageMessage());
 			CombatManager::Get_Message_Window()->Add_Message(page->GetPageMessage(), COLOR_CONSOLE_TEXT);
 			break;
 		}

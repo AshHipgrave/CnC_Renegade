@@ -1834,7 +1834,7 @@ RenegadeTerrainPatchClass::Save (ChunkSaveClass &csave)
 	//
 	csave.Begin_Chunk (CHUNKID_MATERIAL_LAYERS);
 
-		for (index = 0; index < MaterialPassList.Count (); index ++) {
+		for (int index = 0; index < MaterialPassList.Count (); index ++) {
 			
 			//
 			//	Don't save the material information if there' no material configured...
