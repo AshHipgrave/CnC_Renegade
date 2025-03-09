@@ -175,6 +175,7 @@ class SoundSceneClass
 		virtual void			Save_Static_Sounds (ChunkSaveClass &csave);
 		virtual void			Load_Static_Sounds (ChunkLoadClass &cload);
 
+public:
 		//////////////////////////////////////////////////////////////////////
 		//	Collection methods
 		//////////////////////////////////////////////////////////////////////		
@@ -192,7 +193,7 @@ class SoundSceneClass
 			AudibleSoundClass *	sound_obj;
 			float						distance2;
 		};
-
+protected:
 		typedef MultiListClass<AudibleInfoClass>	COLLECTED_SOUNDS;
 
 		virtual void			Collect_Audible_Sounds (Listener3DClass *listener, COLLECTED_SOUNDS &list);

@@ -41,8 +41,6 @@
 #ifndef __ANIMATEDSOUNDMGR_H
 #define __ANIMATEDSOUNDMGR_H
 
-#if 0
-
 #include "simplevec.h"
 #include "vector.h"
 #include "hashtemplate.h"
@@ -105,7 +103,5 @@ private:
 	///////////////////////////////////////////////////////////////////
 	static ANIM_SOUND_LIST *	Find_Sound_List (HAnimClass *anim);
 };
-
-#endif // 0
 
 #endif //__ANIMATEDSOUNDMGR_H
