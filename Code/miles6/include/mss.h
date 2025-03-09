@@ -228,7 +228,7 @@ RE3MSS_EXPORT void WINAPI AIL_stop_timer(HTIMER timer);
 RE3MSS_EXPORT void WINAPI AIL_release_timer_handle(HTIMER timer);
 RE3MSS_EXPORT S32 WINAPI AIL_stream_playback_rate(HSTREAM stream);
 RE3MSS_EXPORT void WINAPI AIL_set_stream_playback_rate(HSTREAM stream, S32 rate);
-RE3MSS_EXPORT HSTREAM AIL_open_stream_by_sample(HDIGDRIVER driver, HSAMPLE sample, const char* filename, S32 stream_mem);
+RE3MSS_EXPORT HSTREAM WINAPI AIL_open_stream_by_sample(HDIGDRIVER driver, HSAMPLE sample, const char* filename, S32 stream_mem);
 
 #define AIL_set_3D_object_user_data AIL_set_3D_user_data
 #define AIL_3D_object_user_data AIL_3D_user_data
