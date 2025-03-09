@@ -59,7 +59,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\wwui;..\..\combat;..\..\wwdebug;..\..\wwmath;..\..\ww3d2;..\..\wwphys;..\..\wwlib;..\..\srsdk1x\include;..\..\wwaudio;..\..\miles6\include;..\..\wwsaveload;..\..\wwnet;..\..\wwtranslatedb;..\..\wwbitpack;..\..\wwutil;..\..\NvDXTLib\Inc;..\..\directX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WIN32;_WINDOWS;PARAM_EDITING_ON;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WWDEBUG;WIN32;_WINDOWS;PARAM_EDITING_ON;_CRT_SECURE_NO_WARNINGS;PUBLIC_EDITOR_VER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
