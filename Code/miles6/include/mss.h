@@ -30,7 +30,13 @@ typedef void *HSAMPLE;
 typedef S32 HSAMPLESTATE;
 
 // @third party code - BEGIN C&C: Renegade
-#define AILCALL WINAPI
+#define NO                      0
+#define DIG_USE_WAVEOUT         15
+#define AIL_NO_ERROR            0
+#define AIL_LOCK_PROTECTION     18
+#define WAVE_FORMAT_PCM         1
+#define WAVE_FORMAT_IMA_ADPCM   0x0011
+
 #define AILEXPORT WINAPI
 #define AILCALLBACK AILEXPORT
 
@@ -39,225 +45,22 @@ typedef U32 HATTRIB;
 typedef S32 HASISTREAM;
 typedef S32 ASIRESULT;
 
-typedef LPVOID AILLPDIRECTSOUND;
-typedef LPVOID AILLPDIRECTSOUNDBUFFER;
+typedef struct _DIG_DRIVER
+{
+    char pad[168];
+    int emulated_ds;
+} DIG_DRIVER;
 
-struct _DIG_DRIVER;
-typedef struct _DIG_DRIVER * HDIGDRIVER;
-
-typedef S32(AILCALLBACK* AILASIFETCHCB) (U32 user, void* dest, S32 bytes_requested, S32 offset);
-typedef HASISTREAM(AILCALL* ASI_STREAM_OPEN) (U32 user, AILASIFETCHCB fetch_CB, U32 total_size);
-typedef S32(AILCALL* ASI_STREAM_PROCESS) (HASISTREAM  stream, void* buffer, S32 buffer_size);
-typedef ASIRESULT(AILCALL* ASI_STREAM_SEEK) (HASISTREAM stream, S32 stream_offset);
-typedef S32(AILCALL* ASI_STREAM_ATTRIBUTE) (HASISTREAM stream, HATTRIB attrib);
-typedef S32(AILCALL* ASI_STREAM_SET_PREFERENCE) (HASISTREAM stream, HATTRIB preference, void const* value);
-typedef ASIRESULT(AILCALL* ASI_STREAM_CLOSE) (HASISTREAM stream);
+typedef struct _DIG_DRIVER* HDIGDRIVER;
 
 typedef enum
 {
-    DP_FLUSH = 0,     // Must be "MSS mixer" provider
-    DP_DEFAULT_FILTER, // Must be "MSS pipeline filter" provider (sets the default)
-    DP_DEFAULT_MERGE,  // Must be "MSS mixer" provider (sets the default)
-    DP_COPY,          // Must be "MSS mixer" provider
-    N_DIGDRV_STAGES,  // Placeholder for end of list (= # of valid stages)
-    DIGDRV_ALL_STAGES // Used to signify all pipeline stages, for shutdown
-} DIGDRVSTAGE;
-
-typedef struct
-{
-    ASI_STREAM_OPEN           ASI_stream_open;
-    ASI_STREAM_PROCESS        ASI_stream_process;
-    ASI_STREAM_SEEK           ASI_stream_seek;
-    ASI_STREAM_CLOSE          ASI_stream_close;
-    ASI_STREAM_ATTRIBUTE      ASI_stream_attribute;
-    ASI_STREAM_SET_PREFERENCE ASI_stream_set_preference;
-
-    HATTRIB INPUT_BIT_RATE;
-    HATTRIB INPUT_SAMPLE_RATE;
-    HATTRIB INPUT_BITS;
-    HATTRIB INPUT_CHANNELS;
-    HATTRIB OUTPUT_BIT_RATE;
-    HATTRIB OUTPUT_SAMPLE_RATE;
-    HATTRIB OUTPUT_BITS;
-    HATTRIB OUTPUT_CHANNELS;
-    HATTRIB POSITION;
-    HATTRIB PERCENT_DONE;
-    HATTRIB MIN_INPUT_BLOCK_SIZE;
-    HATTRIB RAW_RATE;
-    HATTRIB RAW_BITS;
-    HATTRIB RAW_CHANNELS;
-    HATTRIB REQUESTED_RATE;
-    HATTRIB REQUESTED_BITS;
-    HATTRIB REQUESTED_CHANS;
-
-    HASISTREAM stream;
-} ASISTAGE;
-
-typedef void (AILCALL * MIXER_FLUSH) (S32 * dest, S32 len, S32 * reverb_buffer, S32 reverb_level, U32 MMX_available);
-typedef void (AILCALL * MIXER_MERGE)  (void const * * src, U32 * src_fract, void const * src_end, S32 * * dest, void * dest_end, S32 * left_val, S32 * right_val, S32 playback_ratio, S32 scale_left, S32 scale_right, U32 operation, U32 MMX_available);
-typedef void (AILCALL * MIXER_COPY) (void const * src, S32 src_len, void * dest, U32 operation, U32 MMX_available);
-
-typedef struct
-{
-    MIXER_FLUSH MSS_mixer_flush;
-    MIXER_MERGE MSS_mixer_merge;
-    MIXER_COPY  MSS_mixer_copy;
-} MIXSTAGE;
-
-typedef struct
-{
-    struct _FLTPROVIDER * provider;
-    HSAMPLESTATE             sample_state;
-}
-FLTSTAGE;
-
-typedef struct
-{
-    S32       active;    // Pass-through if 0, active if 1
-    HPROVIDER provider;
-
-    union
-    {
-        ASISTAGE ASI;
-        MIXSTAGE MIX;
-        FLTSTAGE FLT;
-    }
-    TYPE;
-} DPINFO;
-
-typedef struct _DIG_DRIVER          // Handle to digital audio driver
-{
-    char     tag[4];                 // HDIG
-
-    HTIMER      backgroundtimer;     // Background timer handle
-
-    S32         quiet;               // # of consecutive quiet sample periods
-
-    S32         n_active_samples;    // # of samples being processed
-
-    S32         master_volume;       // Master sample volume 0-127
-
-    S32         DMA_rate;            // Hardware sample rate
-    S32         hw_format;           // DIG_F code in use
-    U32         hw_mode_flags;       // DIG_PCM_ flags for mode in use
-
-    S32         channels_per_sample; // # of channels per sample (1 or 2)
-    S32         bytes_per_channel;   // # of bytes per channel (1 or 2)
-    S32         channels_per_buffer; // # of channels per half-buffer
-    S32         samples_per_buffer;  // # of samples per half-buffer
-
-    S32         playing;             // Playback active if non-zero
-
-    HSAMPLE     samples;             // Pointer to list of SAMPLEs
-
-    S32         n_samples;           // # of SAMPLEs
-
-    S32         build_size;          // # of bytes in build buffer
-    S32    * build_buffer;        // Build buffer (4 * samples_per_buffer)
-
-    S32         system_data[8];      // Miscellaneous system data
-
-    S32         buffer_size;         // Size of each output buffer
-
-    //
-    // waveOut-specific interface data
-    //
-
-    HWAVEOUT    hWaveOut;            // Wave output driver
-
-    U32         reset_works;         // TRUE if OK to do waveOutReset
-    U32         request_reset;       // If nonzero, do waveOutReset ASAP
-
-    LPWAVEHDR   first;               // Pointer to first WAVEHDR in chain
-    S32         n_buffers;           // # of output WAVEHDRs in chain
-
-    LPWAVEHDR volatile * return_list; // Circular list of returned WAVEHDRs
-    S32       volatile      return_head; // Head of WAVEHDR list (insertion point)
-    S32       volatile      return_tail; // Tail of WAVEHDR list (retrieval point)
-
-
-    U32         deviceid;            // id from waveout open
-    PCMWAVEFORMAT  wformat;          // format from waveout open
-
-    //
-    // DirectSound-specific interface data
-    //
-
-    U32                    guid;        // The guid id of the ds driver
-    AILLPDIRECTSOUND       pDS;         // DirectSound output driver (don't
-    // use with Smacker directly anymore!)
-
-    U32                    ds_priority; // priority opened with
-
-    S32                    emulated_ds; // is ds emulated or not?
-    AILLPDIRECTSOUNDBUFFER lppdsb;      // primary buffer or null
-
-    U32                    dsHwnd;      // HWND used with DirectSound
-
-    AILLPDIRECTSOUNDBUFFER * lpbufflist;   // List of pointers to secondary buffers
-    HSAMPLE         * samp_list;      // HSAMPLE associated with each buffer
-    S32             * sec_format;     // DIG_F_ format for secondary buffer
-    S32                  max_buffs;      // Max. allowable # of secondary buffers
-
-    //
-    // Misc. data
-    //
-
-    S32         released;            // has the sound manager been released?
-
-    U32         foreground_timer;    // Foreground timer handle
-
-    HDIGDRIVER  next;                // Pointer to next HDIGDRIVER in use
-    S32      callingCT;              // Calling EXE's task number (16 bit only)
-    S32      callingDS;              // Calling EXE's DS (used in 16 bit only)
-
-    //
-    // Vars for waveOut emulation
-    //
-
-    S32 DS_initialized;
-
-    AILLPDIRECTSOUNDBUFFER DS_sec_buff;    // Secondary buffer (or NULL if none)
-    AILLPDIRECTSOUNDBUFFER DS_out_buff;    // Output buffer (may be sec or prim)
-    S32 DS_buffer_size;                    // Size of entire output buffer
-
-    S32 DS_frag_cnt;                 // Total fragment count and size, and
-    S32 DS_frag_size;                // last fragment occupied by play cursor
-    S32 DS_last_frag;
-    S32 DS_last_write;
-    S32 DS_last_timer;
-    S32 DS_skip_time;
-
-    S32 DS_use_default_format;       // 1 to force use of default DS primary buffer format
-
-    S32         use_MMX;             // Use MMX with this driver if TRUE
-
-    void   * decode_buffer;       // Buffer used by optional ASI pipeline decoder
-    S32         decode_buffer_size;  // # of bytes in decode buffer
-
-    U32 us_count;
-    U32 ms_count;
-    U32 last_ms_polled;
-    U32 last_percent;
-
-    //
-    // Digital driver pipeline stages
-    //
-
-    DPINFO   pipeline[N_DIGDRV_STAGES];
-
-    //
-    // Reverb buffer
-    //
-
-    S32 * reverb_buffer;
-    S32      reverb_buffer_size;
-    S32      reverb_buffer_position;
-    S32      no_wom_done;
-    U32      wom_done_buffers;
-} DIG_DRIVER;
-
-typedef struct _DIG_DRIVER * HDIGDRIVER;
+    DP_ASI_DECODER = 0,
+    DP_FILTER,
+    DP_MERGE,
+    N_SAMPLE_STAGES,
+    SAMPLE_ALL_STAGES
+} SAMPLESTAGE;
 // @third party code - END C&C: Renegade
 
 typedef U32 HPROENUM;
@@ -267,18 +70,6 @@ typedef S32 M3DRESULT;
 
 #define M3D_NOERR 0
 
-// @third party code - BEGIN C&C: Renegade
-#define AILEXPORT WINAPI
-#define AILCALLBACK AILEXPORT
-
-#define NO                      0
-#define DIG_USE_WAVEOUT         15
-#define AIL_NO_ERROR            0
-#define AIL_LOCK_PROTECTION     18
-#define WAVE_FORMAT_PCM         1
-#define WAVE_FORMAT_IMA_ADPCM   0x0011
-// @third party code - END C&C: Renegade
-
 enum 
 { 
 	// @third party code - BEGIN C&C: Renegade
@@ -286,17 +77,6 @@ enum
 	// @third party code - END C&C: Renegade
 	ENVIRONMENT_CAVE = 8 
 };
-
-// @third party code - BEGIN C&C: Renegade
-typedef enum
-{
-	DP_ASI_DECODER = 0,
-	DP_FILTER,
-	DP_MERGE,
-	N_SAMPLE_STAGES,
-	SAMPLE_ALL_STAGES
-} SAMPLESTAGE;
-// @third party code - END C&C: Renegade
 
 #define AIL_3D_2_SPEAKER 0
 #define AIL_3D_HEADPHONE 1
@@ -423,8 +203,8 @@ RE3MSS_EXPORT void WINAPI AIL_stop_sample(HSAMPLE S);
 RE3MSS_EXPORT void WINAPI AIL_resume_sample(HSAMPLE S);
 RE3MSS_EXPORT void WINAPI AIL_set_sample_ms_position(HSAMPLE S, S32 milliseconds);
 RE3MSS_EXPORT S32 WINAPI AIL_3D_sample_playback_rate(H3DSAMPLE S);
-RE3MSS_EXPORT S32  WINAPI AIL_3D_object_user_data(H3DPOBJECT obj, U32 index);
-RE3MSS_EXPORT void WINAPI AIL_set_3D_object_user_data(H3DPOBJECT obj, U32 index, S32 value);
+RE3MSS_EXPORT S32  WINAPI AIL_3D_user_data(H3DPOBJECT obj, U32 index);
+RE3MSS_EXPORT void WINAPI AIL_set_3D_user_data(H3DPOBJECT obj, U32 index, S32 value);
 RE3MSS_EXPORT void WINAPI AIL_set_3D_sample_offset(H3DSAMPLE S, U32 offset);
 RE3MSS_EXPORT S32 WINAPI AIL_3D_sample_volume(H3DSAMPLE S);
 RE3MSS_EXPORT U32 WINAPI AIL_3D_sample_length(H3DSAMPLE S);
@@ -442,13 +222,17 @@ RE3MSS_EXPORT void WINAPI AIL_set_filter_sample_preference(HSAMPLE S, C8 const *
 RE3MSS_EXPORT S32 WINAPI AIL_set_named_sample_file(HSAMPLE S, C8 const * file_type_suffix, void const * file_image, S32 file_size, S32 block);
 RE3MSS_EXPORT S32 WINAPI AIL_waveOutOpen(HDIGDRIVER * drvr, LPHWAVEOUT * lphWaveOut, S32 wDeviceID, LPWAVEFORMAT lpFormat);
 RE3MSS_EXPORT void WINAPI AIL_waveOutClose(HDIGDRIVER drvr);
-RE3MSS_EXPORT H3DPOBJECT WINAPI AIL_3D_open_listener(HPROVIDER lib);
+RE3MSS_EXPORT H3DPOBJECT WINAPI AIL_open_3D_listener(HPROVIDER lib);
 RE3MSS_EXPORT S32 WINAPI AIL_enumerate_filters(HPROENUM  * next, HPROVIDER * dest, C8  * * name);
 RE3MSS_EXPORT void WINAPI AIL_stop_timer(HTIMER timer);
 RE3MSS_EXPORT void WINAPI AIL_release_timer_handle(HTIMER timer);
 RE3MSS_EXPORT S32 WINAPI AIL_stream_playback_rate(HSTREAM stream);
 RE3MSS_EXPORT void WINAPI AIL_set_stream_playback_rate(HSTREAM stream, S32 rate);
-RE3MSS_EXPORT HSTREAM AIL_open_stream_by_sample(HDIGDRIVER driver, HSAMPLE sample, const char* filename, S32 mem); // This is a guess based on the function signature
+RE3MSS_EXPORT HSTREAM AIL_open_stream_by_sample(HDIGDRIVER driver, HSAMPLE sample, const char* filename, S32 stream_mem);
+
+#define AIL_set_3D_object_user_data AIL_set_3D_user_data
+#define AIL_3D_object_user_data AIL_3D_user_data
+#define AIL_3D_open_listener AIL_open_3D_listener
 // @third party code - END C&C: Renegade
 
 #ifdef __cplusplus
