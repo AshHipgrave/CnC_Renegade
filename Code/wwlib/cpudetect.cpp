@@ -1274,5 +1274,10 @@ void Get_OS_Info(
 			os_info.Code="WINXX";
 			return;
 		}
+		else
+		{
+			// TODO: AshHipgrave - Temp fix. If we've hit this then we're running an OS later than Windows XP
+			os_info.Code = "UNKNOWN";
+		}
 	}
 }
